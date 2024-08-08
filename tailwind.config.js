@@ -2,10 +2,10 @@
 export default {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,jsx}',
-    './components/**/*.{js,jsx}',
-    './app/**/*.{js,jsx}',
-    './src/**/*.{js,jsx}',
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./app/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx}",
   ],
   prefix: "",
   theme: {
@@ -27,6 +27,16 @@ export default {
           to: { height: "0" },
         },
       },
+      colors: {
+        serene: "#FFF963",
+        "serene-purple": "#E3DAFF",
+        "serene-ash": "#EBE5DD",
+        "serene-black": "#0B0B0B",
+        "serene-blue": "#CBE6FF",
+      },
+      fontFamily: {
+        NeueHass: ["Neue Haas Grotesk Display Pro", "sans-serif"],
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
@@ -34,4 +44,4 @@ export default {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
