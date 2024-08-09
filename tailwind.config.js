@@ -1,11 +1,16 @@
+import { Layout } from 'lucide-react';
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ["class"],
   content: [
+    // "./index.html",
     "./pages/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
+    ".Component/**/*.{js,jsx}",
     "./app/**/*.{js,jsx}",
     "./src/**/*.{js,jsx}",
+    // "./src/Component/Shared/**/*.{js,jsx}",
+    // "./src/Component/SideBar.jsx"
   ],
   prefix: "",
   theme: {
@@ -33,6 +38,7 @@ export default {
         "serene-ash": "#EBE5DD",
         "serene-black": "#0B0B0B",
         "serene-blue": "#CBE6FF",
+        "serene-gray": "#C7C7C7",
       },
       fontFamily: {
         NeueHass: ["Neue Haas Grotesk Display Pro", "sans-serif"],
@@ -41,7 +47,20 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-    },
+      gridTemplateAreas:{
+        Layout:[
+          'sidebar header',
+          'sidebar main'
+        ],
+        main:[
+  
+          
+        ]
+      }
+     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    // require('savvywombat/tailwindcss-grid-areas')
+  ],
 };
