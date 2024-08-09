@@ -31,9 +31,9 @@ const Header = () => {
      row-start-1 row-end-2 sticky top-0 z-[900] text-serene"
     >
       <div className="flex gap-5 mb-5 mr-10">
-        <img src={searchIcon} width={20} />
-        <img src={bell} width={20} />
-        <img src={chat} width={20} />
+        <img src={searchIcon} width={18} />
+        <img src={bell} width={18} />
+        <img src={chat} width={18} />
       </div>
     </header>
   );
