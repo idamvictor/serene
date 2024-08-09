@@ -1,9 +1,30 @@
-import { Button } from "./Component/ui/button"
+import { Dashboard } from "./pages";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Route,
+  Outlet,
+  Navigate,
+} from "react-router-dom";
 function App() {
+
+//  const Layout = () => {
+//    return (
+//      <div>
+//        <NavBar />
+//        <div style={{ display: "flex" }}>
+//          <LeftBar />
+//          <Outlet />
+//          <RightBar />
+//        </div>
+//      </div>
+//    );
+//  };
+
   return (
-    <h1>
-      <Button variant="destructive">Here</Button>
-    </h1>
+    <>
+      <Dashboard/>
+    </>
   );
 }
 
