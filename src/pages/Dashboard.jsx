@@ -1,4 +1,9 @@
 import Layout from "@/Component/Shared/Layout";
+import DashboardQuickChat from "@/features/dashboard/DashboardQuickChat";
+import DashboardRecommendedTherapist from "@/features/dashboard/DashboardRecommendedTherapist";
+import DashboardWelcomeMessage from "@/features/dashboard/DashboardWelcomeMessage";
+import RecommendedCommunities from "@/features/dashboard/RecommendedCommunities"
+import MoodTracking from "@/features/dashboard/MoodTracking"
 
 const Dashboard = () => {
   return (
@@ -6,6 +11,11 @@ const Dashboard = () => {
       <div className="text-serene mt-11 ml-11 font-medium text-lg">
         Dashboard
       </div>
+      <DashboardWelcomeMessage />
+      <DashboardQuickChat />
+      <DashboardRecommendedTherapist />
+      <RecommendedCommunities />
+      <MoodTracking/>
     </Layout>
   );
 }
