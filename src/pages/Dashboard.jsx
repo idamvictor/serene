@@ -8,14 +8,14 @@ import MoodTracking from "@/features/dashboard/MoodTracking"
 const Dashboard = () => {
   return (
     <Layout>
-      <div className="text-serene mt-11 ml-11 font-medium text-lg">
+      <div className="text-serene mt-11 mx-11 font-medium text-lg">
         Dashboard
+        <DashboardWelcomeMessage />
+        <DashboardQuickChat />
+        <DashboardRecommendedTherapist />
+        <RecommendedCommunities />
+        <MoodTracking />
       </div>
-      <DashboardWelcomeMessage />
-      <DashboardQuickChat />
-      <DashboardRecommendedTherapist />
-      <RecommendedCommunities />
-      <MoodTracking/>
     </Layout>
   );
 }
