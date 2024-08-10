@@ -27,7 +27,7 @@ import { chat, searchIcon,bell } from "@/assets";
 const Header = () => {
   return (
     <header
-      className="flex justify-end border-b-[0.1rem] pt-4 mt-7  
+      className="flex justify-end border-b-[0.1rem] pt-4 mt-7  bg-serene-black
      border-[#575757] lg:h-[60px] lg:px-6 col-start-2 col-end-3 
      row-start-1 row-end-2 sticky top-0 z-[900] text-serene-ash"
     >

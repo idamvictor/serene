@@ -4,7 +4,7 @@ import SideBar from "../SideBar";
 const Layout = ({ children }) => {
   return (
     <section className="mx-auto max-w-screen-2xl">
-      <div className="grid grid-cols-[auto_1fr] grid-rows-[5rem_1fr] h-screen">
+      <div className="grid grid-cols-[15rem_1fr] grid-rows-[5rem_1fr] h-screen">
         <SideBar />
 
         {/* this is the side bar  */}
