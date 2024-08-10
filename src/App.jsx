@@ -1,4 +1,4 @@
-import { Dashboard } from "./pages";
+import { Dashboard, Communities, Rooms, Therapist, Resources } from "./pages";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -7,25 +7,48 @@ import {
   Navigate,
 } from "react-router-dom";
 function App() {
-
-//  const Layout = () => {
-//    return (
-//      <div>
-//        <NavBar />
-//        <div style={{ display: "flex" }}>
-//          <LeftBar />
-//          <Outlet />
-//          <RightBar />
-//        </div>
-//      </div>
-//    );
-//  };
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Dashboard />,
+    },
+    {
+      path: "/Communities",
+      element: <Communities />,
+    },
+    {
+      path: "/Therapist",
+      element: <Therapist />,
+    },
+    {
+      path: "/Rooms",
+      element: <Rooms />,
+    },
+    {
+      path: "/Resources",
+      element: <Resources />,
+    },
+  ]);
+  //  const Layout = () => {
+  //    return (
+  //      <div>
+  //        <NavBar />
+  //        <div style={{ display: "flex" }}>
+  //          <LeftBar />
+  //          <Outlet />
+  //          <RightBar />
+  //        </div>
+  //      </div>
+  //    );
+  //  };
 
   return (
     <>
-      <Dashboard/>
+      <div>
+        <RouterProvider router={router} />
+      </div>
     </>
   );
 }
 
-export default App
+export default App;
