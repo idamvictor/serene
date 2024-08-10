@@ -8,6 +8,7 @@ import recommendedCommunitiesImage from "./recommendedCommunitiesImage.svg";
 import star from "./star.svg";
 import avatarBig from "./avatatBig.svg";
 import moodImg from "./moodImg.png"
+import rightArrow from "./rightArrow.svg"
 
 export {
   sereneSign,
@@ -19,5 +20,6 @@ export {
   star,
   recommendedCommunitiesImage,
   avatarBig,
-  moodImg                       
+  moodImg,
+  rightArrow                    
 };
