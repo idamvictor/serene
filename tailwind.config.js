@@ -8,7 +8,7 @@ export default {
     "./pages/**/*.{js,jsx}",
     ".Component/**/*.{js,jsx}",
     "./app/**/*.{js,jsx}",
-    "./src/**/*.{js,jsx}",
+    "./src/**/*.{js,jsx,svg}",
     // "./src/Component/Shared/**/*.{js,jsx}",
     // "./src/Component/SideBar.jsx"
   ],

@@ -20,6 +20,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../Component/ui/card";
+import { Search,Bell,LucideMessageCircle,ChevronLeft} from "lucide-react";
 import { chat, searchIcon,bell } from "@/assets";
  
 
@@ -28,12 +29,12 @@ const Header = () => {
     <header
       className="flex justify-end border-b-[0.1rem] pt-4 mt-7  
      border-[#575757] lg:h-[60px] lg:px-6 col-start-2 col-end-3 
-     row-start-1 row-end-2 sticky top-0 z-[900] text-serene"
+     row-start-1 row-end-2 sticky top-0 z-[900] text-serene-ash"
     >
       <div className="flex gap-5 mb-5 mr-10">
-        <img src={searchIcon} width={18} />
-        <img src={bell} width={18} />
-        <img src={chat} width={18} />
+        <Search className="hover:text-serene w-4" />
+        <Bell className="hover:text-serene w-4" />
+        <LucideMessageCircle className="hover:text-serene w-4" />
       </div>
     </header>
   );
