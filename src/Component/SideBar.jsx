@@ -18,7 +18,7 @@ import { sereneSign } from '@/assets';
 
  export function SideBar() {
    return (
-     <aside className="hidden  md:block bg-[#272727] text-serene-ash serene-sidebar sticky top-0 z-[1000] col-start-1 col-end-2 row-span-3">
+     <aside className="hidden  md:block bg-[#272727] text-serene-ash serene-sidebar sticky top-0 z-[1000] col-start-1 col-end-2 row-span-3 h-screen">
        <div className="flex h-full max-h-screen flex-col gap-2">
          <div className=" flex flex-col gap-11 border-b-[0.1rem] border-[#575757] py-6 pb-32 lg:h-[60px] lg:px-6">
            <a href="/" className="flex items-center gap-2 font-semibold ">
