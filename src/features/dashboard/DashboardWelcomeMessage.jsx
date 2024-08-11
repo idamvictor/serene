@@ -7,4 +7,4 @@ function DashboardWelcomeMessage() {
   )
 }
 
-export default DashboardWelcomeMessage
+export default DashboardWelcomeMessage;

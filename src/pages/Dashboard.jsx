@@ -4,18 +4,41 @@ import DashboardRecommendedTherapist from "@/features/dashboard/DashboardRecomme
 import DashboardWelcomeMessage from "@/features/dashboard/DashboardWelcomeMessage";
 import RecommendedCommunities from "@/features/dashboard/RecommendedCommunities"
 import MoodTracking from "@/features/dashboard/MoodTracking"
+import RecommendationCard from "@/Component/ui/RecommendationCard";
+
+//*Will be removed later
+import { recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage } from "@/assets";
+import TherapistCard from "@/Component/ui/TherapistCard";
+
 
 const Dashboard = () => {
   return (
     <Layout>
       <div className="text-serene mt-11 mx-11 font-medium text-lg">
-        Dashboard
-        <DashboardWelcomeMessage />
+        {/* Dashboard */}
+        {/* <DashboardWelcomeMessage />
         <DashboardQuickChat />
         <DashboardRecommendedTherapist />
         <RecommendedCommunities />
-        <MoodTracking />
+        <MoodTracking /> */}
+        
       </div>
+
+      {/* <RecommendationCard 
+          img={recommendedTherapistImage}
+          imgCaption={"You don't have any scheduled appointment with a therapist"}
+          recommendedText={"Recommended therapists for you"}
+        >
+          <TherapistCard />
+          <TherapistCard />
+        </RecommendationCard> */}
+
+      <RecommendationCard 
+      img={recommendedCommunitiesImage}
+      imgCaption={"You are not a member of any community"}
+      
+      ></RecommendationCard>
+
     </Layout>
   );
 }

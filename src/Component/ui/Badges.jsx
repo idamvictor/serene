@@ -1,7 +1,7 @@
-export default function Badges({ children }) {
+export default function Badges({ children, styling }) {
   return (
-    <div className="bg-serene-purple inline-flex justify-center items-center p-[5px_12px] rounded-[19px]">
+    <p className={`${styling} inline-flex justify-center items-center p-[5px_10px] rounded-[19px] text-xs font-semibold`}>
       {children}
-    </div>
+    </p>
   );
 }
