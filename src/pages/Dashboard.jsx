@@ -11,7 +11,7 @@ const Dashboard = () => {
   return (
     <Layout>
       {/* <div className="text-serene mt-11 mx-11 font-medium text-lg"></div> */}
-      <div className="dashboard-content grid grid-cols-2 gap-4 grid-rows-auto px-7 py-5 place-content-center">
+      <div className="dashboard-content grid grid-cols-2 gap-8 grid-rows-auto mx-9 py-3 ">
         <DashboardWelcomeMessage />
         <DashboardQuickChat />
         <DashboardRecommendedTherapist />
@@ -24,4 +24,4 @@ const Dashboard = () => {
   );
 }
 
-export default Dashboard
+export default Dashboard;
