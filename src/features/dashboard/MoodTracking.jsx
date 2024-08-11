@@ -1,28 +1,36 @@
-import { moodImg } from "@/assets";
+import {moodImage}from "@/assets";
 
-function DashboardQuickChat() {
+const MoodButton = ({mood}) => {
   return (
-    <section className="flex flex-col justify-center items-center gap-[24px] p-[33px_30px] self-stretch rounded-[15px] bg-serene-ash">
-      <p className="text-[#191919] font-[600] text-[26px]">
-        What's your mood like today 
-      </p>
-      <p className="text-[20px] font-[600] text-[#666]">4 August</p>
-      <div className="flex items-start gap-[8px] self-stretch">
-        <ChatButton>Hey</ChatButton>
-        <ChatButton>Hello, good morning!</ChatButton>
-        <ChatButton>Hi, its nice to meet you!</ChatButton>
+    <button className="text-xs text-center bg-[#d8cfc2] px-3 py-1 rounded-lg border ">
+      {mood}
+    </button>
+  );
+};
+
+const DashboardQuickChat = () => {
+  return (
+    <section className="flex justify-center items-center rounded-md bg-serene-ash w-[24rem] h-auto mx-4">
+      <div className="flex-col font-semibold ml-5">
+        <h5 className="text-[#191919] text-[1.07rem]">
+          What's your mood like today?
+        </h5>
+        <p className="text-xs text-[#666] mt-1 mb-5">4 August</p>
+        <div className="flex flex-wrap gap-1">
+          <MoodButton mood={`Anxiety`} />
+          <MoodButton mood={`Joy`} />
+          <MoodButton mood={`Depressed`} />
+          <MoodButton mood={`Surprised`} />
+          <MoodButton mood={`Calm`} />
+          <MoodButton mood={`Stupid`} />
+        </div>
       </div>
-      <img src={moodImg} alt="" />
+     
+      <img src={moodImage} alt="" className="w-[40%] h-48" />
     </section>
   );
-}
+};
 
 export default DashboardQuickChat;
 
-function ChatButton({ children }) {
-  return (
-    <button className="flex justify-center items-center gap-[10px] p-[10px_26px] rounded-[10px] border border-[#B2A4DC] bg-[#C1B4E9]">
-      {children}
-    </button>
-  );
-}
+

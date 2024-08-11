@@ -27,23 +27,23 @@ const Dashboard = () => {
         
       </div>
 
-      <DashboardQuickChat />
+      {/* <DashboardQuickChat /> */}
 
 
 
       {/* <RecommendationCard 
-          img={recommendedTherapistImage}
-          imgCaption={"You don't have any scheduled appointment with a therapist"}
-          recommendedText={"Recommended therapists for you"}
+            img={recommendedTherapistImage}
+            imgCaption={"You don't have any scheduled appointment with a therapist"}
+            recommendedText={"Recommended therapists for you"}
         >
           <TherapistCard />
           <TherapistCard />
         </RecommendationCard> */}
 
       {/* <RecommendationCard 
-        img={recommendedCommunitiesImage}
-        imgCaption={"You are not a member of any community"}
-        recommendedText={"Recommended communities you can join"}
+            img={recommendedCommunitiesImage}
+            imgCaption={"You are not a member of any community"}
+            recommendedText={"Recommended communities you can join"}
       >
         <CommunityCard 
           backgroundColor={"bg-[#fffb97]"}
@@ -75,6 +75,7 @@ const Dashboard = () => {
         ></CommunityCard>
       </RecommendationCard> */}
 
+        <MoodTracking />
     </Layout>
   );
 }

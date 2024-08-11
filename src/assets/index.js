@@ -7,7 +7,8 @@ import recommendedTherapistImage from "./recommendedTherapistImage.svg";
 import recommendedCommunitiesImage from "./recommendedCommunitiesImage.svg";
 import star from "./star.svg";
 import avatarBig from "./avatatBig.svg";
-import moodImg from "./moodImg.png"
+import moodImg from "./moodImg.png";
+import moodImage from "./moodImage.svg";
 
 export {
   sereneSign,
@@ -19,5 +20,6 @@ export {
   star,
   recommendedCommunitiesImage,
   avatarBig,
-  moodImg                       
+  moodImg,
+  moodImage                      
 };
