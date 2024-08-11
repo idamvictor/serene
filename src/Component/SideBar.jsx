@@ -13,8 +13,8 @@ export function SideBar() {
   };
 
   return (
-    <aside className="hidden md:block bg-[#272727] text-serene-ash serene-sidebar sticky top-0 z-[1000] col-start-1 col-end-2 row-span-3">
-      <div className="flex h-full max-h-screen flex-col gap-2">
+    <aside className="hidden md:block bg-[#272727] max-h-[120vh] text-serene-ash serene-sidebar sticky col-start-1 col-end-2 row-span-3">
+      <div className="gap-2">
         <div className="flex flex-col items-start gap-11  mx-4 border-[#575757] min-h-56 lg:h-[60px]">
           <NavLink
             to="/"
@@ -32,7 +32,7 @@ export function SideBar() {
           </div>
         </div>
         <div className="flex-1">
-          <nav className="flex flex-col gap-5 mt-5 leading-normal text-base font-bold">
+          <nav className="flex flex-col justify-between gap-5 mt-5 leading-normal text-base font-bold">
             <NavLink
               to="/"
               className={`flex items-center gap-3 rounded-sm px-3 py-2 transition-all ${
@@ -93,6 +93,14 @@ export function SideBar() {
               <LineChart className="h-4 w-4" />
               Resources
             </NavLink>
+            <div className="flex flex-col gap-11 mt-64">
+              <NavLink>
+                Settings
+              </NavLink>
+              <NavLink>
+                Log out
+              </NavLink>
+            </div>
           </nav>
         </div>
       </div>
