@@ -1,10 +1,10 @@
 function DashboardWelcomeMessage() {
   return (
-    <header>
-      <p className="text-white font-[600] text-[34px] ">Hey Friend! 🖐🏻</p>
-      <p className="text-serene-gray font-[500] text-[16px]">We are excited that you have started this journey to greatness.</p>
+    <header className="dashoard-welcome col-span-2 row-span-1 mb-2 mt-5">
+      <h1 className="text-white font-semibold text-2xl mb-1">Hey Friend! 🖐🏻</h1>
+      <p className="text-serene-gray font-medium text-xs leading-3">We are excited that you have started this journey to greatness.</p>
     </header>
   )
 }
 
-export default DashboardWelcomeMessage
+export default DashboardWelcomeMessage;
