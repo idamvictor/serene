@@ -9,6 +9,7 @@ import RecommendationCard from "@/Component/ui/RecommendationCard";
 //*Will be removed later
 import { recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage } from "@/assets";
 import TherapistCard from "@/Component/ui/TherapistCard";
+import CommunityCard from "@/Component/ui/CommunityCard";
 
 
 const Dashboard = () => {
@@ -36,8 +37,21 @@ const Dashboard = () => {
       <RecommendationCard 
       img={recommendedCommunitiesImage}
       imgCaption={"You are not a member of any community"}
-      
-      ></RecommendationCard>
+      recommendedText={"Recommended communities you can join"}
+      >
+        <CommunityCard 
+        backgroundColor={"bg-[#fffb97]"}
+        />
+        <CommunityCard 
+        backgroundColor={"bg-serene-blue"}
+        ></CommunityCard>
+    <CommunityCard 
+          backgroundColor={"bg-serene-ash"}
+          ></CommunityCard>
+    <CommunityCard 
+          backgroundColor={"bg-serene-purple"}
+          ></CommunityCard>
+        </RecommendationCard>
 
     </Layout>
   );
