@@ -9,17 +9,7 @@ import star from "./star.svg";
 import avatarBig from "./avatatBig.svg";
 import moodImg from "./moodImg.png";
 import moodImage from "./moodImage.svg";
+import articlePic from "./articlePic.png";
+import arrowRight from "./arrow-right.svg";
 
-export {
-  sereneSign,
-  searchIcon,
-  chat,
-  bell,
-  recommendedTherapistImage,
-  avatarSmall,
-  star,
-  recommendedCommunitiesImage,
-  avatarBig,
-  moodImg,
-  moodImage                      
-};
+export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight };

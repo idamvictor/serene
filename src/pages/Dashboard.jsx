@@ -7,11 +7,12 @@ import MoodTracking from "@/features/dashboard/MoodTracking";
 import RecommendationCard from "@/Component/ui/RecommendationCard";
 
 //*Will be removed later
-import { recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage } from "@/assets";
+import { recommendedTherapistImage, recommendedCommunitiesImage } from "@/assets";
 import TherapistCard from "@/Component/ui/TherapistCard";
 import CommunityCard from "@/Component/ui/CommunityCard";
 import communityPic1 from "@/assets/communityPic1.png";
 import communityPic2 from "@/assets/communityPic2.png";
+import ResourceCard from "@/Component/ui/ResourceCard";
 
 
 const Dashboard = () => {
@@ -75,7 +76,9 @@ const Dashboard = () => {
         ></CommunityCard>
       </RecommendationCard> */}
 
-        <MoodTracking />
+        {/* <MoodTracking /> */}
+
+        <ResourceCard />
     </Layout>
   );
 }

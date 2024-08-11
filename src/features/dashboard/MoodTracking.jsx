@@ -1,4 +1,4 @@
-import {moodImage}from "@/assets";
+import { moodImage }from "@/assets";
 
 const MoodButton = ({mood}) => {
   return (
