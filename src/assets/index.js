@@ -11,5 +11,7 @@ import moodImg from "./moodImg.png";
 import moodImage from "./moodImage.svg";
 import articlePic from "./articlePic.png";
 import arrowRight from "./arrow-right.svg";
+import communityPic1 from "./communityPic1.png";
+import communityPic2 from "./communityPic2.png";
 
-export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight };
+export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2 };

@@ -8,9 +8,9 @@ const MoodButton = ({mood}) => {
   );
 };
 
-const DashboardQuickChat = () => {
+const MoodTracking = () => {
   return (
-    <section className="flex justify-center items-center rounded-md bg-serene-ash w-[24rem] h-auto mx-4">
+    <section className="dashboard-mood flex justify-center items-center rounded-md bg-serene-ash row-span-1 col-span-1 h-[12rem] ">
       <div className="flex-col font-semibold ml-5">
         <h5 className="text-[#191919] text-[1.07rem]">
           What's your mood like today?
@@ -31,6 +31,6 @@ const DashboardQuickChat = () => {
   );
 };
 
-export default DashboardQuickChat;
+export default MoodTracking;
 
 

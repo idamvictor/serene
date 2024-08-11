@@ -1,6 +1,4 @@
-//TODO: DELETE THIS FILE. NO LONGER NEEDED
-
-import ArticleCard from "./ArticleCard";
+import ArticleCard from "@/Component/ui/ArticleCard";
 
 const ResourceBtn = ({ resource }) => {
     return(
@@ -10,10 +8,10 @@ const ResourceBtn = ({ resource }) => {
     );
 };
 
-const ResourceCard = () => {
+const DashboardResources = () => {
     return (  
         <>
-            <section className="resourceCard-cont h-auto w-[80%] bg-[#272727] flex flex-col m-11 p-8 rounded-md">
+            <section className="dashboard-resources  bg-[#272727] flex flex-col p-8 rounded-md col-span-2 h-auto">
                 <div className="flex justify-between items-center">
                         <h4 className="text-white text-xl font-semibold">Resources</h4> 
                         <button className="text-serene-gray font-medium text-xs">See all</button>
@@ -41,4 +39,4 @@ const ResourceCard = () => {
     );
 }
  
-export default ResourceCard;
+export default DashboardResources;
