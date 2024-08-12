@@ -10,8 +10,7 @@ import DashboardResources from "@/features/dashboard/DashboardResoures";
 const Dashboard = () => {
   return (
     <Layout>
-      {/* <div className="text-serene mt-11 mx-11 font-medium text-lg"></div> */}
-      <div className="dashboard-content grid grid-cols-2 grid-rows-[auto_auto_auto] gap-6 mx-9 py-3 ">
+      <div className="dashboard-content grid grid-cols-2 grid-rows-[auto_auto_auto] gap-6 mx-8 my-3 ">
         <DashboardWelcomeMessage />
 
         <div className="grid gap-6">

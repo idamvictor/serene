@@ -20,7 +20,8 @@ const Communities = () => {
       </div>
 
             {/* TOO BULKY. WILL BE ADJUSTED LATER AFTER INTEGRATION */}
-      <section className="mt-12">
+      <div className="flex justify-center items-center mx-11 mb-11">
+        <section className="mt-12 grid grid-cols-2 gap-5 grid-rows-auto">
           <CommunityCard2
             communityProfilePic={``}
             communityName={`Cheers Champions`}
@@ -28,7 +29,65 @@ const Communities = () => {
             communityDescription={`A community to help get over the urge for a cold beer`}
             communityMembers={`12K+ Members`}
           />
-      </section>
+
+          <CommunityCard2
+            communityProfilePic={``}
+            communityName={`Cheers Champions`}
+            badgeTitle={`Alcoholics`}
+            communityDescription={`A community to help get over the urge for a cold beer`}
+            communityMembers={`12K+ Members`}
+          />
+
+          <CommunityCard2
+            communityProfilePic={``}
+            communityName={`Cheers Champions`}
+            badgeTitle={`Alcoholics`}
+            communityDescription={`A community to help get over the urge for a cold beer`}
+            communityMembers={`12K+ Members`}
+          />
+
+          <CommunityCard2
+            communityProfilePic={``}
+            communityName={`Cheers Champions`}
+            badgeTitle={`Alcoholics`}
+            communityDescription={`A community to help get over the urge for a cold beer`}
+            communityMembers={`12K+ Members`}
+          />
+
+          <CommunityCard2
+            communityProfilePic={``}
+            communityName={`Cheers Champions`}
+            badgeTitle={`Alcoholics`}
+            communityDescription={`A community to help get over the urge for a cold beer`}
+            communityMembers={`12K+ Members`}
+          />
+
+          <CommunityCard2
+            communityProfilePic={``}
+            communityName={`Cheers Champions`}
+            badgeTitle={`Alcoholics`}
+            communityDescription={`A community to help get over the urge for a cold beer`}
+            communityMembers={`12K+ Members`}
+          />
+
+          <CommunityCard2
+            communityProfilePic={``}
+            communityName={`Cheers Champions`}
+            badgeTitle={`Alcoholics`}
+            communityDescription={`A community to help get over the urge for a cold beer`}
+            communityMembers={`12K+ Members`}
+          />
+
+          <CommunityCard2
+            communityProfilePic={``}
+            communityName={`Cheers Champions`}
+            badgeTitle={`Alcoholics`}
+            communityDescription={`A community to help get over the urge for a cold beer`}
+            communityMembers={`12K+ Members`}
+          />
+        </section>
+      </div>
+     
 
     </Layout>
   );
