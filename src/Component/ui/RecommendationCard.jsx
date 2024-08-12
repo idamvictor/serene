@@ -1,10 +1,10 @@
 const RecommendationCard = ({img, imgCaption, recommendedText, children}) => {
     return ( 
         <>
-            <div className="recommendation-cont bg-[#272727] flex flex-col p-8 rounded-lg  ">
+            <div className="recommendation-cont bg-[#272727] flex flex-col p-8 rounded-lg h-[30rem] ">
                 <figure className="flex-col text-center ">
                     <img src={img} alt="Illustration" className="mx-auto my-0 mt-6 w-16 h-16" />
-                    <figcaption className="text-serene-gray font-medium tracking-normal text-[.8rem] px-16 mt-5">{imgCaption}</figcaption>
+                    <figcaption className="text-serene-gray font-medium tracking-normal text-sm px-20 mt-5">{imgCaption}</figcaption>
                 </figure>
 
                 <div className="flex justify-between items-center mt-8">

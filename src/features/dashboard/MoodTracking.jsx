@@ -10,7 +10,7 @@ const MoodButton = ({mood}) => {
 
 const MoodTracking = () => {
   return (
-    <section className="dashboard-mood flex justify-center items-center rounded-md bg-serene-ash h-[12rem] ">
+    <section className="dashboard-mood flex justify-center items-center rounded-md bg-serene-ash h-[10rem] ">
       <div className="flex-col font-semibold ml-5">
         <h5 className="text-[#191919] text-[1.07rem]">
           What's your mood like today?
