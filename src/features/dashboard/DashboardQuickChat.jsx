@@ -6,7 +6,7 @@ const ChatButton = ({ message }) => {
 
 const DashboardQuickChat = () => {
   return (
-    <section className="dashboard-quickChat row-span-1 col-start-1 col-end-2 flex flex-col justify-center gap-3 pl-6 py-3 rounded-lg bg-[#E3DAFF] h-[10rem] ">
+    <section className="dashboard-quickChat flex flex-col justify-center gap-3 pl-6 py-3 rounded-lg bg-[#E3DAFF] h-[10rem] ">
       <p className="text-[#605A74] font-semibold text-xs tracking-wide pr-3">
         You have been matched with one started his own journey few years ago to
         be your personal guide and to push each other

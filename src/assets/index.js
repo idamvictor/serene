@@ -13,5 +13,8 @@ import articlePic from "./articlePic.png";
 import arrowRight from "./arrow-right.svg";
 import communityPic1 from "./communityPic1.png";
 import communityPic2 from "./communityPic2.png";
+import arrowDown from "./arrow-down.svg";
+import menuBar from "./menu-bar.svg";
+import filterIcon from "./mingcute_filter-line.svg";
 
-export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2 };
+export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2, arrowDown, menuBar, filterIcon };
