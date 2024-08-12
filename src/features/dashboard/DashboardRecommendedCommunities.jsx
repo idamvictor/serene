@@ -7,7 +7,7 @@ import { communityPic1, communityPic2 } from "@/assets";
 const DashboardRecommendedCommunities = () => {
   return (
     <>
-     <div className="dashboard-community mt-[-18rem]">
+     <div className="dashboard-community">
       <RecommendationCard 
               img={recommendedCommunitiesImage}
               imgCaption={"You are not a member of any community"}
