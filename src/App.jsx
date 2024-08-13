@@ -1,11 +1,8 @@
-import { Dashboard, Communities, Rooms, Therapist, Resources } from "./pages";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  Route,
-  Outlet,
-  Navigate,
-} from "react-router-dom";
+import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities } from "./pages";
+
+import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
+
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -13,21 +10,25 @@ function App() {
       element: <Dashboard />,
     },
     {
-      path: "/Communities",
-      element: <Communities />,
+      path: "/join-communities",
+      element: <JoinCommunities />,
     },
     {
-      path: "/Therapist",
+      path: "/therapist",
       element: <Therapist />,
     },
     {
-      path: "/Rooms",
+      path: "/rooms",
       element: <Rooms />,
     },
     {
-      path: "/Resources",
+      path: "/resources",
       element: <Resources />,
     },
+    {
+      path:"/community",
+      element: <Communities />
+    }
   ]);
 
   return (

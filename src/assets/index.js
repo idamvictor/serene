@@ -13,10 +13,18 @@ import articlePic from "./articlePic.png";
 import arrowRight from "./arrow-right.svg";
 import communityPic1 from "./communityPic1.png";
 import communityPic2 from "./communityPic2.png";
+import arrowDown from "./arrow-down.svg";
+import menuBar from "./menuBar.svg";
+import filterIcon from "./mingcute_filter-line.svg";
+import postForwardArrow from "./postForwardArrow.svg";
+import postMessage from "./postMessage.svg";
+import postPic from "./postPic.png";
+import userProfilePic from "./userProfilePic.png";
+
 import profilePhoto from "./images/profilePhoto.png"
 import headerImg from "./images/headerImg.png"
 import about from './about.svg'
 import experience from './experience.svg'
 import lang from "./lang.svg" 
 
-export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2, profilePhoto, headerImg, about, experience, lang };
+export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2, arrowDown, menuBar, filterIcon, postForwardArrow, postMessage, postPic, userProfilePic, profilePhoto, headerImg, about, experience, lang };

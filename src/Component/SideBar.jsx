@@ -1,19 +1,5 @@
-import React from 'react'
- import {
-   Bell,
-   CircleUser,
-   Home,
-   LineChart,
-   Menu,
-   Package,
-   Package2,
-   Search,
-   ShoppingCart,
-   Users,
-   ChevronLeft,
- } from "lucide-react";
- import { Link } from 'react-router-dom';
-
+import { Bell, CircleUser, Home, LineChart, Menu, Package, Package2, Search, ShoppingCart, Users, ChevronLeft } from "lucide-react";
+import { Link } from 'react-router-dom';
 import { sereneSign } from '@/assets';
 
  export function SideBar() {
@@ -44,28 +30,28 @@ import { sereneSign } from '@/assets';
                Dashboard
              </Link>
              <Link
-               to={`/Communities`}
+               to={`/join-communities`}
                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
              >
                <ShoppingCart className="h-4 w-4" />
-               Communtity
+               Community
              </Link>
              <Link
-               to={`/Therapist`}
+               to={`/therapist`}
                className="flex items-center gap-3 rounded-lg bg-muted px-3 py-2 text-primary transition-all hover:text-primary"
              >
                <Package className="h-4 w-4" />
                Therapist{" "}
              </Link>
              <Link
-               to={`/Rooms`}
+               to={`/rooms`}
                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
              >
                <Users className="h-4 w-4" />
                Rooms
              </Link>
              <Link
-               to={`/Resources`}
+               to={`/resources`}
                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
              >
                <LineChart className="h-4 w-4" />
