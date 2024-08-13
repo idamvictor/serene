@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers}) => {
   return (
     <>
-       <div className="border border-[#6c6c6c] w-[28.5rem] rounded-[.5625rem] flex items-start gap-2 p-3 relative">
+       <div className="border border-[#6c6c6c] w-[100%] rounded-[.5625rem] flex items-start gap-2 p-3 relative">
             <img src={communityProfilePic} alt="" className="h-9 w-9 bg-[#d9d9d9] rounded-full" />
 
             <div className="flex flex-col gap-2 w-[100%]">
