@@ -47,17 +47,10 @@ export default {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
-      gridTemplateAreas:{
-        Layout:[
-          'sidebar header',
-          'sidebar main'
-        ],
-        main:[
-  
-          
-        ]
-      }
-     },
+      backgroundImage: {
+        "serene-image": "url('/src/assets/Onboarding.png')",
+      },
+    },
   },
   plugins: [
     require("tailwindcss-animate"),

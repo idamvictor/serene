@@ -1,30 +1,73 @@
-import sereneSign from "./sereneSign.svg";
-import searchIcon from "./searchIcon.svg";
-import chat from "./chat.svg";
-import bell from "./bell.svg";
-import avatarSmall from "./avatarSmall.svg";
-import recommendedTherapistImage from "./recommendedTherapistImage.svg";
-import recommendedCommunitiesImage from "./recommendedCommunitiesImage.svg";
-import star from "./star.svg";
-import avatarBig from "./avatatBig.svg";
-import moodImg from "./moodImg.png";
-import moodImage from "./moodImage.svg";
-import articlePic from "./articlePic.png";
-import arrowRight from "./arrow-right.svg";
-import communityPic1 from "./communityPic1.png";
-import communityPic2 from "./communityPic2.png";
-import arrowDown from "./arrow-down.svg";
-import menuBar from "./menuBar.svg";
-import filterIcon from "./mingcute_filter-line.svg";
-import postForwardArrow from "./postForwardArrow.svg";
-import postMessage from "./postMessage.svg";
-import postPic from "./postPic.png";
-import userProfilePic from "./userProfilePic.png";
+// ALL ICONS IMPORT
+import sereneSign from "./Icons/sereneSign.svg";
+import searchIcon from "./Icons/searchIcon.svg";
+import chat from "./Icons/chat.svg";
+import bell from "./Icons/bell.svg";
+import avatarSmall from "./Icons/avatarSmall.svg";
+import recommendedTherapistImage from "./Icons/recommendedTherapistImage.svg";
+import recommendedCommunitiesImage from "./Icons/recommendedCommunitiesImage.svg";
+import star from "./Icons/star.svg";
+import avatarBig from "./Icons/avatatBig.svg";
+import Frame from "./Icons/Frame.svg";
+import RoomsIcon from "./Icons/RoomsIcon.svg";
+import ResourcesIcon from "./Icons/resourcesIcon.svg";
+import TherapistIcon from "./Icons/Therapist.svg";
+import Home from "./Icons/Home.svg";
+import Communities from "./Icons/Communities.svg";
+import arrowDown from "./Icons/arrow-down.svg";
+import menuBar from "./Icons/menuBar.svg";
+import filterIcon from "./Icons/mingcute_filter-line.svg";
+import postForwardArrow from "./Icons/postForwardArrow.svg";
+import postMessage from "./Icons/postMessage.svg";
+import about from "./Icons/about.svg";
+import experience from "./Icons/experience.svg";
+import lang from "./Icons/lang.svg"; 
 
-import profilePhoto from "./images/profilePhoto.png"
-import headerImg from "./images/headerImg.png"
-import about from './about.svg'
-import experience from './experience.svg'
-import lang from "./lang.svg" 
+// ALL IMAGES IMPORT
+import moodImg from "./Images/moodImg.png";
+import moodImage from "./Icons/moodImage.svg";
+import arrowRight from "./Icons/arrow-right.svg";
+import communityPic1 from "./Images/communityPic1.png";
+import communityPic2 from "./Images/communityPic2.png";
+import Onboarding from "./Images/Onboarding.png";
+import postPic from "./Images/postPic.png";
+import userProfilePic from "./Images/userProfilePic.png";
+import profilePhoto from "./images/profilePhoto.png";
+import headerImg from "./images/headerImg.png";
 
-export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2, arrowDown, menuBar, filterIcon, postForwardArrow, postMessage, postPic, userProfilePic, profilePhoto, headerImg, about, experience, lang };
+
+export { 
+  sereneSign, 
+  searchIcon,
+  chat,
+  bell,
+  recommendedTherapistImage,
+  avatarSmall,
+  star,
+  recommendedCommunitiesImage,
+  avatarBig,
+  moodImg,
+  moodImage,
+  arrowRight,
+  communityPic1,
+  communityPic2,
+  arrowDown,
+  filterIcon,
+  postForwardArrow,
+  postMessage,
+  postPic,
+  userProfilePic,
+  profilePhoto,
+  headerImg,
+  about,
+  experience,
+  lang,
+  Onboarding,
+  Frame,
+  RoomsIcon,
+  ResourcesIcon,
+  TherapistIcon,
+  Home,
+  Communities,
+  menuBar
+};
