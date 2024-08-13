@@ -30,18 +30,6 @@ function App() {
       element: <Communities />
     }
   ]);
-  //  const Layout = () => {
-  //    return (
-  //      <div>
-  //        <NavBar />
-  //        <div style={{ display: "flex" }}>
-  //          <LeftBar />
-  //          <Outlet />
-  //          <RightBar />
-  //        </div>
-  //      </div>
-  //    );
-  //  };
 
   return (
     <>

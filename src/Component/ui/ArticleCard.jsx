@@ -1,9 +1,9 @@
-import { articlePic, arrowRight} from "@/assets";
+import { arrowRight} from "@/assets";
 
 const ArticleCard = ({articleTitle, articleDescription}) => {
     return ( 
         <article className="border-b-[.05rem] border-b-[#505050] flex items-center gap-4 mt-5 pb-5">
-            <img src={articlePic} alt="" className="w-32 h-28" />
+            <img src={``} alt="" className="w-32 h-28" />
 
             <div className="article-info pr-32 flex flex-col gap-2">
                 <h4 className="font-semibold text-white text-base">{articleTitle}</h4>

@@ -5,10 +5,14 @@ import DashboardWelcomeMessage from "@/features/dashboard/DashboardWelcomeMessag
 import MoodTracking from "@/features/dashboard/MoodTracking";
 import DashboardRecommendedCommunities from "@/features/dashboard/DashboardRecommendedCommunities";
 import DashboardResources from "@/features/dashboard/DashboardResoures";
+import AuthLayout from "@/Component/Shared/AuthLayout";
 
 
 const Dashboard = () => {
   return (
+    // <>
+    //   <AuthLayout />
+    // </>
     <Layout>
       <DashboardWelcomeMessage />
 
