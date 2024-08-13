@@ -1,5 +1,6 @@
 import Badges from "@/Component/ui/Badges";
 import { menuBar } from "@/assets";
+import { Link } from "react-router-dom";
 
 
 const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers}) => {
@@ -23,7 +24,7 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
                   <img src="" alt="" className="h-4 w-4 bg-[#d9d9d9] rounded-full" />
                   <p className="text-white text-[.85rem] font-medium ">{communityMembers}</p>
                 </div>
-                <button className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]  ">Join</button>
+                <Link to={"/community"} className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]  ">Join</Link>
               </div>
             </div>
           </div>

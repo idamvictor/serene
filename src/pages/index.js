@@ -1,15 +1,17 @@
 import Dashboard from "./Dashboard";
-import Communities from "./Communities";
+import JoinCommunities from "./JoinCommunities";
 import Resources from "./Resources";
 import Rooms from "./Rooms";
 import Therapist from "./Therapist";
+import Communities  from "./Communities";
 
 
 
 export {
     Dashboard,
-    Communities,
+    JoinCommunities,
     Resources,
     Rooms,
-    Therapist
+    Therapist,
+    Communities
 }

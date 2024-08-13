@@ -16,5 +16,10 @@ import communityPic2 from "./communityPic2.png";
 import arrowDown from "./arrow-down.svg";
 import menuBar from "./menu-bar.svg";
 import filterIcon from "./mingcute_filter-line.svg";
+import postForwardArrow from "./postForwardArrow.svg";
+import postMessage from "./postMessage.svg";
+import postPic from "./postPic.png";
+import userProfilePic from "./userProfilePic.png";
 
-export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2, arrowDown, menuBar, filterIcon };
+
+export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2, arrowDown, menuBar, filterIcon, postForwardArrow, postMessage, postPic, userProfilePic };
