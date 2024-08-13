@@ -5,10 +5,14 @@ import DashboardWelcomeMessage from "@/features/dashboard/DashboardWelcomeMessag
 import MoodTracking from "@/features/dashboard/MoodTracking";
 import DashboardRecommendedCommunities from "@/features/dashboard/DashboardRecommendedCommunities";
 import DashboardResources from "@/features/dashboard/DashboardResoures";
+import AuthLayout from "@/Component/Shared/AuthLayout";
 
 
 const Dashboard = () => {
   return (
+    // <>
+    //   <AuthLayout />
+    // </>
     <Layout>
       {/* <div className="text-serene mt-11 mx-11 font-medium text-lg"></div> */}
       <div className="dashboard-content grid grid-cols-2 gap-8 grid-rows-auto mx-9 py-3 ">
@@ -19,7 +23,7 @@ const Dashboard = () => {
         <MoodTracking />
         <DashboardResources />
       </div>
-      
+
     </Layout>
   );
 }

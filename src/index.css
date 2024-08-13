@@ -17,7 +17,11 @@ body{
     grid-template-rows: 3rem 1fr;
     height: 100vh; */
 }
-
+.images {
+    background-image: url('./assets/Onboarding.png');
+    background-attachment: fixed;
+    background-size: cover;
+}
 .dashboard-content {
     /* display: grid; */
     /* grid-template-columns: repeat(2, 1fr); */

@@ -1,4 +1,5 @@
 import { Dashboard, Communities, Rooms, Therapist, Resources } from "./pages";
+import Layout from "./Component/Shared/Layout";
 import {
   createBrowserRouter,
   RouterProvider,

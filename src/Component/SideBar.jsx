@@ -1,105 +1,103 @@
 import React, { useState } from "react";
-import { Home, LineChart, Package, ShoppingCart, Users } from "lucide-react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AiFillHome } from "react-icons/ai";
-
+import { TiGroupOutline } from "react-icons/ti";
+import { IoCubeSharp, IoPerson, IoSettings } from "react-icons/io5";
+import { RiGlobalFill, RiLogoutBoxFill } from "react-icons/ri";
+import { IoIosPeople } from "react-icons/io";
 import { rightArrow, sereneSign } from "@/assets";
 
 export function SideBar() {
   const [active, setActive] = useState("");
 
   const handleClick = (link) => {
+    
     setActive(link);
+    
   };
 
   return (
     <aside className="hidden md:block bg-[#272727] max-h-[120vh] text-serene-ash serene-sidebar sticky col-start-1 col-end-2 row-span-3">
-      <div className="gap-2">
-        <div className="flex flex-col items-start gap-11  mx-4 border-[#575757] min-h-56 lg:h-[60px]">
-          <NavLink
-            to="/"
-            className="flex items-center gap-2 font-semibold mt-11"
-          >
-            <img src={sereneSign} width={30} />
-            <span className="text-3xl text-serene">serene</span>
-          </NavLink>
-          <div className="flex gap-7 items-center justify-center text-base text-[#FFFEE0] my-11">
-            <span className="bg-[#FFFEE0] font-semibold text-black rounded-full px-3 py-2">
-              23
-            </span>
-            user id_23586
-            <img src={rightArrow} className="gap-11" />
-          </div>
+      <div className="flex flex-col items-baseline">
+        <div className="ml-5 my-14 lg:h-[60px]">
+          <Link to="/" className="font-semibold pl-6">
+            <img src={sereneSign} width={120} />
+          </Link>
         </div>
-        <div className="flex-1">
-          <nav className="flex flex-col justify-between gap-5 mt-5 leading-normal text-base font-bold">
-            <NavLink
+        <div className="">
+          <nav className="flex flex-col  gap-5 leading-normal text-base font-medium tracking-[1px] ">
+            <Link
               to="/"
-              className={`flex items-center gap-3 rounded-sm px-3 py-2 transition-all ${
+              className={`flex items-center  gap-3 rounded-sm  py-2 transition-all  ${
                 active === "Dashboard"
-                  ? "bg-serene text-serene-black"
-                  : "text-muted-foreground hover:bg-serene hover:text-serene-black"
+                  ? " text-serene"
+                  : "text-muted-foreground  hover:text-serene "
               }`}
               onClick={() => handleClick("Dashboard")}
             >
-              <Home className="h-4 w-4" />
+              <AiFillHome className="text-xl" />
               Dashboard
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               to="/Communities"
-              className={`flex items-center gap-3 rounded-sm px-3 py-2 transition-all ${
+              className={`flex items-center gap-3 rounded-sm  py-2 transition-all ${
                 active === "Communities"
-                  ? "bg-serene text-serene-black"
-                  : "text-muted-foreground hover:bg-serene hover:text-serene-black"
+                  ? " text-serene"
+                  : "text-muted-foreground  hover:text-serene "
               }`}
               onClick={() => handleClick("Communities")}
             >
-              <ShoppingCart className="h-4 w-4" />
-              Communities
-            </NavLink>
-            <NavLink
+              <div className="flex items-center justify-center gap-3">
+                {" "}
+                <IoIosPeople className="text-2xl" />
+                Communities
+              </div>
+            </Link>
+            <Link
               to="/Therapist"
-              className={`flex items-center gap-3 rounded-sm px-3 py-2 transition-all ${
+              className={`flex items-center gap-3 rounded-sm  py-2 transition-all ${
                 active === "Therapist"
-                  ? "bg-serene text-serene-black"
-                  : "text-muted-foreground hover:bg-serene hover:text-serene-black"
+                  ? " text-serene"
+                  : "text-muted-foreground hover:text-serene "
               }`}
               onClick={() => handleClick("Therapist")}
             >
-              <Package className="h-4 w-4" />
+              <IoPerson className="text-xl" />
               Therapist
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               to="/Rooms"
-              className={`flex items-center gap-3 rounded-sm px-3 py-2 transition-all ${
+              className={`flex items-center gap-3 rounded-sm  py-2 transition-all ${
                 active === "Rooms"
-                  ? "bg-serene text-serene-black"
-                  : "text-muted-foreground hover:bg-serene hover:text-serene-black"
+                  ? " text-serene"
+                  : "text-muted-foreground hover:text-serene "
               }`}
               onClick={() => handleClick("Rooms")}
             >
-              <Users className="h-4 w-4" />
+              <IoCubeSharp className="text-xl" />
               Rooms
-            </NavLink>
-            <NavLink
+            </Link>
+            <Link
               to="/Resources"
-              className={`flex items-center gap-3 rounded-sm px-3 py-2 transition-all ${
+              className={`flex items-center gap-3 rounded-sm py-2 transition-all ${
                 active === "Resources"
-                  ? "bg-serene text-serene-black"
-                  : "text-muted-foreground hover:bg-serene hover:text-serene-black"
+                  ? " text-serene"
+                  : "text-muted-foreground  hover:text-serene"
               }`}
               onClick={() => handleClick("Resources")}
             >
-              <LineChart className="h-4 w-4" />
+              <RiGlobalFill className="text-xl" />
               Resources
-            </NavLink>
-            <div className="flex flex-col gap-11 mt-64">
-              <NavLink>
+            </Link>
+            <div className="flex flex-col gap-11 mt-64 ">
+              <Link className="flex items-center gap-3  hover:text-serene">
+                <IoSettings />
                 Settings
-              </NavLink>
-              <NavLink>
+              </Link>
+              <Link className="flex items-center gap-3  hover:text-serene">
+                <RiLogoutBoxFill />
                 Log out
-              </NavLink>
+              </Link>
             </div>
           </nav>
         </div>
