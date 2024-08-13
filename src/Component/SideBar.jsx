@@ -1,11 +1,10 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useState } from "react";
 import { AiFillHome } from "react-icons/ai";
-import { TiGroupOutline } from "react-icons/ti";
 import { IoCubeSharp, IoPerson, IoSettings } from "react-icons/io5";
 import { RiGlobalFill, RiLogoutBoxFill } from "react-icons/ri";
 import { IoIosPeople } from "react-icons/io";
-import { rightArrow, sereneSign } from "@/assets";
+import {sereneSign } from "@/assets";
 
 export function SideBar() {
   const [active, setActive] = useState("");
@@ -17,7 +16,7 @@ export function SideBar() {
   };
 
   return (
-    <aside className="hidden md:block bg-[#272727] max-h-[120vh] text-serene-ash serene-sidebar sticky col-start-1 col-end-2 row-span-3">
+    <aside className="hidden md:block bg-[#272727]  text-serene-ash serene-sidebar sticky top-0 z-[1000] col-start-1 col-end-2 row-span-3 h-screen ">
       <div className="flex flex-col items-baseline">
         <div className="ml-5 my-14 lg:h-[60px]">
           <Link to="/" className="font-semibold pl-6">
@@ -39,7 +38,7 @@ export function SideBar() {
               Dashboard
             </Link>
             <Link
-              to="/Communities"
+              to="/join-communities"
               className={`flex items-center gap-3 rounded-sm  py-2 transition-all ${
                 active === "Communities"
                   ? " text-serene"

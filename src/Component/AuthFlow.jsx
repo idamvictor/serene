@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { sereneSign,metamask,Frame} from '@/assets'
+import { sereneSign, Frame} from '@/assets'
 const AuthFlow = () => {
     const [currentUser, setcurrentUser] = useState(false)
   return (
