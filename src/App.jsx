@@ -29,18 +29,6 @@ function App() {
       element: <Resources />,
     },
   ]);
-  //  const Layout = () => {
-  //    return (
-  //      <div>
-  //        <NavBar />
-  //        <div style={{ display: "flex" }}>
-  //          <LeftBar />
-  //          <Outlet />
-  //          <RightBar />
-  //        </div>
-  //      </div>
-  //    );
-  //  };
 
   return (
     <>
