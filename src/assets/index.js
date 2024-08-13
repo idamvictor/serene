@@ -14,7 +14,7 @@ import arrowRight from "./arrow-right.svg";
 import communityPic1 from "./communityPic1.png";
 import communityPic2 from "./communityPic2.png";
 import arrowDown from "./arrow-down.svg";
-import menuBar from "./menu-bar.svg";
+import menuBar from "./menuBar.svg";
 import filterIcon from "./mingcute_filter-line.svg";
 import postForwardArrow from "./postForwardArrow.svg";
 import postMessage from "./postMessage.svg";

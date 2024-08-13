@@ -12,7 +12,9 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
             <div className="flex flex-col gap-2 w-[100%]">
               <div className="flex items-center justify-between">
                 <h3 className="text-white font-bold">{communityName}</h3>
-                <img src={menuBar} alt="" className="w-4 h-4 absolute flex ml-[83%] " />
+
+                {/* TODO: CHANGE TO HORIZONTAL */}
+                <img src={menuBar} alt="" className="w-[1.25rem] h-[.1875] absolute flex ml-[80%] " />
               </div>
 
               <Badges styling={"text-[#5f5f5f] bg-[#E1DC58] text-[.85rem] w-[6rem]"}> {badgeTitle} </Badges>
