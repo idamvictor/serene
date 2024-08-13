@@ -21,5 +21,10 @@ import postMessage from "./postMessage.svg";
 import postPic from "./postPic.png";
 import userProfilePic from "./userProfilePic.png";
 
+import profilePhoto from "./images/profilePhoto.png"
+import headerImg from "./images/headerImg.png"
+import about from './about.svg'
+import experience from './experience.svg'
+import lang from "./lang.svg" 
 
-export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2, arrowDown, menuBar, filterIcon, postForwardArrow, postMessage, postPic, userProfilePic };
+export {sereneSign, searchIcon, chat, bell, recommendedTherapistImage, avatarSmall, star, recommendedCommunitiesImage, avatarBig, moodImg, moodImage, articlePic, arrowRight, communityPic1, communityPic2, arrowDown, menuBar, filterIcon, postForwardArrow, postMessage, postPic, userProfilePic, profilePhoto, headerImg, about, experience, lang };
