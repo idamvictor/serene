@@ -16,6 +16,7 @@ const AuthFlow = () => {
 const Auth = () => {
 
   var account = null;
+  var shortAcct = null;
 
   async function connectWallet() {
     if(window.ethereum) {
@@ -23,7 +24,8 @@ const Auth = () => {
       await window.ethereum.send('eth_requestAccounts')
       var accounts = await web3.eth.getAccounts();
       account = accounts[0];
-      document.getElementById("connectButton").textContent = account;
+      shortAcct = `${account.slice(0,6)}....${account.slice(-6)}`;
+      document.getElementById("connectButton").textContent = shortAcct;
 
     }
   }
