@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { sereneSign, Frame} from '@/assets'
+import Web3 from 'web3'
 const AuthFlow = () => {
     const [currentUser, setcurrentUser] = useState(false)
+
   return (
     <div>
       <Auth/>
@@ -12,6 +14,20 @@ const AuthFlow = () => {
 
 
 const Auth = () => {
+
+  var account = null;
+
+  async function connectWallet() {
+    if(window.ethereum) {
+      var web3 = new Web3(window.ethereum)
+      await window.ethereum.send('eth_requestAccounts')
+      var accounts = await web3.eth.getAccounts();
+      account = accounts[0];
+      document.getElementById("connectButton").textContent = account;
+
+    }
+  }
+
   return (
     <div className="flex flex-col justify-between items-center my-16 h-auto md:my-24 md:h-52">
       <div className="flex mb-5 md:mb-7">
@@ -30,7 +46,10 @@ const Auth = () => {
           Sign Up
         </span>
         <div>
-          <button className="bg-serene px-12 py-2 md:px-24 md:py-3 font-semibold flex justify-center items-center gap-2 md:gap-3">
+          <button 
+          id="connectButton"
+          onClick={connectWallet}
+           className="bg-serene px-12 py-2 md:px-24 md:py-3 font-semibold flex justify-center items-center gap-2 md:gap-3">
             Continue with Wallet
           </button>
           <p className="text-[#E3E3E3] text-xs md:text-sm font-medium flex gap-2 md:gap-3 items-center justify-center mt-2 md:mt-3">

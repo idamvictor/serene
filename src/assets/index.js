@@ -32,8 +32,8 @@ import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";
-import profilePhoto from "./images/profilePhoto.png";
-import headerImg from "./images/headerImg.png";
+import profilePhoto from "./Images/profilePhoto.png";
+import headerImg from "./Images/headerImg.png";
 
 
 export { 
