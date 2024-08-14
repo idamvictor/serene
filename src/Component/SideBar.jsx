@@ -10,21 +10,20 @@ export function SideBar() {
   const [active, setActive] = useState("");
 
   const handleClick = (link) => {
-    
     setActive(link);
-    
   };
 
   return (
-    <aside className="hidden md:block bg-[#272727]  text-serene-ash serene-sidebar sticky top-0 z-[1000] col-start-1 col-end-2 row-span-3 h-screen ">
-      <div className="flex flex-col items-baseline">
+    <aside className="hidden md:block bg-[#272727]  text-serene-ash serene-sidebar sticky top-0 z-[1000] col-start-1 col-end-2 row-span-3 h-screen">
+
+      {/* <div className="flex flex-col items-baseline">
         <div className="ml-5 my-14 lg:h-[60px]">
           <Link to="/" className="font-semibold pl-6">
             <img src={sereneSign} width={120} />
           </Link>
         </div>
         <div className="">
-          <nav className="flex flex-col  gap-5 leading-normal text-base font-medium tracking-[1px] ">
+          <nav className="flex flex-col gap-5 leading-normal text-base font-medium tracking-[1px] ">
             <Link
               to="/"
               className={`flex items-center  gap-3 rounded-sm  py-2 transition-all  ${
@@ -100,7 +99,7 @@ export function SideBar() {
             </div>
           </nav>
         </div>
-      </div>
+      </div> */}
     </aside>
   );
 }

@@ -11,7 +11,7 @@ const Communities = () => {
 
         <section className="mt-10 mx-10 flex items-center justify-center ">
 
-            <div className="grid grid-cols-[3fr_2fr] grid-rows-auto place-content-center">
+            <div className="grid grid-cols-[3fr_2fr] auto-rows-auto place-content-center">
                 <div className="post-cont mr-10">
                     {/* ALL POSTS WILL BE WITHIN THIS POST-CONT DIV */}
                     <h4 className="text-serene">Hot</h4>
@@ -25,7 +25,7 @@ const Communities = () => {
                     </Post>
                 </div>
 
-                <aside className=" h-[25rem] bg-[#272727] rounded-[9px] ">
+                <aside className="h-[39rem] bg-[#272727]  rounded-[9px]  ">
                     <CommunityRuleCard />
                 </aside>
             </div>

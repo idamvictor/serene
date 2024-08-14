@@ -1,4 +1,4 @@
-import { arrowRight} from "@/assets";
+// import {} from "@/assets";
 
 const ArticleCard = ({articleTitle, articleDescription}) => {
     return ( 
@@ -10,7 +10,7 @@ const ArticleCard = ({articleTitle, articleDescription}) => {
                 <p className="text-serene-gray font-medium text-sm leading-6">{articleDescription}</p>
                 <button className="border border-1 border-serene rounded-sm text-serene font-medium text-xs px-2 py-1 w-[7rem] mt-1">
                     Read more 
-                    <img src={arrowRight} alt="" className="inline-block ml-5 w-4" />
+                    <img src={``} alt="" className="inline-block ml-5 w-4" />
                 </button>
             </div>
         </article>

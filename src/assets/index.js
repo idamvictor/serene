@@ -22,6 +22,8 @@ import postMessage from "./Icons/postMessage.svg";
 import about from "./Icons/about.svg";
 import experience from "./Icons/experience.svg";
 import lang from "./Icons/lang.svg"; 
+import leftArrow from "./Icons/rightArrow.svg";
+import ruleArrowDown from "./Icons/rule-arrow-down.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -32,8 +34,8 @@ import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";
-import profilePhoto from "./images/profilePhoto.png";
-import headerImg from "./images/headerImg.png";
+import profilePhoto from "./Images/profilePhoto.png";
+import headerImg from "./Images/headerImg.png";
 
 
 export { 
@@ -69,5 +71,7 @@ export {
   TherapistIcon,
   Home,
   Communities,
-  menuBar
+  menuBar,
+  leftArrow,
+  ruleArrowDown
 };
