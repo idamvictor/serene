@@ -9,7 +9,7 @@ const CommunityRuleCard = () => {
 
         <p className="text-sm text-[#a3a3a3] tracking-wide ">A safe place for people suffering from alcohol addiction looking to cut down or stop to share.</p>
 
-        <div className="flex justify-between items-center w-[37%] ">
+        <div className="flex justify-between items-center xl:w-[37%] lg:w-[58%] ">
             <div className="flex flex-col">
                 <p className="font-medium text-base text-white tracking-wider">1K</p>
                 <p className="text-[#a3a3a3] text-xs ">Members</p>

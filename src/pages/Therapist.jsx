@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Layout from "@/Component/Shared/Layout";
 import { profilePhoto, headerImg } from "@/assets";
 import ProfileHeader from "@/features/psychologists/ProfileHeader";
@@ -6,6 +6,8 @@ import NavigationTabs from "@/features/psychologists/NavigationTabs";
 import AboutSection from "@/features/psychologists/AboutSection";
 import ExperienceDetails from "@/features/psychologists/ExperienceDetails";
 import ExpertiseSection from "@/features/psychologists/ExpertiseSection";
+import StarRating from "@/Component/ui/StarRating";
+
 
 export default function Therapist() {
   const [activeTab, setActiveTab] = useState("Overview");
@@ -29,13 +31,36 @@ export default function Therapist() {
   return (
     <Layout>
       <main className="flex flex-col mt-11 mx-11">
-        <ProfileHeader
+
+        
+        {/* <ProfileHeader
           name={profileData.name}
           title={profileData.title}
           rating={profileData.rating}
           avatarSrc={profileData.avatarSrc}
           coverSrc={profileData.coverSrc}
-        />
+        /> */}    {/* TODO: DELETE  */}
+
+        <ProfileHeader
+          name={profileData.name}
+          avatarSrc={profileData.avatarSrc}
+          coverSrc={profileData.coverSrc}
+        >
+          <div className="flex flex-col self-end mt-16 max-md:mt-10">
+            <h1 className="text-xl font-semibold tracking-normal leading-tight text-white">
+              {profileData.name}
+            </h1>
+            <p className="mt-1.5 text-base font-medium tracking-normal text-white">
+              {profileData.title}
+            </p>
+            <div className="flex gap-2.5 items-center mt-1.5 w-full">
+              <StarRating rating={5} />
+              <span className="self-stretch my-auto text-base font-medium text-white">
+                ({profileData.rating})
+              </span>
+            </div>
+          </div>
+        </ProfileHeader>
 
         <div className="flex flex-col mt-10 max-w-full text-base w-[51.625rem]">
           {/* Pass setActiveTab to NavigationTabs to update the active tab */}

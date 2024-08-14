@@ -1,6 +1,6 @@
-import StarRating from "@/Component/ui/StarRating"
+// import StarRating from "@/Component/ui/StarRating";  //TODO: DELETE
 
-export default function ProfileHeader({ name, title, rating, avatarSrc, coverSrc }) {
+export default function ProfileHeader({ name, title, rating, avatarSrc, coverSrc, children }) {
   return (
     <header className="flex flex-col w-full rounded-none max-md:max-w-full">
       <img
@@ -16,7 +16,11 @@ export default function ProfileHeader({ name, title, rating, avatarSrc, coverSrc
           alt={`${name}'s avatar`}
           className="object-contain shrink-0 self-start max-w-full aspect-square w-[8.6875rem]"
         />
-        <div className="flex flex-col self-end mt-16 max-md:mt-10">
+
+        {children}
+
+        {/* TODO: DELETE THE CODE BELOW */}
+        {/* <div className="flex flex-col self-end mt-16 max-md:mt-10">
           <h1 className="text-xl font-semibold tracking-normal leading-tight text-white">
             {name}
           </h1>
@@ -24,12 +28,13 @@ export default function ProfileHeader({ name, title, rating, avatarSrc, coverSrc
             {title}
           </p>
           <div className="flex gap-2.5 items-center mt-1.5 w-full">
-            <StarRating rating={rating} />
+            <StarRating rating={4} />
             <span className="self-stretch my-auto text-base font-medium text-white">
               ({rating})
             </span>
           </div>
-        </div>
+        </div> */}
+
       </div>
     </header>
   );
