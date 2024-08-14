@@ -12,16 +12,12 @@
 }
 body{
     background-color: #0B0B0B;
-    /* display: grid;
-    grid-template-columns: 13rem 1fr;
-    grid-template-rows: 3rem 1fr;
-    height: 100vh; */
 }
-.images {
-    background-image: url('./assets/Onboarding.png');
-    background-attachment: fixed;
-    background-size: cover;
+
+.metamask{
+    @apply flex items-stretch text-[#7B7B7B] gap-4 font-semibold;
 }
+
 .dashboard-content {
     /* display: grid; */
     /* grid-template-columns: repeat(2, 1fr); */

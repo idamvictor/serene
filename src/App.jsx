@@ -26,9 +26,13 @@ function App() {
       element: <Resources />,
     },
     {
-      path:"/community",
-      element: <Communities />
-    }
+      path: "/community",
+      element: <Communities />,
+    },
+    {
+      path: "/sign-up",
+      element: "<AuthLayout />",
+    },
   ]);
 
   return (

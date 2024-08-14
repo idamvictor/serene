@@ -22,6 +22,12 @@ import postMessage from "./Icons/postMessage.svg";
 import about from "./Icons/about.svg";
 import experience from "./Icons/experience.svg";
 import lang from "./Icons/lang.svg"; 
+import metamask from "./Icons/metamask_symbol.svg.svg"
+import coinbase from "./Icons/coinbase.svg"
+import rainbow from "./Icons/rainbow.svg"
+import wallet from "./Icons/wallet.svg"
+import metamany from "./Icons/Frame 237591.svg"
+import login from "./Icons/login.svg"
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -32,8 +38,8 @@ import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";
-import profilePhoto from "./images/profilePhoto.png";
-import headerImg from "./images/headerImg.png";
+import profilePhoto from "./Images/profilePhoto.png";
+import headerImg from "./Images/headerImg.png";
 
 
 export { 
@@ -69,5 +75,11 @@ export {
   TherapistIcon,
   Home,
   Communities,
-  menuBar
+  menuBar,
+  metamask,
+  coinbase,
+  rainbow,
+  wallet,
+  metamany,
+  login
 };

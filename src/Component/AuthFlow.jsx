@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { sereneSign, Frame} from '@/assets'
+import { sereneSign, Frame,metamask,coinbase,rainbow,wallet,metamany,login} from '@/assets'
 const AuthFlow = () => {
     const [currentUser, setcurrentUser] = useState(false)
   return (
     <div>
-      <Auth/>
+      {/* <Auth/> */}
+      <ConnectWallet/>
         
     </div>
   )
@@ -49,4 +50,75 @@ const Auth = () => {
   );
 };
 
-export default Auth;
+
+
+
+const ConnectWallet = ()=>{
+  return (
+    <section className="text-white ml-4 mt-7">
+      <div className="flex ">
+        <div className="w-1/3">
+          <h4 className="font-semibold text-white">Connect a Wallet</h4>
+          <div className="mt-8">
+            <h5 className="font-semibold text-[#D9D9D9] text-base">Approved</h5>
+            <div className="flex items-center gap-2 mt-8">
+              <img src={metamask} width={40} />
+              <span className="text-white font-semibold">Metamask Wallet</span>
+            </div>
+          </div>
+          <div className="mt-10">
+            <h5 className="font-semibold text-[#D9D9D9] text-base">
+              Coming Soon
+            </h5>
+            <div className="flex items-center gap-2 mt-7">
+              <img src={coinbase} width={30} />
+              <span className="metamask">Coinbase Wallet</span>
+            </div>
+            <div className="flex items-center gap-2 mt-4">
+              <img src={rainbow} width={30} />
+              <span className="metamask">Rainbow</span>
+            </div>
+            <div className="flex items-center gap-2 mt-4">
+              <img src={wallet} width={30} />
+              <span className="metamask">WalletConnect</span>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-1/12 flex justify-center">
+          <div className="border border-[#7B7B7B]"></div>
+        </div>
+
+        <div className="w-2/3 mt-5">
+          <h4 className="font-semibold text-white text-base text-center">
+            What is Wallet?
+          </h4>
+          <div className="flex items-start mt-6 gap-4">
+            <img src={metamany} width={60} />
+            <div>
+              <h5 className="font-semibold text-white">
+                A Home For Your Digital Assets
+              </h5>
+              <p className="text-gray-400 text-sm">
+                Wallets are used to send, receive, store and display digital
+                assets like Ethereum and NFTs.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-start mt-6 gap-4">
+            <img src={login} width={60} />
+            <div>
+              <h5 className="font-semibold text-white">A Way To Log In</h5>
+              <p className="text-gray-400 text-sm">
+                Instead of creating new accounts and passwords on every website,
+                just connect your wallet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export default AuthFlow;
