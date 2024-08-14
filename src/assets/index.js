@@ -39,6 +39,7 @@ import profilePhoto from "./Images/profilePhoto.png";
 import headerImg from "./Images/headerImg.png";
 import communityProfilePic from "./Images/communityProfilePic.png";
 import communityCoverPic from "./Images/communityCoverPic.png";
+import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 
 
 export { 
@@ -79,5 +80,6 @@ export {
   ruleArrowDown,
   communityCoverPic,
   communityProfilePic,
-  yellowPlusSign
+  yellowPlusSign,
+  userDashboardProfilePic
 };
