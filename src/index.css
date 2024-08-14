@@ -12,55 +12,13 @@
 }
 body{
     background-color: #0B0B0B;
-    /* display: grid;
-    grid-template-columns: 13rem 1fr;
-    grid-template-rows: 3rem 1fr;
-    height: 100vh; */
+    position: relative;
 }
 .images {
     background-image: url('./assets/Onboarding.png');
     background-attachment: fixed;
     background-size: cover;
 }
-.dashboard-content {
-    /* display: grid; */
-    /* grid-template-columns: repeat(2, 1fr); */
-    /* grid-template-rows: 3rem 1fr min-content min-content 1fr; */
-    /* grid-template-rows: auto auto auto; */
-    /* grid-template-areas: 
-        "welcome welcome" 
-        "quickchat therapist" 
-        "community therapist" 
-        "community mood" 
-        "resource resource"; */
-    /* gap: 1.5rem; */
-}
-
-/* .dashboard-welcome {
-    grid-area: welcome;
-}
-
-.dashboard-quickChat {
-    grid-area: quickchat;
-    height: 12rem;
-}
-
-.dashboard-therapist {
-    grid-area: therapist;
-}
-
-.dashboard-community {
-    grid-area: community;
-}
-
-.dashboard-mood {
-    grid-area: mood;
-}
-
-.dashboard-resources {
-    grid-area: resource;
-} */
-
 
 
 @layer utilities{
