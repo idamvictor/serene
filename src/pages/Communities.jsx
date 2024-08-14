@@ -1,19 +1,49 @@
 import Post from "@/Component/ui/Post";
 import Layout from "@/Component/Shared/Layout";
-import { postPic, ruleArrowDown } from "@/assets";
+import { communityCoverPic, communityProfilePic, menuBar, postPic, ruleArrowDown, yellowPlusSign } from "@/assets";
 import CommunityRuleCard from "@/Component/ui/CommunityRuleCard";
 import ProfileHeader from "@/features/psychologists/ProfileHeader";
+import { Link } from "react-router-dom";
+
+export const communityActionBtns = () => {
+    return ( 
+        <>
+            <button></button>
+        </>
+     );
+}
+
+
 
 const Communities = () => {
   return (
     <>
     <Layout>
+        <div className="mx-10 mt-5 ">
+            <ProfileHeader
+                name={``}
+                avatarSrc={communityProfilePic}
+                coverSrc={communityCoverPic}
+            >
+                <div className="flex self-end items-center justify-between mt-14 max-md:mt-10 w-[100%] ">
+                    <h3 className="text-white font-semibold ">Cheers Champions</h3>
 
-        {/* <ProfileHeader /> */}
-        {/* <header></header> */}
+                    <div className="flex items-center gap-4">
+                        <button className="text-serene flex items-center gap-1 border border-serene rounded-sm font-medium text-[.82rem] px-3 py-1 ">
+                            <img src={yellowPlusSign} alt="" className="w-4 h-4 " />
+                            Say something
+                        </button>
 
-        <section className="mt-10 mb-10 mx-10 flex items-center justify-center ">
+                        <Link to={""} className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-sm hover:bg-serene hover:text-[#191919]  ">Join</Link>
 
+                        <img src={menuBar} alt="" className="border border-[#717171] rounded-md px-[5px] py-[14px]  " />
+                    </div>
+                </div>
+            </ProfileHeader>
+        </div>
+      
+
+        <section className="mt-8 mb-10 mx-10 flex items-center justify-center ">
             <div className="grid grid-cols-[3fr_2fr] auto-rows-auto place-content-center">
                 <div className="post-cont mr-10">
                     {/* ALL POSTS WILL BE WITHIN THIS POST-CONT DIV */}
@@ -34,7 +64,6 @@ const Communities = () => {
                     <CommunityRuleCard />
                 </aside>
             </div>
-
         </section>
     </Layout>
      

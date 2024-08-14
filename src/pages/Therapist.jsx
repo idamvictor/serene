@@ -31,8 +31,6 @@ export default function Therapist() {
   return (
     <Layout>
       <main className="flex flex-col mt-11 mx-11">
-
-        
         {/* <ProfileHeader
           name={profileData.name}
           title={profileData.title}
@@ -45,6 +43,8 @@ export default function Therapist() {
           name={profileData.name}
           avatarSrc={profileData.avatarSrc}
           coverSrc={profileData.coverSrc}
+          profileHeaderStyling={"max-w-full aspect-square w-[8.6875rem]"}
+          profileCoverStyling={"aspect-[10] max-md:max-w-full"}
         >
           <div className="flex flex-col self-end mt-16 max-md:mt-10">
             <h1 className="text-xl font-semibold tracking-normal leading-tight text-white">

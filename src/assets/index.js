@@ -24,6 +24,7 @@ import experience from "./Icons/experience.svg";
 import lang from "./Icons/lang.svg"; 
 import leftArrow from "./Icons/rightArrow.svg";
 import ruleArrowDown from "./Icons/rule-arrow-down.svg";
+import yellowPlusSign from "./Icons/yellowPlusSign.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -36,6 +37,8 @@ import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";
 import profilePhoto from "./Images/profilePhoto.png";
 import headerImg from "./Images/headerImg.png";
+import communityProfilePic from "./Images/communityProfilePic.png";
+import communityCoverPic from "./Images/communityCoverPic.png";
 
 
 export { 
@@ -73,5 +76,8 @@ export {
   Communities,
   menuBar,
   leftArrow,
-  ruleArrowDown
+  ruleArrowDown,
+  communityCoverPic,
+  communityProfilePic,
+  yellowPlusSign
 };
