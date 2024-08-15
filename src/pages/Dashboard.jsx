@@ -10,9 +10,7 @@ import AuthLayout from "@/Component/Shared/AuthLayout";
 
 const Dashboard = () => {
   return (
-    // <>
-    //   <AuthLayout />
-    // </>
+   
     <Layout>
       <DashboardWelcomeMessage />
 

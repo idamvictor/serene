@@ -1,9 +1,12 @@
 import React from 'react'
+import AuthFlow from '@/features/authentication/AuthFlow';
 
 const Authentication = () => {
   return (
-    <div>Authentication</div>
-  )
+    <>
+      <AuthFlow />
+    </>
+  );
 }
 
 export default Authentication

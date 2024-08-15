@@ -1,4 +1,5 @@
-import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities } from "./pages";
+import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities,Authentication } from "./pages";
+import ConnectWallet from "./features/authentication/ConnectWallet";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
 
@@ -30,9 +31,13 @@ function App() {
       element: <Communities />,
     },
     {
-      path: "/sign-up",
-      element: "<AuthLayout />",
+      path:"/authpage",
+      element: <Authentication/>,
     },
+    {
+      path:"/wallet",
+      element: <ConnectWallet/>
+    }
   ]);
 
   return (
