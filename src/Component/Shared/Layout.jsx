@@ -5,13 +5,13 @@ import SideBar from "../SideBar";
 //! ------------ DON'T TOUCH WITHOUT PERMISSION --------------!
 const Layout = ({ children }) => {
   return (
-    <section className="mx-auto max-w-screen-2xl h-screen">
-      <div className="grid grid-cols-[auto_1fr] grid-rows-[5rem_1fr] min-h-screen ">
+    <section className="lg:mx-auto lg:max-w-screen-2xl lg:h-screen">
+      <div className="lg:grid lg:grid-cols-[auto_1fr] lg:grid-rows-[5rem_1fr] lg:min-h-screen ">
         <SideBar />
 
         <Header />
 
-        <main className="col-start-2 col-end-3 row-start-2 row-end-3 overflow-y-auto ml-[15.625rem] ">
+        <main className="lg:col-start-2 lg:col-end-3 lg:row-start-2 lg:row-end-3 lg:overflow-y-auto lg:ml-[15.625rem] ">
           {children}
         </main>
       </div>

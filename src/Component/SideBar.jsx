@@ -11,7 +11,7 @@ import { Dashboard } from '@/pages';
 export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName}) => {
   return ( 
     <>
-      <Link className="flex items-center gap-2 hover:text-serene ">
+      <Link className="flex items-center gap-2 hover:text-serene text-base py-[12px]  ">
           {Icon && <Icon className={`text-xl`} />}
           {linkName}
       </Link>
@@ -29,15 +29,15 @@ export function SideBar() {
 };
 
   return (
-    <aside className="hidden md:block bg-[#272727]  text-serene-ash serene-sidebar fixed top-0 z-[1000] bottom-0 col-start-1 col-end-2 row-span-3 h-full w-[15.625rem] ">
-      <div className="px-5 pt-10 pb-10 border border-green-500  ">
+    <aside className="serene-sidebar lg:bg-[#272727] text-serene-ash lg:fixed lg:top-0 lg:z-[1000] lg:bottom-0 lg:col-start-1 lg:col-end-2 lg:row-span-3 lg:h-full lg:w-[15.625rem] ">
+      <div className="lg:px-5 lg:pt-10 lg:pb-10 ">
       
-        <div className="border ">
-          <img src={sereneSign} className='w-[7rem] h-[2.75rem] ' />  
+        <div className="serene-logo">
+          <img src={sereneSign} className='lg:w-[7rem] lg:h-[2.75rem] ' />  
         </div>
 
-        <div className="mt-10 flex flex-col justify-between border gap-36">
-          <nav className="top-nav">
+        <div className="lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24">
+          <nav className="top-nav lg:flex lg:flex-col lg:gap-2">
             <NAV_LINK 
               reactIcon={AiFillHome}
               linkName={"Dashboard"}
@@ -60,7 +60,7 @@ export function SideBar() {
             />
           </nav>
 
-          <nav className="bottom-nav">
+          <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4 ">
             <NAV_LINK 
               reactIcon={IoSettings}
               linkName={"Settings"}
@@ -167,6 +167,6 @@ export function SideBar() {
       </div> */}
     </aside>
   );
-}
+};
 
 export default SideBar;

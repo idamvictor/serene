@@ -40,6 +40,7 @@ import headerImg from "./Images/headerImg.png";
 import communityProfilePic from "./Images/communityProfilePic.png";
 import communityCoverPic from "./Images/communityCoverPic.png";
 import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
+import articlePic from "./Images/articlePic.png";
 
 
 export { 
@@ -81,5 +82,6 @@ export {
   communityCoverPic,
   communityProfilePic,
   yellowPlusSign,
-  userDashboardProfilePic
+  userDashboardProfilePic,
+  articlePic
 };

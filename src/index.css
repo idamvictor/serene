@@ -20,6 +20,41 @@ body{
     background-size: cover;
 }
 
+@media screen and (min-width: 1440px) {
+    .quickchat-p1, .quickchat-p2 {
+        font-size: .95rem;
+    }
+
+    .quickchat-p2 strong {
+        font-size: 16px;
+    }
+
+    .recommendation-cont figure img {
+        width: 5rem;
+        height: 5rem;
+    }
+
+    .recommendation-cont figure figcaption {
+       font-size: 1.125rem;
+       line-height: 1.75rem;
+    }
+
+    .recommendation-cont div h4{
+      font-size: 16px;
+    }
+}
+
+    /* ------- RESPONSIVENESS FOR MOBILES ------ */
+@media screen and (max-width: 1023.33px) {
+    .serene-sidebar {
+        /* display: none; */
+        @apply hidden
+    }
+
+    .serene-header > div {
+        @apply flex-row-reverse justify-between w-full
+    }
+}
 
 @layer utilities{
     .serene-sidebar{
