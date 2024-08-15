@@ -48,12 +48,16 @@ body{
 @media screen and (max-width: 1023.33px) {
     .serene-sidebar {
         /* display: none; */
-        @apply hidden
+        @apply hidden;
     }
 
     .serene-header > div {
-        @apply flex-row-reverse justify-between w-full
+        @apply flex-row-reverse justify-between w-full;
     }
+}
+
+@media screen and (max-width: 767px) {
+
 }
 
 @layer utilities{
