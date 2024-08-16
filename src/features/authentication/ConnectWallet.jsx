@@ -1,7 +1,12 @@
 import { metamask, coinbase, rainbow, wallet, metamany, login } from "@/assets";
 import AuthLayout from "@/Component/Shared/AuthLayout";
+import { useDispatch } from "react-redux";
+import { useLoginUserMutation } from "@/services/auth/apiSlice";
 import Web3 from "web3";
+import { setCredentials } from "@/services/auth/authSlice";
 const ConnectWallet = () => {
+  const [loginUser] =useLoginUserMutation()
+  const dispatch = useDispatch()
      var account = null;
   var shortAcct = null;
 
@@ -11,8 +16,22 @@ const ConnectWallet = () => {
       await window.ethereum.send("eth_requestAccounts");
       var accounts = await web3.eth.getAccounts();
       account = accounts[0];
-      shortAcct = `${account.slice(0, 6)}....${account.slice(-6)}`;
-      document.getElementById("connectButton").textContent = shortAcct;
+      const walletid = account
+
+      
+
+      try{
+        const response = await loginUser(walletid).unwrap()
+        dispatch(setCredentials(response.data))
+        console.log(walletid);
+
+      }catch(error){
+        console.error("login/sign error:", error)
+      }
+      // shortAcct = `${account.slice(0, 6)}....${account.slice(-6)}`;
+      // document.getElementById("connectButton").textContent = shortAcct;
+    }else{
+      console.log("Click on metamask to create an account")
     }
 }
   return (
@@ -83,9 +102,9 @@ const ConnectWallet = () => {
                   Instead of creating new accounts and passwords on every
                   website, just connect your wallet.
                 </p>
-              </div>
             </div>
           </div>
+        </div>
         </div>
       </section>
     </AuthLayout>

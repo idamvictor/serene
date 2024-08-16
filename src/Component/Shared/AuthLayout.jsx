@@ -6,7 +6,7 @@ const AuthLayout = ({ children }) => {
   return (
     <div className=" bg-serene-image bg-fixed bg-cover overflow-hidden w-screen h-screen flex ">
       <div className="w-full  max-w-[650px] md:h-full h-auto  max-h-[650px] m-auto rounded-2xl bg-[#272727] bg-opacity-70 backdrop-blur-xl">
-        {children}
+        <div>{children}</div>
       </div>
     </div>
   );

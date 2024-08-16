@@ -8,7 +8,7 @@ const navigate = useNavigate();
  
   return (
     <AuthLayout>
-      <div className="flex flex-col justify-between items-center my-16 h-auto md:my-24 md:h-32">
+      <div className="flex flex-col justify-between items-center mt-20 h-auto md:my-24 md:h-32">
         <div className="flex mb-5 md:mb-7">
           <img src={sereneSign} width={80} className="md:w-24" />
         </div>
@@ -32,12 +32,6 @@ const navigate = useNavigate();
               <img src={Frame} className="w-4 md:w-auto" />
               This helps keeps you completely anonymous
             </p>
-          </div>
-          <div>
-            <h4 className="text-white font-medium text-xs md:text-sm mt-12 md:mt-24">
-              Don't have a metamask wallet?{" "}
-              <span className="text-serene">Quickly create one</span>
-            </h4>
           </div>
         </div>
       </div>
