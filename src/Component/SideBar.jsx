@@ -65,11 +65,6 @@ export function SideBar() {
               reactIcon={IoPerson}
               linkName={"Therapist"}
             />
-             <NAV_LINK 
-              destinationLink={"/rooms"}
-              reactIcon={IoCubeSharp}
-              linkName={"Rooms"}
-            />
              <NAV_LINK
               destinationLink={"/resources"}
               reactIcon={RiGlobalFill}

@@ -21,7 +21,7 @@ const Dashboard = () => {
               <DashboardRecommendedCommunities />
             </div>
 
-            <div className="flex flex-col gap-7">
+            <div className="second-dashboardcolumn flex flex-col gap-7 ">
               <DashboardRecommendedTherapist />
               <MoodTracking />
             </div>

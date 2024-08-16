@@ -20,6 +20,8 @@ body{
     background-size: cover;
 }
 
+
+/* WILL BE REMOVED LATER... PROBABLY */
 @media screen and (min-width: 1440px) {
     .recommendation-cont figure img {
         width: 5rem;
@@ -56,6 +58,10 @@ body{
         @apply mx-5 my-0;
     }
 
+    .second-dashboardcolumn {
+        @apply mt-7;
+    }
+
 /* ------- WELCOME MESSAGE CSS STYLING ------ */
     .dashboard-welcome {
         @apply mx-5 mb-4;
@@ -71,24 +77,32 @@ body{
 
 /* ------- QUICKCHAT CSS STYLING ------ */
     .dashboard-quickchat {
-        @apply px-4 ;
+        @apply px-4;
     }
 
     .quickchat-p1{
-        @apply text-sm ;
+        @apply text-sm;
     }
 
     .quickchat-otherUser img {
-        @apply w-7 h-7 ;
+        @apply w-7 h-7;
     }
 
     .quickchat-p2 {
-        @apply text-[.83rem]
+        @apply text-[.83rem];
     }
 
 /* ------- RECOMMENDATION CSS STYLING ------ */
     .recommendation-cont-figure {
-        @apply bg-[#272727];
+        @apply bg-[#272727] pb-5;
+    }
+
+    .recommended-card {
+        @apply mt-5;
+    }
+
+    .recommended-card > h4 {
+        @apply  w-[66%];
     }
 }
 
