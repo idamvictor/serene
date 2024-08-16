@@ -21,7 +21,7 @@ import postForwardArrow from "./Icons/postForwardArrow.svg";
 import postMessage from "./Icons/postMessage.svg";
 import about from "./Icons/about.svg";
 import experience from "./Icons/experience.svg";
-import lang from "./Icons/lang.svg"; 
+import lang from "./Icons/lang.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -32,12 +32,22 @@ import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";
-import profilePhoto from "./images/profilePhoto.png";
-import headerImg from "./images/headerImg.png";
+import profilePhoto from "./Images/profilePhoto.png";
+import headerImg from "./Images/headerImg.png";
 
+import americanExpress from "./Icons/americanExpress.svg";
+import bitcoin from "./Icons/bitcoin.png";
+import discover from "./Icons/discover.svg";
+import etherium from "./Icons/etherium.svg";
+import masterCard from "./Icons/masterCard.svg";
+import paypal from "./Icons/paypal.svg";
+import radioButton from "./Icons/radioButton.svg";
+import usdc from "./Icons/usdc.svg";
+import usdt from "./Icons/usdt.svg";
+import visa from "./Icons/visa.svg";
 
-export { 
-  sereneSign, 
+export {
+  sereneSign,
   searchIcon,
   chat,
   bell,
@@ -69,5 +79,15 @@ export {
   TherapistIcon,
   Home,
   Communities,
-  menuBar
+  menuBar,
+  americanExpress,
+  bitcoin,
+  discover,
+  etherium,
+  masterCard,
+  paypal,
+  radioButton,
+  usdc,
+  usdt,
+  visa,
 };

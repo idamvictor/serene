@@ -4,6 +4,7 @@ import Resources from "./Resources";
 import Rooms from "./Rooms";
 import Therapist from "./Therapist";
 import Communities  from "./Communities";
+import Payment from "./Payment";
 
 
 
@@ -13,5 +14,6 @@ export {
     Resources,
     Rooms,
     Therapist,
-    Communities
+    Communities,
+    Payment
 }

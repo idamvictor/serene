@@ -88,6 +88,22 @@ export function SideBar() {
               <RiGlobalFill className="text-xl" />
               Resources
             </Link>
+
+            {/* Payments  */}
+            <Link
+              to="/Payment"
+              className={`flex items-center gap-3 rounded-sm py-2 transition-all ${
+                active === "Resources"
+                  ? " text-serene"
+                  : "text-muted-foreground  hover:text-serene"
+              }`}
+              onClick={() => handleClick("payment")}
+            >
+              <RiGlobalFill className="text-xl" />
+              Payment
+            </Link>
+
+
             <div className="flex flex-col gap-11 mt-64 ">
               <Link className="flex items-center gap-3  hover:text-serene">
                 <IoSettings />
