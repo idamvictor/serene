@@ -21,14 +21,6 @@ body{
 }
 
 @media screen and (min-width: 1440px) {
-    .quickchat-p1, .quickchat-p2 {
-        font-size: .95rem;
-    }
-
-    .quickchat-p2 strong {
-        font-size: 16px;
-    }
-
     .recommendation-cont figure img {
         width: 5rem;
         height: 5rem;
@@ -47,18 +39,59 @@ body{
     /* ------- RESPONSIVENESS FOR MOBILES ------ */
 @media screen and (max-width: 1023.33px) {
     .serene-sidebar {
-        /* display: none; */
         @apply hidden;
     }
 
     .serene-header > div {
         @apply flex-row-reverse justify-between w-full;
     }
+
+    .dashboard-welcome{
+        @apply mt-[6rem];
+    }
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 767.33px) {
+    .dashboard-cont > div {
+        @apply mx-5 my-0;
+    }
 
+/* ------- WELCOME MESSAGE CSS STYLING ------ */
+    .dashboard-welcome {
+        @apply mx-5 mb-4;
+    }
+
+    .dashboard-welcome h1 {
+        @apply text-xl;
+    }
+
+    .dashboard-welcome p {
+        @apply text-sm;
+    }
+
+/* ------- QUICKCHAT CSS STYLING ------ */
+    .dashboard-quickchat {
+        @apply px-4 ;
+    }
+
+    .quickchat-p1{
+        @apply text-sm ;
+    }
+
+    .quickchat-otherUser img {
+        @apply w-7 h-7 ;
+    }
+
+    .quickchat-p2 {
+        @apply text-[.83rem]
+    }
+
+/* ------- RECOMMENDATION CSS STYLING ------ */
+    .recommendation-cont-figure {
+        @apply bg-[#272727];
+    }
 }
+
 
 @layer utilities{
     .serene-sidebar{

@@ -5,20 +5,17 @@ import DashboardWelcomeMessage from "@/features/dashboard/DashboardWelcomeMessag
 import MoodTracking from "@/features/dashboard/MoodTracking";
 import DashboardRecommendedCommunities from "@/features/dashboard/DashboardRecommendedCommunities";
 import DashboardResources from "@/features/dashboard/DashboardResoures";
-import AuthLayout from "@/Component/Shared/AuthLayout";
 
 
 const Dashboard = () => {
   return (
-    // <>
-    //   <AuthLayout />
-    // </>
     <Layout>
-      <div>
+      <div className="dashboard-cont">
+
         <DashboardWelcomeMessage />
 
-        <div className="mx-7 mb-4 mt-8 flex justify-center items-center">
-          <div className="grid grid-cols-2 grid-rows-[auto_auto_auto] gap-7">
+        <div className="md:mx-8 md:mb-4 md:mt-8 md:flex md:justify-center md:items-center">
+          <div className="md:grid md:grid-cols-2 md:grid-rows-[auto_auto_auto] md:gap-7">
             <div className="flex flex-col gap-7">
               <DashboardQuickChat />
               <DashboardRecommendedCommunities />
@@ -32,6 +29,7 @@ const Dashboard = () => {
             <DashboardResources />
           </div>
         </div>
+
       </div>
     
     </Layout>

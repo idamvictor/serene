@@ -1,8 +1,8 @@
 const RecommendationCard = ({img, imgCaption, recommendedText, children}) => {
     return ( 
         <>
-            <div className="recommendation-cont bg-[#272727] flex flex-col p-8 rounded-[.73rem] h-[auto] ">
-                <figure className="flex flex-col items-center justify-center text-center">
+            <div className="recommendation-cont md:bg-[#272727] md:flex md:flex-col md:p-8 md:rounded-[.73rem] md:h-[auto] ">
+                <figure className="recommendation-cont-figure flex flex-col items-center justify-center text-center">
                     <img src={img} alt="Illustration" className=" mt-6 w-16 h-16 " />
                     <figcaption className="text-serene-gray font-medium tracking-normal text-base mt-5 px-16 ">{imgCaption}</figcaption>
                 </figure>
@@ -12,7 +12,7 @@ const RecommendationCard = ({img, imgCaption, recommendedText, children}) => {
                     <button className="text-serene-gray font-medium text-xs">See all</button>
                 </div>
 
-                <main className="mt-5 grid grid-cols-[1fr_1fr] auto-rows-auto place-items-center place-content-center gap-[.6rem]">{children}</main>
+                <main className="md:mt-5 md:grid md:grid-cols-[1fr_1fr] md:auto-rows-auto md:place-items-center md:place-content-center md:gap-[.6rem] flex  ">{children}</main>
             </div>
         </>
      );

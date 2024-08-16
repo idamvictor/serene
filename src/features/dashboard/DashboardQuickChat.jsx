@@ -1,25 +1,27 @@
+import { quickChatPic } from "@/assets";
+
 const ChatButton = ({ message }) => {
   return (
-    <button className="text-center text-[#211f2a] font-semibold text-[.78rem] xl:text-[.95rem] px-6 py-1 rounded-md border border-[#B2A4DC] bg-[#C1B4E9]">{message}</button>
+    <button className="text-center text-[#211f2a] font-semibold text-sm lg:text-[.78rem] xl:text-[.95rem] px-6 py-1 rounded-md border border-[#B2A4DC] bg-[#C1B4E9]">{message}</button>
   );
 };
 
 const DashboardQuickChat = () => {
   return (
-    <section className="dashboard-quickChat flex flex-col justify-center gap-3 px-5 py-3 rounded-[.73rem] bg-[#E3DAFF] h-[10rem] ">
-      <p className="quickchat-p1 text-[#605A74] font-semibold text-[.78rem] tracking-wide pr-3">
+    <section className="dashboard-quickchat flex flex-col justify-center gap-3 md:px-5 py-5 rounded-[.73rem] bg-[#E3DAFF] xl:h-[10rem] ">
+      <p className="quickchat-p1 text-[#605A74] md:font-semibold md:text-[.78rem] tracking-wide pr-3 lg:text-[.95rem] ">
         You have been matched with one started his own journey few years ago to be your personal guide and to push each other
       </p>
 
-      <div className="flex items-center gap-2">
-        <div className="bg-[#EB5757] rounded-full flex items-center justify-center w-6 h-6 text-[.6rem] text-white font-semibold ">12</div>
+      <div className="quickchat-otherUser flex items-center gap-2">
+        <img src={quickChatPic} className="rounded-full flex items-center justify-center w-6 h-6 "/>
        
-        <p className="quickchat-p2 text-[#605A74] text-[.78rem] font-semibold flex items-center gap-1 tracking-wide">
-          <strong className="text-[#0b0b0b] text-sm flex items-center">user id_12345</strong> is excited to meet you! Say hi to him 👋🏻
+        <p className="quickchat-p2 text-[#605A74] md:text-[.78rem] md:font-semibold flex items-center flex-wrap gap-1 tracking-wide lg:text-[.95rem]  ">
+          <strong className="text-[#0b0b0b] text-sm flex items-center lg:text-base">Beaver</strong> is excited to meet you! Say hi to him 👋🏻
         </p>
       </div>
 
-      <div className="flex gap-2 mt-2">
+      <div className="flex gap-2 mt-2 flex-wrap">
         <ChatButton message={`Hey`} />
         <ChatButton message={`Hello, good morning!`}/>
         <ChatButton message={`Hi, it's nice to meet you!`} />
