@@ -14,7 +14,7 @@ const DashboardQuickChat = () => {
       </p>
 
       <div className="quickchat-otherUser flex items-center gap-2">
-        <img src={quickChatPic} className="rounded-full flex items-center justify-center w-6 h-6 "/>
+        <img src={quickChatPic} className="rounded-full flex items-center justify-center w-6 h-6 " />
        
         <p className="quickchat-p2 text-[#605A74] md:text-[.78rem] md:font-semibold flex items-center flex-wrap gap-1 tracking-wide lg:text-[.95rem]  ">
           <strong className="text-[#0b0b0b] text-sm flex items-center lg:text-base">Beaver</strong> is excited to meet you! Say hi to him 👋🏻

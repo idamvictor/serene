@@ -2,7 +2,7 @@ import { moodImage }from "@/assets";
 
 const MoodButton = ({mood}) => {
   return (
-    <button className="text-[.78rem] text-center bg-[#d8cfc2] px-3 py-1 rounded-lg border xl:text-sm ">
+    <button className="mood-button text-[.78rem] text-center bg-[#d8cfc2] px-3 py-1 rounded-lg border xl:text-sm ">
       {mood}
     </button>
   );
@@ -10,9 +10,9 @@ const MoodButton = ({mood}) => {
 
 const MoodTracking = () => {
   return (
-    <section className="dashboard-mood flex justify-center items-center rounded-[.73rem] bg-serene-ash h-[10rem] ">
+    <section className="dashboard-mood-cont flex justify-center items-center rounded-[.73rem] bg-serene-ash xl:h-[10rem] ">
       <div className="flex-col font-semibold ml-5">
-        <h5 className="text-[#191919] text-[1.07rem] xl:text-lg ">
+        <h5 className="mood-question text-[#191919] md:text-[1.07rem] xl:text-lg ">
           What's your mood like today?
         </h5>
         <p className="text-xs text-[#666] mt-1 mb-5 xl:text-base ">4 August</p>
@@ -26,7 +26,7 @@ const MoodTracking = () => {
         </div>
       </div>
      
-      <img src={moodImage} alt="" className="w-[40%] h-48" />
+      <img src={moodImage} alt="mood image" className="w-[40%] h-48" />
     </section>
   );
 };

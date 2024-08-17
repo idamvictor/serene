@@ -5,7 +5,7 @@ import SideBar from "../SideBar";
 //! ------------ DON'T TOUCH WITHOUT PERMISSION --------------!
 const Layout = ({ children }) => {
   return (
-    <section className="lg:mx-auto">
+    <section className="lg:mx-auto w-screen">
       <div className="lg:min-h-screen ">
         <SideBar />
 

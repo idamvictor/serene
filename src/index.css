@@ -142,7 +142,7 @@ input[type="checkbox"]:checked::after {
         @apply text-[.83rem];
     }
 
-/* ------- RECOMMENDATION CSS STYLING ------ */
+/* ------- RECOMMENDATION CARD CSS STYLING ------ */
     .recommendation-cont-figure {
         @apply bg-[#272727] pb-5;
     }
@@ -153,6 +153,20 @@ input[type="checkbox"]:checked::after {
 
     .recommended-card > h4 {
         @apply  w-[66%];
+    }
+
+    .recommendation-cont > main {
+        @apply overflow-x-auto;
+    }
+
+/* ------- COMMUNITYCARD1 CSS STYLING ------ */
+    .communityCard1-cont {
+        @apply h-24;
+    }
+
+/* ------- MOOD TRACKING CSS STYLING ------ */
+    .mood-question {
+        @apply text-sm
     }
 }
 

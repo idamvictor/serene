@@ -12,7 +12,7 @@ const RecommendationCard = ({img, imgCaption, recommendedText, children}) => {
                     <button className="text-serene-gray font-medium text-xs">See all</button>
                 </div>
 
-                <main className="md:mt-5 md:grid md:grid-cols-[1fr_1fr] md:auto-rows-auto md:place-items-center md:place-content-center md:gap-[.6rem] flex mt-2 ">{children}</main>
+                <main className="md:mt-5 md:grid md:grid-cols-[1fr_1fr] md:auto-rows-auto md:place-items-center md:place-content-center md:gap-[.6rem] flex ">{children}</main>
             </div>
         </>
      );
