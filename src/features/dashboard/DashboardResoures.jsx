@@ -11,13 +11,13 @@ const ResourceBtn = ({ resource }) => {
 const DashboardResources = () => {
     return (  
         <>
-            <section className="dashboard-resources  bg-[#272727] flex flex-col p-8 rounded-lg col-span-2 h-auto">
+            <section className="dashboard-resources  bg-[#272727] flex flex-col rounded-lg col-span-2 h-auto md:p-8 md:mt-0 mt-7 py-5 px-6 ">
                 <div className="flex justify-between items-center">
-                        <h4 className="text-white text-xl font-semibold">Resources</h4> 
+                        <h4 className="text-white text-lg md:text-xl font-semibold">Resources</h4> 
                         <button className="text-serene-gray font-medium text-xs">See all</button>
                 </div>
 
-                <div className="resourceCard-btn-group flex justify-center mt-4 gap-7">
+                <div className="resourceCard-btn-group md:flex md:justify-center md:mt-4 md:gap-7 hidden">
                     <ResourceBtn resource={"Articles"} />
                     <ResourceBtn resource={"Videos"} />
                     <ResourceBtn resource={"Podcasts"} />

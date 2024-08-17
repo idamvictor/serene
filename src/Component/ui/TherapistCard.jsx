@@ -5,7 +5,7 @@ import Badges from './Badges';
 const TherapistCard = () => {
     return ( 
         <>
-            <div className="therapistCard-cont border-[1px] rounded-xl border-[#747474] w-[12.5rem] p-4 xl:w-[14.6rem] ">
+            <div className="therapistCard-cont border-[1px] rounded-xl border-[#747474] w-[12.5rem] p-4 xl:w-[14.6rem] mr-4 pr-28 ">
                 <div className="therapistCard-profile flex gap-3">
                     <img src="" alt="" className="h-9 w-9 bg-[#d9d9d9] rounded-full" />
 
@@ -20,8 +20,8 @@ const TherapistCard = () => {
                 </div>
 
                 <div className="text-[#191919] flex gap-2 flex-wrap mt-6">
-                    <Badges styling="bg-serene-purple ">Depression</Badges>
-                    <Badges styling="bg-serene ">Anxiety</Badges>
+                    <Badges styling="bg-serene-purple">Depression</Badges>
+                    <Badges styling="bg-serene">Anxiety</Badges>
                     <Badges styling="bg-serene-ash">Family issues</Badges>
                 </div>
             </div>

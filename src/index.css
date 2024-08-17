@@ -109,7 +109,7 @@ input[type="checkbox"]:checked::after {
     }
 
     .second-dashboardcolumn {
-        @apply mt-7;
+        /* @apply ; */
     }
 
 /* ------- WELCOME MESSAGE CSS STYLING ------ */
@@ -164,10 +164,22 @@ input[type="checkbox"]:checked::after {
         @apply h-24;
     }
 
+/* ------- THERAPIST CSS STYLING ------ */
+    .therapistCard-info > p:nth-child(1) {
+        @apply w-[8rem] ;
+    }
+
+    .therapistCard-cont > div:nth-child(2) {
+        @apply w-[8rem]
+    }
+
 /* ------- MOOD TRACKING CSS STYLING ------ */
     .mood-question {
         @apply text-sm
     }
+
+/* ------- MOOD TRACKING CSS STYLING ------ */
+
 }
 
 
