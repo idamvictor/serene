@@ -14,14 +14,14 @@ const Dashboard = () => {
 
         <DashboardWelcomeMessage />
 
-        <div className="lg:mx-8 lg:mb-4 lg:mt-8 lg:flex lg:justify-center lg:items-center">
-          <div className="lg:grid lg:grid-cols-2 lg:grid-rows-[auto_auto_auto] lg:gap-7">
-            <div className="flex flex-col gap-7 lg:col-span-1">
+        <div className="lg:mx-5 xl:mx-8 lg:mb-4 lg:mt-8 lg:flex lg:justify-center lg:items-center">
+          <div className="lg:grid lg:grid-cols-2 lg:grid-rows-[auto_auto_auto] lg:gap-5 xl:gap-7">
+            <div className="flex flex-col lg:gap-5 xl:gap-7 lg:col-span-1">
               <DashboardQuickChat />
               <DashboardRecommendedCommunities />
             </div>
 
-            <div className="second-dashboardcolumn flex flex-col gap-7 lg:col-span-1">
+            <div className="second-dashboardcolumn flex flex-col lg:gap-5 xl:gap-7 lg:col-span-1">
               <DashboardRecommendedTherapist />
               <MoodTracking />
             </div>
@@ -34,6 +34,6 @@ const Dashboard = () => {
     
     </Layout>
   );
-}
+};
 
 export default Dashboard;

@@ -41,7 +41,7 @@ const Header = () => {
 
 
     //*NEW HEADER FOR THE DASHBOARD
-    <header className="serene-header fixed top-0 right-0 left-0 border border-b-[0.1rem] border-[#575757] bg-serene-black h-[3.75rem] z-[900] text-serene-ash flex lg:justify-end lg:left-[15.625rem] px-6 py-10 ">
+    <header className="serene-header fixed top-0 right-0 left-0 border border-b-[0.1rem] border-[#575757] bg-serene-black h-[3.75rem] z-[900] text-serene-ash flex lg:justify-end lg:left-[12.625rem] xl:left-[15.625rem] px-6 py-10 ">
 
       <div className=" flex items-center">
         <div className="flex items-center justify-center gap-5 ">

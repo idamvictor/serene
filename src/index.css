@@ -182,11 +182,11 @@ input[type="checkbox"]:checked::after {
 
 }
 
-@media screen and (min-width: 900.33px) {
+/* @media screen and (min-width: 900.33px) {
     .recommendation-cont > main {
         @apply overflow-x-hidden;
     }
-}
+} */
 
 
 @layer utilities{

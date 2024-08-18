@@ -41,7 +41,7 @@ export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinati
 export function SideBar() {
 
   return (
-    <aside className="serene-sidebar lg:bg-[#272727] text-serene-ash lg:fixed lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[15.625rem] ">
+    <aside className="serene-sidebar lg:bg-[#272727] text-serene-ash lg:fixed lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[12.625rem] xl:w-[15.625rem] ">
       <div className="lg:px-5 lg:pt-10 lg:pb-10 ">
       
         <div className="serene-logo">

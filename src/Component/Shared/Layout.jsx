@@ -5,13 +5,13 @@ import SideBar from "../SideBar";
 //! ------------ DON'T TOUCH WITHOUT PERMISSION --------------!
 const Layout = ({ children }) => {
   return (
-    <section className="lg:mx-auto w-screen">
+    <section className="lg:mx-auto w-screen ">
       <div className="lg:min-h-screen ">
         <SideBar />
 
         <Header />
 
-        <main className="layout-main lg:ml-[15.625rem] overflow-y-auto ">
+        <main className="layout-main lg:ml-[12.625rem] xl:ml-[15.625rem] overflow-y-auto ">
           {children}
         </main>
       </div>
