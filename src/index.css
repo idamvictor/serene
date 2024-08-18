@@ -103,7 +103,7 @@ input[type="checkbox"]:checked::after {
     }
 }
 
-@media screen and (max-width: 767.33px) {
+@media screen and (max-width: 1023.33px) {
     .dashboard-cont > div {
         @apply mx-5 my-0;
     }
@@ -180,6 +180,12 @@ input[type="checkbox"]:checked::after {
 
 /* ------- MOOD TRACKING CSS STYLING ------ */
 
+}
+
+@media screen and (min-width: 900.33px) {
+    .recommendation-cont > main {
+        @apply overflow-x-hidden;
+    }
 }
 
 
