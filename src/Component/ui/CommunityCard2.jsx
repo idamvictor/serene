@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 
 const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers}) => {
+
   return (
     <>
        <div className="border border-[#6c6c6c] w-[100%] rounded-[.5625rem] flex items-start gap-2 p-3 relative">
@@ -14,7 +15,7 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
                 <h3 className="text-white font-bold">{communityName}</h3>
 
                 {/* TODO: CHANGE TO HORIZONTAL */}
-                <img src={menuBar} alt="" className="w-[1.25rem] h-[.1875] absolute flex ml-[80%] " />
+                <img src={menuBar} alt="" className="w-[1.25rem] h-[.1875] absolute flex ml-[83%] " />
               </div>
 
               <Badges styling={"text-[#5f5f5f] bg-[#E1DC58] text-[.85rem] w-[6rem]"}> {badgeTitle} </Badges>
