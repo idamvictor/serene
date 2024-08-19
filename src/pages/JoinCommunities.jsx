@@ -53,8 +53,8 @@ const Communities = () => {
       </section>
       
       {/* EXPLORE OTHER COMMUNITIES SECTION */}
-      <section className="mx-4 mt-8 lg:mt-28 md:mx-7">
-        <div className="xl:mt-4 flex justify-between items-center">
+      <section className="mx-4 mt-8 md:mx-7 lg:mt-12 xl:mt-14">
+        <div className=" flex justify-between items-center">
           <h2 className="text-serene-gray font-semibold text-base xl:text-xl ">Explore all other communities</h2>
           
           <div className="filter-dropdown border border-red-100 flex items-center rounded-xl w-20 justify-around py-[.1rem] ">
