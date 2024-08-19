@@ -7,16 +7,16 @@ const Communities = () => {
   return (
     <Layout>
         {/* RECOMMENDED COMMUNITIES SECTION */}
-      <section className="recommended-communities-section xl:mt-28 mx-7">
-        <h1 className="text-white text-3xl font-bold ">Communities</h1>
+      <section className="recommended-communities-section mx-4 mt-24 lg:mt-28 md:mx-7">
+        <h1 className="text-white text-2xl xl:text-3xl font-bold ">Communities</h1>
 
-        <div className="xl:mt-4 flex justify-between items-center">
-          <h2 className="text-serene-gray font-semibold text-xl ">Recommended communities for you</h2>
+        <div className="xl:mt-4 flex items-center">
+          <h2 className="text-serene-gray font-semibold text-base xl:text-xl ">Recommended communities for you</h2>
         </div>
 
         <div className="flex justify-center items-center mb-11">
             {/* TOO BULKY. WILL BE ADJUSTED LATER AFTER INTEGRATION */}
-          <main className="mt-6 grid grid-cols-2 gap-5 grid-rows-auto">
+          <main className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5 grid-rows-auto">
             <CommunityCard2
               communityProfilePic={``}
               communityName={`Cheers Champions`}
@@ -53,9 +53,9 @@ const Communities = () => {
       </section>
       
       {/* EXPLORE OTHER COMMUNITIES SECTION */}
-      <section className="xl:mt-10 mx-7">
+      <section className="mx-4 mt-8 lg:mt-28 md:mx-7">
         <div className="xl:mt-4 flex justify-between items-center">
-          <h2 className="text-serene-gray font-semibold text-xl ">Explore all other communities</h2>
+          <h2 className="text-serene-gray font-semibold text-base xl:text-xl ">Explore all other communities</h2>
           
           <div className="filter-dropdown border border-red-100 flex items-center rounded-xl w-20 justify-around py-[.1rem] ">
             <img src={filterIcon} alt="" className="w-5 h-5 " />
@@ -70,7 +70,7 @@ const Communities = () => {
 
         <div className="flex justify-center items-center mb-11">
             {/* TOO BULKY. WILL BE ADJUSTED LATER AFTER INTEGRATION */}
-          <main className="mt-6 grid grid-cols-2 gap-5 grid-rows-auto">
+          <main className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5 grid-rows-auto">
             <CommunityCard2
               communityProfilePic={``}
               communityName={`Cheers Champions`}
