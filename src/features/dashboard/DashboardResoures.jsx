@@ -11,7 +11,7 @@ const ResourceBtn = ({ resource }) => {
 const DashboardResources = () => {
     return (  
         <>
-            <section className="dashboard-resources  bg-[#272727] flex flex-col rounded-lg col-span-2 h-auto md:p-8 lg:mt-0 mt-7 py-5 px-6 ">
+            <section className="dashboard-resources  bg-[#272727] flex flex-col rounded-lg col-span-2 h-auto mt-7 py-5 px-6 md:p-8 lg:mt-0 ">
                 <div className="flex justify-between items-center">
                         <h4 className="text-white text-lg md:text-xl font-semibold">Resources</h4> 
                         <button className="text-serene-gray font-medium text-xs">See all</button>
