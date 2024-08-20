@@ -5,10 +5,10 @@ import CommunityRuleCard from "@/Component/ui/CommunityRuleCard";
 import ProfileHeader from "@/features/psychologists/ProfileHeader";
 import { Link } from "react-router-dom";
 
-export const communityActionBtns = () => {
+export const communityActionBtns = ({BtnText}) => {
     return ( 
         <>
-            <button></button>
+            <button className="px-4 py-2 text-white bg-[#242424] ">{BtnText}</button>
         </>
      );
 }
@@ -19,13 +19,13 @@ const Communities = () => {
   return (
     <>
     <Layout>
-        <div className="mx-10 mt-5 ">
+        <div className=" mt-28 lg:mx-3 lg:mt-28 xl:mx-7 xl:mt-28 ">
             <ProfileHeader
                 name={``}
                 avatarSrc={communityProfilePic}
                 coverSrc={communityCoverPic}
             >
-                <div className="flex self-end items-center justify-between mt-14 max-md:mt-10 w-[100%] ">
+                <div className="hidden md:flex md:self-end md:items-center md:justify-between md:mt-14 max-md:mt-10 md:w-[100%] ">
                     <h3 className="text-white font-semibold ">Cheers Champions</h3>
 
                     <div className="flex items-center gap-4">
@@ -43,7 +43,12 @@ const Communities = () => {
         </div>
       
 
-        <section className="mt-8 mb-10 mx-10 flex items-center justify-center ">
+        <section className="mt-8 mb-10 lg:mx-4 xl:mx-7 flex items-center justify-center ">
+            <div className="tab-btns">
+                <communityActionBtns BtnText="Post" />
+                <communityActionBtns BtnText="About" />
+            </div>
+
             <div className="grid grid-cols-[3fr_2fr] auto-rows-auto place-content-center">
                 <div className="post-cont mr-10">
                     {/* ALL POSTS WILL BE WITHIN THIS POST-CONT DIV */}

@@ -62,6 +62,7 @@ import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
 import profilePhoto from "./Images/profilePhoto.png";
+import videoPreviewPic from "./Images/videoPreviewPic.png";
 
 
 
@@ -125,5 +126,6 @@ export {
   quickChatPic, 
   profilePhoto,
   framer2,
-  arrow
+  arrow,
+  videoPreviewPic
 };

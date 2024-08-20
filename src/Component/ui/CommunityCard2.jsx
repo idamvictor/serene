@@ -15,7 +15,7 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
                 <h3 className="text-white text-[.93rem] font-bold xl:text-base">{communityName}</h3>
 
                 {/* TODO: CHANGE TO HORIZONTAL */}
-                <img src={menuBar} alt="" className="w-[1.25rem] h-[.1875] absolute flex ml-[73%] md:ml-[74.5%] lg:ml-[76%] xl:ml-[83%]  " />
+                <img src={menuBar} alt="" className="w-[1.25rem] h-[.1875] absolute flex ml-[73%] md:ml-[74.5%] lg:ml-[76%] xl:ml-[82%]  " />
               </div>
 
               <Badges styling={"text-[#5f5f5f] bg-[#E1DC58] text-xs w-[4.5rem] xl:text-[.85rem] xl:w-[6rem]"}> {badgeTitle} </Badges>
