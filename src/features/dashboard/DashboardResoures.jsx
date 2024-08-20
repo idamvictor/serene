@@ -44,7 +44,7 @@ const DashboardResources = () => {
                 <main>
                 {/* FOR VIDEOS SECTION */}
                 {activeTab === "Videos" && (
-                    <div className="mt-5 flex flex-wrap gap-4" >
+                    <div className="mt-5 flex flex-wrap gap-[1.3rem]" >
                         <VideoCard 
                             videoPreviewImg={videoPreviewPic}
                             videoTitle={`How to manage your mental health|Leon Taylor|TEDxClapham`}

@@ -10,13 +10,24 @@ const VideoCard = ({videoPreviewImg, videoTitle, videoChannel, videoViews, video
             </div>
 
             <div className="videoCard-details flex flex-col gap-2 mt-1 ml-1 mr-2 ">
-                <div className="flex justify-between items-center">
-                    <h4 className="font-semibold text-white opacity-80 text-sm">{videoTitle}</h4>
-                    <img src={menuBar} alt="" className="rotate-90 w-[12px] h-[10px] " />
+                <div className="flex flex-col gap-2">
+                    <div className="flex justify-between items-center">
+                        <h4 
+                            className="font-semibold text-white opacity-80 text-sm overflow-hidden text-ellipsis w-[15rem] " 
+                            style={{
+                                WebkitLineClamp: 2,
+                                WebkitBoxOrient: 'vertical',
+                                display: '-webkit-box',
+                            }}
+                        >
+                            {videoTitle}
+                        </h4>
+                        <img src={menuBar} alt="" className="rotate-90 w-[12px] h-[10px] " />
+                    </div>
+
+                    <p className="font-medium text-white opacity-70 text-sm">{videoChannel}</p>
                 </div>
-
-                <p className="font-medium text-white opacity-70 text-sm">{videoChannel}</p>
-
+               
                 <div className="text-white text-[.8rem] opacity-70 flex justify-between items-center ">
                     <p>{videoViews} views</p>
                     <p>{videoPostDate} ago</p>
