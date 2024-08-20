@@ -33,6 +33,8 @@ import metamany from "./Icons/Frame 237591.svg"
 import login from "./Icons/login.svg"
 import framer2 from "./Icons/framer2.svg"
 import arrow from "./Icons/arrow.svg"
+import playVideoIcon from "./Icons/playVideoIcon.svg";
+
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
 import moodImage from "./Icons/moodImage.svg";
@@ -63,6 +65,7 @@ import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
 import profilePhoto from "./Images/profilePhoto.png";
 import videoPreviewPic from "./Images/videoPreviewPic.png";
+import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
 
 
 
@@ -127,5 +130,7 @@ export {
   profilePhoto,
   framer2,
   arrow,
-  videoPreviewPic
+  videoPreviewPic,
+  playVideoIcon,
+  videoDesktopPreviewPic
 };

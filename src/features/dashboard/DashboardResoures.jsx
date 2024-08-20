@@ -44,13 +44,14 @@ const DashboardResources = () => {
                 <main>
                 {/* FOR VIDEOS SECTION */}
                 {activeTab === "Videos" && (
-                    <div className="mt-5 flex flex-wrap gap-[1.3rem]" >
+                    <div className="mt-5 grid grid-cols-3 auto-rows-auto gap-3" >
                         <VideoCard 
                             videoPreviewImg={videoPreviewPic}
                             videoTitle={`How to manage your mental health|Leon Taylor|TEDxClapham`}
                             videoChannel={`TEDxTalks`}
                             videoViews={`11k`}
                             videoPostDate={`1hour`}
+                            videoDuration={`15:30`}
                         />
                         <VideoCard 
                             videoPreviewImg={videoPreviewPic}
@@ -58,6 +59,7 @@ const DashboardResources = () => {
                             videoChannel={`Christian Maté Grab`}
                             videoViews={`140k`}
                             videoPostDate={`1week`}
+                            videoDuration={`2:30`}
                         /> 
                         <VideoCard 
                              videoPreviewImg={videoPreviewPic}
@@ -65,6 +67,7 @@ const DashboardResources = () => {
                              videoChannel={`KGH Foundation`}
                              videoViews={`20k`}
                              videoPostDate={`4months`}
+                             videoDuration={`1:00`}
                         />
                     </div>
                 )}
