@@ -2,7 +2,7 @@ import ArticleCard from "@/Component/ui/ArticleCard";
 
 const ResourceBtn = ({ resource }) => {
     return(
-        <button className="w-[25%] py-[.3rem] text-sm border border-[#201f1f] text-center rounded-md text-[#c7c7c7] bg-[#201f1f] hover:bg-serene hover:text-[#191919] hover:font-semibold hover:border-serene ">
+        <button className="w-[25%] py-[.3rem] text-sm border border-[#201f1f] text-center rounded-md text-[#c7c7c7] bg-[#201f1f] hover:bg-serene hover:text-[#191919] hover:font-semibold hover:border-serene xl:text-base ">
             {resource}
         </button>
     );

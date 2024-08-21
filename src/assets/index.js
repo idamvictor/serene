@@ -21,7 +21,10 @@ import postForwardArrow from "./Icons/postForwardArrow.svg";
 import postMessage from "./Icons/postMessage.svg";
 import about from "./Icons/about.svg";
 import experience from "./Icons/experience.svg";
-import lang from "./Icons/lang.svg";
+import lang from "./Icons/lang.svg"; 
+import leftArrow from "./Icons/rightArrow.svg";
+import ruleArrowDown from "./Icons/rule-arrow-down.svg";
+import yellowPlusSign from "./Icons/yellowPlusSign.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -45,6 +48,14 @@ import radioButton from "./Icons/radioButton.svg";
 import usdc from "./Icons/usdc.svg";
 import usdt from "./Icons/usdt.svg";
 import visa from "./Icons/visa.svg";
+import profilePhoto from "./Images/profilePhoto.png";
+import headerImg from "./Images/headerImg.png";
+import communityProfilePic from "./Images/communityProfilePic.png";
+import communityCoverPic from "./Images/communityCoverPic.png";
+import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
+import articlePic from "./Images/articlePic.png";
+import quickChatPic from "./Images/quickchatPic.svg";
+
 
 export {
   sereneSign,
@@ -90,4 +101,13 @@ export {
   usdc,
   usdt,
   visa,
+  menuBar,
+  leftArrow,
+  ruleArrowDown,
+  communityCoverPic,
+  communityProfilePic,
+  yellowPlusSign,
+  userDashboardProfilePic,
+  articlePic,
+  quickChatPic
 };

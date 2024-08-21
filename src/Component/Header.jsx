@@ -21,21 +21,40 @@ import {
   CardTitle,
 } from "../Component/ui/card";
 import { Search,Bell,LucideMessageCircle,ChevronLeft} from "lucide-react";
-import { chat, searchIcon,bell } from "@/assets";
+import { chat, searchIcon,bell, userDashboardProfilePic } from "@/assets";
  
 
+
+
+//! ------------ DON'T TOUCH WITHOUT PERMISSION --------------!
 const Header = () => {
   return (
-    <header
-      className="flex justify-end border-b-[0.1rem] pt-4 mt-7  bg-serene-black
-     border-[#575757] lg:h-[60px] lg:px-6 col-start-2 col-end-3 
-     row-start-1 row-end-2 sticky top-0 z-[900] text-serene-ash"
-    >
-      <div className="flex gap-5 mb-5 mr-10">
-        <Search className="hover:text-serene w-4" />
-        <Bell className="hover:text-serene w-4" />
-        <LucideMessageCircle className="hover:text-serene w-4" />
+    // <header className="flex justify-end border-b-[0.1rem] mt-5 bg-serene-black border-[#575757] lg:h-[60px] lg:px-6 col-start-2 col-end-3 row-start-1 row-end-2 sticky top-0 z-[900] text-serene-ash">
+    //   <div className="flex items-center gap-5 mb-5 ">
+    //     <Search className="hover:text-serene w-4 h-4 " />
+    //     <Bell className="hover:text-serene w-4 h-4 " />
+    //     <LucideMessageCircle className="hover:text-serene w-4 h-4 " />
+    //     <img src={userDashboardProfilePic} alt="user profile icon" className="rounded-full h-9 w-9" />
+    //   </div>
+    // </header>
+    //TODO: DELETE THE CODE ABOVE AFTER THOROUGH CHECKS
+
+
+    //*NEW HEADER FOR THE DASHBOARD
+    <header className="serene-header fixed top-0 right-0 left-0 border border-b-[0.1rem] border-[#575757] bg-serene-black h-[3.75rem] z-[900] text-serene-ash flex lg:justify-end lg:left-[15.625rem] px-6 py-10 ">
+
+      <div className=" flex items-center">
+        <div className="flex items-center justify-center gap-5 ">
+          <Search className="hover:text-serene w-4 h-4 " />
+          <Bell className="hover:text-serene w-4 h-4 " />
+          <LucideMessageCircle className="hover:text-serene w-4 h-4 " />
+        </div>
+
+        <div className="lg:ml-5">
+          <img src={userDashboardProfilePic} alt="user profile icon" className="rounded-full h-9 w-9 " />
+        </div>
       </div>
+          
     </header>
   );
 };
