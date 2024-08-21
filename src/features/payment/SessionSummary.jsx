@@ -6,7 +6,7 @@ const SessionSummary = () => {
       </div>
       <section className="flex flex-col items-start px-6 py-7 mt-6 w-full rounded-lg bg-neutral-800 max-md:px-5">
         <div className="flex flex-col max-w-full text-sm w-[20.6875rem]">
-          <h2 className="font-semibold tracking-wide leading-none text-yellow-300">
+          <h2 className="font-semibold tracking-wide leading-none text-serene">
             Session Summary
           </h2>
           <div className="mt-2 tracking-wide leading-5 text-white text-opacity-80">
@@ -17,7 +17,7 @@ const SessionSummary = () => {
         </div>
 
         <div className="flex flex-col max-w-full text-sm w-[20.6875rem] mt-6">
-          <h2 className="font-semibold tracking-wide leading-none text-yellow-300">
+          <h2 className="font-semibold tracking-wide leading-none text-serene">
             Total length of session
           </h2>
           <div className="mt-2 tracking-wide leading-5 text-white text-opacity-80">
@@ -26,7 +26,7 @@ const SessionSummary = () => {
         </div>
 
         <div className="flex flex-col max-w-full text-sm w-[20.6875rem] mt-6">
-          <h2 className="font-semibold tracking-wide leading-none text-yellow-300">
+          <h2 className="font-semibold tracking-wide leading-none text-serene">
             You selected:
           </h2>
           <div className="mt-2 tracking-wide leading-5 text-white text-opacity-80">
@@ -36,7 +36,7 @@ const SessionSummary = () => {
 
         <div className="flex flex-col self-stretch mt-6 w-full">
           <div className="flex flex-col max-w-full text-sm w-[20.6875rem]">
-            <h2 className="font-semibold tracking-wide leading-none text-yellow-300">
+            <h2 className="font-semibold tracking-wide leading-none text-serene">
               Price Summary
             </h2>
             <div className="mt-2 tracking-wide leading-none text-white text-opacity-80">
@@ -62,7 +62,7 @@ const SessionSummary = () => {
           <div className="w-full border border-solid border-white border-opacity-20 min-h-[0.0625rem] mt-4" />
 
           <div className="flex gap-10 justify-between items-center mt-3.5 w-full text-base leading-none">
-            <div className="self-stretch my-auto font-semibold text-yellow-300 w-[4.8125rem]">
+            <div className="self-stretch my-auto font-semibold text-serene w-[4.8125rem]">
               Total Price
             </div>
             <div className="self-stretch my-auto font-bold tracking-wide text-white text-opacity-80 w-[3.75rem]">

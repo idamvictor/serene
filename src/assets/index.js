@@ -48,8 +48,8 @@ import radioButton from "./Icons/radioButton.svg";
 import usdc from "./Icons/usdc.svg";
 import usdt from "./Icons/usdt.svg";
 import visa from "./Icons/visa.svg";
-import profilePhoto from "./Images/profilePhoto.png";
-import headerImg from "./Images/headerImg.png";
+// import profilePhoto from "./Images/profilePhoto.png";
+// import headerImg from "./Images/headerImg.png";
 import communityProfilePic from "./Images/communityProfilePic.png";
 import communityCoverPic from "./Images/communityCoverPic.png";
 import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
@@ -101,7 +101,6 @@ export {
   usdc,
   usdt,
   visa,
-  menuBar,
   leftArrow,
   ruleArrowDown,
   communityCoverPic,
