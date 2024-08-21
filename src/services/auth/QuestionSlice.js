@@ -9,21 +9,11 @@ export const QuestionSlice = apiSlice.injectEndpoints({
                 url: QUESTIONS_URL,
                 method:"GET",
             }),
-            transformResponse:(response)=>{
-                return response.data.map((question)=>{
-                    let inferredType = "radio";
-                    if(question.options.length > 2){
-                        inferredType = "radio"
-                    }else if (question.options.length == 2){
-                        inferredType = "radio"
-                    }else if (question.options.length === 0){
-                        inferredType = "dropdown"
-                    }
-                    return {
-                        ...question,
-                        type: inferredType,
-                    }
-                })
+             transformResponse: (response) => {
+                return response.data.map((question) => ({
+                    ...question,
+                    type: question.type || "radio", // Default to "radio" if type is not provided
+                }));
             },
             providesTags:["Question"],
             keepUnusedDataFor: 5

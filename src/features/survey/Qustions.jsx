@@ -1,33 +1,58 @@
+import { Checkbox } from "@/Component/Questions/CheckboxQuestions";
+import { Radio } from "@/Component/Questions/RadioQuestions";
+import { Dropdown } from "@/Component/Questions/DropdownQuestions";
 import React, { useState, useEffect } from "react";
 
-const Questions = ({ question, onAnswer,isLastQuestion,submitBtn }) => {
+const Questions = ({
+  question,
+  onAnswer,
+  isLastQuestion,
+  submitBtn,
+  response,
+  setResponse,
+}) => {
+
   const [selectedAnswer, setSelectedAnswer] = useState(null);
 
-  useEffect(() => {
-    setSelectedAnswer(null); 
-  }, [question]);
-
   const handleAnswerChange = (e) => {
-    const answer = e.target.value
+    const answer = e.target.value;
     setSelectedAnswer(answer);
   };
 
   const handleNextClick = () => {
-      onAnswer(selectedAnswer);
-    
+    onAnswer(selectedAnswer);
   };
-
   return (
-    <div>
+    <div className="flex flex-col justify-between ">
       <h3 className="text-white font-semibold text-xl mb-4">
         {question.question}
       </h3>
-      <div className="space-y-3">
-        {question.options.map((option) => (
+      {question && (
+        <div className="space-y-3">
+          {question.type === "radio" ? (
+            <Radio
+              question={question}
+              response={response}
+              setResponse={setResponse}
+            />
+          ) : question.type === "checkbox" ? (
+            <Checkbox
+              question={question}
+              response={response}
+              setResponse={setResponse}
+            />
+          ) : (
+            <Dropdown
+              question={question}
+              response={response}
+              setResponse={setResponse}
+            />
+          )}
+          {/* {question.options.map((option) => (
           <div key={option} className="p-4 bg-[#5E5E5E]  rounded-md">
             <label className="flex items-center">
               <input
-                type={question.type === "radio" ? "checkbox" : "radio"}
+                type={question.type === "radio" ? "radio" : "checkbox"}
                 name="answer"
                 value={option}
                 checked={selectedAnswer === option}
@@ -37,8 +62,10 @@ const Questions = ({ question, onAnswer,isLastQuestion,submitBtn }) => {
               <span className="ml-2 text-white">{option}</span>
             </label>
           </div>
-        ))}
-      </div>
+        ))} */}
+        </div>
+      )}
+
       {isLastQuestion ? (
         <button
           onClick={submitBtn}
@@ -49,7 +76,7 @@ const Questions = ({ question, onAnswer,isLastQuestion,submitBtn }) => {
       ) : (
         <button
           onClick={handleNextClick}
-          className="flex mx-auto py-2 px-14 mt-5 bg-serene text-black rounded-md"
+          className="flex font-medium mx-auto py-2 px-14 mt-5 bg-serene text-black rounded-md"
         >
           Next
         </button>
@@ -57,5 +84,7 @@ const Questions = ({ question, onAnswer,isLastQuestion,submitBtn }) => {
     </div>
   );
 };
+
+
 
 export default Questions;
