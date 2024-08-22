@@ -70,6 +70,11 @@ export function SideBar() {
               reactIcon={RiGlobalFill}
               linkName={"Resources"}
             />
+             <NAV_LINK
+              destinationLink={"/payment"}
+              reactIcon={RiGlobalFill}
+              linkName={"Payment"}
+            />
           </nav>
 
           <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4 ">
