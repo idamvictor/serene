@@ -36,6 +36,7 @@ import arrow from "./Icons/arrow.svg"
 import playVideoIcon from "./Icons/playVideoIcon.svg";
 import saveAddIcon from "./Icons/saveAddIcon.svg";
 import yellowShareIcon from "./Icons/yellowShareIcon.svg";
+import rightArrow from "./Icons/rightArrow.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -142,5 +143,6 @@ export {
   saveAddIcon,
   yellowShareIcon,
   articleFeaturedPic,
-  smallArticleCardPic
+  smallArticleCardPic,
+  rightArrow
 };

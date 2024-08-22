@@ -21,7 +21,7 @@ import {
   CardTitle,
 } from "../Component/ui/card";
 import { Search,Bell,LucideMessageCircle,ChevronLeft} from "lucide-react";
-import { chat, searchIcon,bell, userDashboardProfilePic } from "@/assets";
+import { chat, searchIcon,bell, userDashboardProfilePic, arrowRight, rightArrow, menuBar } from "@/assets";
  
 
 
@@ -41,19 +41,23 @@ const Header = () => {
 
 
     //*NEW HEADER FOR THE DASHBOARD
-    <header className="serene-header fixed top-0 right-0 left-0 border border-b-[0.1rem] border-[#575757] bg-serene-black h-[3.75rem] z-[900] text-serene-ash flex lg:justify-end lg:left-[12.625rem] xl:left-[15.625rem] px-6 py-10 ">
+    <header className="serene-header fixed top-0 right-0 left-0 border border-b-[0.1rem] border-[#575757] bg-serene-black h-[3.75rem] z-[900] text-serene-ash  lg:left-[12.625rem] xl:left-[15.625rem] flex items-center lg:justify-between px-4 lg:px-7 py-10 ">
+      <img src={rightArrow} alt="" className="hidden lg:flex" />
 
-      <div className=" flex items-center">
-        <div className="flex items-center justify-center gap-5 ">
-          <Search className="hover:text-serene w-4 h-4 " />
-          <Bell className="hover:text-serene w-4 h-4 " />
-          <LucideMessageCircle className="hover:text-serene w-4 h-4 " />
-        </div>
+      <div className="flex items-center">
+        <div className=" flex flex-row-reverse w-full items-center justify-between lg:justify-normal lg:flex-row ">
+          <div className="flex items-center justify-center gap-5 ">
+            <Search className="hover:text-serene w-4 h-4 " />
+            <Bell className="hover:text-serene w-4 h-4 " />
+            <LucideMessageCircle className="hover:text-serene w-4 h-4 " />
+          </div>
 
-        <div className="lg:ml-5">
-          <img src={userDashboardProfilePic} alt="user profile icon" className="rounded-full h-9 w-9 " />
+          <div className="lg:ml-5">
+            <img src={userDashboardProfilePic} alt="user profile icon" className="rounded-full h-9 w-9 " />
+          </div>
         </div>
       </div>
+      
           
     </header>
   );

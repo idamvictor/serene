@@ -1,18 +1,21 @@
 import { articleFeaturedPic, filterIcon, arrowDown, smallArticleCardPic } from "@/assets";
 import SmallArticleCard from "./SmallArticleCard";
 import ArticleCard from "./ArticleCard";
+import { Link } from "react-router-dom";
 
 const ArticleSection = () => {
   return (
     <>
       <section className="articleResource-cont mb-4  grid grid-cols-1 md:grid-cols-[2fr_1fr] auto-rows-auto gap-3 lg:gap-5 xl:gap-7">
+
+        {/* FEATURED ARTICLE SECTION234[] */}
         <section className="articleFeature-section mt-2 lg:mt-0 ">
             <div className="flex flex-col-reverse lg:flex-row lg:items-end border border-[#7e7e7e] bg-[#303030] rounded-[11px] h-fit lg:h-[21.313rem] ">
                 <div className="mx-4 mt-10 flex flex-col gap-3 mb-[1.5rem] lg:w-[50%] lg:mx-0 lg:ml-3 xl:ml-5 ">
                     <span className="text-[#c7c7c7] text-sm font-semibold ">Featured</span>
                     <h3 className="text-[#fefefe] text-xl lg:text-2xl xl:text-3xl tracking-wide font-bold  ">What Are Mental Disorders?</h3>
                     <p className="text-[#a3a3a3]  text-[10px] lg:text-[8px] xl:text-[10px] tracking-wide  ">By Kendra Cherry, MSEd | Updated on February 17, 2022</p>
-                    <button className="text-serene text-[11px] border border-serene font-medium px-[14px] py-[8.24px] rounded-[2.75px] w-[25%] lg:w-[35%] mt-5 ">Read</button>
+                    <button className="text-serene text-[11px] text-center border border-serene font-medium px-[14px] py-[8.24px] rounded-[2.75px] w-[25%] mt-5 "> Read </button>
                 </div>
 
                 <img src={articleFeaturedPic} alt="" className=" w-full h-[134px] lg:w-[50%] lg:h-[21.313rem] rounded-t-[11px] lg:rounded-t-[0px] lg:rounded-r-[11px] " />

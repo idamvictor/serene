@@ -32,7 +32,7 @@ const Resources = () => {
 
   return (
     <Layout>
-      <section className="mt-24 lg:mt-28 mx-4 lg:mx-5 xl:mx-7 ">
+      <section className="mt-24 lg:mt-28 mx-4 lg:mx-5 xl:mx-8 ">
       <h1 className="text-white text-xl lg:text-2xl xl:text-3xl font-bold">Resources</h1>
 
       <div className="flex gap-2 items-center md:flex justify-center md:mt-6 md:gap-6 mb-4 lg:mb-7 mt-2">
