@@ -1,4 +1,6 @@
 import Layout from "@/Component/Shared/Layout";
+import VideoSection from "@/Component/ui/VideoSection";
+import { useState } from "react";
 
 
 const ResourceBtn = ({activeTab, setActiveTab}) => {
@@ -24,18 +26,23 @@ const ResourceBtn = ({activeTab, setActiveTab}) => {
   );
 };
 
-
-
-
 const Resources = () => {
+  const [activeTab, setActiveTab] = useState("Videos");
+
   return (
     <Layout>
-      <section className="mt-28 mx-7 ">
-      <h1 className="text-white text-3xl font-bold">Resources</h1>
+      <section className="mt-28 lg:mx-5 xl:mx-7 ">
+      <h1 className="text-white lg:text-2xl xl:text-3xl font-bold">Resources</h1>
 
       <div className=" md:flex justify-center md:mt-6 md:gap-6 ">
-        <ResourceBtn />
+        <ResourceBtn activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
+
+      <main>
+      {activeTab === "Videos" && (
+        <VideoSection />
+      )}
+      </main>
 
       </section>
     </Layout>

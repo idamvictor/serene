@@ -34,6 +34,8 @@ import login from "./Icons/login.svg"
 import framer2 from "./Icons/framer2.svg"
 import arrow from "./Icons/arrow.svg"
 import playVideoIcon from "./Icons/playVideoIcon.svg";
+import saveAddIcon from "./Icons/saveAddIcon.svg";
+import yellowShareIcon from "./Icons/yellowShareIcon.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -66,6 +68,7 @@ import quickChatPic from "./Images/quickchatPic.svg";
 import profilePhoto from "./Images/profilePhoto.png";
 import videoPreviewPic from "./Images/videoPreviewPic.png";
 import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
+import smallVideoCardPic from "./Images/smallVideoCardPic.png";
 
 
 
@@ -132,5 +135,8 @@ export {
   arrow,
   videoPreviewPic,
   playVideoIcon,
-  videoDesktopPreviewPic
+  videoDesktopPreviewPic,
+  smallVideoCardPic,
+  saveAddIcon,
+  yellowShareIcon
 };

@@ -41,6 +41,10 @@ body{
     .recommendation-cont div h4{
       font-size: 16px;
     }
+
+    .sideBar-links-cont {
+        @apply gap-60;
+    }
 }
 /* index.css */
 

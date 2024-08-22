@@ -48,7 +48,7 @@ export function SideBar() {
           <img src={sereneSign} className='lg:w-[6.2rem]   xl:w-[7rem] lg:h-[2.75rem] ' />  
         </div>
 
-        <div className="lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24 xl:gap-60 ">
+        <div className="sideBar-links-cont lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24 xl:mt-6 xl:gap-32 ">
           <nav className="top-nav lg:flex lg:flex-col lg:gap-2">
             <NAV_LINK 
               destinationLink={"/"}

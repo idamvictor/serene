@@ -4,13 +4,13 @@ import { menuBar, videoPreviewPic } from "@/assets";
 const VideoCard = ({videoPreviewImg, videoTitle, videoChannel, videoViews, videoPostDate, videoDuration}) => {
   return (
     <>
-        <div className="videoCard-cont border border-[#101010]  bg-[#101010] rounded-md pb-2 ">
-            <div className="flex flex-col items-end justify-end">
+        <div className="videoCard-cont border border-[#101010] bg-[#101010] rounded-md pb-2 ">
+            <div className="flex flex-col items-end justify-end ">
                 <img src={videoPreviewImg} alt="" className="rounded-md relative w-full h-[156px] " />
-                <span className="absolute text-white lg:text-[.7rem] xl:text-[.65rem] text-center text-opacity-80 bg-[#787878] font-semibold rounded-lg w-[2.5rem] mr-2 mb-1 ">{videoDuration}</span>
+                <span className="absolute text-white text-[.7rem] xl:text-[.65rem] text-center text-opacity-80 bg-[#787878] font-semibold rounded-lg w-[38px] mr-2 mb-1 ">{videoDuration}</span>
             </div>
 
-            <div className="videoCard-details flex flex-col gap-2 mt-1 ml-1 mr-2">
+            <div className="videoCard-details flex flex-col gap-2 mt-1 ml-1 mr-2 ">
                 <div className="flex flex-col gap-2">
                     <div className="flex justify-between items-center">
                         <h4 
@@ -30,8 +30,8 @@ const VideoCard = ({videoPreviewImg, videoTitle, videoChannel, videoViews, video
                 </div>
                
                 <div className="text-white text-[.8rem] opacity-70 flex justify-between items-center ">
-                    <p>{videoViews} views</p>
-                    <p>{videoPostDate} ago</p>
+                    <span>{videoViews} views</span>
+                    <span>{videoPostDate} ago</span>
                 </div>
             </div>
         </div>
