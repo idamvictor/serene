@@ -69,6 +69,8 @@ import profilePhoto from "./Images/profilePhoto.png";
 import videoPreviewPic from "./Images/videoPreviewPic.png";
 import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
 import smallVideoCardPic from "./Images/smallVideoCardPic.png";
+import articleFeaturedPic from "./Images/articleFeaturedPic.png";
+import smallArticleCardPic from "./Images/smallArticleCardPic.png";
 
 
 
@@ -138,5 +140,7 @@ export {
   videoDesktopPreviewPic,
   smallVideoCardPic,
   saveAddIcon,
-  yellowShareIcon
+  yellowShareIcon,
+  articleFeaturedPic,
+  smallArticleCardPic
 };

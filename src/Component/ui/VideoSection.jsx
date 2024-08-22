@@ -12,7 +12,7 @@ const VideoSection = () => {
 
   return (
     <>
-    <section className={` mb-4 grid grid-cols-1 lg:grid-cols-[2fr_1fr] auto-rows-auto gap-3 lg:gap-5 xl:gap-7 ${!isPlaying ?' text-serene ': 'text-white'}p`}>
+    <section className={` mb-4 grid grid-cols-1 lg:grid-cols-[2fr_1fr] auto-rows-auto gap-3 lg:gap-5 xl:gap-7 `}>
 
             {/* VIDEO PLAYER SECTION */}
         <div  className='rounded-[11px] h-[13rem] lg:h-full overflow-hidden border border-[#666666] lg:col-span-1 lg:row-span-1'>

@@ -1,4 +1,5 @@
 import Layout from "@/Component/Shared/Layout";
+import ArticleSection from "@/Component/ui/ArticleSection";
 import VideoSection from "@/Component/ui/VideoSection";
 import { useState } from "react";
 
@@ -38,10 +39,15 @@ const Resources = () => {
         <ResourceBtn activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
+      {/* RESOURCES MAIN CONTENT */}
       <main>
-      {activeTab === "Videos" && (
-        <VideoSection />
-      )}
+        {activeTab === "Videos" && (
+          <VideoSection />
+        )}
+
+        {activeTab === "Articles" && (
+          <ArticleSection />
+        )}
       </main>
 
       </section>
