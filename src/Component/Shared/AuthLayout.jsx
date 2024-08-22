@@ -13,7 +13,7 @@ const AuthLayout = ({ children }) => {
 
 export const Modal = ({ children }) => {
   return (
-    <div className="w-full max-w-[650px] md:h-full h-auto max-h-[650px] m-auto rounded-2xl bg-[#272727] bg-opacity-70 backdrop-blur-xl">
+    <div className="w-full max-w-[650px]  md:h-full h-auto max-h-[650px] pb-32 m-auto rounded-2xl bg-[#272727] bg-opacity-70 backdrop-blur-xl">
       <div>{children}</div>
     </div>
   );

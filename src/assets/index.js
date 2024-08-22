@@ -31,7 +31,8 @@ import rainbow from "./Icons/rainbow.svg"
 import wallet from "./Icons/wallet.svg"
 import metamany from "./Icons/Frame 237591.svg"
 import login from "./Icons/login.svg"
-
+import framer2 from "./Icons/framer2.svg"
+import arrow from "./Icons/arrow.svg"
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
 import moodImage from "./Icons/moodImage.svg";
@@ -48,6 +49,7 @@ import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
 import profilePhoto from "./Images/profilePhoto.png";
+
 
 
 
@@ -98,5 +100,7 @@ export {
   userDashboardProfilePic,
   articlePic,
   quickChatPic, 
-  profilePhoto
+  profilePhoto,
+  framer2,
+  arrow
 };

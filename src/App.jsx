@@ -2,6 +2,7 @@ import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities,Au
 import ConnectWallet from "./features/authentication/ConnectWallet";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
+import Survey from "./features/survey/Survey";
 
 
 function App() {
@@ -37,6 +38,10 @@ function App() {
     {
       path:"/wallet",
       element: <ConnectWallet/>
+    },
+    {
+      path:"/survey",
+      element:<Survey/>
     }
   ]);
 

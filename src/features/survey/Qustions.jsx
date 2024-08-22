@@ -12,19 +12,18 @@ const Questions = ({
   setResponse,
 }) => {
 
-  const [selectedAnswer, setSelectedAnswer] = useState(null);
-
-  const handleAnswerChange = (e) => {
-    const answer = e.target.value;
-    setSelectedAnswer(answer);
-  };
-
   const handleNextClick = () => {
-    onAnswer(selectedAnswer);
+    if(isLastQuestion){
+      submitBtn()
+    }else{
+ onAnswer();
+    }
+   
+
   };
   return (
     <div className="flex flex-col justify-between ">
-      <h3 className="text-white font-semibold text-xl mb-4">
+      <h3 className="text-white font-semibold text-base md:text-xl mb-4">
         {question.question}
       </h3>
       {question && (
@@ -65,22 +64,13 @@ const Questions = ({
         ))} */}
         </div>
       )}
-
-      {isLastQuestion ? (
-        <button
-          onClick={submitBtn}
-          className="mt-4 py-2 px-4 bg-serene text-black rounded-md"
-        >
-          Submit
-        </button>
-      ) : (
         <button
           onClick={handleNextClick}
-          className="flex font-medium mx-auto py-2 px-14 mt-5 bg-serene text-black rounded-md"
+          className="flex font-medium mx-auto py-2 px-14 mt-5 fixed bottom-8 right-40 md:bottom-16 md:right-60 bg-serene text-black rounded-md"
         >
           Next
         </button>
-      )}
+      
     </div>
   );
 };

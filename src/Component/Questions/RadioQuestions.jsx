@@ -4,7 +4,7 @@ export const Radio = ({ question, response, setResponse }) => {
   const handleRadioSelect = (answer) => {
     let newEntry = {
       id: question._id,
-      answer: answer,
+      answer: Array.isArray(answer) ? answer : [answer],
     };
 
     const updatedResponses = response.map((item) =>
@@ -25,7 +25,7 @@ export const Radio = ({ question, response, setResponse }) => {
         return (
           <div
             key={option}
-            className={`p-4 rounded-md hover:cursor-pointer ${
+            className={`p-2 sm:p-4 rounded-md hover:cursor-pointer ${
               isSelected
                 ? "border-serene"
                 : " bg-[#5E5E5E] border-[#5E5E5E]"

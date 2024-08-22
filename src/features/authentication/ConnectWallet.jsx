@@ -4,7 +4,9 @@ import { useDispatch } from "react-redux";
 import { useLoginUserMutation } from "@/services/auth/apiSlice";
 import Web3 from "web3";
 import { setCredentials } from "@/services/auth/authSlice";
+import { useNavigate } from "react-router-dom";
 const ConnectWallet = () => {
+  const navigate = useNavigate()
   const [loginUser] = useLoginUserMutation();
   const dispatch = useDispatch();
   var account = null;
@@ -21,8 +23,9 @@ const ConnectWallet = () => {
       try {
         const response = await loginUser(walletid).unwrap();
         console.log(response.message)
-        console.log(response.data.username)
+        console.log(response.newuser)
         dispatch(setCredentials(response.data));
+        navigate('/survey')
         console.log(walletid);
       } catch (error) {
         console.error("login/sign error:", error);

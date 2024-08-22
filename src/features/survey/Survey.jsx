@@ -8,14 +8,15 @@ import ProgressBar from "./ProgressBar";
 import { useNavigate } from "react-router-dom";
 import AuthLayout from "@/Component/Shared/AuthLayout";
 import { Modal } from "@/Component/Shared/AuthLayout";
+import WelcomeMsg from "./WelcomeMsg";
 
 const Survey = () => {
   const { data: questions, error, isLoading } = useGetQuestionsQuery();
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [response, setResponse] = useState([]);
   const [submitSurvey] = useSubmitSurveyMutation();
+  const [showMessage, setshowMessage] = useState(false)
   const navigate = useNavigate();
-console.log(response)
 
 
   // useEffect(() => {
@@ -26,7 +27,8 @@ console.log(response)
   //     setResponse(response);
   //   }
   // }, []);
-const userId = "66c4aa4130a04134e0acd7e0";
+const userInfo = JSON.parse(localStorage.getItem("userInfo"));
+const userId = userInfo._id
   const saveProgress = () => {
     const progressData = {
       currentQuestionIndex,
@@ -35,34 +37,28 @@ const userId = "66c4aa4130a04134e0acd7e0";
     localStorage.setItem("surveyProgress", JSON.stringify(progressData));
   };
 
-  const handleNext = (selectedAnswer) => {
-    // setResponse((prevResponses) => {
-    //   const updatedResponses = [...prevResponses];
-    //   updatedResponses[currentQuestionIndex] = {
-    //     questionId: questions[currentQuestionIndex]?._id,
-    //     answer: selectedAnswer,
-    //   };
-    //   return updatedResponses;
-    // });
-
+  const handleNext = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
+  
     }
   };
 
   const handleSubmit = async () => {
-    console.log(response);
     const payload = { response, userId };
     console.log(payload)
     try {
       await submitSurvey(payload).unwrap();
       console.log("Survey submitted successfully");
-      navigate("/");
+      setshowMessage(true)
     } catch (error) {
       console.error("Failed to submit survey:", error);
+      setshowMessage(true)
     }
   };
-
+  if (showMessage){
+    return <WelcomeMsg/>
+  }
   const handleSkipForNow = () => {
     saveProgress();
     navigate("/"); // Navigate to the homepage or another section of your app
@@ -95,7 +91,7 @@ const userId = "66c4aa4130a04134e0acd7e0";
             totalSteps={questions.length}
           />
         </div>
-        <h2 className="text-xl font-extralight leading-10  mb-4 text-white border-b-2 border-[#393939] px-10 py-3 ">
+        <h2 className="text-xl font-extralight leading-10  mb-4 text-white border-b-2 border-[#393939] px-10 py-4  ">
           Help us recommend the right communities for you
         </h2>
         <div className="mx-10 my-6">
@@ -109,6 +105,8 @@ const userId = "66c4aa4130a04134e0acd7e0";
               isLastQuestion={currentQuestionIndex === questions.length - 1}
             />
           )}
+         
+        
         </div>
       </Modal>
     </AuthLayout>

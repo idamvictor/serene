@@ -22,10 +22,8 @@ export const QuestionSlice = apiSlice.injectEndpoints({
         query:(responses)=>({
             url:`${QUESTIONS_URL}/save`,
             method: "POST",
-            headers:{
-                'Content-type': 'application/type',
-            },
-            body:JSON.stringify({responses}),
+            body: responses,
+           
         }),
         invalidatesTags:["Questions"]
     }),

@@ -46,7 +46,12 @@ const newEntry = {
       {question.options.map((option) => {
         const checked = answersArr?.answer.includes(option);
         return (
-          <div key={option} className="p-4 bg-[#5E5E5E]  rounded-md">
+          <div
+            key={option}
+            className={`p-4 ${
+              checked ? "border-serene border" : " bg-[#5E5E5E] border-[#5E5E5E]"
+            } rounded-md`}
+          >
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -54,7 +59,6 @@ const newEntry = {
                 value={option}
                 checked={checked}
                 onChange={(e) => handleRadioSelect(e.target.value)}
-              
                 className="form-checkbox bg-[#5E5E5E] text-serene "
               />
               <span className="ml-2 text-white">{option}</span>
