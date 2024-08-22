@@ -12,7 +12,7 @@ const SmallVideoCard = ({videoPreviewImg, videoTitle, videoChannel, videoViews, 
 
         <div className="video-details">
             <h3 
-                className="text-[#fefefe] font-semibold lg:text-xs xl:text-sm text-ellipsis overflow-hidden w-[12rem] xl:w-[15rem]"
+                className="text-[#fefefe] font-semibold text-sm text-ellipsis overflow-hidden w-[12rem] xl:w-[15rem]"
                 style={{
                     WebkitLineClamp: 2,
                     WebkitBoxOrient: 'vertical',
@@ -21,7 +21,7 @@ const SmallVideoCard = ({videoPreviewImg, videoTitle, videoChannel, videoViews, 
             >
                 {videoTitle}
             </h3>
-            <p className="text-[#c7c7c7]  lg:text-[11px] xl:text-xs mt-1 ">{videoChannel}</p>
+            <p className="text-[#c7c7c7] text-[11px] text-xs mt-1 ">{videoChannel}</p>
             <div className="smallVideo-meta">
                 <span className="text-white text-opacity-80 text-[10px] ">{videoViews} views | {videoPostDate} ago</span>
             </div>
