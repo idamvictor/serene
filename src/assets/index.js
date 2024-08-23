@@ -43,6 +43,19 @@ import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";;
 import headerImg from "./Images/headerImg.png";
+
+import americanExpress from "./Icons/americanExpress.svg";
+import bitcoin from "./Icons/bitcoin.png";
+import discover from "./Icons/discover.svg";
+import etherium from "./Icons/etherium.svg";
+import masterCard from "./Icons/masterCard.svg";
+import paypal from "./Icons/paypal.svg";
+import radioButton from "./Icons/radioButton.svg";
+import usdc from "./Icons/usdc.svg";
+import usdt from "./Icons/usdt.svg";
+import visa from "./Icons/visa.svg";
+// import profilePhoto from "./Images/profilePhoto.png";
+// import headerImg from "./Images/headerImg.png";
 import communityProfilePic from "./Images/communityProfilePic.png";
 import communityCoverPic from "./Images/communityCoverPic.png";
 import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
@@ -53,8 +66,8 @@ import profilePhoto from "./Images/profilePhoto.png";
 
 
 
-export { 
-  sereneSign, 
+export {
+  sereneSign,
   searchIcon,
   chat,
   bell,
@@ -86,6 +99,16 @@ export {
   Home,
   Communities,
   menuBar,
+  americanExpress,
+  bitcoin,
+  discover,
+  etherium,
+  masterCard,
+  paypal,
+  radioButton,
+  usdc,
+  usdt,
+  visa,
   metamask,
   coinbase,
   rainbow,

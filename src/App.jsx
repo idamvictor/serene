@@ -1,4 +1,13 @@
-import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities,Authentication } from "./pages";
+import {
+  Dashboard,
+  JoinCommunities,
+  Rooms,
+  Therapist,
+  Resources,
+  Communities,
+  Authentication,
+  Payment,
+} from "./pages";
 import ConnectWallet from "./features/authentication/ConnectWallet";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
@@ -42,7 +51,11 @@ function App() {
     {
       path:"/survey",
       element:<Survey/>
-    }
+    },
+    {
+      path:"/payment",
+      element: <Payment />
+    },
   ]);
 
   return (
