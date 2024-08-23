@@ -3,7 +3,7 @@ import Layout from "@/Component/Shared/Layout";
 import { communityCoverPic, communityProfilePic, menuBar, postPic, ruleArrowDown, yellowPlusSign } from "@/assets";
 import CommunityRuleCard from "@/Component/ui/CommunityRuleCard";
 import ProfileHeader from "@/features/psychologists/ProfileHeader";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const communityActionBtns = ({BtnText}) => {
     return ( 
@@ -14,11 +14,16 @@ export const communityActionBtns = ({BtnText}) => {
 }
 
 
-
 const Communities = () => {
+    const navigate = useNavigate();
+
+    const handleBackClick = () => {
+        navigate("/join-communities")
+    };
+
   return (
     <>
-    <Layout>
+    <Layout onBack={handleBackClick}>
         <div className=" mt-28 lg:mx-3 lg:mt-28 xl:mx-7 xl:mt-28 ">
             <ProfileHeader
                 name={``}
@@ -49,6 +54,7 @@ const Communities = () => {
                 <communityActionBtns BtnText="About" />
             </div>
 
+            {/* COMMUNITY POSTS */}
             <div className="grid grid-cols-[3fr_2fr] auto-rows-auto place-content-center">
                 <div className="post-cont mr-10">
                     {/* ALL POSTS WILL BE WITHIN THIS POST-CONT DIV */}
@@ -65,6 +71,8 @@ const Communities = () => {
                     </Post>
                 </div>
 
+
+                {/* COMMUNITY RULE SECTION */}
                 <aside className="xl:h-[41rem] bg-[#272727]  rounded-[9px]  ">
                     <CommunityRuleCard />
                 </aside>

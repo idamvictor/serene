@@ -25,9 +25,8 @@ import { chat, searchIcon,bell, userDashboardProfilePic, arrowRight, rightArrow,
  
 
 
-
 //! ------------ DON'T TOUCH WITHOUT PERMISSION --------------!
-const Header = () => {
+const Header = ({ onBack }) => {
   return (
     // <header className="flex justify-end border-b-[0.1rem] mt-5 bg-serene-black border-[#575757] lg:h-[60px] lg:px-6 col-start-2 col-end-3 row-start-1 row-end-2 sticky top-0 z-[900] text-serene-ash">
     //   <div className="flex items-center gap-5 mb-5 ">
@@ -41,10 +40,13 @@ const Header = () => {
 
 
     //*NEW HEADER FOR THE DASHBOARD
-    <header className="serene-header fixed top-0 right-0 left-0 border border-b-[0.1rem] border-[#575757] bg-serene-black h-[3.75rem] z-[900] text-serene-ash  lg:left-[12.625rem] xl:left-[15.625rem] flex items-center lg:justify-between px-4 lg:px-7 py-10 ">
-      <img src={rightArrow} alt="" className="hidden lg:flex" />
+    <header className={`serene-header fixed top-0 right-0 left-0 border border-b-[0.1rem] border-[#575757] bg-serene-black h-[3.75rem] z-[900] text-serene-ash  lg:left-[12.625rem] xl:left-[15.625rem] flex items-center px-4 lg:px-7 py-10 ${onBack ? "lg:justify-between"  : "lg:justify-end" }`}>
+      {onBack && (
+        <img src={rightArrow} alt="" className="hidden lg:flex bg-[#2a2a2a] py-2 px-4 rounded-[6px] " onClick={onBack} />
+      )}
 
-      <div className="flex items-center">
+
+      <div className="flex items-center ">
         <div className=" flex flex-row-reverse w-full items-center justify-between lg:justify-normal lg:flex-row ">
           <div className="flex items-center justify-center gap-5 ">
             <Search className="hover:text-serene w-4 h-4 " />
