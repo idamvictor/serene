@@ -25,7 +25,14 @@ import lang from "./Icons/lang.svg";
 import leftArrow from "./Icons/rightArrow.svg";
 import ruleArrowDown from "./Icons/rule-arrow-down.svg";
 import yellowPlusSign from "./Icons/yellowPlusSign.svg";
-
+import metamask from "./Icons/metamask_symbol.svg.svg"
+import coinbase from "./Icons/coinbase.svg"
+import rainbow from "./Icons/rainbow.svg"
+import wallet from "./Icons/wallet.svg"
+import metamany from "./Icons/Frame 237591.svg"
+import login from "./Icons/login.svg"
+import framer2 from "./Icons/framer2.svg"
+import arrow from "./Icons/arrow.svg"
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
 import moodImage from "./Icons/moodImage.svg";
@@ -34,8 +41,7 @@ import communityPic1 from "./Images/communityPic1.png";
 import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
-import userProfilePic from "./Images/userProfilePic.png";
-import profilePhoto from "./Images/profilePhoto.png";
+import userProfilePic from "./Images/userProfilePic.png";;
 import headerImg from "./Images/headerImg.png";
 
 import americanExpress from "./Icons/americanExpress.svg";
@@ -55,6 +61,9 @@ import communityCoverPic from "./Images/communityCoverPic.png";
 import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
+import profilePhoto from "./Images/profilePhoto.png";
+
+
 
 
 export {
@@ -78,7 +87,6 @@ export {
   postMessage,
   postPic,
   userProfilePic,
-  profilePhoto,
   headerImg,
   about,
   experience,
@@ -101,6 +109,12 @@ export {
   usdc,
   usdt,
   visa,
+  metamask,
+  coinbase,
+  rainbow,
+  wallet,
+  metamany,
+  login,
   leftArrow,
   ruleArrowDown,
   communityCoverPic,
@@ -108,5 +122,8 @@ export {
   yellowPlusSign,
   userDashboardProfilePic,
   articlePic,
-  quickChatPic
+  quickChatPic, 
+  profilePhoto,
+  framer2,
+  arrow
 };
