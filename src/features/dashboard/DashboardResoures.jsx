@@ -2,6 +2,7 @@ import { videoPreviewPic } from "@/assets";
 import ArticleCard from "@/Component/ui/ResourcesPage/ArticleCard";
 import VideoCard from "@/Component/ui/ResourcesPage/VideoCard";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ResourceBtn = ({activeTab, setActiveTab}) => {
     const tabs = ["Videos", "Articles", "Podcasts", "Careers"];
@@ -31,10 +32,10 @@ const DashboardResources = () => {
 
     return (  
         <>
-            <section className="dashboard-resources  bg-[#272727] flex flex-col rounded-lg col-span-2 h-auto mt-7 py-5 px-6 md:p-8 lg:mt-0 ">
+            <section className="dashboard-resources  bg-[#272727] flex flex-col rounded-lg col-span-2 h-auto mt-7 py-5 px-6 lg:px-4 md:mt-[-18px] xl:px-8 ">
                 <div className="flex justify-between items-center">
                         <h4 className="text-white text-lg md:text-xl font-semibold">Resources</h4> 
-                        <button className="text-serene-gray font-medium text-xs">See all</button>
+                        <Link to={"/resources"} className="text-serene-gray font-medium text-xs">See all</Link>
                 </div>
 
                 <div className="resourceCard-btn-group md:flex md:justify-center md:mt-4 md:gap-7 hidden">
