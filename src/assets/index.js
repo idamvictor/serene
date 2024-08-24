@@ -33,6 +33,14 @@ import metamany from "./Icons/Frame 237591.svg"
 import login from "./Icons/login.svg"
 import framer2 from "./Icons/framer2.svg"
 import arrow from "./Icons/arrow.svg"
+import playVideoIcon from "./Icons/playVideoIcon.svg";
+import saveAddIcon from "./Icons/saveAddIcon.svg";
+import yellowShareIcon from "./Icons/yellowShareIcon.svg";
+import rightArrow from "./Icons/rightArrow.svg";
+import verifiedBadge from "./Icons/verifiedBadge.svg";
+import facebookIcon from "./Icons/facebook-icon.svg";
+import instaIcon from "./Icons/insta-icon.svg";
+
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
 import moodImage from "./Icons/moodImage.svg";
@@ -62,6 +70,12 @@ import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
 import profilePhoto from "./Images/profilePhoto.png";
+import videoPreviewPic from "./Images/videoPreviewPic.png";
+import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
+import smallVideoCardPic from "./Images/smallVideoCardPic.png";
+import articleFeaturedPic from "./Images/articleFeaturedPic.png";
+import smallArticleCardPic from "./Images/smallArticleCardPic.png";
+import articleContentPic from "./Images/articleContentPic.png";
 
 
 
@@ -125,5 +139,18 @@ export {
   quickChatPic, 
   profilePhoto,
   framer2,
-  arrow
+  arrow,
+  videoPreviewPic,
+  playVideoIcon,
+  videoDesktopPreviewPic,
+  smallVideoCardPic,
+  saveAddIcon,
+  yellowShareIcon,
+  articleFeaturedPic,
+  smallArticleCardPic,
+  rightArrow,
+  articleContentPic, 
+  verifiedBadge,
+  facebookIcon,
+  instaIcon
 };

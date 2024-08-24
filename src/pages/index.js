@@ -9,6 +9,7 @@ import Authentication from "./Authentication";
 
 
 
+
 export {
   Dashboard,
   JoinCommunities,
@@ -17,5 +18,5 @@ export {
   Therapist,
   Communities,
   Authentication,
-  Payment
+  Payment,
 };
