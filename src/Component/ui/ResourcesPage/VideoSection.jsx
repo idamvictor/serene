@@ -1,36 +1,41 @@
 import ReactPlayer from 'react-player';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { playVideoIcon, videoPreviewPic, filterIcon, arrowDown, yellowShareIcon, saveAddIcon, smallVideoCardPic } from '@/assets';
 import SmallVideoCard from './SmallVideoCard';
 import VideoCard from './VideoCard';
 
-const VideoSection = () => {
-    const [isPlaying, setIsPlaying] = useState(false);
-  
-    const handlePlay = () => setIsPlaying(true);
-    const handlePause = () => setIsPlaying(false);
+const VideoSection = ({ isVideoPlaying, setIsVideoPlaying}) => {
+
+    const handlePlay = () => {
+        setIsVideoPlaying(true);
+    };
+
+    //* function to handle reset
+    // const handleStop = () => {
+    //     setIsVideoPlaying(false); 
+    // };
 
   return (
     <>
     <section className={` mb-4 grid grid-cols-1 lg:grid-cols-[2fr_1fr] auto-rows-auto gap-3 lg:gap-5 xl:gap-7 `}>
 
             {/* VIDEO PLAYER SECTION */}
-        <div  className='rounded-[11px] h-[13rem] lg:h-full overflow-hidden border border-[#666666] lg:col-span-1 lg:row-span-1'>
+        <div  className='rounded-[11px] h-[13rem] lg:h-full overflow-hidden border border-[#666666] lg:col-span-1 lg:row-span-1 '>
             <ReactPlayer
                 url='https://www.youtube.com/watch?v=LXb3EKWsInQ'
                 onStart={handlePlay}
-                onPause={handlePlay}
-                onEnded={handlePause}
-                playIcon={playVideoIcon}
+                playIcon={<div className='rounded-full border border-[#919191] border-opacity-[6%] bg-[#000000] bg-opacity-25 backdrop-blur-md size-[60px] md:size-[80px] xl:size-[100px] flex items-center justify-center '><img src={playVideoIcon} className='size-8 md:size-10 xl:size-12' /></div>}
+                playing={true}
                 controls={true} 
                 width={"100%"}
                 height={"100%"}
+                light={!isVideoPlaying ? true : null}
             />
         </div>
         
 
             {/* LAYOUT WHEN VIDEO IS NOT PLAYED */}
-        {!isPlaying && (
+        {!isVideoPlaying && (
             <>
                 {/* RECOMMENDED VIDEOS */}
                 <section className="lg:col-span-1 ">
@@ -119,7 +124,7 @@ const VideoSection = () => {
         )}
             
             {/* LAYOUT WHEN IT IS PLAYED */}
-        {isPlaying && (
+        {isVideoPlaying && (
             <>
                 <section className='row-span-2'>
                     <h2 className=' text-white text-xl text-opacity-80 font-bold'>Related video</h2>

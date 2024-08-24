@@ -1,12 +1,11 @@
 import Layout from "@/Component/Shared/Layout";
-import ArticleSection from "@/Component/ui/ArticleSection";
-import VideoSection from "@/Component/ui/VideoSection";
+import ArticleSection from "@/Component/ui/ResourcesPage/ArticleSection";
+import VideoSection from "@/Component/ui/ResourcesPage/VideoSection";
 import { useState } from "react";
 
 
 const ResourceBtn = ({activeTab, setActiveTab}) => {
   const tabs = ["Videos", "Articles", "Podcasts", "Careers"];
-
   return(
       <>
           {tabs.map((tab) => (
@@ -27,11 +26,19 @@ const ResourceBtn = ({activeTab, setActiveTab}) => {
   );
 };
 
+
+//* MAIN RESOURCES COMPONENT
 const Resources = () => {
   const [activeTab, setActiveTab] = useState("Videos");
 
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);  //* to control the video logic when a video is being played
+
+  const handleBackClick = () => {
+    setIsVideoPlaying(false);   
+  };
+
   return (
-    <Layout>
+    <Layout onBack={isVideoPlaying ? handleBackClick : null}>
       <section className="mt-24 lg:mt-28 mx-4 lg:mx-5 xl:mx-8 ">
       <h1 className="text-white text-xl lg:text-2xl xl:text-3xl font-bold">Resources</h1>
 
@@ -41,13 +48,20 @@ const Resources = () => {
 
       {/* RESOURCES MAIN CONTENT */}
       <main>
+
+        {/* VIDEO SECTION */}
         {activeTab === "Videos" && (
-          <VideoSection />
+          <VideoSection
+            isVideoPlaying={isVideoPlaying} 
+            setIsVideoPlaying={setIsVideoPlaying}
+          />
         )}
 
+        {/* ARTICLE SECTION */}
         {activeTab === "Articles" && (
           <ArticleSection />
         )}
+        
       </main>
 
       </section>

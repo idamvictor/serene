@@ -1,6 +1,6 @@
 import { videoPreviewPic } from "@/assets";
-import ArticleCard from "@/Component/ui/ArticleCard";
-import VideoCard from "@/Component/ui/VideoCard";
+import ArticleCard from "@/Component/ui/ResourcesPage/ArticleCard";
+import VideoCard from "@/Component/ui/ResourcesPage/VideoCard";
 import { useState } from "react";
 
 const ResourceBtn = ({activeTab, setActiveTab}) => {
