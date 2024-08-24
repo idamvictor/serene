@@ -19,5 +19,4 @@ export {
   Communities,
   Authentication,
   Payment,
-  ArticleContent
 };

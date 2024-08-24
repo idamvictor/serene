@@ -33,12 +33,15 @@ const Resources = () => {
 
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);  //* to control the video logic when a video is being played
 
+  const [selectedArticle, setSelectedArticle] = useState(false); //* to control the article logic when an article is selected
+
   const handleBackClick = () => {
-    setIsVideoPlaying(false);   
+    setIsVideoPlaying(false);
+    setSelectedArticle(false)   
   };
 
   return (
-    <Layout onBack={isVideoPlaying ? handleBackClick : null}>
+    <Layout onBack={isVideoPlaying || selectedArticle ? handleBackClick : null}>
       <section className="mt-24 lg:mt-28 mx-4 lg:mx-5 xl:mx-8 ">
       <h1 className="text-white text-xl lg:text-2xl xl:text-3xl font-bold">Resources</h1>
 
@@ -48,7 +51,6 @@ const Resources = () => {
 
       {/* RESOURCES MAIN CONTENT */}
       <main>
-
         {/* VIDEO SECTION */}
         {activeTab === "Videos" && (
           <VideoSection
@@ -59,9 +61,12 @@ const Resources = () => {
 
         {/* ARTICLE SECTION */}
         {activeTab === "Articles" && (
-          <ArticleSection />
+          <ArticleSection
+            selectedArticle={selectedArticle}
+            setSelectedArticle={setSelectedArticle}
+          />
         )}
-        
+
       </main>
 
       </section>

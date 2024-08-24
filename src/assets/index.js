@@ -37,6 +37,9 @@ import playVideoIcon from "./Icons/playVideoIcon.svg";
 import saveAddIcon from "./Icons/saveAddIcon.svg";
 import yellowShareIcon from "./Icons/yellowShareIcon.svg";
 import rightArrow from "./Icons/rightArrow.svg";
+import verifiedBadge from "./Icons/verifiedBadge.svg";
+import facebookIcon from "./Icons/facebook-icon.svg";
+import instaIcon from "./Icons/insta-icon.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -72,6 +75,7 @@ import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
 import smallVideoCardPic from "./Images/smallVideoCardPic.png";
 import articleFeaturedPic from "./Images/articleFeaturedPic.png";
 import smallArticleCardPic from "./Images/smallArticleCardPic.png";
+import articleContentPic from "./Images/articleContentPic.png";
 
 
 
@@ -144,5 +148,9 @@ export {
   yellowShareIcon,
   articleFeaturedPic,
   smallArticleCardPic,
-  rightArrow
+  rightArrow,
+  articleContentPic, 
+  verifiedBadge,
+  facebookIcon,
+  instaIcon
 };

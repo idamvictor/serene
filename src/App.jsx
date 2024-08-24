@@ -1,4 +1,4 @@
-import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, ArticleContent } from "./pages";
+import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities } from "./pages";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
 import Survey from "./features/survey/Survey";
