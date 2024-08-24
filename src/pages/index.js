@@ -6,7 +6,7 @@ import Therapist from "./Therapist";
 import Communities  from "./Communities";
 import Payment from "./Payment";
 import Authentication from "./Authentication";
-import ArticleContent from "./ArticleContent";
+
 
 
 

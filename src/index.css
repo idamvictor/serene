@@ -90,8 +90,10 @@ input[type="checkbox"]:checked::after {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    
 }
+
+
+
     /* ------- RESPONSIVENESS FOR MOBILES ------ */
 @media screen and (max-width: 1023.33px) {
     .serene-sidebar {

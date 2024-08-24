@@ -45,7 +45,7 @@ const DashboardResources = () => {
                 <main>
                 {/* FOR VIDEOS SECTION */}
                 {activeTab === "Videos" && (
-                    <div className="mt-5 grid grid-cols-3 auto-rows-auto gap-3" >
+                    <div className="mt-5 grid grid-cols-1 place-content-center lg:grid-cols-3 auto-rows-auto gap-3" >
                         <VideoCard 
                             videoPreviewImg={videoPreviewPic}
                             videoTitle={`How to manage your mental health|Leon Taylor|TEDxClapham`}
