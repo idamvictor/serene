@@ -55,7 +55,10 @@ const Header = ({ onBack }) => {
           </div>
 
           <div className="lg:ml-5">
-            <img src={userDashboardProfilePic} alt="user profile icon" className="rounded-full h-9 w-9 " />
+        {onBack
+          ? (<img src={rightArrow} alt="" className="flex bg-[#2a2a2a] py-2 px-4 rounded-[6px] " onClick={onBack} />)
+          : (<img src={userDashboardProfilePic} alt="user profile icon" className="rounded-full h-9 w-9 " />)
+        }
           </div>
         </div>
       </div>
