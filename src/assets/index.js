@@ -33,6 +33,7 @@ import metamany from "./Icons/Frame 237591.svg"
 import login from "./Icons/login.svg"
 import framer2 from "./Icons/framer2.svg"
 import arrow from "./Icons/arrow.svg"
+import arrowBack from "./Icons/arrowBack.svg"
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
 import moodImage from "./Icons/moodImage.svg";
@@ -125,5 +126,6 @@ export {
   quickChatPic, 
   profilePhoto,
   framer2,
-  arrow
+  arrow,
+  arrowBack
 };

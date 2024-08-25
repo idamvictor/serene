@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 import AuthLayout from "@/Component/Shared/AuthLayout";
 import { Modal } from "@/Component/Shared/AuthLayout";
 import WelcomeMsg from "./WelcomeMsg";
+import { arrowBack } from "@/assets";
 
 const Survey = () => {
   const { data: questions, error, isLoading } = useGetQuestionsQuery();
@@ -59,10 +60,6 @@ const userId = userInfo._id
   if (showMessage){
     return <WelcomeMsg/>
   }
-  const handleSkipForNow = () => {
-    saveProgress();
-    navigate("/"); // Navigate to the homepage or another section of your app
-  };
 
   if (isLoading) return <p className="text-serene">Loading questions...</p>;
   if (error) return <p className="text-serene">Error loading questions: {error.message}</p>;
@@ -76,13 +73,7 @@ const userId = userInfo._id
             className="text-gray-400"
             disabled={currentQuestionIndex === 0} // Disable back button if on the first question
           >
-            Back
-          </button>
-          <button
-            onClick={handleSkipForNow}
-            className="text-[#bebdbd] font-semibold text-base hover:text-serene"
-          >
-            Skip for now
+            <img src={arrowBack}  />
           </button>
         </div>
         <div className="mx-10 mt-6">
