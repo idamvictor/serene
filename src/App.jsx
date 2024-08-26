@@ -1,6 +1,7 @@
-import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Payment } from "./pages";
+import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Payment, Therapists } from "./pages";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
+
 
 
 function App() {
@@ -32,6 +33,10 @@ function App() {
     {
       path:"/payment",
       element: <Payment />
+    },
+    {
+      path:"/therapists",
+      element: <Therapists />
     },
   ]);
 
