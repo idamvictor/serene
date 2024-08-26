@@ -35,8 +35,9 @@ const Loader = () => {
 };
 
 const ConnectWallet = () => {
-  const notify = () =>
-    toast("Welcome!  Be serene :)", {
+
+  const notify = (message) =>
+    toast(message, {
       duration: 5000,
       style: {
         padding: "10px 40px",
@@ -61,22 +62,28 @@ const ConnectWallet = () => {
 
       try {
         const response = await loginUser(walletid).unwrap();
+         dispatch(setCredentials(response.data));
         if (response.newuser) {
           navigate("/survey");
+          notify("Fill in the survey")
 
         } else {
-          navigate("/survey");
-           notify();
+          navigate("/");
+           notify("Welcome Back!");
           
         }
-        dispatch(setCredentials(response.data));
+        // dispatch(setCredentials(response.data));
       } catch (error) {
-        console.error("login/sign error:", error);
+        notify("login/sign error: server down!");
       } finally {
         setIsLoading(false); 
       }
     } else {
-      console.log("Click on Metamask to create an account");
+      notify("redirecting you to metamask...");
+       window.open(
+         "https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn",
+         "_blank"
+       );
     }
   }
 
@@ -95,7 +102,7 @@ const ConnectWallet = () => {
                     Approved
                   </h5>
                   <div className="flex items-center gap-2 mt-8">
-                    <img src={metamask} width={40} />
+                    <img src={metamask} width={40} className="hover:w-12 hover:cursor-pointer"/>
                     <span
                       id="connectButton"
                       onClick={connectWallet}
