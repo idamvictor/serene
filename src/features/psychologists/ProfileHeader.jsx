@@ -39,3 +39,6 @@ export default function ProfileHeader({ name, avatarSrc, coverSrc, children, pro
     </header>
   );
 };
+
+
+
