@@ -25,6 +25,21 @@ import lang from "./Icons/lang.svg";
 import leftArrow from "./Icons/rightArrow.svg";
 import ruleArrowDown from "./Icons/rule-arrow-down.svg";
 import yellowPlusSign from "./Icons/yellowPlusSign.svg";
+import metamask from "./Icons/metamask_symbol.svg.svg"
+import coinbase from "./Icons/coinbase.svg"
+import rainbow from "./Icons/rainbow.svg"
+import wallet from "./Icons/wallet.svg"
+import metamany from "./Icons/Frame 237591.svg"
+import login from "./Icons/login.svg"
+import framer2 from "./Icons/framer2.svg"
+import arrow from "./Icons/arrow.svg"
+import playVideoIcon from "./Icons/playVideoIcon.svg";
+import saveAddIcon from "./Icons/saveAddIcon.svg";
+import yellowShareIcon from "./Icons/yellowShareIcon.svg";
+import rightArrow from "./Icons/rightArrow.svg";
+import verifiedBadge from "./Icons/verifiedBadge.svg";
+import facebookIcon from "./Icons/facebook-icon.svg";
+import instaIcon from "./Icons/insta-icon.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -34,8 +49,7 @@ import communityPic1 from "./Images/communityPic1.png";
 import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
-import userProfilePic from "./Images/userProfilePic.png";
-import profilePhoto from "./Images/profilePhoto.png";
+import userProfilePic from "./Images/userProfilePic.png";;
 import headerImg from "./Images/headerImg.png";
 
 import americanExpress from "./Icons/americanExpress.svg";
@@ -55,6 +69,15 @@ import communityCoverPic from "./Images/communityCoverPic.png";
 import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
+import profilePhoto from "./Images/profilePhoto.png";
+import videoPreviewPic from "./Images/videoPreviewPic.png";
+import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
+import smallVideoCardPic from "./Images/smallVideoCardPic.png";
+import articleFeaturedPic from "./Images/articleFeaturedPic.png";
+import smallArticleCardPic from "./Images/smallArticleCardPic.png";
+import articleContentPic from "./Images/articleContentPic.png";
+
+
 
 
 export {
@@ -78,7 +101,6 @@ export {
   postMessage,
   postPic,
   userProfilePic,
-  profilePhoto,
   headerImg,
   about,
   experience,
@@ -101,6 +123,12 @@ export {
   usdc,
   usdt,
   visa,
+  metamask,
+  coinbase,
+  rainbow,
+  wallet,
+  metamany,
+  login,
   leftArrow,
   ruleArrowDown,
   communityCoverPic,
@@ -108,5 +136,21 @@ export {
   yellowPlusSign,
   userDashboardProfilePic,
   articlePic,
-  quickChatPic
+  quickChatPic, 
+  profilePhoto,
+  framer2,
+  arrow,
+  videoPreviewPic,
+  playVideoIcon,
+  videoDesktopPreviewPic,
+  smallVideoCardPic,
+  saveAddIcon,
+  yellowShareIcon,
+  articleFeaturedPic,
+  smallArticleCardPic,
+  rightArrow,
+  articleContentPic, 
+  verifiedBadge,
+  facebookIcon,
+  instaIcon
 };

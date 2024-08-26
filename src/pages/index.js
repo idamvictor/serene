@@ -6,10 +6,22 @@ import Therapist from "./Therapist";
 import Communities  from "./Communities";
 import Payment from "./Payment";
 import Therapists from "./Therapists";
+import Authentication from "./Authentication";
+
 
 
 
 export {
+  Dashboard,
+  JoinCommunities,
+  Resources,
+  Rooms,
+  Therapist,
+  Communities,
+  Authentication,
+  Payment,
+};
+
     Dashboard,
     JoinCommunities,
     Resources,
@@ -18,4 +30,4 @@ export {
     Communities,
     Payment,
     Therapists
-}
+};

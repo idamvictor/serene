@@ -48,12 +48,13 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
       },
       backgroundImage: {
-        "serene-image": "url('/src/assets/Onboarding.png')",
+        "serene-image": "url('/src/assets/Images/Onboarding.png')",
       },
     },
   },
   plugins: [
     require("tailwindcss-animate"),
+    require('@tailwindcss/forms')
     // require('savvywombat/tailwindcss-grid-areas')
   ],
 };

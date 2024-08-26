@@ -27,9 +27,9 @@ export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinati
       <Link 
         to={destinationLink} 
         className={`flex items-center gap-2 text-base py-[12px]  
-          ${location.pathname === destinationLink ? "text-serene " : "hover:text-serene text-muted-foreground"} `}
+          ${location.pathname === destinationLink ? "text-serene border-l-2 border-l-white bg-serene bg-opacity-[8%] " : "hover:text-serene text-muted-foreground"} `}
         onClick={handleClick} >
-          {Icon && <Icon className={`text-xl`} />}
+          {Icon && <Icon className={`text-xl ml-4`} />}
           {linkName}
       </Link>
     </>
@@ -41,14 +41,14 @@ export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinati
 export function SideBar() {
 
   return (
-    <aside className="serene-sidebar lg:bg-[#272727] text-serene-ash lg:fixed lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[15.625rem] ">
-      <div className="lg:px-5 lg:pt-10 lg:pb-10 ">
+    <aside className="serene-sidebar lg:bg-[#272727] text-serene-ash lg:fixed lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[12.625rem] xl:w-[15.625rem] ">
+      <div className="lg:pt-8 xl:pt-10 xl:pb-10 ">
       
-        <div className="serene-logo">
-          <img src={sereneSign} className='lg:w-[7rem] lg:h-[2.75rem] ' />  
+        <div className="serene-logo lg:mx-5">
+          <img src={sereneSign} className='lg:w-[6.2rem]   xl:w-[7rem] lg:h-[2.75rem] ' />  
         </div>
 
-        <div className="lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24">
+        <div className="sideBar-links-cont lg:mx-2 lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24 xl:mt-6 xl:gap-48 ">
           <nav className="top-nav lg:flex lg:flex-col lg:gap-2">
             <NAV_LINK 
               destinationLink={"/"}

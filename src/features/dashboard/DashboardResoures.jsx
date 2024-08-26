@@ -1,38 +1,93 @@
-import ArticleCard from "@/Component/ui/ArticleCard";
+import { videoPreviewPic } from "@/assets";
+import ArticleCard from "@/Component/ui/ResourcesPage/ArticleCard";
+import VideoCard from "@/Component/ui/ResourcesPage/VideoCard";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
-const ResourceBtn = ({ resource }) => {
+const ResourceBtn = ({activeTab, setActiveTab}) => {
+    const tabs = ["Videos", "Articles", "Podcasts", "Careers"];
+
     return(
-        <button className="w-[25%] py-[.3rem] text-sm border border-[#201f1f] text-center rounded-md text-[#c7c7c7] bg-[#201f1f] hover:bg-serene hover:text-[#191919] hover:font-semibold hover:border-serene xl:text-base ">
-            {resource}
-        </button>
+        <>
+            {tabs.map((tab) => (
+                <button 
+                key={tab}
+                className={`w-[25%] py-[.3rem] text-sm text-center rounded-md xl:text-[.95rem] ${
+                    tab === activeTab
+                        ? "bg-serene font-semibold text-[#191919] "
+                        : "bg-[#201f1f] border border-[#201f1f] text-[#c7c7c7] "
+                }`} 
+                onClick={() => setActiveTab(tab)}
+                >
+                    {tab}
+                </button>
+                ))
+            }
+        </>
     );
 };
 
 const DashboardResources = () => {
+    const [activeTab, setActiveTab] = useState("Videos");
+
     return (  
         <>
-            <section className="dashboard-resources  bg-[#272727] flex flex-col p-8 rounded-lg col-span-2 h-auto">
+            <section className="dashboard-resources  bg-[#272727] flex flex-col rounded-lg col-span-2 h-auto mt-7 py-5 px-6 lg:px-4 md:mt-[-18px] xl:px-8 ">
                 <div className="flex justify-between items-center">
-                        <h4 className="text-white text-xl font-semibold">Resources</h4> 
-                        <button className="text-serene-gray font-medium text-xs">See all</button>
+                        <h4 className="text-white text-lg md:text-xl font-semibold">Resources</h4> 
+                        <Link to={"/resources"} className="text-serene-gray font-medium text-xs">See all</Link>
                 </div>
 
-                <div className="resourceCard-btn-group flex justify-center mt-4 gap-7">
-                    <ResourceBtn resource={"Articles"} />
-                    <ResourceBtn resource={"Videos"} />
-                    <ResourceBtn resource={"Podcasts"} />
-                    <ResourceBtn resource={"Careers"} />
+                <div className="resourceCard-btn-group md:flex md:justify-center md:mt-4 md:gap-7 hidden">
+                    <ResourceBtn activeTab={activeTab} setActiveTab={setActiveTab} />
                 </div>
 
                 <main>
-                    <ArticleCard 
-                        articleTitle={`How I was able to fight my depression of 10 years now`}
-                        articleDescription={`For a decade, I lived in the shadow of depression. It was a constant companion, sapping my energy, motivation, and joy.`}
-                    />
-                    <ArticleCard 
-                        articleTitle={`How I was able to fight my depression of 10 years now`}
-                        articleDescription={`For a decade, I lived in the shadow of depression. It was a constant companion, sapping my energy, motivation, and joy.`}
-                    />
+                {/* FOR VIDEOS SECTION */}
+                {activeTab === "Videos" && (
+                    <div className="mt-5 grid grid-cols-1 place-content-center lg:grid-cols-3 auto-rows-auto gap-3" >
+                        <VideoCard 
+                            videoPreviewImg={videoPreviewPic}
+                            videoTitle={`How to manage your mental health|Leon Taylor|TEDxClapham`}
+                            videoChannel={`TEDxTalks`}
+                            videoViews={`11k`}
+                            videoPostDate={`1hour`}
+                            videoDuration={`15:30`}
+                        />
+                        <VideoCard 
+                            videoPreviewImg={videoPreviewPic}
+                            videoTitle={`WARNING SIGNS | A Cinematic Short Film about Mental Health`}
+                            videoChannel={`Christian Maté Grab`}
+                            videoViews={`140k`}
+                            videoPostDate={`1week`}
+                            videoDuration={`2:30`}
+                        /> 
+                        <VideoCard 
+                             videoPreviewImg={videoPreviewPic}
+                             videoTitle={`We see you. A campaign for mental health care`}
+                             videoChannel={`KGH Foundation`}
+                             videoViews={`20k`}
+                             videoPostDate={`4months`}
+                             videoDuration={`1:00`}
+                        />
+                    </div>
+                )}
+
+
+                {/* FOR ARTICLES SECTION */}
+                {activeTab === "Articles" && (
+                    <>
+                        <ArticleCard 
+                            articleTitle={`How I was able to fight my depression of 10 years now`}
+                            articleDescription={`For a decade, I lived in the shadow of depression. It was a constant companion, sapping my energy, motivation, and joy.`}
+                        />
+                        <ArticleCard 
+                            articleTitle={`How I was able to fight my depression of 10 years now`}
+                            articleDescription={`For a decade, I lived in the shadow of depression. It was a constant companion, sapping my energy, motivation, and joy.`}
+                        />
+                    </> 
+                )}
+                   
                 </main>
             </section>
         </>
