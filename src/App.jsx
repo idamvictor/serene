@@ -1,8 +1,9 @@
-import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities } from "./pages";
+import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Authentication } from "./pages";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
 import Survey from "./features/survey/Survey";
 import { Toaster } from "react-hot-toast";
+import ConnectWallet from "./features/authentication/ConnectWallet";
 
 
 
@@ -32,12 +33,24 @@ function App() {
       path:"/community",
       element: <Communities />,
     },
+    {
+      path:"/authpage",
+      element: <Authentication/>
+    },
+    {
+      path:"/wallet",
+      element: <ConnectWallet/>
+    },
+    {
+      path:"/survey",
+      element: <Survey/>
+    }
   ]);
 
   return (
     <>
       <Toaster
-        position="bottom-right"
+        position="top-center"
         reverseOrder={false}
         gutter={8}
         containerClassName=""
@@ -47,6 +60,7 @@ function App() {
           className: "",
           duration: 5000,
           style: {
+            padding: "50px",
             background: "#363636",
             color: "yellow",
           },

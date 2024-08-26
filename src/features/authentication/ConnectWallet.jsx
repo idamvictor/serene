@@ -1,5 +1,5 @@
 import { useState,useEffect } from "react";
-import { metamask, coinbase, rainbow, wallet, metamany, login } from "@/assets";
+import { metamask, coinbase, rainbow, wallet, metamany, login,sereneSign,spinner } from "@/assets";
 import AuthLayout, { Modal } from "@/Component/Shared/AuthLayout";
 import { useDispatch } from "react-redux";
 import { useLoginUserMutation } from "@/services/auth/apiSlice";
@@ -10,30 +10,40 @@ import toast, { Toaster } from "react-hot-toast";
 
 // Loader Component
 const Loader = () => {
-  useEffect(() => {
-    const toastId = toast.loading("Loading...");
-    return () => {
-      toast.dismiss(toastId);
-    };
-  }, []);
-
   return (
     <div className="flex justify-center items-center h-full text-white">
-      <div className="loader text-serene"> Ginger the mannnnnn!!</div> 
-   </div>
+      <div className="loader text-serene">
+        <div className="flex flex-col justify-between items-center mt-20 h-auto md:my-24 md:h-32">
+          <div className="flex mb-5 md:mb-7">
+            <img src={sereneSign} width={80} className="md:w-24" />
+          </div>
+          <div className="text-center">
+            <h3 className="text-white text-2xl md:text-4xl flex flex-col font-thin mb-2 md:mb-3">
+              Welcome to a space to be
+            </h3>
+            <span className="font-semibold text-white text-2xl md:text-4xl text-center">
+              Invisible But Heard
+            </span>
+          </div>
+          <div className="flex flex-col justify-center items-center gap-3 md:gap-4 mt-10 md:mt-14">
+           <img src={spinner} width={50} height={50} />
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
 const ConnectWallet = () => {
   const notify = () =>
-    toast("Hello Darkness!", {
-      duration: Infinity,
-      icon: "👏",
+    toast("Welcome!  Be serene :)", {
+      duration: 5000,
       style: {
-        padding: "15px",
+        padding: "10px 40px",
         borderRadius: "5px",
-        background: "#333",
-        color: "yellow",
+        border: "1px solid #C7C7C7",
+        background: "#0B0B0B",
+        color: "#E3DAFF",
       },
     });
   const navigate = useNavigate();
@@ -55,7 +65,7 @@ const ConnectWallet = () => {
           navigate("/survey");
 
         } else {
-          navigate("/");
+          navigate("/survey");
            notify();
           
         }
@@ -89,11 +99,11 @@ const ConnectWallet = () => {
                     <span
                       id="connectButton"
                       onClick={connectWallet}
-                      className="text-white font-semibold hover:text-serene cursor-pointer"
+                      className="text-serene opacity-65 hover:opacity-95 font-semibold  hover:text-serene cursor-pointer"
                     >
                       Metamask Wallet
                     </span>
-                    <Toaster />
+                   
                   </div>
                 </div>
                 <div className="mt-10">
