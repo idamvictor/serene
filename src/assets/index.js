@@ -50,7 +50,7 @@ import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";;
-import headerImg from "./Images/headerImg.png";
+import headerImg from "./images/headerImg.png";
 
 import americanExpress from "./Icons/americanExpress.svg";
 import bitcoin from "./Icons/bitcoin.png";
@@ -69,13 +69,16 @@ import communityCoverPic from "./Images/communityCoverPic.png";
 import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
-import profilePhoto from "./Images/profilePhoto.png";
+import profilePhoto from "./images/profilePhoto.png";
 import videoPreviewPic from "./Images/videoPreviewPic.png";
 import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
 import smallVideoCardPic from "./Images/smallVideoCardPic.png";
 import articleFeaturedPic from "./Images/articleFeaturedPic.png";
 import smallArticleCardPic from "./Images/smallArticleCardPic.png";
 import articleContentPic from "./Images/articleContentPic.png";
+
+// settings image
+import profileAvatar from './Images/profile-avatar.png'
 
 
 
@@ -152,5 +155,6 @@ export {
   articleContentPic, 
   verifiedBadge,
   facebookIcon,
-  instaIcon
+  instaIcon,
+  profileAvatar
 };
