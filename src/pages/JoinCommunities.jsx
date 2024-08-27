@@ -57,13 +57,14 @@ const Communities = () => {
         <div className=" flex justify-between items-center">
           <h2 className="text-serene-gray font-semibold text-base xl:text-xl ">Explore all other communities</h2>
           
-          <div className="filter-dropdown border border-red-100 flex items-center rounded-xl w-20 justify-around py-[.1rem] ">
+          {/* TODO: REMOVE LATER  */}
+          {/* <div className="filter-dropdown border border-red-100 flex items-center rounded-xl w-20 justify-around py-[.1rem] ">
             <img src={filterIcon} alt="" className="w-5 h-5 " />
             <input type="text" placeholder="Filter" id="filter" className=" outline-none text-xs bg-transparent w-7 font-medium box-border "/>
             <img src={arrowDown} alt="" className="w-4 h-4"  />
           </div>
 
-          {/* <ul id="dropdown-list">
+          <ul id="dropdown-list">
               <li data-value="option-1">Option 1</li>
           </ul> */}
         </div>

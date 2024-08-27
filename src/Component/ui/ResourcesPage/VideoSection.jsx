@@ -82,15 +82,17 @@ const VideoSection = ({ isVideoPlaying, setIsVideoPlaying}) => {
                     <div className=" flex justify-between items-center">
                         <h2 className="text-white font-semibold xl:text-lg ">Other videos</h2>
                         
-                        <div className="filter-dropdown border border-red-100 flex items-center rounded-xl w-[4rem] justify-around py-[.1rem] ">
+
+                        {/* CUSTOM FILTER BUTTON REMOVED */}
+                        {/* <div className="filter-dropdown border border-red-100 flex items-center rounded-xl w-[4rem] justify-around py-[.1rem] ">
                             <img src={filterIcon} alt="" className="size-4 " />
                             <input type="text" placeholder="All" id="filter" className=" outline-none text-xs bg-transparent w-4 font-medium box-border "/>
                             <img src={arrowDown} alt="" className="size-4"  />
                         </div>
 
-                        {/* <ul id="dropdown-list">
+                        <ul id="dropdown-list">
                             <li data-value="option-1">Option 1</li>
-                        </ul> */}
+                        </ul>  */}
                     </div>
     
                     <div className="mt-5 grid grid-cols-1 place-content-center lg:grid-cols-3 auto-rows-auto gap-3" >

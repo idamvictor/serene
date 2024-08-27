@@ -11,7 +11,7 @@ export const communityActionBtns = ({BtnText}) => {
             <button className="px-4 py-2 text-white bg-[#242424] ">{BtnText}</button>
         </>
      );
-}
+};
 
 
 const Communities = () => {
@@ -29,6 +29,8 @@ const Communities = () => {
                 name={``}
                 avatarSrc={communityProfilePic}
                 coverSrc={communityCoverPic}
+                profileCoverStyling={`h-20 `}
+                profileHeaderStyling={`size-14`}
             >
                 <div className="hidden md:flex md:self-end md:items-center md:justify-between md:mt-14 max-md:mt-10 md:w-[100%] ">
                     <h3 className="text-white font-semibold ">Cheers Champions</h3>
