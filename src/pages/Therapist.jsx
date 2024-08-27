@@ -11,6 +11,13 @@ import StarRating from "@/Component/ui/StarRating";
 
 export default function Therapist() {
   const [activeTab, setActiveTab] = useState("Overview");
+  const tabs = [
+    { name: "Booking", width: "14.75rem" },
+    { name: "Overview", width: "14.75rem" },
+    { name: "Reviews", width: "14.75rem" },
+    // You can add more tabs here or adjust the existing ones
+  ];
+
 
   const profileData = {
     name: "Mary-Ann Okoli",
@@ -64,7 +71,7 @@ export default function Therapist() {
 
         <div className="flex flex-col mt-10 max-w-full text-base w-[51.625rem]">
           {/* Pass setActiveTab to NavigationTabs to update the active tab */}
-          <NavigationTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+          <NavigationTabs activeTab={activeTab} setActiveTab={setActiveTab} tabs={tabs} />
 
           {/* Conditionally render sections based on the active tab */}
           {activeTab === "Booking" && (

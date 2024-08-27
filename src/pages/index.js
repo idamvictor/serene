@@ -3,12 +3,10 @@ import JoinCommunities from "./JoinCommunities";
 import Resources from "./Resources";
 import Rooms from "./Rooms";
 import Therapist from "./Therapist";
-import Communities  from "./Communities";
+import Communities from "./Communities";
 import Payment from "./Payment";
+import Therapists from "./Therapists";
 import Authentication from "./Authentication";
-
-
-
 
 export {
   Dashboard,
@@ -19,4 +17,5 @@ export {
   Communities,
   Authentication,
   Payment,
+  Therapists,
 };
