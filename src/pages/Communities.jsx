@@ -14,11 +14,11 @@ export const communityActionBtns = ({BtnText}) => {
 };
 
 
-const Communities = () => {
-    const navigate = useNavigate();
+    const Communities = () => {
+        const navigate = useNavigate();
 
-    const handleBackClick = () => {
-        navigate("/join-communities")
+        const handleBackClick = () => {
+            navigate("/join-communities")
     };
 
   return (

@@ -8,7 +8,7 @@ const ArticleCard = ({articleTitle, articleDescription}) => {
             <div className="article-info md:pr-32 flex flex-col gap-2">
                 <h4 className="font-semibold text-white text-sm md:text-base xl:text-lg ">{articleTitle}</h4>
                 <p className="text-serene-gray font-medium text-[.82rem] md:text-sm leading-6 xl:text-base ">{articleDescription}</p>
-                <button className="border border-1 border-serene rounded-sm text-serene font-medium text-xs flex items-center px-2 py-1 w-[6.5rem] xl:w-[7rem] mt-1 xl:text-sm ">
+                <button className="border border-1 border-serene rounded-sm text-serene font-medium text-xs flex items-center px-2 py-1 w-[6.5rem] xl:w-[7.5rem] mt-1 xl:text-sm ">
                     Read more 
                     <img src={arrowRight} alt="" className="inline-block ml-3 w-4" />
                 </button>
