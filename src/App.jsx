@@ -1,4 +1,15 @@
-import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Authentication } from "./pages";
+// import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Authentication } from "./pages";
+import {
+  Dashboard,
+  JoinCommunities,
+  Rooms,
+  Therapist,
+  Resources,
+  Communities,
+  Payment,
+  Therapists,
+  Authentication,
+} from "./pages";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
 import Survey from "./features/survey/Survey";
@@ -18,6 +29,10 @@ function App() {
       element: <JoinCommunities />,
     },
     {
+      path: "/community",
+      element: <Communities />,
+    },
+    {
       path: "/therapist",
       element: <Therapist />,
     },
@@ -30,21 +45,25 @@ function App() {
       element: <Resources />,
     },
     {
-      path:"/community",
-      element: <Communities />,
+      path: "/authpage",
+      element: <Authentication />,
     },
     {
-      path:"/authpage",
-      element: <Authentication/>
+      path: "/payment",
+      element: <Payment />,
     },
     {
-      path:"/wallet",
-      element: <ConnectWallet/>
+      path: "/wallet",
+      element: <ConnectWallet />,
     },
     {
-      path:"/survey",
-      element: <Survey/>
-    }
+      path: "/survey",
+      element: <Survey />,
+    },
+    {
+      path: "/therapists",
+      element: <Therapists />,
+    },
   ]);
 
   return (
