@@ -1,9 +1,19 @@
 import Layout from "@/Component/Shared/Layout";
 import CommunityCard2 from "@/Component/ui/CommunityCard2";
-import { filterIcon, arrowDown} from "@/assets";
+import { useGetCommunitiesQuery } from "@/services/community/CommunitySlice";
+// import { filterIcon, arrowDown} from "@/assets";
 
 
-const Communities = () => {
+const joinCommunities = () => {
+  const { data: allCommunities, error: allCommunitiesError, isLoading: allCommunitiesLoading} = useGetCommunitiesQuery();
+
+  if (allCommunitiesError) {
+      return <h1>NA ERROR BE THIS</h1>
+  }
+
+  const communities = allCommunities?.data || [];
+ console.log(communities);
+
   return (
     <Layout>
         {/* RECOMMENDED COMMUNITIES SECTION */}
@@ -17,7 +27,17 @@ const Communities = () => {
         <div className="flex justify-center items-center mb-11">
             {/* TOO BULKY. WILL BE ADJUSTED LATER AFTER INTEGRATION */}
           <main className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5 grid-rows-auto">
-            <CommunityCard2
+            {communities.map((community) => (
+                          <CommunityCard2
+                          key={community._id}
+                          communityProfilePic={``}
+                          communityName={community.name}
+                          badgeTitle={`Alcoholics`}
+                          communityDescription={community.description}
+                          communityMembers={`12K+ Members`}
+                        />
+            ))}
+            {/* <CommunityCard2
               communityProfilePic={``}
               communityName={`Cheers Champions`}
               badgeTitle={`Alcoholics`}
@@ -47,7 +67,7 @@ const Communities = () => {
               badgeTitle={`Alcoholics`}
               communityDescription={`A community to help get over the urge for a cold beer`}
               communityMembers={`12K+ Members`}
-            />
+            /> */}
           </main>
         </div>
       </section>
@@ -112,4 +132,4 @@ const Communities = () => {
 }
 
 
-export default Communities;
+export default joinCommunities;

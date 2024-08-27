@@ -1,6 +1,6 @@
 import { apiSlice } from '../auth/apiSlice';
 
-export const CommunitiesApi = apiSlice.injectEndpoints({
+export const CommunitySlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         getCommunities: builder.query({
             query: () => ({
@@ -24,4 +24,4 @@ export const CommunitiesApi = apiSlice.injectEndpoints({
 });
 
 
-export const { useGetCommunitiesQuery, useGetCommunityPostQuery,  useSendCommunityPostQuery } = CommunitiesApi;
+export const { useGetCommunitiesQuery, useGetCommunityPostQuery,  useSendCommunityPostQuery } = CommunitySlice;

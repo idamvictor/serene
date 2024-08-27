@@ -25,11 +25,11 @@ function App() {
       element: <Dashboard />,
     },
     {
-      path: "/join-communities",
+      path: "/community",
       element: <JoinCommunities />,
     },
     {
-      path: "/community",
+      path: "/community/:communityId",
       element: <Communities />,
     },
     {

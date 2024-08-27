@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom';
-import { useEffect, useState } from "react";
+import { useEffect, useState, useResolvedPath } from "react";
 import { AiFillHome } from "react-icons/ai";
 import { IoCubeSharp, IoPerson, IoSettings } from "react-icons/io5";
 import { RiGlobalFill, RiLogoutBoxFill } from "react-icons/ri";
@@ -10,12 +10,14 @@ import {sereneSign } from "@/assets";
 export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinationLink}) => {
   const location = useLocation();
   const [active, setActive] = useState("");
+  const isActive = location.pathname === destinationLink || location.pathname.startsWith(`${destinationLink}/`);
 
   useEffect(() => {
-    //* Setting the active state based on the current location path
-    if (location.pathname === destinationLink) {
-      setActive(destinationLink);
-    }
+  //* Setting the active state based on the current location path
+    location.pathname.startsWith(destinationLink)
+      ? setActive(destinationLink)
+      : setActive("")
+
   }, [location.pathname, destinationLink]);
 
   const handleClick = (link) => {
@@ -27,7 +29,7 @@ export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinati
       <Link 
         to={destinationLink} 
         className={`flex items-center gap-2 lg:text-sm xl:text-base py-[12px]  
-          ${location.pathname === destinationLink ? "text-serene border-l-2 border-l-white bg-serene bg-opacity-[8%] " : "hover:text-serene text-muted-foreground"} `}
+          ${isActive ? "text-serene border-l-2 border-l-white bg-serene bg-opacity-[8%] " : "hover:text-serene text-muted-foreground"} `}
         onClick={handleClick} >
           {Icon && <Icon className={`text-xl ml-4`} />}
           {linkName}
@@ -56,7 +58,7 @@ export function SideBar() {
               linkName={"Dashboard"}
             />
              <NAV_LINK 
-              destinationLink={"/join-communities"}
+              destinationLink={"/community"}
               reactIcon={IoIosPeople}
               linkName={"Communities"}
             />
