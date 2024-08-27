@@ -24,7 +24,7 @@ const AuthFlow = () => {
             <div>
               <Link
                 to="/wallet"
-                className="bg-serene px-12 py-2 rounded-lg md:px-24 md:py-3 font-semibold flex justify-center items-center gap-2 md:gap-3"
+                className="bg-serene mt-10 px-12 py-2 rounded-lg md:px-24 md:py-3 font-semibold flex justify-center items-center gap-2 md:gap-3"
               >
                 Continue with Wallet
               </Link>

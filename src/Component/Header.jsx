@@ -40,7 +40,7 @@ const Header = ({ onBack }) => {
 
 
     //*NEW HEADER FOR THE DASHBOARD
-    <header className={`serene-header fixed top-0 right-0 left-0 border border-b-[0.1rem] border-[#575757] bg-serene-black h-[3.75rem] z-[900] text-serene-ash  lg:left-[12.625rem] xl:left-[15.625rem] flex items-center px-4 lg:px-7 py-10 ${onBack ? "lg:justify-between"  : "lg:justify-end" }`}>
+    <header className={`serene-header fixed top-0 right-0 left-0  border-b-[0.1rem] border-[#575757] bg-serene-black h-[3.75rem] z-[900] text-serene-ash  lg:left-[12.625rem] xl:left-[15.625rem] flex items-center px-4 lg:px-7 py-10 ${onBack ? "lg:justify-between"  : "lg:justify-end" }`}>
       {onBack && (
         <img src={rightArrow} alt="" className="hidden lg:flex bg-[#2a2a2a] py-2 px-4 rounded-[6px] " onClick={onBack} />
       )}
@@ -51,7 +51,7 @@ const Header = ({ onBack }) => {
           <div className="flex items-center justify-center gap-5 ">
             <Search className="hover:text-serene w-4 h-4 " />
             <Bell className="hover:text-serene w-4 h-4 " />
-            <LucideMessageCircle className="hover:text-serene w-4 h-4 " />
+            {/* <LucideMessageCircle className="hover:text-serene w-4 h-4 " /> */}
           </div>
 
           <div className="lg:ml-5">

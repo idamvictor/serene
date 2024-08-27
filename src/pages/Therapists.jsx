@@ -1,20 +1,18 @@
 import React, { useState } from "react";
 import Layout from "@/Component/Shared/Layout";
 import StarRating from "@/Component/ui/StarRating";
-
+import { Badge } from "@/Component/ui/badge";
 const Therapists = () => {
   const [activeTab, setActiveTab] = useState("Recommended");
 
   return (
     <Layout>
-      
       <div className="p-8 pt-28">
         <header className="">
           <h1 className="text-4xl font-bold tracking-wide leading-none text-white max-md:max-w-full">
             Therapists
           </h1>
         </header>
-
         <RecommendationTabs activeTab={activeTab} setActiveTab={setActiveTab} />
 
         <div className="mt-8">
@@ -67,7 +65,7 @@ const RecommendationTabs = ({ activeTab, setActiveTab }) => {
   const baseClasses =
     "gap-2.5 self-stretch px-24 py-2 my-auto rounded-lg min-w-[15rem] max-md:px-5";
   const activeClasses =
-    "font-semibold whitespace-nowrap bg-yellow-300 text-zinc-900";
+    "font-semibold whitespace-nowrap bg-serene text-zinc-900";
   const inactiveClasses = "bg-stone-900 font-[450] text-stone-300";
 
   return (
@@ -88,6 +86,7 @@ const RecommendationTabs = ({ activeTab, setActiveTab }) => {
         aria-pressed={activeTab === "All Therapists"}
         onClick={() => setActiveTab("All Therapists")}
       >
+        {/* <Badges/> */}
         All Therapists
       </button>
     </nav>
