@@ -20,7 +20,7 @@ const Post = ({children}) => {
                 <img src={userProfilePic} alt="user profile pic" className="w-8 h-8 rounded-full "  />
                 <h4 className="username text-[.92rem] font-semibold ml-1 ">User 13453</h4>
                 <div className="dot rounded-full bg-white w-[.125rem] h-[.125rem] "></div>
-                <time datetime="" className="text-[.64rem] text-[#8d8d8d] font-medium">30mins ago</time>
+                <time dateTime="" className="text-[.64rem] text-[#8d8d8d] font-medium">30mins ago</time>
             </div>
 
             <img src={menuBar} alt={"more options icon"} />

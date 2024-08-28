@@ -1,3 +1,4 @@
+import joinCommunities from '@/pages/JoinCommunities';
 import { apiSlice } from '../auth/apiSlice';
 
 export const CommunitySlice = apiSlice.injectEndpoints({
@@ -8,13 +9,31 @@ export const CommunitySlice = apiSlice.injectEndpoints({
                 method: "GET"
             }),
         }),
+        joinCommunity: builder.mutation({
+            query: ({communityId, userId}) => ({
+                url:`/community/join`,
+                method: "POST",
+                body: {
+                   communityId,
+                    userId
+                }
+            }),
+            async onQueryStarted(arg, { queryFulfilled }) {
+                try {
+                  const { data } = await queryFulfilled;
+                  console.log('Server response:', data);
+                } catch (error) {
+                  console.error('Error in joinCommunity:', error);
+                }
+              },
+        }),
         getCommunityPost: builder.query({
-            query: () => ({
-                url: `/community/post`,
+            query: (id) => ({
+                url: `/community/post/${id}`,
                 method: "GET"
             }),
         }),
-        sendCommunityPost: builder.query({
+        sendCommunityPost: builder.mutation({
             query: () => ({
                url: `/community/message`,
                method: "POST"
@@ -24,4 +43,4 @@ export const CommunitySlice = apiSlice.injectEndpoints({
 });
 
 
-export const { useGetCommunitiesQuery, useGetCommunityPostQuery,  useSendCommunityPostQuery } = CommunitySlice;
+export const { useGetCommunitiesQuery, useJoinCommunityMutation, useGetCommunityPostQuery,  useSendCommunityPostMutation } = CommunitySlice;

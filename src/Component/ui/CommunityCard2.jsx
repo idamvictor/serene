@@ -1,9 +1,26 @@
 import Badges from "@/Component/ui/Badges";
 import { menuBar } from "@/assets";
+import { useJoinCommunityMutation } from "@/services/community/CommunitySlice";
 import { Link } from "react-router-dom";
 
 
-const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers}) => {
+const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers, communityId}) => {
+
+  const userId = JSON.parse(localStorage.getItem("userInfo"))._id;
+
+  console.log(userId)
+
+  const [joinCommunity, { isLoading, isError, error, data }] = useJoinCommunityMutation();
+
+  const handleJoinClick = async () => {
+    try {
+     const res = await joinCommunity({ communityId, userId }).unwrap();
+     console.log(res.message)
+      // Handle success (e.g., show a success message)
+    } catch (error) {
+      // Handle error (e.g., show an error message)
+    }
+  };
 
   return (
     <>
@@ -20,14 +37,14 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
 
               <Badges styling={"text-[#5f5f5f] bg-[#E1DC58] text-xs w-[4.5rem] xl:text-[.85rem] xl:w-[6rem]"}> {badgeTitle} </Badges>
 
-              <p className="text-serene-gray text-xs leading-5 pr-20 xl:pr-48 xl:text-sm ">{communityDescription}</p>
+              <p className="text-serene-gray text-xs leading-5 pr-20  xl:text-sm ">{communityDescription}</p>
 
               <div className="community-members flex items-center justify-between w-[100%] ">
                 <div className="flex items-center gap-1">
                   <img src="" alt="" className="h-4 w-4 bg-[#d9d9d9] rounded-full" />
                   <p className="text-white  text-sm xl:text-[.85rem] font-medium ">{communityMembers}</p>
                 </div>
-                <Link to={"/community/communityId"} className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]  ">Join</Link>
+                <Link to={`/community/${communityId}`} onClick={handleJoinClick} className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]  ">Join</Link>
               </div>
             </div>
           </div>

@@ -7,10 +7,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 
     //* COMMUNITY ACTION BUTTONS
-export const communityActionBtns = ({BtnText}) => {
+export const CommunityActionBtns = ({btnText}) => {
     return ( 
         <>
-            <button className="px-4 py-2 text-white bg-[#242424] ">{BtnText}</button>
+            <button className="px-4 py-2 text-white bg-[#242424] ">{btnText}</button>
         </>
      );
 };
@@ -33,7 +33,7 @@ const Communities = () => {
                     avatarSrc={communityProfilePic}
                     coverSrc={communityCoverPic}
                     profileCoverStyling={`h-20 `}
-                    profileHeaderStyling={`size-14`}
+                    profileHeaderStyling={`size-14 lg:size-20`}
                 >
                     <div className="hidden md:flex md:self-end md:items-center md:justify-between md:mt-14 max-md:mt-10 md:w-[100%] ">
                         <h3 className="text-white font-semibold ">Cheers Champions</h3>
@@ -54,9 +54,9 @@ const Communities = () => {
         
 
             <section className="mt-8 mb-10 lg:mx-4 xl:mx-7 flex items-center justify-center ">
-                <div className="tab-btns">
-                    <communityActionBtns BtnText="Post" />
-                    <communityActionBtns BtnText="About" />
+                <div className="tab-btns hidden">
+                    <CommunityActionBtns btnText="Post" />
+                    <CommunityActionBtns btnText="About" />
                 </div>
 
                 {/* COMMUNITY POSTS */}
