@@ -1,32 +1,44 @@
 import Badges from "@/Component/ui/Badges";
 import { menuBar } from "@/assets";
 import {  useJoinCommunityMutation } from "@/services/community/CommunitySlice";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
 //* COMMUNITYCARD2 COMPONENT
-const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers, communityId}) => {
+const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers, communityId, isJoined}) => {
 
   //* GETTING THE USER ID FROM LOCAL STORAGE
   const userId = JSON.parse(localStorage.getItem("userInfo"))._id;
-  console.log(userId)
+
 
   //* SET UP FOR SENDING THE POST REQUEST WHEN A USER CLICKS JOIN
   const [joinCommunity, { isLoading, isError, error, data }] = useJoinCommunityMutation();
 
+  const navigate = useNavigate();
+
   const handleJoinClick = async () => {
     try {
-     const res = await joinCommunity({ communityId, userId }).unwrap();
-     console.log(res.message)
+      const res = await joinCommunity({ communityId, userId }).unwrap();
+      console.log("JOIN API RESPONSE:", res);
+      // return true; 
     } catch (error) {
-      //TODO: show an error message
+      console.log("JOIN API ERR", error)
+      // return false; 
+    }
+  };
+
+  const handleButtonClick = async () => {
+    console.log("Join Button Clicked!")
+    const success = await handleJoinClick();
+    if (success) {
+      navigate(`/community/${communityId}/${communityName}`); //* REDIRECTS AFTER SUCCESSFULLY JOINING A COMMUNITY
     }
   };
 
   return (
     <>
-      <div className="border border-[#6c6c6c] w-full rounded-[.5625rem] flex items-start gap-2 p-3 relative">
+      <div className="border border-[#6c6c6c]  rounded-[.5625rem] flex items-start gap-2 p-3 relative ">
           <img src={communityProfilePic} alt="" className="h-9 w-9 bg-[#d9d9d9] rounded-full" />
 
           <div className="flex flex-col gap-2 w-[100%]">
@@ -46,7 +58,22 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
                 <img src="" alt="" className="h-4 w-4 bg-[#d9d9d9] rounded-full" />
                 <p className="text-white  text-sm xl:text-[.85rem] font-medium ">{communityMembers}</p>
               </div>
-              <Link to={`/community/${communityId}/${communityName}`} onClick={handleJoinClick} className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]  ">Join</Link>
+              {isJoined ? (
+                <Link
+                  to={`/community/${communityId}/${communityName}`}
+                  className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]"
+                >
+                  View
+                </Link>
+              ) : (
+                <button
+                  onClick={handleButtonClick}
+                  className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]"
+                  disabled={isLoading}
+                >
+                  Join
+                </button>
+              )}
             </div>
           </div>
       </div>

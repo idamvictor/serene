@@ -1,5 +1,9 @@
 import { apiSlice } from '../auth/apiSlice';
 
+
+const userID = JSON.parse(localStorage.getItem("userInfo"))._id;
+//   console.log(userId)
+
 export const CommunitySlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
         getCommunities: builder.query({
@@ -12,10 +16,7 @@ export const CommunitySlice = apiSlice.injectEndpoints({
             query: ({communityId, userId}) => ({
                 url:`/community/join`,
                 method: "POST",
-                body: {
-                   communityId,
-                    userId
-                }
+                body: { communityId, userId }
             }),
             async onQueryStarted(arg, { queryFulfilled }) {
                 try {
@@ -25,6 +26,12 @@ export const CommunitySlice = apiSlice.injectEndpoints({
                   console.error('Error in joinCommunity:', error);
                 }
               },
+        }),
+        getUserCommunity: builder.query({
+            query: () => ({
+                url: `community/usercommunity/${userID}`,
+                method: "GET",
+            })
         }),
         getCommunityPost: builder.query({
             query: (id) => ({
@@ -37,9 +44,16 @@ export const CommunitySlice = apiSlice.injectEndpoints({
                url: `/community/message`,
                method: "POST"
             }),
+        }),
+        leaveCommunity: builder.mutation({
+            query: ({communityId, userId}) => ({
+                url: `/community/leave`,
+                method: "POST",
+                body: {communityId, userId}
+            })
         })
     }),
 });
 
 
-export const { useGetCommunitiesQuery, useJoinCommunityMutation, useGetCommunityPostQuery,  useSendCommunityPostMutation } = CommunitySlice;
+export const { useGetCommunitiesQuery, useJoinCommunityMutation, useGetUserCommunityQuery, useGetCommunityPostQuery,  useSendCommunityPostMutation } = CommunitySlice;
