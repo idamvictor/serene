@@ -3,7 +3,9 @@ import Layout from "@/Component/Shared/Layout";
 import { communityCoverPic, communityProfilePic, menuBar, postPic, ruleArrowDown, yellowPlusSign } from "@/assets";
 import CommunityRuleCard from "@/Component/ui/CommunityRuleCard";
 import ProfileHeader from "@/features/psychologists/ProfileHeader";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
+import { useGetCommunityPostQuery } from "@/services/community/CommunitySlice";
+
 
 
     //* COMMUNITY ACTION BUTTONS
@@ -18,6 +20,17 @@ export const CommunityActionBtns = ({btnText}) => {
     //* COMMUNITIES COMPONENT
 const Communities = () => {
 
+    //* ACCESSING THE COMMUNITY ID FROM THE URL
+    const { communityID } = useParams();
+
+    const {data: allPosts} = useGetCommunityPostQuery(communityID);
+    // console.log(allPosts)
+
+    const posts = allPosts?.data || [];
+    console.log(posts)
+
+
+    //* SET UP TO GO BACK TO PREVIOUS PAGE
     const navigate = useNavigate();
 
     const handleBackClick = () => {
@@ -66,14 +79,22 @@ const Communities = () => {
                         <h4 className="text-serene-gray text-sm font-medium  flex items-center gap-2 mb-3 ">Hot
                             <img src={ruleArrowDown} alt="" className="w-3 h-3" />
                         </h4>
-                        <Post>
+
+                        {Array.isArray(posts) && posts.map((post) => (
+                            <Post
+                                key={post._id}
+                            >
+                                {post.message}
+                            </Post>
+                        ))}
+                        {/* <Post>
                             <p>One thing that has really helped me is focusing on small, manageable steps. I started by setting tiny goals for myself, like getting out of bed at a certain time or going for a short walk. These might seem insignificant, but accomplishing them gave me a sense of achievement and gradually built up my confidence.</p>
                         </Post>
 
                         <Post>
                             <p>Today felt like hell😥 I even considered suicide.</p>
                             <img src={postPic} alt="post picture" className="my-3" />
-                        </Post>
+                        </Post> */}
                     </div>
 
 

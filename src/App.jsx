@@ -11,7 +11,7 @@ import {
   Authentication,
 } from "./pages";
 
-import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate} from "react-router-dom";
 import Survey from "./features/survey/Survey";
 import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
@@ -19,6 +19,7 @@ import ConnectWallet from "./features/authentication/ConnectWallet";
 
 
 function App() {
+ 
   const router = createBrowserRouter([
     {
       path: "/",
@@ -29,7 +30,7 @@ function App() {
       element: <JoinCommunities />,
     },
     {
-      path: "/community/:communityId",
+      path: "/community/:communityID/:communityName",
       element: <Communities />,
     },
     {

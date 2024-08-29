@@ -1,4 +1,3 @@
-import joinCommunities from '@/pages/JoinCommunities';
 import { apiSlice } from '../auth/apiSlice';
 
 export const CommunitySlice = apiSlice.injectEndpoints({
