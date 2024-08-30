@@ -4,9 +4,10 @@ import { communityCoverPic, communityProfilePic, menuBar, postPic, ruleArrowDown
 import CommunityRuleCard from "@/Component/ui/CommunityRuleCard";
 import ProfileHeader from "@/features/psychologists/ProfileHeader";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useGetCommunitiesQuery, useGetCommunityPostQuery, useLeaveCommunityMutation } from "@/services/community/CommunitySlice";
+import { useGetCommunitiesQuery, useGetCommunityPostQuery, useGetUserCommunityQuery, useLeaveCommunityMutation } from "@/services/community/CommunitySlice";
 import { LuMoreHorizontal, LuPlus } from "react-icons/lu";
 import { useState } from "react";
+import PopupModal from "@/Component/ui/PopupModal";
 
 
 //* COMMUNITY ACTION BUTTONS
@@ -23,7 +24,8 @@ const userId = JSON.parse(localStorage.getItem("userInfo"))._id;
 
 //* COMMUNITIES COMPONENT
 const Communities = () => {
-    const [isOpen, setIsOpen] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     //* Accessing the communityId from the URL
     const { communityID } = useParams();
@@ -32,6 +34,8 @@ const Communities = () => {
     const { data: allCommunities } = useGetCommunitiesQuery();
     const {data: allPosts} = useGetCommunityPostQuery(communityID);
     const [leaveCommunity] = useLeaveCommunityMutation();
+    const { refetch } = useGetUserCommunityQuery();
+
 
     const communities = allCommunities?.data || [];
     const posts = allPosts?.data || [];
@@ -50,19 +54,26 @@ const Communities = () => {
     const handleBackClick = () => navigate("/community");
 
     //* To handle menu dropdown toggle
-    const toggleDropdown = () => setIsOpen(!isOpen);
-    const handleOptionClick = () => setIsOpen(false);
+    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const closeMenu = () => setIsMenuOpen(false);
+
+    //* To handle Popup when a user wants to leave a community
+    const handleOpenModal = () => {
+        setIsModalOpen(true);
+        closeMenu();
+    };
+    const handleCloseModal = () => setIsModalOpen(false);
+      
 
     //* Set up for leaving a community
     const handleLeaveClick = async () => {
         const res = await leaveCommunity({communityId: communityID, userId}).unwrap();
         console.log("Left community successfully!", res);
+        refetch();
         navigate(`/community`);
-        handleOptionClick();
+        handleCloseModal();
     };
     
-
-
 
     return (
         <>
@@ -83,16 +94,16 @@ const Communities = () => {
                                 <LuPlus className="size-[.95rem] text-serene " />
                                 Say something
                             </button>
-                            <LuMoreHorizontal onClick={toggleDropdown}   className="border border-[#717171] rounded-md  text-[#fffcab]  size-7 px-[5px] cursor-pointer "/>
+                            <LuMoreHorizontal onClick={toggleMenu}   className="border border-[#717171] rounded-md  text-[#fffcab]  size-7 px-[5px] cursor-pointer "/>
                         </div>
                     </div>
                 </ProfileHeader>
                 
                 {/* MORE OPTIONS FOR MENU BAR */}
-                {isOpen && (
+                {isMenuOpen && (
                     <ul className="text-white text-sm font-medium flex flex-col lg:w-[140px] xl:w-[180px] absolute lg:ml-[80%] xl:ml-[82%] text-opacity-70 bg-[#5e5e5e] rounded-xl mt-1 p-1 cursor-pointer shadow-lg "> 
-                        <li className="hover:bg-[#555321] rounded-md py-3 pl-4 " onClick={handleLeaveClick}>Leave community</li>
-                        <li className="hover:bg-[#555321] rounded-md py-3 pl-4" onClick={handleOptionClick}>Mute community</li>
+                        <li className="hover:bg-[#555321] rounded-md py-3 pl-4 " onClick={handleOpenModal}>Leave community</li>
+                        <li className="hover:bg-[#555321] rounded-md py-3 pl-4" onClick={closeMenu}>Mute community</li>
                     </ul>
                 )}
             </div>
@@ -134,6 +145,15 @@ const Communities = () => {
                     </aside>
                 </div>
             </section>
+
+            <PopupModal 
+                isOpen={isModalOpen}
+                onClose={handleCloseModal}
+                popupTitle={`Are you sure you want to leave the Cheers Champion community?`}
+                btn1={`Cancel`}
+                btn2={`Leave`}
+                btn2Logic={handleLeaveClick}
+            />
         </Layout>
         </>
   )
