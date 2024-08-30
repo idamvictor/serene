@@ -46,12 +46,12 @@ const joinCommunities = () => {
 
   return (
     <Layout>
-      <h1 className="text-white text-2xl xl:text-3xl font-bold lg:mt-28 mx-7">Communities</h1>
+      <h1 className="text-white text-2xl xl:text-3xl font-bold mt-28 mx-4 xl:mx-7">Communities</h1>
 
-      <section className="mx-7 mt-4">
+      <section className="mx-4 xl:mx-7 mt-4">
         <h1 className="text-[#c7c7c7] font-semibold ">Joined Communities</h1>
 
-        <figure className="recommendation-cont-figure flex flex-col items-center justify-center text-center rounded-[.73rem]">
+        <figure className="recommendation-cont-figure flex flex-col items-center justify-center text-center rounded-[.73rem] mt-2 lg:mt-0">
             <img src={recommendedCommunitiesImage} alt="Illustration" className=" mt-6 size-20" />
             <figcaption className="text-serene-gray font-medium tracking-normal text-base mt-5 px-16 md:text-sm md:px-6 xl:text-[.95rem] xl:w-[70%] ">You are not a member of any community </figcaption>
         </figure>
@@ -59,7 +59,7 @@ const joinCommunities = () => {
       </section>
 
         {/* RECOMMENDED COMMUNITIES SECTION */}
-      <section className="recommended-communities-section mx-4 mt-24 xl:ml-7 xl:mr-11">
+      <section className="recommended-communities-section mx-4 mt-10 md:mt-24 xl:ml-7 xl:mr-11">
 
         <div className="xl:mt-4 flex items-center">
           <h2 className="text-serene-gray font-semibold text-base xl:text-xl ">Recommended communities for you</h2>

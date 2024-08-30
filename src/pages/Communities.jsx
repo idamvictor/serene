@@ -8,6 +8,7 @@ import { useGetCommunitiesQuery, useGetCommunityPostQuery, useGetUserCommunityQu
 import { LuMoreHorizontal, LuPlus } from "react-icons/lu";
 import { useState } from "react";
 import PopupModal from "@/Component/ui/PopupModal";
+import PostModal from "@/Component/ui/PostModal";
 
 
 //* COMMUNITY ACTION BUTTONS
@@ -154,6 +155,8 @@ const Communities = () => {
                 btn2={`Leave`}
                 btn2Logic={handleLeaveClick}
             />
+
+            <PostModal />
         </Layout>
         </>
   )
