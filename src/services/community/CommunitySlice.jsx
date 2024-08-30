@@ -56,4 +56,4 @@ export const CommunitySlice = apiSlice.injectEndpoints({
 });
 
 
-export const { useGetCommunitiesQuery, useJoinCommunityMutation, useGetUserCommunityQuery, useGetCommunityPostQuery,  useSendCommunityPostMutation } = CommunitySlice;
+export const { useGetCommunitiesQuery, useJoinCommunityMutation, useGetUserCommunityQuery, useGetCommunityPostQuery,  useSendCommunityPostMutation, useLeaveCommunityMutation } = CommunitySlice;

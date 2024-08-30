@@ -4,12 +4,12 @@ import { communityCoverPic, communityProfilePic, menuBar, postPic, ruleArrowDown
 import CommunityRuleCard from "@/Component/ui/CommunityRuleCard";
 import ProfileHeader from "@/features/psychologists/ProfileHeader";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useGetCommunitiesQuery, useGetCommunityPostQuery } from "@/services/community/CommunitySlice";
+import { useGetCommunitiesQuery, useGetCommunityPostQuery, useLeaveCommunityMutation } from "@/services/community/CommunitySlice";
 import { LuMoreHorizontal, LuPlus } from "react-icons/lu";
 import { useState } from "react";
 
 
-    //* COMMUNITY ACTION BUTTONS
+//* COMMUNITY ACTION BUTTONS
 export const CommunityActionBtns = ({btnText}) => {
     return ( 
         <>
@@ -18,42 +18,50 @@ export const CommunityActionBtns = ({btnText}) => {
      );
 };
 
+const userId = JSON.parse(localStorage.getItem("userInfo"))._id;
 
 
 //* COMMUNITIES COMPONENT
 const Communities = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     //* Accessing the communityId from the URL
     const { communityID } = useParams();
+    const navigate = useNavigate();
 
-    //* Getting all posts in a community
+    const { data: allCommunities } = useGetCommunitiesQuery();
     const {data: allPosts} = useGetCommunityPostQuery(communityID);
+    const [leaveCommunity] = useLeaveCommunityMutation();
+
+    const communities = allCommunities?.data || [];
     const posts = allPosts?.data || [];
-    console.log(posts)
+
 
     //* Getting a single community
-    const { data: allCommunities } = useGetCommunitiesQuery();
-    const communities = allCommunities?.data || [];
     const selectedCommunity = communities.find((community) => community._id === communityID )
     console.log(selectedCommunity);
-
-    //* set up to go back to previous page
-    const navigate = useNavigate();
-    const handleBackClick = () => {
-        navigate("/community")
-    };
-
+    // const selectedCommunityID = selectedCommunity._id;
+    
     if (!selectedCommunity) {
         return <h1 className="text-white text-center font-semibold">Community not found</h1>;
     }
 
+    //* set up to go back to previous page
+    const handleBackClick = () => navigate("/community");
+
     //* To handle menu dropdown toggle
-    const [isOpen, setIsOpen] = useState(false);
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
+    const toggleDropdown = () => setIsOpen(!isOpen);
+    const handleOptionClick = () => setIsOpen(false);
+
+    //* Set up for leaving a community
+    const handleLeaveClick = async () => {
+        const res = await leaveCommunity({communityId: communityID, userId}).unwrap();
+        console.log("Left community successfully!", res);
+        navigate(`/community`);
+        handleOptionClick();
     };
-    const handleOptionClick = () => {
-        setIsOpen(false);
-    };
+    
+
 
 
     return (
@@ -81,19 +89,14 @@ const Communities = () => {
                 </ProfileHeader>
                 
                 {/* MORE OPTIONS FOR MENU BAR */}
-                {/* <div className=""> */}
-
                 {isOpen && (
                     <ul className="text-white text-sm font-medium flex flex-col lg:w-[140px] xl:w-[180px] absolute lg:ml-[80%] xl:ml-[82%] text-opacity-70 bg-[#5e5e5e] rounded-xl mt-1 p-1 cursor-pointer shadow-lg "> 
-                        <li className="hover:bg-[#555321] rounded-md py-3 pl-4 " onClick={handleOptionClick}>Leave community</li>
+                        <li className="hover:bg-[#555321] rounded-md py-3 pl-4 " onClick={handleLeaveClick}>Leave community</li>
                         <li className="hover:bg-[#555321] rounded-md py-3 pl-4" onClick={handleOptionClick}>Mute community</li>
                     </ul>
                 )}
-
-                {/* </div> */}
             </div>
         
-            
 
             <section className="mt-8 mb-10 lg:mx-4 xl:mx-7 flex items-center justify-center ">
                 <div className="tab-btns hidden">
@@ -117,23 +120,12 @@ const Communities = () => {
                                 </Post>
                             ))
                         )}
-
-
-                       
-                        {/* <Post>
-                            <p>One thing that has really helped me is focusing on small, manageable steps. I started by setting tiny goals for myself, like getting out of bed at a certain time or going for a short walk. These might seem insignificant, but accomplishing them gave me a sense of achievement and gradually built up my confidence.</p>
-                        </Post>
-
-                        <Post>
-                            <p>Today felt like hell😥 I even considered suicide.</p>
-                            <img src={postPic} alt="post picture" className="my-3" />
-                        </Post> */}
                     </div>
-
 
                     {/* COMMUNITY RULE SECTION */}
                     <aside className="xl:h-[41rem] bg-[#272727]  rounded-[9px]  ">
                         <CommunityRuleCard 
+                            key={selectedCommunity._id}
                             communityName={selectedCommunity.name}
                             communityDescription={selectedCommunity.description}
                             communityRuleArr={selectedCommunity.rules}

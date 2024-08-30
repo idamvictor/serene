@@ -8,26 +8,20 @@ import { Link, useNavigate } from "react-router-dom";
 //* COMMUNITYCARD2 COMPONENT
 const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers, communityId, isJoined}) => {
 
-  //* GETTING THE USER ID FROM LOCAL STORAGE
+  //* Getting userId from Local storage
   const userId = JSON.parse(localStorage.getItem("userInfo"))._id;
 
-
-  //* SET UP FOR SENDING THE POST REQUEST WHEN A USER CLICKS JOIN
+  //* Set up for sending the post request when a user clicks join
   const [joinCommunity, { isLoading, isError, error, data }] = useJoinCommunityMutation();
-
   const navigate = useNavigate();
-
   const handleJoinClick = async () => {
     try {
       const res = await joinCommunity({ communityId, userId }).unwrap();
       console.log("JOIN API RESPONSE:", res);
-      // return true; 
     } catch (error) {
-      console.log("JOIN API ERR", error)
-      // return false; 
+      console.log("JOIN API ERR", error) 
     }
   };
-
   const handleButtonClick = async () => {
     console.log("Join Button Clicked!")
     const success = await handleJoinClick();
