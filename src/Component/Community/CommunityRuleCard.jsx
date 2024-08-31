@@ -1,4 +1,4 @@
-import NewRule from "@/Component/ui/NewRule";
+import NewRule from "@/Component/Community/NewRule";
 import Badges from "@/Component/ui/Badges";
 
 const CommunityRuleCard = ({ communityName, communityDescription, communityRuleArr, communityRuleTopics, }) => {

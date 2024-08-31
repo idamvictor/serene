@@ -1,6 +1,6 @@
 import { recommendedCommunitiesImage } from "@/assets";
 import Layout from "@/Component/Shared/Layout";
-import CommunityCard2 from "@/Component/ui/CommunityCard2";
+import CommunityCard2 from "@/Component/Community/CommunityCard2";
 import { useGetCommunitiesQuery, useGetUserCommunityQuery } from "@/services/community/CommunitySlice";
 import { isCommunityJoined } from "@/utils/communityUtils";
 
@@ -17,6 +17,8 @@ const joinCommunities = () => {
   //* Destructuring
   const communities = allCommunities?.data || [];
   const userCommunities = allUserCommunities?.data || [];
+
+  console.log(allCommunities);
 
   //* Filter to get only joined communities
   const joinedCommunities = communities.filter((community) => 

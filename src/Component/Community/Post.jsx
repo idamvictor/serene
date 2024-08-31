@@ -47,11 +47,11 @@ const Post = ({children, posterName, posterImg, postTime}) => {
                 btnIconAlt={"comment icon"}
                 btnTitle={`20`}
             />
-             <PostActionBtn
+             {/* <PostActionBtn
                 btnIcon={<PiShareFat  className="size-4" />}
                 btnIconAlt={"forward icon"}
                 btnTitle={`Share`}
-            />
+            /> */}
         </div>
 
         

@@ -36,6 +36,15 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
     }
   };
 
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      e.preventDefault(); 
+      handlePostSubmit(e);
+      console.log('I pressed Enter')
+    }
+  };
+
+
   //* Close modal if not open
     if (!isOpen) return null;
 
@@ -63,6 +72,7 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
               role="textbox"
               value={postMessage}
               onChange={(e) => setPostMessage(e.target.value)}
+              onKeyDown={handleKeyDown}
               required
               className="placeholder-white placeholder-opacity-50 placeholder:text-lg text-lg w-full h-80 bg-transparent border-[#666666] border-opacity-40 mt-6 rounded-[.6875rem] text-white font-medium " 
               placeholder="What do you want to talk about?"></textarea>

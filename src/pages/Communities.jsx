@@ -1,14 +1,14 @@
-import Post from "@/Component/ui/Post";
+import Post from "@/Component/Community/Post";
 import Layout from "@/Component/Shared/Layout";
 import { communityCoverPic, communityProfilePic, menuBar, postPic, ruleArrowDown, yellowPlusSign } from "@/assets";
-import CommunityRuleCard from "@/Component/ui/CommunityRuleCard";
+import CommunityRuleCard from "@/Component/Community/CommunityRuleCard";
 import ProfileHeader from "@/features/psychologists/ProfileHeader";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetCommunitiesQuery, useGetCommunityPostQuery, useGetUserCommunityQuery, useLeaveCommunityMutation } from "@/services/community/CommunitySlice";
 import { LuMoreHorizontal, LuPlus } from "react-icons/lu";
 import { useState, useEffect } from "react";
-import PopupModal from "@/Component/ui/PopupModal";
-import PostModal from "@/Component/ui/PostModal";
+import PopupModal from "@/Component/Shared/PopupModal";
+import PostModal from "@/Component/Community/PostModal";
 
 
 //* COMMUNITY ACTION BUTTONS
@@ -19,7 +19,6 @@ export const CommunityActionBtns = ({btnText}) => {
         </>
      );
 };
-
 
 
 //* COMMUNITIES COMPONENT
