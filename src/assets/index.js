@@ -1,3 +1,5 @@
+//TODO: DELETE THE MENUBAR ICON 
+
 // ALL ICONS IMPORT
 import sereneSign from "./Icons/sereneSign.svg";
 import searchIcon from "./Icons/searchIcon.svg";
@@ -42,6 +44,9 @@ import facebookIcon from "./Icons/facebook-icon.svg";
 import instaIcon from "./Icons/insta-icon.svg";
 import spinner from "./Icons/spinner.svg"
 import arrowBack from "./Icons/arrowBack.svg"
+
+
+
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
 import moodImage from "./Icons/moodImage.svg";
@@ -52,7 +57,6 @@ import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";;
 import headerImg from "./Images/headerImg.png";
-
 import americanExpress from "./Icons/americanExpress.svg";
 import bitcoin from "./Icons/bitcoin.png";
 import discover from "./Icons/discover.svg";
@@ -77,7 +81,6 @@ import smallVideoCardPic from "./Images/smallVideoCardPic.png";
 import articleFeaturedPic from "./Images/articleFeaturedPic.png";
 import smallArticleCardPic from "./Images/smallArticleCardPic.png";
 import articleContentPic from "./Images/articleContentPic.png";
-
 
 
 

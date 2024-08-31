@@ -7,14 +7,13 @@ const PopupModal = ({ isOpen, onClose, popupTitle, btn1, btn2, btn2Logic  }) => 
     <>
   
         <div 
-        className="fixed inset-0 flex items-center justify-center z-50" 
+        className="fixed inset-0 flex items-center justify-center z-[1000]" 
         aria-modal="true" 
         role="dialog"
-        // onClick={onClose}
     >
-        <div className="fixed inset-0 bg-black opacity-50"  onClick={(e) => e.stopPropagation()}></div>
+        <div className="fixed inset-0 bg-black opacity-60"  onClick={(e) => e.stopPropagation()}></div>
 
-        <div className="bg-[#272727] rounded-lg w-[480px] z-10 px-6 py-8 flex flex-col items-center gap-6 text-center">
+        <div className="bg-[#272727] rounded-lg w-[480px] z-[100] px-6 py-8 flex flex-col items-center gap-6 text-center">
             <h3 className="text-[#fcfcfc] text-xl tracking-wide font-semibold">
                {popupTitle}
             </h3>

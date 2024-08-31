@@ -6,7 +6,7 @@ import ProfileHeader from "@/features/psychologists/ProfileHeader";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGetCommunitiesQuery, useGetCommunityPostQuery, useGetUserCommunityQuery, useLeaveCommunityMutation } from "@/services/community/CommunitySlice";
 import { LuMoreHorizontal, LuPlus } from "react-icons/lu";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PopupModal from "@/Component/ui/PopupModal";
 import PostModal from "@/Component/ui/PostModal";
 
@@ -20,43 +20,57 @@ export const CommunityActionBtns = ({btnText}) => {
      );
 };
 
-const userId = JSON.parse(localStorage.getItem("userInfo"))._id;
 
 
 //* COMMUNITIES COMPONENT
 const Communities = () => {
+    //* All useStates
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [ isPostOpen, setIsPostOpen ] = useState(false);
+    const [user, setUser] = useState(null);
+
+    //* Getting user info from local storage
+    useEffect(() => {
+        const storedUser = JSON.parse(localStorage.getItem("userInfo"));
+        setUser(storedUser);
+    }, []);
+  
 
     //* Accessing the communityId from the URL
     const { communityID } = useParams();
     const navigate = useNavigate();
 
+    //* All API queries
     const { data: allCommunities } = useGetCommunitiesQuery();
-    const {data: allPosts} = useGetCommunityPostQuery(communityID);
+    const {data: allPosts, refetchPosts} = useGetCommunityPostQuery(communityID);
     const [leaveCommunity] = useLeaveCommunityMutation();
-    const { refetch } = useGetUserCommunityQuery();
+    const { refetchUserCommunities } = useGetUserCommunityQuery();
 
-
+    //* Destructuring
     const communities = allCommunities?.data || [];
     const posts = allPosts?.data || [];
 
-
     //* Getting a single community
     const selectedCommunity = communities.find((community) => community._id === communityID )
-    console.log(selectedCommunity);
-    // const selectedCommunityID = selectedCommunity._id;
-    
+    // console.log(selectedCommunity);
     if (!selectedCommunity) {
         return <h1 className="text-white text-center font-semibold">Community not found</h1>;
     }
 
-    //* set up to go back to previous page
+    //* Set up to go back to previous page
     const handleBackClick = () => navigate("/community");
 
     //* To handle menu dropdown toggle
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const closeMenu = () => setIsMenuOpen(false);
+
+    //* To handle Popup when a user wants to make a post 
+    const handleOpenPostModal = () => {
+        setIsPostOpen(true);
+        closeMenu();
+    };
+    const handleClosePostModal = () => setIsPostOpen(false);
 
     //* To handle Popup when a user wants to leave a community
     const handleOpenModal = () => {
@@ -68,11 +82,18 @@ const Communities = () => {
 
     //* Set up for leaving a community
     const handleLeaveClick = async () => {
-        const res = await leaveCommunity({communityId: communityID, userId}).unwrap();
-        console.log("Left community successfully!", res);
-        refetch();
-        navigate(`/community`);
-        handleCloseModal();
+        if (user) {
+            try {
+                const res = await leaveCommunity({communityId: communityID, userId: user._id}).unwrap();
+                console.log("Left community successfully!", res);
+                navigate(`/community`);
+                refetchUserCommunities();
+            } catch(error) {
+                handleCloseModal();
+                console.error("Failed to leave community:", error)
+            }
+        }
+       
     };
     
 
@@ -91,7 +112,7 @@ const Communities = () => {
                         <h3 className="text-white font-semibold ">{selectedCommunity.name}</h3>
 
                         <div className="flex items-center gap-4">
-                            <button className="text-serene flex items-center gap-1 border border-serene rounded-sm font-medium text-[.82rem] px-3 py-1 ">
+                            <button onClick={handleOpenPostModal} className="text-serene flex items-center gap-1 border border-serene rounded-sm font-medium text-[.82rem] px-3 py-1 ">
                                 <LuPlus className="size-[.95rem] text-serene " />
                                 Say something
                             </button>
@@ -127,7 +148,12 @@ const Communities = () => {
                         {posts.length === 0 
                         ? ( <h1 className="text-white text-center font-semibold">NO POSTS YET</h1>) 
                         : ( Array.isArray(posts) && posts.map((post) => (
-                                <Post key={post._id}>
+                                <Post 
+                                    key={post._id}
+                                    posterName={post.userId.username}
+                                    // posterImg={post.userId.avatar}
+                                    postTime={post.time}
+                                >
                                     {post.message}
                                 </Post>
                             ))
@@ -135,7 +161,7 @@ const Communities = () => {
                     </div>
 
                     {/* COMMUNITY RULE SECTION */}
-                    <aside className="xl:h-[41rem] bg-[#272727]  rounded-[9px]  ">
+                    <aside className="xl:h-[41rem] xl:w-[28rem] bg-[#272727]  rounded-[9px]  ">
                         <CommunityRuleCard 
                             key={selectedCommunity._id}
                             communityName={selectedCommunity.name}
@@ -156,7 +182,12 @@ const Communities = () => {
                 btn2Logic={handleLeaveClick}
             />
 
-            <PostModal />
+            <PostModal 
+                isOpen={isPostOpen}
+                onClose={handleClosePostModal}
+                communityId={communityID}
+                refetchPosts={refetchPosts}
+            />
         </Layout>
         </>
   )

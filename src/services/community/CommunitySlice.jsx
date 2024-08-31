@@ -21,7 +21,7 @@ export const CommunitySlice = apiSlice.injectEndpoints({
             async onQueryStarted(arg, { queryFulfilled }) {
                 try {
                   const { data } = await queryFulfilled;
-                  console.log('Server response:', data);
+                  console.log('JOIN COMMUNITY API RESPONSE:', data);
                 } catch (error) {
                   console.error('Error in joinCommunity:', error);
                 }
@@ -40,16 +40,25 @@ export const CommunitySlice = apiSlice.injectEndpoints({
             }),
         }),
         sendCommunityPost: builder.mutation({
-            query: () => ({
+            query: ({communityId, userId, message}) => ({
                url: `/community/message`,
-               method: "POST"
+               method: "POST",
+               body: { communityId, userId, message }
             }),
+            async onQueryStarted(arg, { queryFulfilled }) {
+                try {
+                  const { data } = await queryFulfilled;
+                  console.log('SEND POST API RESPONSE:', data);
+                } catch (error) {
+                  console.error('Error in sending post:', error);
+                }
+              },
         }),
         leaveCommunity: builder.mutation({
             query: ({communityId, userId}) => ({
                 url: `/community/leave`,
                 method: "POST",
-                body: {communityId, userId}
+                body: { communityId, userId }
             })
         })
     }),

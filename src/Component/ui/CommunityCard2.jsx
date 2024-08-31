@@ -20,15 +20,14 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
   //* Set up for sending the post request when a user clicks join
   const handleJoinClick = async () => {
     try {
-      const res = await joinCommunity({ communityId, userId }).unwrap();
-      console.log("JOIN API RESPONSE:", res);
+      await joinCommunity({ communityId, userId }).unwrap();
       refetchUserCommunities();
       navigate(`/community/${communityId}/${communityName}`);
     } catch (error) {
       console.error("Error joining community:", error);
     }
   };
-  
+
 
   return (
     <>
