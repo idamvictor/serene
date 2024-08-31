@@ -27,7 +27,7 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
       try{
         await sendCommunityPost({ communityId, userId: user._id, message: postMessage }).unwrap();
         setPostMessage('');
-        refetchPosts;
+        refetchPosts();
         onClose();
       } catch (error) {
         onClose();
@@ -70,9 +70,10 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
             <button 
               type="submit" 
               disabled={isLoading} 
-              className="self-end text-[#0b0b0b] bg-serene border border-serene px-6 py-1 text-[.8rem] font-semibold rounded-[4px] ">
-            {isLoading ? <img src={spinner} alt="Loading..." className="size-3" /> : 'Post'}
-            </button>
+              className={`self-end border border-serene hover:bg-transparent hover:text-serene px-6 py-1 text-[.8rem]  font-semibold rounded-[4px] ${isLoading ? 'bg-transparent text-serene' : 'bg-serene text-[#0b0b0b]'}`}>
+  {isLoading ? <img src={spinner} alt="Loading..." className="size-5" /> : 'Post'}
+</button>
+
         </form>
             
         </div>

@@ -43,9 +43,9 @@ const Communities = () => {
 
     //* All API queries
     const { data: allCommunities } = useGetCommunitiesQuery();
-    const {data: allPosts, refetchPosts} = useGetCommunityPostQuery(communityID);
+    const {data: allPosts, refetch: refetchPosts} = useGetCommunityPostQuery(communityID);
     const [leaveCommunity] = useLeaveCommunityMutation();
-    const { refetchUserCommunities } = useGetUserCommunityQuery();
+    const { refetch: refetchUserCommunities } = useGetUserCommunityQuery();
 
     //* Destructuring
     const communities = allCommunities?.data || [];
@@ -150,8 +150,8 @@ const Communities = () => {
                         : ( Array.isArray(posts) && posts.map((post) => (
                                 <Post 
                                     key={post._id}
-                                    posterName={post.userId.username}
-                                    // posterImg={post.userId.avatar}
+                                    posterName={post.userId?.username}
+                                    // posterImg={post.userId?.avatar}
                                     postTime={post.time}
                                 >
                                     {post.message}
