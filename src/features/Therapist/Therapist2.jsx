@@ -81,7 +81,11 @@ const Therapist2 = () =>{
           />
         </div>
           )}
-          
+          {activeTab === "Reviews" && (
+            <div>
+              
+            </div>
+          )}
         </main>
       </Layout>
     );
