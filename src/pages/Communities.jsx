@@ -44,7 +44,7 @@ const Communities = () => {
     //* All API queries
     const { data: allCommunities } = useGetCommunitiesQuery();
     const {data: allPosts, refetch: refetchPosts} = useGetCommunityPostQuery(communityID);
-    const [leaveCommunity] = useLeaveCommunityMutation();
+    const [leaveCommunity, { isLoading: loadingLeave }] = useLeaveCommunityMutation();
     const { refetch: refetchUserCommunities } = useGetUserCommunityQuery();
 
     //* Destructuring
@@ -178,8 +178,9 @@ const Communities = () => {
                 onClose={handleCloseModal}
                 popupTitle={`Are you sure you want to leave the Cheers Champion community?`}
                 btn1={`Cancel`}
-                btn2={`Leave`}
+                btn2="Leave"
                 btn2Logic={handleLeaveClick}
+                loadingLeave={loadingLeave}
             />
 
             <PostModal 

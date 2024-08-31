@@ -59,11 +59,18 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
               ) : (
                 <button
                   onClick={handleJoinClick}
-                  className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]"
+                  className={`flex items-center justify-center font-semibold text-[.8rem] px-3 py-1 rounded-[.375rem] border border-serene ${
+                    isLoading ? "bg-transparent text-serene" : "bg-serene text-[#191919]"
+                  } hover:bg-serene hover:text-[#191919] ${isLoading ? "cursor-not-allowed" : ""}`}
                   disabled={isLoading}
                 >
-                  {isLoading ? <img src={spinner} width={20} height={20} /> : "Join"}
+                  {isLoading ? (
+                    <img src={spinner} width={20} height={20} alt="Loading" />
+                  ) : (
+                    "Join"
+                  )}
                 </button>
+
               )}
             </div>
           </div>

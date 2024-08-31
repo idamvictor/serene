@@ -44,6 +44,7 @@ import facebookIcon from "./Icons/facebook-icon.svg";
 import instaIcon from "./Icons/insta-icon.svg";
 import spinner from "./Icons/spinner.svg"
 import arrowBack from "./Icons/arrowBack.svg"
+import redSpinner from "./Icons/redSpinner.svg";
 
 
 
@@ -158,5 +159,6 @@ export {
   verifiedBadge,
   facebookIcon,
   instaIcon,
-  spinner
+  spinner,
+  redSpinner
 };

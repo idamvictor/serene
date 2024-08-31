@@ -1,5 +1,6 @@
+import { redSpinner } from "@/assets";
 
-const PopupModal = ({ isOpen, onClose, popupTitle, btn1, btn2, btn2Logic  }) => {
+const PopupModal = ({ isOpen, onClose, popupTitle, btn1, btn2, btn2Logic, loadingLeave  }) => {
     if (!isOpen) return null;
 
 
@@ -21,10 +22,10 @@ const PopupModal = ({ isOpen, onClose, popupTitle, btn1, btn2, btn2Logic  }) => 
             <div className="flex flex-col px-7 w-full gap-2.5 text-sm font-semibold">
                 <button className="border border-serene bg-serene py-2 px-3 rounded-[4px] cursor-pointer" onClick={onClose}>{btn1}</button>
 
-                <button className="border border-[#ff6767] text-[#ff6767] py-2 px-3 rounded-[4px] cursor-pointer"
+                <button className="border border-[#ff6767] text-[#ff6767] text-center flex justify-center items-center py-2 px-3 rounded-[4px] cursor-pointer "
                     onClick={btn2Logic}
                 >
-                    {btn2}
+                    {loadingLeave ? <img src={redSpinner} className="size-5" /> : btn2 }
                 </button>
             </div>
         </div>
