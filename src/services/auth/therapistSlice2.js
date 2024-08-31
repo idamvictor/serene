@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios"; // Assuming you're using axios, adjust if needed
+import axios from "axios"; 
 
-// Define your API endpoint
+
 const API_URL = "https://serene-lbyk.onrender.com/api/v1/professional"
 
 export const fetchTherapist = createAsyncThunk(
