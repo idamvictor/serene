@@ -7,19 +7,28 @@ import { LuMoreVertical } from "react-icons/lu";
 
 
 //* COMMUNITYCARD2 COMPONENT
-const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers, communityId, isJoined}) => {
+const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers, communityId, isMember, refetchUserCommunities}) => {
+  const navigate = useNavigate();
 
   //* Getting userId from Local storage
   const userId = JSON.parse(localStorage.getItem("userInfo"))._id;
 
-  //* Set up for sending the post request when a user clicks join
+  //* All API queries
   const [joinCommunity, { isLoading }] = useJoinCommunityMutation();
-  const navigate = useNavigate();
+
+
+  //* Set up for sending the post request when a user clicks join
   const handleJoinClick = async () => {
-    const res = await joinCommunity({ communityId, userId }).unwrap();
-    console.log("JOIN API RESPONSE:", res);
-    navigate(`/community/${communityId}/${communityName}`);
+    try {
+      const res = await joinCommunity({ communityId, userId }).unwrap();
+      console.log("JOIN API RESPONSE:", res);
+      refetchUserCommunities();
+      navigate(`/community/${communityId}/${communityName}`);
+    } catch (error) {
+      console.error("Error joining community:", error);
+    }
   };
+  
 
   return (
     <>
@@ -41,7 +50,7 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
                 <img src="" alt="" className="h-4 w-4 bg-[#d9d9d9] rounded-full" />
                 <p className="text-white  text-sm xl:text-[.85rem] font-medium ">{communityMembers}</p>
               </div>
-              {isJoined ? (
+              {isMember ? (
                 <Link
                   to={`/community/${communityId}/${communityName}`}
                   className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]"
