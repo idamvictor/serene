@@ -3,7 +3,6 @@ import {
   Dashboard,
   JoinCommunities,
   Rooms,
-  Therapist,
   Resources,
   Communities,
   Payment,
@@ -15,6 +14,7 @@ import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "re
 import Survey from "./features/survey/Survey";
 import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
+import Therapist2 from "./features/Therapist/Therapist2";
 
 
 
@@ -33,8 +33,8 @@ function App() {
       element: <Communities />,
     },
     {
-      path: "/therapist",
-      element: <Therapist />,
+      path: "/therapist/:id",
+      element: <Therapist2 />,
     },
     {
       path: "/rooms",
@@ -63,7 +63,7 @@ function App() {
     {
       path: "/therapists",
       element: <Therapists />,
-    },
+    },  
   ]);
 
   return (

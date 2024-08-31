@@ -2,19 +2,19 @@
 
 export default function ProfileHeader({ name, avatarSrc, coverSrc, children, profileHeaderStyling, profileCoverStyling, title, rating, }) {
   return (
-    <header className="flex flex-col w-full rounded-none max-md:max-w-full">
+    <header className="flex flex-col w-full rounded-none md:max-w-full">
       <img
         loading="lazy"
         src={coverSrc}
         alt="Profile cover"
-        className={`object-contain w-full rounded-lg  ${profileCoverStyling}`}
+        className={`lg:w-full rounded-lg  ${profileCoverStyling}`}
       />
       <div className="flex z-10 gap-2 items-start self-start -mt-12 ml-14 max-md:ml-2.5 w-[93%] ">
         <img
           loading="lazy"
           src={avatarSrc}
           alt={`${name}'s avatar`}
-          className={`object-contain shrink-0 self-start border-[.3rem] border-[#131313] rounded-full ${profileHeaderStyling} `}
+          className={`border-[.3rem] border-[#131313] rounded-full ${profileHeaderStyling} `}
         />
 
         {children}
@@ -34,7 +34,6 @@ export default function ProfileHeader({ name, avatarSrc, coverSrc, children, pro
             </span>
           </div>
         </div> */}
-
       </div>
     </header>
   );

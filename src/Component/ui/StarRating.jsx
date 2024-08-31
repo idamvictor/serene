@@ -10,13 +10,13 @@ const RatingStars = ({ rating }) => {
     <div className="flex">
       {/* Full stars */}
       {[...Array(fullStars)].map((_, index) => (
-        <FaStar key={index} className="text-yellow-500" />
+        <FaStar key={index} className="text-yellow-400 font-light" />
       ))}
       {/* Half star */}
-      {halfStar && <FaStarHalfAlt className="text-yellow-500" />}
+      {halfStar && <FaStarHalfAlt className="text-yellow-400" />}
       {/* Empty stars */}
       {[...Array(emptyStars)].map((_, index) => (
-        <FaRegStar key={index} className="text-yellow-500" />
+        <FaRegStar key={index} className="text-yellow-400" />
       ))}
     </div>
   );

@@ -53,6 +53,7 @@ input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    outline: none;
     background-color: #5E5E5E;
     /* Tailwind: bg-gray-200 */
     border: 2px solid #cbd5e1;
