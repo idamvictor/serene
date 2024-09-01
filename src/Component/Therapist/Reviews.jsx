@@ -8,11 +8,10 @@ const Reviews = ({reviews}) =>{
             {reviews.reviews.map((review) => (
               <div className="py-3">
                 <div className="flex gap-4">
-                  <img src={review.image} alt="" />
+                  <img src={review.image} alt="" loading="lazy" />
                   <span className="text-white font-semibold text-base">
                     {review.name}
                     <StarRating rating={reviews.ratings}/>
-                    {/* add the ratings here  */}
                   </span>
                 </div>
                 <p className="mt-4 tracking-wide leading-6 font-[450] text-serene-gray text-base max-md:max-w-full max-sm:ml-1.5 opacity-70 border-b text-left py-4  ">

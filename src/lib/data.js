@@ -1,11 +1,13 @@
 export const reviewer = {
   "66cee4fc5896e85a524e7533": [
+
     {
       image:
         "https://cdn.builder.io/api/v1/image/assets%2F100e2d6f7ca14266bfead5d17c059b5c%2F89a558e470ef420b881f78810898c90b",
       name: "Choclate_sugar",
       reviews:
         "Dr. Ginger-eke has been a great help in my journey to better mental health. His compassionate approach and genuine concern for my well-being have made a significant difference. Highly recommend him!",
+     
     },
     {
       image:
@@ -20,6 +22,11 @@ export const reviewer = {
       name: "Milk_Banana",
       reviews:
         "I’ve been seeing Dr. Ginger-eke for over a year now, and I can honestly say he has changed my life for the better. His insight and understanding have been invaluable.",
+      Time: {
+        "2024-08-30": ["10:00 am", "11:00 am", "2:00 pm", "4:00 pm"],
+        "2024-08-31": ["2:00pm", "9:00am", "12:00pm", "4:00pm", "6:00pm"],
+        "2024-09-01": ["9:00 am", "1:00 pm", "3:00 pm"],
+      },
     },
     {
       image:
