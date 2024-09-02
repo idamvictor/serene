@@ -41,6 +41,7 @@ function App() {
       path:"/therapists",
       element: <Therapists />
     },
+    
   ]);
 
   return (

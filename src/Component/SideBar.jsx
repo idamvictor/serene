@@ -80,6 +80,11 @@ export function SideBar() {
               reactIcon={RiGlobalFill}
               linkName={"Therapists"}
             />
+             <NAV_LINK
+              destinationLink={"/experiment"}
+              reactIcon={RiGlobalFill}
+              linkName={"Experiment"}
+            />
           </nav>
 
           <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4 ">
