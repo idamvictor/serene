@@ -6,10 +6,11 @@ import { useState } from "react";
 
 const ResourceBtn = ({activeTab, setActiveTab}) => {
   const tabs = ["Videos", "Articles", "Podcasts", "Careers"];
-
   const handleTabButtonClick = (tab) => {
       setActiveTab(tab);
   };
+
+
 
   return(
       <>

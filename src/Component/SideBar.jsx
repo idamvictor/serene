@@ -70,6 +70,21 @@ export function SideBar() {
               reactIcon={RiGlobalFill}
               linkName={"Resources"}
             />
+             <NAV_LINK
+              destinationLink={"/payment"}
+              reactIcon={RiGlobalFill}
+              linkName={"Payment"}
+            />
+             <NAV_LINK
+              destinationLink={"/therapists"}
+              reactIcon={RiGlobalFill}
+              linkName={"Therapists"}
+            />
+             <NAV_LINK
+              destinationLink={"/experiment"}
+              reactIcon={RiGlobalFill}
+              linkName={"Experiment"}
+            />
             
             
           </nav>
