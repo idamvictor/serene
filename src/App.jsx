@@ -10,7 +10,7 @@ import {
   Authentication,
 } from "./pages";
 
-import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate} from "react-router-dom";
 import Survey from "./features/survey/Survey";
 import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
@@ -19,17 +19,18 @@ import Therapist2 from "./features/Therapist/Therapist2";
 
 
 function App() {
+ 
   const router = createBrowserRouter([
     {
       path: "/",
       element: <Dashboard />,
     },
     {
-      path: "/join-communities",
+      path: "/community",
       element: <JoinCommunities />,
     },
     {
-      path: "/community",
+      path: "/community/:communityID/:communityName",
       element: <Communities />,
     },
     {
