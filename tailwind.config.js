@@ -36,7 +36,7 @@ export default {
         serene: "#FFF963",
         "serene-purple": "#E3DAFF",
         "serene-ash": "#EBE5DD",
-        "serene-black": "#0B0B0B",
+        "serene-black": "#101010",
         "serene-blue": "#CBE6FF",
         "serene-gray": "#C7C7C7",
       },
@@ -54,7 +54,7 @@ export default {
   },
   plugins: [
     require("tailwindcss-animate"),
-    // require('@tailwindcss/forms')
+    require("@tailwindcss/forms"),
     // require('savvywombat/tailwindcss-grid-areas')
   ],
 };

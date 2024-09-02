@@ -40,7 +40,8 @@ import rightArrow from "./Icons/rightArrow.svg";
 import verifiedBadge from "./Icons/verifiedBadge.svg";
 import facebookIcon from "./Icons/facebook-icon.svg";
 import instaIcon from "./Icons/insta-icon.svg";
-
+import spinner from "./Icons/spinner.svg"
+import arrowBack from "./Icons/arrowBack.svg"
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
 import moodImage from "./Icons/moodImage.svg";
@@ -76,6 +77,7 @@ import smallVideoCardPic from "./Images/smallVideoCardPic.png";
 import articleFeaturedPic from "./Images/articleFeaturedPic.png";
 import smallArticleCardPic from "./Images/smallArticleCardPic.png";
 import articleContentPic from "./Images/articleContentPic.png";
+
 
 
 
@@ -140,6 +142,7 @@ export {
   profilePhoto,
   framer2,
   arrow,
+  arrowBack,
   videoPreviewPic,
   playVideoIcon,
   videoDesktopPreviewPic,
@@ -152,5 +155,7 @@ export {
   articleContentPic, 
   verifiedBadge,
   facebookIcon,
-  instaIcon
+  instaIcon,
+  spinner,
+  
 };

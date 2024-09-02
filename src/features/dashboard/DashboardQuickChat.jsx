@@ -2,7 +2,9 @@ import { quickChatPic } from "@/assets";
 
 const ChatButton = ({ message }) => {
   return (
-    <button className="border border-[#B2A4DC] bg-[#C1B4E9] rounded-md text-center text-[#211f2a] font-semibold text-sm lg:text-[.78rem] xl:text-sm px-6 py-1 lg:px-2  ">{message}</button>
+    <button className="border border-[#B2A4DC] bg-[#C1B4E9] rounded-md text-center text-[#211F2A] font-medium text-sm lg:text-[.78rem] xl:text-sm px-6 py-1 lg:px-2  ">
+      {message}
+    </button>
   );
 };
 

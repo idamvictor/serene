@@ -49,7 +49,7 @@ export function SideBar() {
         </div>
 
         <div className="sideBar-links-cont lg:mx-2 lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24 xl:mt-6 xl:gap-48 ">
-          <nav className="top-nav lg:flex lg:flex-col lg:gap-2">
+          <nav className="top-nav lg:flex lg:flex-col lg:gap-1">
             <NAV_LINK 
               destinationLink={"/"}
               reactIcon={AiFillHome}
@@ -61,9 +61,9 @@ export function SideBar() {
               linkName={"Communities"}
             />
              <NAV_LINK
-              destinationLink={"/Therapist"} 
+              destinationLink={"/therapists"} 
               reactIcon={IoPerson}
-              linkName={"Therapist"}
+              linkName={"Therapists"}
             />
              <NAV_LINK
               destinationLink={"/resources"}
@@ -85,6 +85,8 @@ export function SideBar() {
               reactIcon={RiGlobalFill}
               linkName={"Experiment"}
             />
+            
+            
           </nav>
 
           <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4 ">
