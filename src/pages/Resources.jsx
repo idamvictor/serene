@@ -37,7 +37,8 @@ const ResourceBtn = ({activeTab, setActiveTab}) => {
 const Resources = () => {
   const [activeTab, setActiveTab] = useState("Videos");
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);  //* to control the video logic when a video is being played
-  const [selectedArticle, setSelectedArticle] = useState(false); //* to control the article logic when an article is selected
+  // const [selectedArticle, setSelectedArticle] = useState(false); //* to control the article logic when an article is selected
+  const [selectedArticle, setSelectedArticle] = useState(null);
 
   const handleBackClick = () => {
     setIsVideoPlaying(false);
@@ -84,3 +85,7 @@ const Resources = () => {
 };
 
 export default Resources;
+
+
+
+
