@@ -1,5 +1,7 @@
 import { useEffect,useState } from "react";
 import { IoIosArrowForward, IoIosArrowBack } from "react-icons/io";
+import { useDispatch } from "react-redux";
+import { setSelectedTime } from "@/services/auth/BookingSlice";
 
 
 const fetchAvailibilty = (therapistTime,date) =>{
@@ -17,10 +19,14 @@ const fetchAvailibilty = (therapistTime,date) =>{
   const Booking = ({therapistData}) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [availableSlots, setAvailableSlots] = useState([]);
+  const [clickedBtn ,setClickedBtn] = useState([])
+  const dispatch = useDispatch()
+
+  
 
   useEffect(() => {
    fetchAvailibilty(therapistData,selectedDate).then((slots) => setAvailableSlots(slots));
-  }, [selectedDate]);
+  }, [selectedDate,therapistData]);
 
   const handlePrevDay = () => {
     setSelectedDate(prevDate => {
@@ -37,7 +43,12 @@ const fetchAvailibilty = (therapistTime,date) =>{
       return newDate;
     });
   };
-
+  // console.log(selectedDate)
+    const handleSelectedDay = (slots) =>{
+      setClickedBtn(slots)
+      const changetoString = selectedDate.toISOString()
+      dispatch(setSelectedTime({date:changetoString, Time: slots}))
+    }
   return (
     <div className=" py-32 pt-9 px-10 bg-[#272727] border border-[#454545] text-white lg:max-w-[70%] rounded-lg ">
       <div className="flex items-center justify-between pb-11">
@@ -62,10 +73,16 @@ const fetchAvailibilty = (therapistTime,date) =>{
           availableSlots.map((slot) => (
             <button
               key={slot}
-              className=" flex items-center justify-center gap-2 py-4 px-11 bg-[#404040] rounded-lg hover:bg-serene focus:outline-none font-medium border border-[#6D6D6D]"
+              onClick={() => handleSelectedDay(slot)}
+              className={`flex items-center justify-center gap-2 py-4 px-11  rounded-lg 
+                ${
+                  clickedBtn === slot
+                    ? "bg-serene bg-opacity-35 text-white"
+                    : " hover:bg-serene hover:text-black focus:outline-none font-medium border border-[#6D6D6D]"
+                }`}
             >
               {slot}
-              <span>WAT</span>
+              <span className="text-sm text-serene-gray">WAT</span>
             </button>
           ))
         ) : (

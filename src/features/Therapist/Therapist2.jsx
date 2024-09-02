@@ -9,10 +9,10 @@ import ProfileHeader from "../psychologists/ProfileHeader";
 import About from "@/Component/Therapist/About";
 import Expertise from "@/Component/Therapist/Expertise";
 import { reviewer } from "@/lib/data";
-import { IoMdArrowDropright } from "react-icons/io";
 import Reviews from "@/Component/Therapist/Reviews";
 import Booking from "@/Component/Therapist/Booking";
 import { TimeSlot } from "@/lib/Time";
+import Footer from "@/Component/Therapist/Footer";
 import { useNavigate } from "react-router-dom";
 
 const Therapist2 = () =>{
@@ -20,28 +20,7 @@ const Therapist2 = () =>{
     const  [therapistData, setTherapistData] = useState(null)
     const {id} = useParams();
     const {data:therapist, error, isLoading} = useGetAllTherapistQuery()
-    const [theEnd, setTheEnd] = useState(true)
-
-    let lastScroll = window.scrollY
-
-  useEffect(()=>{
-const handleScroll = () =>{
-  if(window.scrollY > lastScroll){
-    setTheEnd(false)
-  }else{
-    setTheEnd(true)
-  }
-  lastScroll = window.scrollY
-}
-window.addEventListener('scroll', handleScroll)
-return ()=>{
-window.removeEventListener("scroll", handleScroll);
-}
-
-  },[])
-    
-    console.log(therapist)
-
+    const navigate = useNavigate()
 
     useEffect(()=>{
       if(therapist?.data && Array.isArray(therapist.data) && id ){
@@ -67,6 +46,10 @@ window.removeEventListener("scroll", handleScroll);
     { name: "Reviews", width: "14.75rem" },
   ]
 
+  const handleBack = ()=>{
+    navigate(-1);
+  }
+
   if (isLoading){
     return <Layout><div className="text-serene">Loading ...</div></Layout>
   }
@@ -85,7 +68,7 @@ window.removeEventListener("scroll", handleScroll);
    console.log("reviews:",therapistData)
 
     return (
-      <Layout>
+      <Layout  onBack={handleBack}>
         <main className="flex flex-col mt-20 mx-11">
           <ProfileHeader
             name={therapistData.name}
@@ -142,16 +125,10 @@ window.removeEventListener("scroll", handleScroll);
             )
           }
         </main>
-       <footer
-  className={`bg-[#202020] p-5 fixed w-full lg:w-[83%] bottom-0 flex items-center justify-end transition-transform duration-300 ${
-    theEnd ? "translate-y-0" : "translate-y-full"
-  }`}
->
-  <button  className="bg-serene text-[#0B0B0B] py-1 lg:py-2 font-medium px-1 lg:px-4 rounded-lg text-sm flex items-center">
-    Continue to booking
-    <IoMdArrowDropright className="text-2xl" />
-  </button>
-</footer>
+     <Footer
+     buttonNote= "Continue to booking"
+     onClickNote={`/payment/${therapistData._id}`}
+     />
         
       </Layout>
     );

@@ -49,7 +49,7 @@ function App() {
       element: <Authentication />,
     },
     {
-      path: "/payment",
+      path: "/payment/:id",
       element: <Payment />,
     },
     {
