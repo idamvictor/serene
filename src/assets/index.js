@@ -81,6 +81,7 @@ import articleContentPic from "./Images/articleContentPic.png";
 
 
 
+
 export {
   sereneSign,
   searchIcon,
@@ -155,5 +156,6 @@ export {
   verifiedBadge,
   facebookIcon,
   instaIcon,
-  spinner
+  spinner,
+  
 };

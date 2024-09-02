@@ -48,9 +48,9 @@ const Header = ({ onBack }) => {
 
       <div className="flex items-center ">
         <div className=" flex flex-row-reverse w-full items-center justify-between lg:justify-normal lg:flex-row ">
-          <div className="flex items-center justify-center gap-5 ">
-            <Search className="hover:text-serene w-4 h-4 " />
-            <Bell className="hover:text-serene w-4 h-4 " />
+          <div className="flex items-center justify-center gap-7 ">
+            <Search className="hover:text-serene w-5 h-5 " />
+            <Bell className="hover:text-serene w-5 h-5 " />
             {/* <LucideMessageCircle className="hover:text-serene w-4 h-4 " /> */}
           </div>
 

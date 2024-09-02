@@ -1,17 +1,24 @@
 import { apiSlice } from "./apiSlice";
 
-const THERAPIST_URL = "api/v1/professional"
+const THERAPIST_URL = "api/v1/professional/"
 
 export const therapistSlice = apiSlice.injectEndpoints({
   endpoints:(builder)=>({
-    getTherapist: builder.query({
+    getAllTherapist: builder.query({
       query:()=> ({
-        url:"api/v1/professional",
+        url:THERAPIST_URL,
         method: "GET",
       }),
-      providesTags:["Therapist"]
+      providesTags:["Therapist"],
+      keepUnusedDataFor: 5
+    }),
+   getTherapist:builder.query({
+    query:(id)=>({
+      url: `${THERAPIST_URL}${id}`
     })
+
+   })
   })
 })
 
-export const {useGetTherapistQuery} = therapistSlice
+export const {useGetAllTherapistQuery,useGetTherapistQuery} = therapistSlice
