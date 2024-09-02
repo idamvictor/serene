@@ -1,4 +1,4 @@
-import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from "react-icons/io";
 
 const RatingStars = ({ rating }) => {
   // Round down to nearest half-star
@@ -7,16 +7,16 @@ const RatingStars = ({ rating }) => {
   const emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
   return (
-    <div className="flex">
+    <div className="flex gap-2">
       {/* Full stars */}
       {[...Array(fullStars)].map((_, index) => (
-        <FaStar key={index} className="text-yellow-500" />
+        <IoIosStar key={index} className="text-yellow-300 font-light" />
       ))}
       {/* Half star */}
-      {halfStar && <FaStarHalfAlt className="text-yellow-500" />}
+      {halfStar && <IoIosStarHalf className="text-yellow-300" />}
       {/* Empty stars */}
       {[...Array(emptyStars)].map((_, index) => (
-        <FaRegStar key={index} className="text-yellow-500" />
+        <IoIosStarOutline key={index} className="text-yellow-300" />
       ))}
     </div>
   );

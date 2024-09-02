@@ -63,9 +63,9 @@ export function SideBar() {
               linkName={"Communities"}
             />
              <NAV_LINK
-              destinationLink={"/Therapist"} 
+              destinationLink={"/therapists"} 
               reactIcon={IoPerson}
-              linkName={"Therapist"}
+              linkName={"Therapists"}
             />
              <NAV_LINK
               destinationLink={"/resources"}
@@ -82,6 +82,13 @@ export function SideBar() {
               reactIcon={RiGlobalFill}
               linkName={"Therapists"}
             />
+             <NAV_LINK
+              destinationLink={"/experiment"}
+              reactIcon={RiGlobalFill}
+              linkName={"Experiment"}
+            />
+            
+            
           </nav>
 
           <nav className="bottom-nav absolute bottom-0 lg:flex lg:flex-col lg:gap-1 ">

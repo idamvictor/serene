@@ -85,6 +85,11 @@ import articleContentPic from "./Images/articleContentPic.png";
 
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 41b67be9aefcd055918f9bd4f9e28210c7aa80f3
 export {
   sereneSign,
   searchIcon,
@@ -160,5 +165,9 @@ export {
   facebookIcon,
   instaIcon,
   spinner,
+<<<<<<< HEAD
   redSpinner
+=======
+  
+>>>>>>> 41b67be9aefcd055918f9bd4f9e28210c7aa80f3
 };

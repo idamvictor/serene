@@ -1,6 +1,7 @@
 import Layout from "@/Component/Shared/Layout";
 import PaymentInfo from "@/features/payment/PaymentInfo";
 import SectionSummary from "@/features/payment/SessionSummary";
+import Footer from "@/Component/Therapist/Footer";
 // import AppointmentDetails from "@/features/payment/AppointmentDetails";
 // import CryptoPaymentMethodSection from "@/features/payment/CryptoPaymentMethodSection";
 
@@ -13,6 +14,9 @@ function Payment() {
         {/* <CryptoPaymentMethodSection />
         <AppointmentDetails /> */}
       </div>
+      <Footer
+      buttonNote="Checkout"
+      />
       
     </Layout>
   );
