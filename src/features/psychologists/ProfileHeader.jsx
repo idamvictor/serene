@@ -14,11 +14,7 @@ export default function ProfileHeader({ name, avatarSrc, coverSrc, children, pro
           loading="lazy"
           src={avatarSrc}
           alt={`${name}'s avatar`}
-<<<<<<< HEAD
           className={` border-[.3rem] border-[#131313] rounded-full ${profileHeaderStyling} `}
-=======
-          className={`border-[.3rem] border-[#131313] rounded-full ${profileHeaderStyling} `}
->>>>>>> 41b67be9aefcd055918f9bd4f9e28210c7aa80f3
         />
 
         {children}

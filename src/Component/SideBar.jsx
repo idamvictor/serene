@@ -77,11 +77,7 @@ export function SideBar() {
               reactIcon={RiGlobalFill}
               linkName={"Payment"}
             />
-             <NAV_LINK
-              destinationLink={"/therapists"}
-              reactIcon={RiGlobalFill}
-              linkName={"Therapists"}
-            />
+        
              <NAV_LINK
               destinationLink={"/experiment"}
               reactIcon={RiGlobalFill}
