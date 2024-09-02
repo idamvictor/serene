@@ -51,7 +51,7 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
   return (
     <>
       <div 
-        className="fixed inset-0 flex items-center justify-center z-[1000]" 
+        className={`fixed inset-0 flex items-center justify-center z-[1000] transition-opacity duration-300  ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}
         aria-modal="true" 
         role="dialog"
     >
@@ -74,7 +74,7 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
               onChange={(e) => setPostMessage(e.target.value)}
               onKeyDown={handleKeyDown}
               required
-              className="placeholder-white placeholder-opacity-50 placeholder:text-lg text-lg w-full h-80 bg-transparent border-[#666666] border-opacity-40 mt-6 rounded-[.6875rem] text-white font-medium " 
+              className="placeholder-white placeholder-opacity-50 placeholder:text-lg text-lg w-full h-80 bg-transparent border-[#666666] border-opacity-40 mt-6 rounded-[.6875rem] text-white font-medium focus:outline-none focus:ring-0 focus:border-serene " 
               placeholder="What do you want to talk about?"></textarea>
                 
             <button 

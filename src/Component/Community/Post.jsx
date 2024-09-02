@@ -1,6 +1,7 @@
-import { userProfilePic, postMessage, postForwardArrow } from "@/assets";
+import { userProfilePic, postMessage, postForwardArrow, userDashboardProfilePic } from "@/assets";
 import { IoIosMore } from "react-icons/io";
 import { PiShareFat } from "react-icons/pi";
+import { PiSmileyBold } from "react-icons/pi";
 import { FaRegComment } from "react-icons/fa";
 import { formatDistanceToNowStrict } from 'date-fns';
 
@@ -37,22 +38,58 @@ const Post = ({children, posterName, posterImg, postTime}) => {
             <IoIosMore  className="text-[#b9b9b9] size-5  "/>
         </div>
 
-        <main className="text-[.92rem] tracking-wide leading-6 pt-2 ">
-            {children}
-            </main>
+        <main className="text-[.92rem] tracking-wide leading-6 pt-2 text-[#c7c7c7]">
+          {children}
+        </main>
 
         <div className="comment-box text-xs flex gap-[.6rem] h-10 items-center w-[25%] ">
-            <PostActionBtn
-                btnIcon={<FaRegComment className="size-4" />}
-                btnIconAlt={"comment icon"}
-                btnTitle={`20`}
-            />
-             {/* <PostActionBtn
-                btnIcon={<PiShareFat  className="size-4" />}
-                btnIconAlt={"forward icon"}
-                btnTitle={`Share`}
-            /> */}
+          <PostActionBtn
+              btnIcon={<FaRegComment className="size-4" />}
+              btnIconAlt={"comment icon"}
+              btnTitle={`20`}
+          />
+            {/* <PostActionBtn
+              btnIcon={<PiShareFat  className="size-4" />}
+              btnIconAlt={"forward icon"}
+              btnTitle={`Share`}
+          /> */}
         </div>
+
+              {/* COMMENTS SECTION */}
+        <section aria-labelledby="comments-section" className="mt-1">
+          <form>
+              <label for="comment" className="flex rounded-[49px] items-center justify-end">
+              <textarea id="comment" name="comment" rows="1" className="relative bg-transparent rounded-[49px] shadow-sm focus:outline-none focus:ring-0 focus:border-serene border-[#343434] py-[17px] px-9 block w-full placeholder:text-[#989898] placeholder:font-bold text-sm font-medium text-white" placeholder="Add a comment...">
+              </textarea>
+              <PiSmileyBold  className="absolute size-5 text-[#c7c7c7] mr-4 "/>
+              </label>
+          </form>
+
+
+          <ul className="mt-1 ">
+            <li>
+              <article className="p-2 bg-transparent rounded mb-4 border">
+                <header className="flex items-center justify-between">
+                  <div className="flex items-center gap-1">
+                    <img src={userDashboardProfilePic} alt="" className="size-5" />
+                    <h3 className="font-semibold">Jelly Bean</h3>
+                  </div>
+
+                  <div className="flex items-center gap-1">
+                    <time datetime="2024-08-31">1 week</time>
+                    <IoIosMore  className="text-[#989898] size-5"/> 
+                  </div>
+                
+                </header>
+                <p>This is the comment text.</p>
+                <footer className="mt-2">
+                  <button className="text-blue-500">Reply</button>
+                </footer>
+              </article>
+            </li>
+          </ul>
+
+        </section>
 
         
       </div>

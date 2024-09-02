@@ -20,7 +20,7 @@ const PopupModal = ({ isOpen, onClose, popupTitle, btn1, btn2, btn2Logic, loadin
             </h3>
 
             <div className="flex flex-col px-7 w-full gap-2.5 text-sm font-semibold">
-                <button className="border border-serene bg-serene py-2 px-3 rounded-[4px] cursor-pointer" onClick={onClose}>{btn1}</button>
+                <button className="border border-serene bg-serene hover:bg-transparent hover:text-[#0b0b0b] py-2 px-3 rounded-[4px] cursor-pointer " onClick={onClose}>{btn1}</button>
 
                 <button className="border border-[#ff6767] text-[#ff6767] text-center flex justify-center items-center py-2 px-3 rounded-[4px] cursor-pointer "
                     onClick={btn2Logic}
