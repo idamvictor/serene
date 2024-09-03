@@ -1,10 +1,12 @@
 import Layout from "@/Component/Shared/Layout";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Web3 from 'web3';
 
 function CryptoPaymentMethodSection() {
 
   const [isConfirmed, setIsConfirmed] = useState(true);
+  const navigate = useNavigate();
 
   const test = () => {
     alert("testt")
@@ -249,7 +251,7 @@ function CryptoPaymentMethodSection() {
 
           <button
             disabled={!isConfirmed}
-            onClick={test}
+            onClick={() => navigate(`/payment/crypto/details`)}
             className={`mt-7 px-1 py-2 text-sm font-medium text-yellow-300 bg-transparent border border-yellow-300 rounded w-[308px] ${!isConfirmed && "opacity-25"} `}
             type="button"
           >

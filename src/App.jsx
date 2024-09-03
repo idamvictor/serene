@@ -16,6 +16,7 @@ import CryptoPaymentMethodSection from "./features/payment/CryptoPaymentMethodSe
 import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
 import Therapist2 from "./features/Therapist/Therapist2";
+import AppointmentDetails from "./features/payment/AppointmentDetails";
 
 
 
@@ -69,6 +70,10 @@ function App() {
     {
       path: "/payment/crypto",
       element: <CryptoPaymentMethodSection />,
+    }, 
+    {
+      path: "/payment/crypto/details",
+      element: <AppointmentDetails />,
     },  
   ]);
 
