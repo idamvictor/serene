@@ -71,7 +71,7 @@ import communityCoverPic from "./Images/communityCoverPic.png";
 import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
-import profilePhoto from "./Images/profilePhoto.png";
+// import profilePhoto from "./Images/profilePhoto.png";
 import videoPreviewPic from "./Images/videoPreviewPic.png";
 import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
 import smallVideoCardPic from "./Images/smallVideoCardPic.png";
