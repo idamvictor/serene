@@ -1,6 +1,6 @@
 import { recommendedCommunitiesImage} from "@/assets";
 import RecommendationCard from "@/Component/ui/RecommendationCard";
-import CommunityCard from "@/Component/ui/CommunityCard";
+import CommunityCard from "@/Component/Community/CommunityCard";
 import { communityPic1, communityPic2 } from "@/assets";
 
 

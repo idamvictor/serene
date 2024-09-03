@@ -11,7 +11,7 @@ const Layout = ({ children, onBack}) => {
 
         <Header onBack={onBack}  />
 
-        <main className="layout-main lg:ml-[12.625rem] xl:ml-[15.625rem] overflow-y-auto ">
+        <main className="layout-main lg:ml-[12.625rem] xl:ml-[15.625rem] overflow-y-auto scrollbar-hide ">
           {children}
         </main>
       </div>
