@@ -54,18 +54,18 @@ const fetchAvailibilty = (therapistTime,date) =>{
       <div className="flex items-center justify-between pb-11">
         <button
           onClick={handlePrevDay}
-          className="p-4 bg-[#272727] border-[#454545] border rounded-full hover:bg-gray-700 focus:outline-none"
+          className="p-2 mr-2 bg-[#272727] border-[#454545] border rounded-full hover:bg-gray-700 focus:outline-none"
         >
-          <IoIosArrowBack className="text-lg" />
+          <IoIosArrowBack className="text-sm md:text-lg" />
         </button>
-        <span className="text-lg font-semibold">
+        <span className="text-sm font-semibold">
           {selectedDate.toDateString()}
         </span>
         <button
           onClick={handleNextDay}
-          className="p-4 border-[#454545] border  bg-[#272727] rounded-full hover:bg-gray-700 focus:outline-none"
+          className="p-2   border-[#454545] border  bg-[#272727] rounded-full hover:bg-gray-700 focus:outline-none"
         >
-          <IoIosArrowForward className="text-lg" />
+          <IoIosArrowForward className="text-sm md:text-lg" />
         </button>
       </div>
       <div className="flex flex-wrap items-end justify-center gap-4">

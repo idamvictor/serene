@@ -5,7 +5,7 @@ import Expertise from "./Expertise";
 const Recommended = ({name,about,ratings,expertise,type,experience,highest,image,id}) =>{
    const navigate = useNavigate();
     return (
-      <section className="flex gap-10 mt-10 w-full ">
+      <section className="flex flex-wrap md:flex-nowrap gap-10 mt-10 w-full ">
         <article className="flex flex-col items-center  shrink min-w-[15rem] w-[12.875rem]">
           {/* Therapist Image Section */}
           <div className="flex flex-col px-12 py-7 w-full rounded-xl border border-solid border-neutral-600 max-md:px-5">
@@ -20,7 +20,7 @@ const Recommended = ({name,about,ratings,expertise,type,experience,highest,image
             <div className="flex flex-col items-center mt-5 ">
               <div className="flex flex-col items-center w-full tracking-normal text-center text-white text-opacity-90">
                 <h2 className="text-lg font-semibold ">{name}</h2>
-                <p className="mt-2 text-base font-[450]">{type}</p>
+                <p className="mt-2 text-base font-[400]">{type}</p>
               </div>
 
               {/* Star Rating Section */}
@@ -43,7 +43,7 @@ const Recommended = ({name,about,ratings,expertise,type,experience,highest,image
               className="bg-serene mt-5 mb-10 px-2 w-40 rounded-md py-2"
               onClick={() => navigate(`/therapist/${id}`)}
             >
-              <span className="self-stretch px-1 my-auto ">
+              <span className="self-stretch px-1 my-auto text-black ">
                 Choose Therapist
               </span>
             </button>
@@ -68,14 +68,6 @@ const Recommended = ({name,about,ratings,expertise,type,experience,highest,image
             </button>
           )}
         </div>
-
-        {/* <TherapistDetails
-          id={id}
-          about={about}
-          highest={highest}
-          experience={experience}
-          expertise={expertise}
-        /> */}
       </section>
     );
 }

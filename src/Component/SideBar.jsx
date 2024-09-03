@@ -38,57 +38,107 @@ export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinati
 
 
 //* SIDE BAR COMPONENT
-export function SideBar() {
+export function SideBar({ isOpen }) {
+  // Debug: Confirm the sidebar is receiving the correct isOpen prop
+  console.log("Rendering SideBar with isOpen:", isOpen);
 
   return (
-    <aside className="serene-sidebar lg:bg-[#272727] text-serene-ash lg:fixed lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[12.625rem] xl:w-[15.625rem] ">
-      <div className="lg:pt-8 xl:pt-10 xl:pb-10 ">
-      
+    <aside
+      className={`serene-sidebar lg:bg-[#272727] text-serene-ash lg:fixed lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[12.625rem] xl:w-[15.625rem] 
+    transform transition-transform duration-300 ease-in-out translate-x-0`}
+    >
+      <div className="lg:pt-8 xl:pt-10 xl:pb-10">
         <div className="serene-logo lg:mx-5">
-          <img src={sereneSign} className='lg:w-[6.2rem]   xl:w-[7rem] lg:h-[2.75rem] ' />  
+          <img
+            src={sereneSign}
+            className="lg:w-[6.2rem] xl:w-[7rem] lg:h-[2.75rem]"
+          />
         </div>
 
-        <div className="sideBar-links-cont lg:mx-2 lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24 xl:mt-6 xl:gap-48 ">
+        <div className="sideBar-links-cont lg:mx-2 lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24 xl:mt-6 xl:gap-48">
           <nav className="top-nav lg:flex lg:flex-col lg:gap-1">
-            <NAV_LINK 
+            <NAV_LINK
               destinationLink={"/"}
               reactIcon={AiFillHome}
               linkName={"Dashboard"}
             />
-             <NAV_LINK 
+            <NAV_LINK
               destinationLink={"/join-communities"}
               reactIcon={IoIosPeople}
               linkName={"Communities"}
             />
-             <NAV_LINK
-              destinationLink={"/therapists"} 
+            <NAV_LINK
+              destinationLink={"/therapists"}
               reactIcon={IoPerson}
               linkName={"Therapists"}
             />
-             <NAV_LINK
+            <NAV_LINK
               destinationLink={"/resources"}
               reactIcon={RiGlobalFill}
               linkName={"Resources"}
             />
-            
-            
           </nav>
 
-          <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4 ">
-            <NAV_LINK 
-              reactIcon={IoSettings}
-              linkName={"Settings"}
-            />
-            <NAV_LINK 
-              reactIcon={RiLogoutBoxFill}
-              linkName={"Log out"}
-            />
+          <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4">
+            <NAV_LINK reactIcon={IoSettings} linkName={"Settings"} />
+            <NAV_LINK reactIcon={RiLogoutBoxFill} linkName={"Log out"} />
           </nav>
         </div>
       </div>
-
     </aside>
   );
-};
+}
 
 export default SideBar;
+// export function SideBar({isOpen}) {
+
+//   return (
+//     <aside
+//       className={`serene-sidebar lg:bg-[#272727] text-serene-ash lg:fixed lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[12.625rem] xl:w-[15.625rem] 
+//         transform transition-transform duration-300 ease-in-out ${
+//           isOpen ? "translate-x-0" : "-translate-x-full"
+//         } lg:translate-x-0`}
+//     >
+//       <div className="lg:pt-8 xl:pt-10 xl:pb-10 ">
+//         <div className="serene-logo lg:mx-5">
+//           <img
+//             src={sereneSign}
+//             className="lg:w-[6.2rem]   xl:w-[7rem] lg:h-[2.75rem] "
+//           />
+//         </div>
+
+//         <div className="sideBar-links-cont lg:mx-2 lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24 xl:mt-6 xl:gap-48 ">
+//           <nav className="top-nav lg:flex lg:flex-col lg:gap-1">
+//             <NAV_LINK
+//               destinationLink={"/"}
+//               reactIcon={AiFillHome}
+//               linkName={"Dashboard"}
+//             />
+//             <NAV_LINK
+//               destinationLink={"/join-communities"}
+//               reactIcon={IoIosPeople}
+//               linkName={"Communities"}
+//             />
+//             <NAV_LINK
+//               destinationLink={"/therapists"}
+//               reactIcon={IoPerson}
+//               linkName={"Therapists"}
+//             />
+//             <NAV_LINK
+//               destinationLink={"/resources"}
+//               reactIcon={RiGlobalFill}
+//               linkName={"Resources"}
+//             />
+//           </nav>
+
+//           <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4 ">
+//             <NAV_LINK reactIcon={IoSettings} linkName={"Settings"} />
+//             <NAV_LINK reactIcon={RiLogoutBoxFill} linkName={"Log out"} />
+//           </nav>
+//         </div>
+//       </div>
+//     </aside>
+//   );
+// };
+
+// export default SideBar;
