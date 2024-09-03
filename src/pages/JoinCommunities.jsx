@@ -18,7 +18,7 @@ const joinCommunities = () => {
   const communities = allCommunities?.data || [];
   const userCommunities = allUserCommunities?.data || [];
 
-  console.log(allCommunities);
+  // console.log(allCommunities);
 
   //* Filter to get only joined communities
   const joinedCommunities = communities.filter((community) => 

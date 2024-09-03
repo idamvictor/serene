@@ -30,6 +30,7 @@ const Post = ({children, posterName, posterImg, postTime, postID}) => {
   const [isCommentOpen, setIsCommentOpen] = useState(false);
   const [ commentMessage, setCommentMessage ] = useState('');
   const [ user, setUser ] = useState(null);
+  const [ postOptionOpen, setPostOptionOpen ] = useState(false);
 
   //* Getting user info from local storage
   useEffect(() => {
@@ -76,16 +77,21 @@ const Post = ({children, posterName, posterImg, postTime, postID}) => {
 
   return (
     <>
-      <div className="text-white border-t-[1px] border-t-[#3e3e3e] flex flex-col mb-2 ">
-        <div className="flex items-center justify-between mt-3">
+      <div className="text-white border-t-[1px] border-t-[#3e3e3e] flex flex-col mb-2 relative">
+        <div className="flex items-center justify-between mt-3  ">
             <div className="flex items-center justify-center gap-1 ">
                 <img src={userProfilePic} alt="user profile pic" className="w-8 h-8 rounded-full "  />
                 <h4 className="username text-[.92rem] font-semibold ml-1 ">{posterName}</h4>
                 <div className="dot rounded-full bg-white w-[.125rem] h-[.125rem] "></div>
                 <time dateTime="" className="text-[.64rem] text-[#8d8d8d] font-medium"> <TimeAgo timestamp={postTime} /> </time>
             </div>
-            <IoIosMore  className="text-[#b9b9b9] size-5  "/>
+            <IoIosMore onClick={() => setPostOptionOpen(prevState => !prevState)} className="text-[#b9b9b9] size-5  "/>
+
         </div>
+
+        {postOptionOpen && (
+          <button className="text-white text-sm text-opacity-70 font-medium absolute self-end mt-9 bg-[#5e5e5e] shadow-lg hover:bg-[#555321] rounded-xl px-3 py-1 cursor-pointer ">Delete</button>
+        )}
 
         <main className="text-[.92rem] tracking-wide leading-6 pt-2 text-[#c7c7c7]">
           {children}
@@ -128,7 +134,7 @@ const Post = ({children, posterName, posterImg, postTime, postID}) => {
         <ul className="mt-1 overflow-y-auto h-fit scrollbar-hide ">
 
           {postComments.map((postComment) => (
-             <li>
+             <li key={postComment._id}>
              <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
                <header className="flex items-center justify-between">
                  <div className="flex items-center gap-2 ">
@@ -150,118 +156,6 @@ const Post = ({children, posterName, posterImg, postTime, postID}) => {
              </article>
            </li>
           ))}
-          {/* <li>
-            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-              <header className="flex items-center justify-between">
-                <div className="flex items-center gap-2 ">
-                  <img src={userDashboardProfilePic} alt="" className="size-5" />
-                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                </div>
-
-                <div className="flex items-center gap-6">
-                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                  <IoIosMore  className="text-[#989898] size-5"/> 
-                </div>
-              </header>
-
-              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
-
-              <footer className="">
-                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-              </footer>
-            </article>
-          </li>
-
-          <li>
-            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-              <header className="flex items-center justify-between">
-                <div className="flex items-center gap-2 ">
-                  <img src={userDashboardProfilePic} alt="" className="size-5" />
-                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                </div>
-
-                <div className="flex items-center gap-6">
-                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                  <IoIosMore  className="text-[#989898] size-5"/> 
-                </div>
-              </header>
-
-              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
-
-              <footer className="">
-                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-              </footer>
-            </article>
-          </li>
-
-
-          <li>
-            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-              <header className="flex items-center justify-between">
-                <div className="flex items-center gap-2 ">
-                  <img src={userDashboardProfilePic} alt="" className="size-5" />
-                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                </div>
-
-                <div className="flex items-center gap-6">
-                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                  <IoIosMore  className="text-[#989898] size-5"/> 
-                </div>
-              </header>
-
-              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
-
-              <footer className="">
-                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-              </footer>
-            </article>
-          </li>
-
-
-          <li>
-            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-              <header className="flex items-center justify-between">
-                <div className="flex items-center gap-2 ">
-                  <img src={userDashboardProfilePic} alt="" className="size-5" />
-                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                </div>
-
-                <div className="flex items-center gap-6">
-                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                  <IoIosMore  className="text-[#989898] size-5"/> 
-                </div>
-              </header>
-
-              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
-
-              <footer className="">
-                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-              </footer>
-            </article>
-          </li>
-
-          <li>
-            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-              <header className="flex items-center justify-between">
-                <div className="flex items-center gap-2 ">
-                  <img src={userDashboardProfilePic} alt="" className="size-5" />
-                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                </div>
-
-                <div className="flex items-center gap-6">
-                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                  <IoIosMore  className="text-[#989898] size-5"/> 
-                </div>
-              </header>
-
-              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
-
-              <footer className="">
-                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-              </footer>
-            </article>
-          </li> */}
-          
         </ul>
 
       </section>

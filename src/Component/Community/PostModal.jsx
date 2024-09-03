@@ -3,16 +3,36 @@ import { useSendCommunityPostMutation } from "@/services/community/CommunitySlic
 import { IoClose } from "react-icons/io5";
 import { spinner } from "@/assets";
 import { useEffect, useState } from "react";
+import { postSocket } from "@/App";
 
 const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
   const [postMessage, setPostMessage] = useState('');
   const [user, setUser] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  //* Getting user info from local storage
+
   useEffect(() => {
+    //* Getting user info from local storage
     const storedUser = JSON.parse(localStorage.getItem("userInfo"));
     setUser(storedUser);
-  }, []);
+
+    if (postSocket) {
+      postSocket.connect();
+
+      postSocket.on('receive-post', () => {
+        console.log('Received post event');
+        refetchPosts();
+      });
+
+      return () => {
+        console.log('Disconnecting socket');
+        postSocket.off('receive-post');
+        postSocket.disconnect();
+      };
+    }
+   
+  }, [refetchPosts]);
+
   
   //* All API queries
   const [sendCommunityPost, { isLoading }] = useSendCommunityPostMutation();
@@ -20,15 +40,19 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
   //* Set up for sending post request when the user clicks post
   const handlePostSubmit = async (e) => {
     e.preventDefault();
-    if (user) {
+    if (user && !isSubmitting) {
       try{
-        await sendCommunityPost({ communityId, userId: user._id, message: postMessage }).unwrap();
+        // await sendCommunityPost({ communityId, userId: user._id, message: postMessage }).unwrap();
+        postSocket.emit('new-post', {communityId, userId: user._id, message: postMessage});
         setPostMessage('');
         refetchPosts();
         onClose();
       } catch (error) {
+        setPostMessage('');
         onClose();
         console.error("Failed to create post:", error)
+      } finally {
+        setIsSubmitting(false);
       }
     }
   };
@@ -43,6 +67,7 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
   //* Close modal if not open
     if (!isOpen) return null;
 
+   
   return (
     <>
       <div 

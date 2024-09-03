@@ -1,5 +1,6 @@
 const express = require("express");
 const { join } = require("path");
+const cors  = require("cors");
 const app = express();
 const server = require("http").Server(app);
 const { v4: uuidv4 } = require("uuid");
@@ -10,11 +11,19 @@ const { v4: uuidv4 } = require("uuid");
 //   getRoomUsers,
 // } = require("./utils/user");
 
-const io = require("socket.io")(server);
+const io = require("socket.io")(server, {
+  cors: {
+    origin: "*",
+    method: "*",
+  }
+});
 
 const chat = io.of("/chat");
 const video = io.of("/video");
+const post = io.of('/post');
 
+
+app.use(cors());
 app.set("view engine", "ejs");
 app.use(express.static("./"));
 
@@ -96,6 +105,40 @@ chat.on("connection", (socket) => {
     });
   });
 });
+
+
+post.on('connection', (socket) => {
+  socket.on('new-post', async ({communityId, userId, message}) => {
+    console.log("Socket is connected!")
+      try {
+          const resp = await fetch('https://serene-lbyk.onrender.com/api/v1/community/message', {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({
+                  communityId, userId, message
+              }),
+          });
+
+          if (resp.ok) {
+            const data = await resp.json();
+            post.emit('receive-post', data.data);
+            post.broadcast.emit('receive-post', data.data);
+          } else {
+            socket.emit('error', 'Failed to save the post'); 
+          }
+        } catch (error) {
+          console.error('Error saving message:', error);
+          socket.emit('error', 'Error saving the post'); 
+        }
+  });
+
+  socket.on('disconnect', () => {
+      console.log('user disconnected');
+  });
+});
+
 
 server.listen(3000, () => {
   console.log("Server running on port 3000");

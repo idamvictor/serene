@@ -16,6 +16,12 @@ import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
 import Therapist2 from "./features/Therapist/Therapist2";
 
+//* SOCKET IO SETUP
+import { io } from "socket.io-client";
+// export const socket = io("http://localhost:3000");
+// export const postSocket = io("http://localhost:3000/post");
+export const postSocket = io("https://serene-lbyk.onrender.com/post");
+
 
 
 function App() {

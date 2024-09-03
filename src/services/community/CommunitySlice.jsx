@@ -1,8 +1,11 @@
 import { apiSlice } from '../auth/apiSlice';
 
 
-const userID = JSON.parse(localStorage.getItem("userInfo"))._id;
-//   console.log(userId)
+const userID = JSON.parse(localStorage.getItem("userInfo"))?._id;
+if(!userID){
+    //*TODO: Redirect to login screen or homepage
+}
+
 
 export const CommunitySlice = apiSlice.injectEndpoints({
     endpoints: (builder) => ({
