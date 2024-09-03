@@ -64,14 +64,14 @@ const ArticleSection = ({selectedArticle, setSelectedArticle}) => {
                  <div className=" flex justify-between items-center">
                      <h2 className="text-white font-semibold xl:text-lg ">Related Articles</h2>
                      
-                     {/* FILTER CUSTOM BUTTON  */}
-                     <div className="filter-dropdown border border-red-100 flex items-center rounded-xl w-[4rem] justify-around py-[.1rem] ">
+                     {/* REMOVED FILTER CUSTOM BUTTON  */}
+                     {/* <div className="filter-dropdown border border-red-100 flex items-center rounded-xl w-[4rem] justify-around py-[.1rem] ">
                          <img src={filterIcon} alt="" className="size-4 " />
                          <input type="text" placeholder="All" id="filter" className=" outline-none text-xs bg-transparent w-4 font-medium box-border "/>
                          <img src={arrowDown} alt="" className="size-4"  />
                      </div>
      
-                     {/* <ul id="dropdown-list">
+                     <ul id="dropdown-list">
                          <li data-value="option-1">Option 1</li>
                      </ul> */}
                  </div>

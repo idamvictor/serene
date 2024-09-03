@@ -1,3 +1,5 @@
+//TODO: DELETE THE MENUBAR ICON
+
 // ALL ICONS IMPORT
 import sereneSign from "./Icons/sereneSign.svg";
 import searchIcon from "./Icons/searchIcon.svg";
@@ -42,6 +44,8 @@ import facebookIcon from "./Icons/facebook-icon.svg";
 import instaIcon from "./Icons/insta-icon.svg";
 import spinner from "./Icons/spinner.svg";
 import arrowBack from "./Icons/arrowBack.svg";
+import redSpinner from "./Icons/redSpinner.svg";
+
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
 import moodImage from "./Icons/moodImage.svg";
@@ -51,8 +55,6 @@ import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";
-import headerImg from "./Images/headImage.png";
-
 import americanExpress from "./Icons/americanExpress.svg";
 import bitcoin from "./Icons/bitcoin.png";
 import discover from "./Icons/discover.svg";
@@ -63,14 +65,12 @@ import radioButton from "./Icons/radioButton.svg";
 import usdc from "./Icons/usdc.svg";
 import usdt from "./Icons/usdt.svg";
 import visa from "./Icons/visa.svg";
-// import profilePhoto from "./Images/profilePhoto.png";
-// import headerImg from "./Images/headerImg.png";
 import communityProfilePic from "./Images/communityProfilePic.png";
 import communityCoverPic from "./Images/communityCoverPic.png";
 import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
-import profilePhoto from "./Images/profilePhoto.png";
+// import profilePhoto from "./Images/profilePhoto.png";
 import videoPreviewPic from "./Images/videoPreviewPic.png";
 import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
 import smallVideoCardPic from "./Images/smallVideoCardPic.png";
@@ -99,7 +99,6 @@ export {
   postMessage,
   postPic,
   userProfilePic,
-  headerImg,
   about,
   experience,
   lang,
@@ -135,7 +134,6 @@ export {
   userDashboardProfilePic,
   articlePic,
   quickChatPic,
-  profilePhoto,
   framer2,
   arrow,
   arrowBack,
@@ -153,4 +151,5 @@ export {
   facebookIcon,
   instaIcon,
   spinner,
+  redSpinner,
 };

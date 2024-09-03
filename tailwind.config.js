@@ -55,6 +55,6 @@ export default {
   plugins: [
     require("tailwindcss-animate"),
     require("@tailwindcss/forms"),
-    // require('savvywombat/tailwindcss-grid-areas')
+    require("tailwind-scrollbar-hide")
   ],
 };
