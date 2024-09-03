@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player";
-import { playVideoIcon, filterIcon, arrowDown, yellowShareIcon, saveAddIcon, videoPreviewPic } from "@/assets";
+import { playVideoIcon, filterIcon, arrowDown, yellowShareIcon, saveAddIcon, videoPreviewPic,smallVideoCardPic } from "@/assets";
 import SmallVideoCard from "./SmallVideoCard";
 import VideoCard from "./VideoCard";
 
