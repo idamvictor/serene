@@ -210,7 +210,7 @@ function CryptoPaymentMethodSection() {
             </h1>
             <p className="mt-5 text-sm font-medium text-amber-300">
               Kindly make a payment of{" "}
-              <span className="font-semibold">0.00005BTC</span> to the BTC wallet
+              <span className="font-semibold">6 USDT</span> to this USDT wallet
               address
             </p>
           </div>
@@ -225,7 +225,7 @@ function CryptoPaymentMethodSection() {
             <div className="mt-3.5">OR</div>
             <div className="mt-3 flex items-center justify-between px-2 py-3.5 rounded-xl bg-stone-600 border border-neutral-400 border-opacity-70">
               <span className="text-sm font-bold">
-                1WCA7kftd4gxLsKxBWz4ATBCbX5Md9mvn
+              0x634bC37172eCDD1Eb18Fb1C1f1E043006be5Cc60
               </span>
               <img
                 loading="lazy"
@@ -246,7 +246,7 @@ function CryptoPaymentMethodSection() {
           </div>
 
           <div className="mt-1 text-sm font-medium text-center text-white text-opacity-90">
-            Waiting for Payment (2:30:40)
+            Waiting for Payment 
           </div>
 
           <button

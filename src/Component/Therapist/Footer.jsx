@@ -26,7 +26,7 @@ const Footer = ({ buttonNote,onClickNote }) => {
       }`}
     >
       <button
-        onClick={() => navigate(`${onClickNote}`)}
+        onClick={(currencyy) => navigate(`${onClickNote}`)}
         className="bg-serene text-[#0B0B0B] py-1 lg:py-2 font-medium px-1 lg:px-4 rounded-lg text-sm flex items-center"
       >
         {buttonNote}
