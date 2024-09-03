@@ -1,6 +1,6 @@
 import ReactPlayer from "react-player";
 
-const SmallVideoCard = ({
+const SmallVideoCard = ({ 
   videoUrl,
   videoTitle,
   videoChannel,
