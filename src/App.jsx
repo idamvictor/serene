@@ -12,6 +12,7 @@ import {
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate} from "react-router-dom";
 import Survey from "./features/survey/Survey";
+import CryptoPaymentMethodSection from "./features/payment/CryptoPaymentMethodSection";
 import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
 import Therapist2 from "./features/Therapist/Therapist2";
@@ -64,6 +65,10 @@ function App() {
     {
       path: "/therapists",
       element: <Therapists />,
+    },
+    {
+      path: "/payment/crypto",
+      element: <CryptoPaymentMethodSection />,
     },  
   ]);
 

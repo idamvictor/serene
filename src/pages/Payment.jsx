@@ -5,6 +5,10 @@ import Footer from "@/Component/Therapist/Footer";
 // import AppointmentDetails from "@/features/payment/AppointmentDetails";
 // import CryptoPaymentMethodSection from "@/features/payment/CryptoPaymentMethodSection";
 
+const toggleModal = () => {
+  alert("modal toggled");
+}
+
 function Payment() {
   return (
     <Layout>
@@ -16,6 +20,7 @@ function Payment() {
       </div>
       <Footer
       buttonNote="Checkout"
+      onClickNote={`/payment/crypto`}
       />
       
     </Layout>
