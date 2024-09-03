@@ -29,7 +29,7 @@ const Survey = () => {
   //   }
   // }, []);
 const userInfo = JSON.parse(localStorage.getItem("userInfo"));
-const userId = userInfo._id
+const userId = userInfo?._id
   const saveProgress = () => {
     const progressData = {
       currentQuestionIndex,

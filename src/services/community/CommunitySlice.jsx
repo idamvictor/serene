@@ -1,7 +1,7 @@
 import { apiSlice } from '../auth/apiSlice';
 
 
-const userID = JSON.parse(localStorage.getItem("userInfo"))._id;
+const userID = JSON.parse(localStorage.getItem("userInfo"))?._id;
 //   console.log(userId)
 
 export const CommunitySlice = apiSlice.injectEndpoints({
