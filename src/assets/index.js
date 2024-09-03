@@ -75,12 +75,14 @@ import videoPreviewPic from "./Images/videoPreviewPic.png";
 import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
 import smallVideoCardPic from "./Images/smallVideoCardPic.png";
 import articleFeaturedPic from "./Images/articleFeaturedPic.png";
+import headerImage from "./Images/headImage.png";
 import smallArticleCardPic from "./Images/smallArticleCardPic.png";
 import articleContentPic from "./Images/articleContentPic.png";
 
 export {
   sereneSign,
   searchIcon,
+  headerImage,
   chat,
   bell,
   recommendedTherapistImage,
