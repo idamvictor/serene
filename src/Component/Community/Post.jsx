@@ -3,27 +3,76 @@ import { IoIosMore } from "react-icons/io";
 import { PiShareFat } from "react-icons/pi";
 import { PiSmileyBold } from "react-icons/pi";
 import { FaRegComment } from "react-icons/fa";
-import { formatDistanceToNowStrict, intlFormatDistance } from 'date-fns';
+import { formatDistanceToNowStrict } from 'date-fns';
+import { useState, useEffect } from "react";
+import { useGetCommentsQuery, useSendCommentsMutation } from "@/services/community/CommentSlice";
 
-export const PostActionBtn = ({btnIcon, btnIconAlt, btnTitle }) => {
+export const PostActionBtn = ({btnIcon, btnIconAlt, btnTitle, btnLogic }) => {
     return ( 
         <>
-            <button className="flex items-center justify-center gap-1 text-[#b1b1b1] bg-[#282828]  font-medium rounded-full px-[.9rem] py-[.375rem] ">
-                {/* <img src={btnIcon} alt={btnIconAlt} className="w-4 h-4" /> */}
-                <div>{btnIcon}</div>
+            <button onClick={btnLogic} className="flex items-center justify-center gap-1 text-[#b1b1b1] bg-[#282828]  font-medium rounded-full px-[.9rem] py-[.375rem] ">
+                <img src={btnIcon} alt={btnIconAlt} className="w-4 h-4" />
+                {/* <div>{btnIcon}</div> */}
                 <span>{btnTitle}</span>
             </button>
         </>
      );
 };
 
-
+//* Format timestamp from backend 
 const TimeAgo = ({ timestamp }) => {
     const date = formatDistanceToNowStrict(new Date(timestamp));  
     return date;
+};
+
+//* POST COMPONENT
+const Post = ({children, posterName, posterImg, postTime, postID}) => {
+  const [isCommentOpen, setIsCommentOpen] = useState(false);
+  const [ commentMessage, setCommentMessage ] = useState('');
+  const [ user, setUser ] = useState(null);
+
+  //* Getting user info from local storage
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("userInfo"));
+    setUser(storedUser);
+  }, []);
+  // console.log(user._id)
+  // console.log(postID)
+
+  //* ALL API QUERIES
+  const { data: allComments, refetch: refetchComments } = useGetCommentsQuery(postID);
+  const[ sendComments, { isLoading: loadingSendComment} ] = useSendCommentsMutation();
+
+  //* Destructuring
+  const postComments = allComments?.data || [];
+  // console.log(postComments)
+  //  console.log(postID);
+
+  //*Handle comment section toggle
+  const handleCommentClick = () => {
+    setIsCommentOpen(prevState => !prevState);
   };
 
-const Post = ({children, posterName, posterImg, postTime}) => {
+  //*Handle posting comments
+  const handleCommentSubmit = async (e) => {
+    e.preventDefault();
+    if (user) {
+      try{
+        await sendComments({ userId: user._id, comment: commentMessage, postID }).unwrap();
+        setCommentMessage('');
+        refetchComments();
+      } catch (error) {
+        console.error("Failed to create comment:", error)
+      }
+    }
+  };
+
+  const handleKeyDown = (e) => {
+    if ( e.key === 'Enter' && !e.shiftKey ) {
+      e.preventDefault();
+      handleCommentSubmit(e);
+    }
+  };
 
   return (
     <>
@@ -43,10 +92,13 @@ const Post = ({children, posterName, posterImg, postTime}) => {
         </main>
 
         <div className="comment-box text-xs flex gap-[.6rem] h-10 items-center w-[25%] ">
+
           <PostActionBtn
-              btnIcon={<FaRegComment className="size-4" />}
+              // btnIcon={<FaRegComment className="size-4" />}
+              btnIcon={postMessage}
               btnIconAlt={"comment icon"}
-              btnTitle={`20`}
+              btnTitle={postComments.length}
+              btnLogic={handleCommentClick}
           />
             {/* <PostActionBtn
               btnIcon={<PiShareFat  className="size-4" />}
@@ -56,132 +108,166 @@ const Post = ({children, posterName, posterImg, postTime}) => {
         </div>
 
               {/* COMMENTS SECTION */}
+      {isCommentOpen && (
         <section aria-labelledby="comments-section" className="mt-1">
-          <form>
-              <label for="comment" className="flex rounded-[49px] items-center justify-end">
-              <textarea id="comment" name="comment" rows="1" className="relative bg-transparent border-[#343434] rounded-[49px] shadow-sm focus:outline-none focus:ring-0 focus:border-serene py-[17px] px-9 block w-full placeholder:text-[#989898] placeholder:font-bold text-sm font-medium text-white" placeholder="Add a comment...">
-              </textarea>
-              <PiSmileyBold  className="absolute size-5 text-[#c7c7c7] mr-4 "/>
-              </label>
-          </form>
+        <form onSubmit={handleCommentSubmit}>
+            <label className="flex rounded-[49px] items-center justify-end">
+            <textarea 
+              value={commentMessage} 
+              onKeyDown={handleKeyDown}
+              onChange={(e) => setCommentMessage(e.target.value)} 
+              rows="1" 
+              className="relative bg-transparent border-[#343434] rounded-[49px] shadow-sm focus:outline-none focus:ring-0 focus:border-serene py-[17px] px-9 block w-full placeholder:text-[#989898] placeholder:font-bold text-sm font-medium text-white" 
+              placeholder="Add a comment...">
+            </textarea>
+            <PiSmileyBold  className="absolute size-5 text-[#c7c7c7] mr-4 "/>
+            </label>
+        </form>
+
+        {/* RENDERED COMMENTS */}
+        <ul className="mt-1 overflow-y-auto h-fit scrollbar-hide ">
+
+          {postComments.map((postComment) => (
+             <li>
+             <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
+               <header className="flex items-center justify-between">
+                 <div className="flex items-center gap-2 ">
+                   <img src={userDashboardProfilePic} alt="" className="size-5" />
+                   <h3 className="font-semibold text-xs ">Jelly Bean</h3>
+                 </div>
+ 
+                 <div className="flex items-center gap-6">
+                   <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs "><TimeAgo timestamp={postComment.createdAt} /></time>
+                   <IoIosMore  className="text-[#989898] size-5"/> 
+                 </div>
+               </header>
+ 
+               <p className="text-[#e8e8e8] text-sm ">{postComment.comment}</p>
+ 
+               <footer className="">
+                 <button className="text-[#989898] text-xs font-semibold ">Reply</button>
+               </footer>
+             </article>
+           </li>
+          ))}
+          {/* <li>
+            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
+              <header className="flex items-center justify-between">
+                <div className="flex items-center gap-2 ">
+                  <img src={userDashboardProfilePic} alt="" className="size-5" />
+                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
+                </div>
+
+                <div className="flex items-center gap-6">
+                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
+                  <IoIosMore  className="text-[#989898] size-5"/> 
+                </div>
+              </header>
+
+              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
+
+              <footer className="">
+                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
+              </footer>
+            </article>
+          </li>
+
+          <li>
+            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
+              <header className="flex items-center justify-between">
+                <div className="flex items-center gap-2 ">
+                  <img src={userDashboardProfilePic} alt="" className="size-5" />
+                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
+                </div>
+
+                <div className="flex items-center gap-6">
+                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
+                  <IoIosMore  className="text-[#989898] size-5"/> 
+                </div>
+              </header>
+
+              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
+
+              <footer className="">
+                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
+              </footer>
+            </article>
+          </li>
 
 
-          <ul className="mt-1 overflow-y-auto h-[13rem] scrollbar-hide ">
-            <li>
-              <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-                <header className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 ">
-                    <img src={userDashboardProfilePic} alt="" className="size-5" />
-                    <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                  </div>
+          <li>
+            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
+              <header className="flex items-center justify-between">
+                <div className="flex items-center gap-2 ">
+                  <img src={userDashboardProfilePic} alt="" className="size-5" />
+                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
+                </div>
 
-                  <div className="flex items-center gap-6">
-                    <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                    <IoIosMore  className="text-[#989898] size-5"/> 
-                  </div>
-                </header>
+                <div className="flex items-center gap-6">
+                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
+                  <IoIosMore  className="text-[#989898] size-5"/> 
+                </div>
+              </header>
 
-                <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
+              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
 
-                <footer className="">
-                  <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-                </footer>
-              </article>
-            </li>
-
-            <li>
-              <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-                <header className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 ">
-                    <img src={userDashboardProfilePic} alt="" className="size-5" />
-                    <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                  </div>
-
-                  <div className="flex items-center gap-6">
-                    <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                    <IoIosMore  className="text-[#989898] size-5"/> 
-                  </div>
-                </header>
-
-                <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
-
-                <footer className="">
-                  <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-                </footer>
-              </article>
-            </li>
+              <footer className="">
+                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
+              </footer>
+            </article>
+          </li>
 
 
-            <li>
-              <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-                <header className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 ">
-                    <img src={userDashboardProfilePic} alt="" className="size-5" />
-                    <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                  </div>
+          <li>
+            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
+              <header className="flex items-center justify-between">
+                <div className="flex items-center gap-2 ">
+                  <img src={userDashboardProfilePic} alt="" className="size-5" />
+                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
+                </div>
 
-                  <div className="flex items-center gap-6">
-                    <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                    <IoIosMore  className="text-[#989898] size-5"/> 
-                  </div>
-                </header>
+                <div className="flex items-center gap-6">
+                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
+                  <IoIosMore  className="text-[#989898] size-5"/> 
+                </div>
+              </header>
 
-                <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
+              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
 
-                <footer className="">
-                  <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-                </footer>
-              </article>
-            </li>
+              <footer className="">
+                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
+              </footer>
+            </article>
+          </li>
 
+          <li>
+            <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
+              <header className="flex items-center justify-between">
+                <div className="flex items-center gap-2 ">
+                  <img src={userDashboardProfilePic} alt="" className="size-5" />
+                  <h3 className="font-semibold text-xs ">Jelly Bean</h3>
+                </div>
 
-            <li>
-              <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-                <header className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 ">
-                    <img src={userDashboardProfilePic} alt="" className="size-5" />
-                    <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                  </div>
+                <div className="flex items-center gap-6">
+                  <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
+                  <IoIosMore  className="text-[#989898] size-5"/> 
+                </div>
+              </header>
 
-                  <div className="flex items-center gap-6">
-                    <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                    <IoIosMore  className="text-[#989898] size-5"/> 
-                  </div>
-                </header>
+              <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
 
-                <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
+              <footer className="">
+                <button className="text-[#989898] text-xs font-semibold ">Reply</button>
+              </footer>
+            </article>
+          </li> */}
+          
+        </ul>
 
-                <footer className="">
-                  <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-                </footer>
-              </article>
-            </li>
+      </section>
 
-            <li>
-              <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
-                <header className="flex items-center justify-between">
-                  <div className="flex items-center gap-2 ">
-                    <img src={userDashboardProfilePic} alt="" className="size-5" />
-                    <h3 className="font-semibold text-xs ">Jelly Bean</h3>
-                  </div>
-
-                  <div className="flex items-center gap-6">
-                    <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs ">1 week</time>
-                    <IoIosMore  className="text-[#989898] size-5"/> 
-                  </div>
-                </header>
-
-                <p className="text-[#e8e8e8] text-sm ">I can go a full day without sleeping</p>
-
-                <footer className="">
-                  <button className="text-[#989898] text-xs font-semibold ">Reply</button>
-                </footer>
-              </article>
-            </li>
-          </ul>
-
-        </section>
-
+      )}
+        
         
       </div>
     </>

@@ -8,15 +8,12 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
   const [postMessage, setPostMessage] = useState('');
   const [user, setUser] = useState(null);
 
-
   //* Getting user info from local storage
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("userInfo"));
     setUser(storedUser);
   }, []);
   
- 
-
   //* All API queries
   const [sendCommunityPost, { isLoading }] = useSendCommunityPostMutation();
 
@@ -37,13 +34,11 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if ( e.key === 'Enter' && !e.shiftKey ) {
       e.preventDefault(); 
       handlePostSubmit(e);
-      console.log('I pressed Enter')
     }
   };
-
 
   //* Close modal if not open
     if (!isOpen) return null;

@@ -49,6 +49,7 @@ const Communities = () => {
     //* Destructuring
     const communities = allCommunities?.data || [];
     const posts = allPosts?.data || [];
+    // console.log(posts)
 
     //* Getting a single community
     const selectedCommunity = communities.find((community) => community._id === communityID )
@@ -152,6 +153,7 @@ const Communities = () => {
                                     posterName={post.userId?.username}
                                     // posterImg={post.userId?.avatar}
                                     postTime={post.time}
+                                    postID={post._id}
                                 >
                                     {post.message}
                                 </Post>

@@ -20,7 +20,7 @@ export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinati
 
   }, [location.pathname, destinationLink]);
 
-  const handleClick = (link) => {
+  const handleClick = () => {
     setActive(destinationLink);
   };
 
