@@ -1,4 +1,3 @@
-// import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Authentication } from "./pages";
 import {
   Dashboard,
   JoinCommunities,
@@ -8,6 +7,8 @@ import {
   Payment,
   Therapists,
   Authentication,
+  ChatPage,
+  ErrorPage,
 } from "./pages";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate} from "react-router-dom";
@@ -30,6 +31,7 @@ function App() {
     {
       path: "/",
       element: <Dashboard />,
+      errorElement: <ErrorPage />,
     },
     {
       path: "/community",
@@ -70,6 +72,10 @@ function App() {
     {
       path: "/therapists",
       element: <Therapists />,
+    }, 
+    {
+      path: "/chat",
+      element: <ChatPage />,
     },  
   ]);
 

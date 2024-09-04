@@ -6,6 +6,8 @@ import Communities from "./Communities";
 import Payment from "./Payment";
 import Therapists from "./Therapists";
 import Authentication from "./Authentication";
+import ChatPage from "./ChatPage";
+import ErrorPage from "./ErrorPage";
 
 export {
   Dashboard,
@@ -16,4 +18,6 @@ export {
   Authentication,
   Payment,
   Therapists,
+  ChatPage,
+  ErrorPage
 };

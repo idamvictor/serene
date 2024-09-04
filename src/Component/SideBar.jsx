@@ -83,7 +83,11 @@ export function SideBar() {
               reactIcon={RiGlobalFill}
               linkName={"Experiment"}
             />
-            
+             <NAV_LINK
+              destinationLink={"/chat"}
+              reactIcon={RiGlobalFill}
+              linkName={"Chats"}
+            />
             
           </nav>
 
