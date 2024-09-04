@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavigationTabs from "../psychologists/NavigationTabs";
 import StarRating from "@/Component/ui/StarRating";
-import { headerImg } from "@/assets";
+import { headerImage } from "@/assets";
 import { useGetAllTherapistQuery } from "@/services/auth/therapistSlice";
 import Layout from "@/Component/Shared/Layout";
 import ProfileHeader from "../psychologists/ProfileHeader";
@@ -74,7 +74,7 @@ const Therapist2 = () =>{
             name={therapistData.name}
             title={therapistData.type}
             avatarSrc={therapistData.image}
-            coverSrc={headerImg}
+            coverSrc={headerImage}
             profileHeaderStyling={`size-20 lg:size-32`}
             profileCoverStyling={`h-28`}
           >

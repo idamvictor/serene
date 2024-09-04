@@ -1,4 +1,4 @@
-import Badges from "./Badges";
+import Badges from "@/Component/ui/Badges";
 
 
 const CommunityCard = ({backgroundColor, BadgeStyling, communityName, communityMembers, communityPicture}) => {

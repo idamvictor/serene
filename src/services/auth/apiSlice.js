@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 const baseQuery = fetchBaseQuery({
-  baseUrl: "https://serene-lbyk.onrender.com/",
+  baseUrl: "https://serene-lbyk.onrender.com/api/v1",
 });
 
 export const apiSlice = createApi({
@@ -10,7 +10,7 @@ export const apiSlice = createApi({
   endpoints: (builder) => ({
     loginUser: builder.mutation({
       query: (walletid) => ({
-        url: "api/v1/user/login",
+        url: "/user/login",
         method: "POST",
         body: { walletid },
       }),
