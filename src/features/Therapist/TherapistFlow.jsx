@@ -6,8 +6,12 @@ import Recommended from "@/Component/Therapist/Recommended";
 import { useDispatch,useSelector } from "react-redux";
 import { fetchTherapist } from "@/services/auth/therapistSlice2";
 import AllTherapist from "@/Component/Therapist/AllTherapist";
+import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const TherapistFlow = ()=>{
+  const {id} = useParams()
+  const navigate = useNavigate()
   const dispatch = useDispatch();
   const therapists = useSelector(state => state.fetchTherapist.therapist)
   const highestRated = useSelector(
@@ -15,6 +19,10 @@ const TherapistFlow = ()=>{
   );
   const loading = useSelector(state=> state.fetchTherapist.loading )
   const error = useSelector(state=> state.fetchTherapist.error)
+
+  const handleNavigate = ()=>{
+    navigate(`/therapist/${id}`);
+  }
     //  const {data:therapist, error,isLoading} = useGetAllTherapistQuery();
 
        useEffect(() => {
@@ -98,6 +106,7 @@ const TherapistFlow = ()=>{
                     ratings={therapist.ratings}
                     expertise={therapist.expertise}
                     image={therapist.image}
+                    id={therapist._id}
                     />
                 </div>
               ))}

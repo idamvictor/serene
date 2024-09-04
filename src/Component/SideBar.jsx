@@ -67,7 +67,7 @@ export function SideBar({ isOpen }) {
               linkName={"Dashboard"}
             />
             <NAV_LINK
-              destinationLink={"/join-communities"}
+              destinationLink={"/community"}
               reactIcon={IoIosPeople}
               linkName={"Communities"}
             />

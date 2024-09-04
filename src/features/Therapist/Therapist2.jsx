@@ -23,7 +23,7 @@ const Therapist2 = () =>{
     const navigate = useNavigate()
 
     useEffect(()=>{
-      if(therapist?.data && Array.isArray(therapist.data) && id ){
+      if(therapist?.data && Array.isArray(therapist?.data) && id ){
 
         const selectTherapist = therapist.data.find((t)=> t._id === id)
 

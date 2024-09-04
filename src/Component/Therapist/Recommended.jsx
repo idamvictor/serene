@@ -52,7 +52,10 @@ const Recommended = ({name,about,ratings,expertise,type,experience,highest,image
         <div>
           <About about={about} />
           {highest ? (
-            <Expertise experience={experience} expertise={expertise} />
+            <div>
+              <Expertise experience={experience} expertise={expertise} />
+              <h1 className="text-serene">Other Reccomendtion</h1>
+            </div>
           ) : (
             <button
               onClick={() => navigate(`/therapist/${id}`)}
