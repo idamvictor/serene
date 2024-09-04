@@ -44,14 +44,16 @@ export function SideBar({ isOpen }) {
 
   return (
     <aside
-      className={`serene-sidebar lg:bg-[#272727] text-serene-ash lg:fixed lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[12.625rem] xl:w-[15.625rem] 
-    transform transition-transform duration-300 ease-in-out translate-x-0`}
+      className={`lg:block lg:bg-[#272727] text-serene-ash lg:fixed fixed z-50 bg-[#272727] top-20 w-[15rem] h-[30rem] pt-2  lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[12.625rem] xl:w-[15.625rem] 
+    transform transition-transform duration-300 ease-in-out ${
+      isOpen ? "translate-x-0 block" : "-translate-x-full hidden"
+    } lg:translate-x-0`}
     >
-      <div className="lg:pt-8 xl:pt-10 xl:pb-10">
+      <div className="lg:pt-8 xl:pt-10 xl:">
         <div className="serene-logo lg:mx-5">
           <img
             src={sereneSign}
-            className="lg:w-[6.2rem] xl:w-[7rem] lg:h-[2.75rem]"
+            className="lg:w-[6.2rem] xl:w-[7rem] lg:h-[2.75rem] w-[5rem] lg:py-0 lg:ml-0 py-5 ml-3  "
           />
         </div>
 
@@ -88,8 +90,6 @@ export function SideBar({ isOpen }) {
     </aside>
   );
 }
-
-export default SideBar;
 // export function SideBar({isOpen}) {
 
 //   return (

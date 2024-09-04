@@ -1,5 +1,5 @@
 import Header from "../Header";
-import SideBar from "../SideBar";
+import {SideBar} from "../SideBar";
 import { useState } from "react";
 
 const Layout = ({ children, onBack }) => {
