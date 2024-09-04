@@ -8,6 +8,7 @@ export const ChatSlice = apiSlice.injectEndpoints({
                 method: "GET"
             }),
         }),
+        // LoadChatMessages
     })
 });
 
