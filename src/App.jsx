@@ -67,7 +67,7 @@ function App() {
     // },
     {
       path: "/wallet",
-      element: <ConnectWallet />,
+      element: <ConnectWallet />
     },
     {
       path: "/survey",
