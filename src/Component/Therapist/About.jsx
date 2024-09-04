@@ -1,8 +1,7 @@
 
 const About = ({about}) =>{
     return(
-        <header className="flex flex-col w-full text-base max-md:max-w-full">
-      {/* About Section: Always visible */}
+        <header className="flex flex-col w-full text-base max-md:max-w-full ">
       <div className="flex flex-col w-full max-md:max-w-full">
         <h1 className="flex items-center gap-1.5 self-start font-[550] tracking-wide leading-none text-white text-opacity-90">
           <img
@@ -13,7 +12,7 @@ const About = ({about}) =>{
           />
           ABOUT THERAPIST
         </h1>
-        <p className="mt-4 tracking-wide leading-6 font-[450] text-serene-gray text-base max-md:max-w-full max-sm:ml-1.5 opacity-70">
+        <p className="mt-4 tracking-wide text-wrap leading-6 font-[450] text-serene-gray text-base max-md:max-w-full max-sm:ml-1.5 opacity-70">
           {about}
         </p>
       </div>
