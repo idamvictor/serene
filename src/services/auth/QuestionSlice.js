@@ -1,6 +1,6 @@
 import { apiSlice } from "./apiSlice";
 
-const QUESTIONS_URL = "/api/v1/survey"
+const QUESTIONS_URL = "/survey"
 
 export const QuestionSlice = apiSlice.injectEndpoints({
     endpoints:(builder)=>({

@@ -1,17 +1,26 @@
 import Header from "../Header";
-import SideBar from "../SideBar";
+import {SideBar} from "../SideBar";
+import { useState } from "react";
 
+const Layout = ({ children, onBack }) => {
+  const [displaySidebar, setDisplaySidebar] = useState(false);
 
-//! ------------ DON'T TOUCH WITHOUT PERMISSION --------------!
-const Layout = ({ children, onBack}) => {
+  const handleSidebarDisplay = () => {
+    setDisplaySidebar((prev) => !prev);
+  };
+
   return (
-    <section className="lg:mx-auto w-screen ">
-      <div className="lg:min-h-screen ">
-        <SideBar />
+    <section className="lg:mx-auto w-screen">
+      <div className="lg:min-h-screen">
+        {/* Debug: Check if isOpen is being passed correctly */}
+        {console.log('Sidebar Open:', displaySidebar)}
 
-        <Header onBack={onBack}  />
+        {/* Pass the isOpen prop to SideBar */}
+        <SideBar isOpen={displaySidebar} />
 
-        <main className="layout-main lg:ml-[12.625rem] xl:ml-[15.625rem] overflow-y-auto ">
+        <Header onBack={onBack} handleSidebarDisplay={handleSidebarDisplay} />
+
+        <main className="layout-main md:text-white lg:ml-[12.625rem] xl:ml-[15.625rem] overflow-y-auto">
           {children}
         </main>
       </div>

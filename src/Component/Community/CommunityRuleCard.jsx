@@ -1,13 +1,13 @@
-import NewRule from "@/Component/ui/NewRule";
+import NewRule from "@/Component/Community/NewRule";
 import Badges from "@/Component/ui/Badges";
 
-const CommunityRuleCard = () => {
+const CommunityRuleCard = ({ communityName, communityDescription, communityRuleArr, communityRuleTopics, }) => {
   return (
     <>
     <section className="border-b-[1px] border-b-[#3f3f3f] py-5 px-8 flex flex-col gap-2 ">
-        <h4 className="font-semibold text-white text-sm ">Cheers Champions</h4>
+        <h4 className="font-semibold text-white text-sm ">{communityName}</h4>
 
-        <p className="text-sm text-[#a3a3a3] tracking-wide ">A safe place for people suffering from alcohol addiction looking to cut down or stop to share.</p>
+        <p className="text-sm text-[#a3a3a3] tracking-wide ">{communityDescription}</p>
 
         <div className="flex justify-between items-center xl:w-[37%] lg:w-[58%] ">
             <div className="flex flex-col">
@@ -28,7 +28,12 @@ const CommunityRuleCard = () => {
       <section className="rules-section px-8 py-5 border-b-[1px] border-b-[#3f3f3f]">
         <h4 className="text-base text-[#a3a3a3] font-semibold tracking-wider mb-5 ">RULES</h4>
         <ol className="list-decimal pl-3 flex flex-col gap-5  ">
-          <NewRule 
+          {communityRuleArr.map((rule) => (
+            <NewRule
+              rule={rule}
+            />
+          ))}
+          {/* <NewRule 
             rule={`Comments from profiles with verified badges are from medical professionals.`}
           />
           <NewRule 
@@ -42,7 +47,7 @@ const CommunityRuleCard = () => {
           />
            <NewRule 
             rule={`No social media or AI-generated content.`}
-          />
+          /> */}
         </ol>
       </section>
 
