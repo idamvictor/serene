@@ -15,7 +15,7 @@ const RecommendationCard = ({img, imgCaption, recommendedText, children, seeAllL
                     <button className="text-serene-gray font-medium text-xs" onClick={seeAllLogic}> See all</button>
                 </div>
 
-                <main className=" flex flex-row items-center mt-2 lg:mt-5 lg:grid lg:grid-cols-2 lg:auto-rows-auto lg:place-items-center lg:place-content-center lg:gap-[.6rem] ">{children}</main>
+                <main className=" flex flex-row overflow-x-auto scrollbar-hide items-center mt-2 lg:mt-5 lg:overflow-hidden lg:grid lg:grid-cols-2 lg:auto-rows-auto lg:place-items-center lg:place-content-center lg:gap-[.6rem] ">{children}</main>
             </div>
         </>
      );

@@ -1,9 +1,13 @@
 import NewRule from "@/Component/Community/NewRule";
 import Badges from "@/Component/ui/Badges";
 
+//* Predefined styles for the badges
+const AboutBadges = ["bg-serene", "bg-serene-purple", "bg-serene-ash", "bg-serene-blue"];
+
 const CommunityRuleCard = ({ communityName, communityDescription, communityRuleArr, communityRuleTopics, communityMembers }) => {
   return (
     <>
+    {/* COMMUNITY DETAILS SECTION */}
     <section className="border-b-[1px] border-b-[#3f3f3f] py-5 px-8 flex flex-col gap-2 ">
         <h4 className="font-semibold text-white text-sm ">{communityName}</h4>
 
@@ -28,6 +32,7 @@ const CommunityRuleCard = ({ communityName, communityDescription, communityRuleA
         </div>
       </section>
 
+      {/* RULES SECTION */}
       <section className="rules-section px-8 py-5 border-b-[1px] border-b-[#3f3f3f]">
         <h4 className="text-base text-[#a3a3a3] font-semibold tracking-wider mb-5 ">RULES</h4>
         <ol className="list-decimal pl-3 flex flex-col gap-5  ">
@@ -45,18 +50,13 @@ const CommunityRuleCard = ({ communityName, communityDescription, communityRuleA
         <h4 className="text-base text-[#a3a3a3] font-semibold tracking-wider mb-4 mt-5">TOPICS</h4>
 
         <div className="flex w-[95%] flex-wrap gap-3">
-          <Badges
-              styling={`bg-serene`}
-            >  Alcohol</Badges>
-              <Badges
-              styling={`bg-serene-purple`}
-            >  Happiness</Badges>
-              <Badges
-              styling={`bg-serene-ash`}
-            >  Mood booster</Badges>
-              <Badges
-              styling={`bg-serene-blue`}
-            >  Soberity</Badges>
+          {communityRuleTopics. map((topic, index) => {
+            const styles = AboutBadges[index % AboutBadges.length]; 
+
+            return (
+              <Badges key={index} styling={styles}>{topic}</Badges>
+            );
+          })}
         </div>
       </section>
     </>

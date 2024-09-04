@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 import {  useJoinCommunityMutation } from "@/services/community/CommunitySlice";
 
 
-
 const CommunityCard = ({backgroundColor, badgeStyling, badgeTitle, communityName, communityId, communityMembers, communityPicture, isMember, refetchUserCommunities}) => {
 const navigate = useNavigate();
 

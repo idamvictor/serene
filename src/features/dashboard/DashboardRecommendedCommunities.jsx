@@ -84,32 +84,26 @@ const DashboardRecommendedCommunities = () => {
   return (
     <>
      <div className="dashboard-community">
-
-     {joinedCommunities.length > 0 ? ( 
-          <>
-            <RecommendationCard
-              recommendedText="Joined Communities"
+      {joinedCommunities.length > 0 ? ( 
+            <>
+              <RecommendationCard
+                recommendedText="Joined Communities"
+                seeAllLogic={seeAllCommunities}
+              >
+              {renderCommunityCards(joinedCommunities)}
+              </RecommendationCard>
+            </>
+          ) : (
+            <RecommendationCard 
+              img={recommendedCommunitiesImage}
+              imgCaption="You are not a member of any community"
+              recommendedText="Recommended communities you can join"
               seeAllLogic={seeAllCommunities}
             >
-             {renderCommunityCards(joinedCommunities)}
+              {renderCommunityCards(only4communities)}
             </RecommendationCard>
-          </>
-        ) : (
-          <RecommendationCard 
-            img={recommendedCommunitiesImage}
-            imgCaption="You are not a member of any community"
-            recommendedText="Recommended communities you can join"
-            seeAllLogic={seeAllCommunities}
-          >
-            {renderCommunityCards(only4communities)}
-          </RecommendationCard>
-        )}
+          )}
      </div>
-
-     <div>
-
-     </div>
-     
     </>
   )
 };

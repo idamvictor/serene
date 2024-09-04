@@ -107,11 +107,11 @@ const Communities = () => {
        
     };
     
-
     return (
         <>
         <Layout onBack={handleBackClick}>
             <div className=" mt-28 lg:mx-3 lg:mt-28 xl:mx-7 xl:mt-28 relative">
+                {/* PROFILE HEADER OF THE COMMUNITY */}
                 <ProfileHeader
                     name={``}
                     avatarSrc={communityProfilePic}
@@ -146,8 +146,6 @@ const Communities = () => {
             </div>
 
             <section className="mt-8 mb-10 lg:mx-4 xl:mx-7 flex items-center justify-center ">
-               
-
                 {/* COMMUNITY POSTS */}
                 <div className="grid grid-cols-[3fr_2fr] auto-rows-auto place-content-center">
                     <div className="post-cont mr-10">
@@ -186,6 +184,7 @@ const Communities = () => {
                 </div>
             </section>
 
+            {/* POPUP WHEN YOU WANT TO LEAVE A COMMUNITY */}
             <PopupModal 
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
@@ -196,6 +195,7 @@ const Communities = () => {
                 loadingLeave={loadingLeave}
             />
 
+            {/* POPUP WHEN YOU WANT TO MAKE A POST */}
             <PostModal 
                 isOpen={isPostOpen}
                 onClose={handleClosePostModal}
