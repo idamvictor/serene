@@ -65,6 +65,7 @@ function App() {
     //   path: "/chats",
     //   element: <Chat />
     // },
+    {
       path: "/wallet",
       element: <ConnectWallet />,
     },

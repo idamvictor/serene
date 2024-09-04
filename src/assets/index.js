@@ -58,7 +58,7 @@ import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";;
-import headerImg from "./images/headerImg.png";
+// import headerImg from "./images/headerImg.png";
 import americanExpress from "./Icons/americanExpress.svg";
 import bitcoin from "./Icons/bitcoin.png";
 import discover from "./Icons/discover.svg";
@@ -174,7 +174,8 @@ export {
   chatImage,
   Mic,
   video,
-  Group
+  Group,
   spinner,
   redSpinner,
+  // profilePhoto
 };

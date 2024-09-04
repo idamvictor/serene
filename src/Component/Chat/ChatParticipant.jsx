@@ -1,11 +1,11 @@
 import React from 'react'
-import { Group, profilePhoto } from '@/assets'
+import { Group } from '@/assets'
 
 function ChatParticipant() {
   return (
     <>
         <div className='flex gap-6 p-4 justify-between bg-[#272727] '>
-            <img src={profilePhoto} alt="" className='w-[48px] h-[48px]' />
+            {/* <img src={profilePhoto} alt="" className='w-[48px] h-[48px]' /> */}
             <div>
                 <div className='text-white font-medium bg-[#191919] px-10 rounded-md py-2'>
                     <p className='text-xs'>Dr. Mary-Ann Okoli</p>

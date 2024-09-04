@@ -1,4 +1,4 @@
-import { chatImage, Group, profilePhoto } from '@/assets'
+import { chatImage, Group } from '@/assets'
 import React from 'react'
 import VideoParticipant from './VideoParticipant'
 import ChatParticipant from './ChatParticipant'
