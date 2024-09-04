@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState, useResolvedPath } from "react";
 import { AiFillHome } from "react-icons/ai";
-import { IoCubeSharp, IoPerson, IoSettings } from "react-icons/io5";
+import { IoCubeSharp, IoPerson, IoSettings, IoChatbubblesSharp } from "react-icons/io5";
 import { RiGlobalFill, RiLogoutBoxFill } from "react-icons/ri";
 import { IoIosPeople } from "react-icons/io";
 import {sereneSign } from "@/assets";
@@ -85,7 +85,7 @@ export function SideBar() {
             />
              <NAV_LINK
               destinationLink={"/chat"}
-              reactIcon={RiGlobalFill}
+              reactIcon={IoChatbubblesSharp}
               linkName={"Chats"}
             />
             

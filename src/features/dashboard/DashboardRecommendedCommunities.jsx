@@ -2,10 +2,26 @@ import { recommendedCommunitiesImage} from "@/assets";
 import RecommendationCard from "@/Component/ui/RecommendationCard";
 import CommunityCard from "@/Component/Community/CommunityCard";
 import { communityPic1, communityPic2 } from "@/assets";
+import { useGetCommunitiesQuery, useGetUserCommunityQuery } from "@/services/community/CommunitySlice";
+import { isCommunityJoined } from "@/utils/communityUtils";
 
 
 
 const DashboardRecommendedCommunities = () => {
+  //* All API queries
+  const { data: allCommunities, error: allCommunitiesError, isLoading: allCommunitiesLoading} = useGetCommunitiesQuery();
+  const {data: allUserCommunities, refetch} = useGetUserCommunityQuery();
+  
+  //* Destructuring
+  const communities = allCommunities?.data || [];
+  const userCommunities = allUserCommunities?.data || [];
+
+  // console.log(allCommunities);
+
+  //* Filter to get only joined communities
+  const joinedCommunities = communities.filter((community) => 
+    isCommunityJoined(community._id, userCommunities)
+  );
 
   return (
     <>

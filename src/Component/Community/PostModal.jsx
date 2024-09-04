@@ -43,7 +43,7 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
     if (user && !isSubmitting) {
       try{
         // await sendCommunityPost({ communityId, userId: user._id, message: postMessage }).unwrap();
-        postSocket.emit('new-post', {communityId, userId: user._id, message: postMessage});
+        postSocket.emit('new-post', {communityId, userId: user?._id, message: postMessage});
         setPostMessage('');
         refetchPosts();
         onClose();

@@ -45,7 +45,7 @@ import instaIcon from "./Icons/insta-icon.svg";
 import spinner from "./Icons/spinner.svg"
 import arrowBack from "./Icons/arrowBack.svg"
 import redSpinner from "./Icons/redSpinner.svg";
-
+import sereneS from "./Icons/sereneS.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -158,5 +158,6 @@ export {
   facebookIcon,
   instaIcon,
   spinner,
-  redSpinner
+  redSpinner,
+  sereneS
 };

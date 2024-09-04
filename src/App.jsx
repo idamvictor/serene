@@ -26,7 +26,6 @@ export const postSocket = io("http://localhost:3000/post");
 
 
 function App() {
- 
   const router = createBrowserRouter([
     {
       path: "/",

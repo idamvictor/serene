@@ -4,8 +4,15 @@ import { MdAlternateEmail } from "react-icons/md";
 import { IoSearchOutline } from "react-icons/io5";
 import { LuMoreHorizontal } from "react-icons/lu";
 import { userDashboardProfilePic } from "@/assets";
+import { useLoadChatMessagesQuery } from "@/services/Chat/ChatSlice";
 
-const ChatDetailsPage = ({userProfilePic, userName }) => {
+const ChatDetailsPage = ({therapistProfilePic, therapistName, therapistId, roomId }) => {
+
+const { data: allMessages} = useLoadChatMessagesQuery(roomId);
+
+console.log(allMessages)
+// const messages = allMessages?.data
+
   return (
     <>
         <div className=" bg-[#181818]">
@@ -13,9 +20,9 @@ const ChatDetailsPage = ({userProfilePic, userName }) => {
                 {/* Fist Div */}
                 <div className="bg-[#272727] h-24 flex items-center justify-between px-8">
                     <div className="flex items-center gap-1" id="profile-section">
-                        <img src={userDashboardProfilePic} alt="" className=" size-9 rounded-full" id="prof-pic" />
+                        <img src={therapistProfilePic} alt="" className=" size-9 rounded-full" id="prof-pic" />
                         <div className="ml-2">
-                            <div className="text-white font-semibold" id="other-user">Mark</div>
+                            <div className="text-white font-semibold" id="other-user">{therapistName}</div>
                             <div className="text-[#a3a3a3] text-xs" id="onlinestatus">Less than 5 mins</div>
                         </div>
                     </div>
@@ -42,7 +49,7 @@ const ChatDetailsPage = ({userProfilePic, userName }) => {
 
                         {/* SENDER CHAT BUBBLE */}
                         <div className="mb-2 mr-8  h-fit text-xs absolute right-0 bg-serene  rounded-lg px-2 p-1 min-w-44 max-w-52 flex flex-col ">
-                            <div class="absolute top-0 right-0 transform -translate-y-1 -translate-x-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-serene border-l-8 border-l-transparent -rotate-90"></div>
+                            <div className="absolute top-0 right-0 transform -translate-y-1 -translate-x-1/2 w-0 h-0 border-t-8 border-t-transparent border-b-8 border-b-serene border-l-8 border-l-transparent -rotate-90"></div>
                             <span className="text-[#191919] font-medium ">Good evening all</span>
                             <span className="text-[0.65rem] text-[#686868] self-end ">4:30AM</span>
                             {/* </div> */}
