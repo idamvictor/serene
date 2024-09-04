@@ -214,9 +214,7 @@ function PaymentInfo() {
 
   return (
     <div className="flex flex-col items-start gap-[24px] w-[39.5625rem]">
-      <div className="self-stretch text-[rgba(255,255,255,0.9)] font-[450] text-[1rem] leading-[1.25rem] tracking-[0.0125rem] font-haas-grotesk">
-        Choose your payment method
-      </div>
+      <h1 className="text-[#FFFFFF] text-2xl font-[450]">Choose your payment method</h1>
       <section
         className="cursor-pointer px-5 pb-3 rounded-xl border border-solid border-neutral-500 self-stretch"
         onClick={() => handleClick("paypal")}

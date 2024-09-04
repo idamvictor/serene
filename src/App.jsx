@@ -1,4 +1,3 @@
-// import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Authentication } from "./pages";
 import {
   Dashboard,
   JoinCommunities,
@@ -8,15 +7,16 @@ import {
   Payment,
   Therapists,
   Authentication,
+  Settings,
+  Bookings
 } from "./pages";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate} from "react-router-dom";
 import Survey from "./features/survey/Survey";
+import Chat from "./pages/Chat";
 import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
 import Therapist2 from "./features/Therapist/Therapist2";
-
-
 
 function App() {
  
@@ -54,6 +54,17 @@ function App() {
       element: <Payment />,
     },
     {
+      path: "/settings",
+      element: <Settings />
+    },
+    {
+      path: "/bookings",
+      element: <Bookings />
+    },
+    // {
+    //   path: "/chats",
+    //   element: <Chat />
+    // },
       path: "/wallet",
       element: <ConnectWallet />,
     },

@@ -23,7 +23,7 @@ const Therapist2 = () =>{
     const navigate = useNavigate()
 
     useEffect(()=>{
-      if(therapist?.data && Array.isArray(therapist.data) && id ){
+      if(therapist?.data && Array.isArray(therapist?.data) && id ){
 
         const selectTherapist = therapist.data.find((t)=> t._id === id)
 
@@ -69,7 +69,7 @@ const Therapist2 = () =>{
 
     return (
       <Layout  onBack={handleBack}>
-        <main className="flex flex-col mt-20 mx-11">
+        <main className="flex flex-col mt-20 mx-11 mb-32">
           <ProfileHeader
             name={therapistData.name}
             title={therapistData.type}
@@ -102,7 +102,7 @@ const Therapist2 = () =>{
             />
           </div>
           {activeTab === "Overview" && (
-            <div className="mt-10">
+            <div className="mt-10 mb-32">
               <About about={therapistData.about} />
               <Expertise
                 experience={therapistData.experience}

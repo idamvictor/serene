@@ -6,6 +6,8 @@ import Communities from "./Communities";
 import Payment from "./Payment";
 import Therapists from "./Therapists";
 import Authentication from "./Authentication";
+import Settings from "./Settings";
+import Bookings from "./Bookings";
 
 export {
   Dashboard,
@@ -15,5 +17,7 @@ export {
   Communities,
   Authentication,
   Payment,
-  Therapists,
+  Settings,
+  Bookings,
+  Therapists
 };

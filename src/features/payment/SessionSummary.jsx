@@ -30,9 +30,9 @@ const [therapistData, setTherapistData] = useState([])
        }, [therapists, id]);
   return (
     <div>
-      <div className="self-stretch text-[rgba(255,255,255,0.9)] font-[450] text-[1rem] leading-[1.25rem] tracking-[0.0125rem] font-haas-grotesk">
+      <h1 className="text-[450] text-white text-2xl">
         Summary
-      </div>
+      </h1>
       <section className="flex flex-col items-start px-6 py-7 mt-6 w-full rounded-lg bg-neutral-800 max-md:px-5">
         <div className="flex flex-col max-w-full text-sm w-[20.6875rem]">
           <h2 className="font-semibold tracking-wide leading-none text-serene">
