@@ -11,7 +11,7 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
   const navigate = useNavigate();
 
   //* Getting userId from Local storage
-  const userId = JSON.parse(localStorage.getItem("userInfo"))._id;
+  const userId = JSON.parse(localStorage.getItem("userInfo"))?._id;
 
   //* All API queries
   const [joinCommunity, { isLoading }] = useJoinCommunityMutation();
@@ -47,8 +47,10 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
             <div className="community-members flex items-center justify-between w-[81%] lg:w-[82%] xl:w-[84%] absolute bottom-0 mb-3">
               <div className="flex items-center gap-1">
                 <img src="" alt="" className="h-4 w-4 bg-[#d9d9d9] rounded-full" />
-                <p className="text-white  text-sm xl:text-[.85rem] font-medium ">{communityMembers}</p>
+                <p className="text-white  text-sm xl:text-[.85rem] font-medium ">{communityMembers <= 1 ? `${communityMembers} Member` : `${communityMembers} Members` }</p>
               </div>
+
+              {/* VIEW OR JOIN LOGIC */}
               {isMember ? (
                 <Link
                   to={`/community/${communityId}/${communityName}`}

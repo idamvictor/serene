@@ -25,7 +25,6 @@ const joinCommunities = () => {
     isCommunityJoined(community._id, userCommunities)
   );
 
-
   //* Reusable function to render community cards
  const renderCommunityCards = (communities) => (
   <main className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5 grid-rows-auto">
@@ -42,7 +41,7 @@ const joinCommunities = () => {
           communityName={community.name}
           badgeTitle={`Alcoholics`}
           communityDescription={community.description}
-          communityMembers={`12K+ Members`}
+          communityMembers={community.members}
           isMember={isMember}
           refetchUserCommunities={refetch}
         />
@@ -71,7 +70,6 @@ const joinCommunities = () => {
         </section>
       )}
       
-
         {/* RECOMMENDED COMMUNITIES SECTION */}
       <section className="recommended-communities-section mx-4 mt-10 md:mt-24 xl:ml-7 xl:mr-11">
         <div className="xl:mt-4 flex items-center">

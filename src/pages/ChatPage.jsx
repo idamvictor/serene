@@ -1,4 +1,4 @@
-import { sereneS, sereneSign, userDashboardProfilePic } from "@/assets";
+import { sereneS } from "@/assets";
 import Layout from "@/Component/Shared/Layout";
 import { useGetOtherUsersQuery } from "@/services/Chat/ChatSlice";
 import { IoSearchOutline } from "react-icons/io5";
@@ -10,7 +10,6 @@ import { useChatUserMutation } from "@/services/Chat/ChatSlice";
 
 const ChatPage = () => {
     const [user, setUser] = useState(null);
-    // const [roomId, setRoomId] = useState(null);
     const [roomDetails, setRoomDetails] = useState({
         roomId: null,
         therapistProfilePic: null,
