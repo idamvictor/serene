@@ -1,11 +1,10 @@
 import React, {useState} from 'react'
-import { Link } from "react-router-dom";
 import { profileAvatar } from '@/assets';
-import { arrowDown } from '@/assets';
 import Info from './Info';
 import Input from './Input';
 import ToogleButton from './ToogleButton';
 import Support from './Support';
+import Accordion from './Accordion';
 
 function Tabs({activeTab, setActiveTab}) {
     const tabs = ["Profile", "Security", "Notifications", "Support"];
@@ -48,21 +47,25 @@ const Setting = () => {
                 {/* FOR VIDEOS SECTION */}
                 {activeTab === "Profile" && (
 
-                    <div>
+                    <div className=''>
                         <Info desc='General Infomation' />
                     <div className="flex gap-10 justify-even items-center mt-10" >
                         <img src={profileAvatar} alt="" />
-                        <button className='bg-serene px-6 py-2 font-bold rounded text-center'>Change Avatar</button>
-                        <button className='border border-[serene] px-6 py-2 font-bold rounded text-center text-serene'>Delete Avatar</button> 
+                        <button className='bg-serene px-6 py-2 font-medium rounded text-center'>Change Avatar</button>
+                        <button className='border border-serene px-6 py-2 font-medium rounded text-center text-serene'>Delete Avatar</button> 
                     </div>
                     <div className='mt-8 flex flex-col relative mb-32'>
-                        <Input name={'Profile Name'} />
-                        <button className='text-serene  font-bold p-3 absolute top-[70px] right-[630px]'>Generate new Profile name</button>
+                        <Input name={'Profile Name'} placeholder={'JELLYBEAN'} />
+                        {/* <button className='text-serene  font-medium p-3 absolute top-[70px] right-[630px]'>Generate new Profile name</button> */}
                     </div>
                     <div className='mt-8 flex flex-col'>
-                        <Input name={'Status Recently'}/>
+                        <Input name={'Status Recently'} placeholder={'JELLYBEAN'}/>
                     </div>
-                    <p className='mt-6 text-serene font-bold'>View Preferences </p>
+                    <div className='flex mt-4'>
+                        {/* <button className='mt-6 text-serene font-medium'>View Preferences </button>
+                        <img src={trailing} alt="" className='pt-6 px-1 cursor-pointer'/> */}
+                        <Accordion />
+                    </div>
                     </div>
                 )}
 
@@ -73,8 +76,8 @@ const Setting = () => {
                         <Info desc='Your Wallet ID' />
 
                          <div className='mt-8 flex flex-col relative mb-32'>
-                            <Input name={'Wallet ID'} />
-                            <button className='text-serene  font-bold p-3 absolute top-[70px] right-[630px]'>Create New Wallet</button>
+                            <Input name={'Wallet ID'} placeholder={'JELLYBEAN'} />
+                            <button className='text-serene  font-medium p-3 absolute top-[70px] right-[630px]'>Create New Wallet</button>
                         </div>
                     </> 
                 )}
@@ -96,14 +99,16 @@ const Setting = () => {
                 {
                     activeTab === "Support" && (
                         <>
-                            <Support text={'About Us'}/>
+                            <Support text={'About Us'}/> 
                             <Support text={'Privacy Policy'}/>
                             <Support text={'Terms and Conditons'}/>
                             <Support text={'FAQs'}/>
                             <Support text={'Contact Us'}/>
                         </>
                     )
-                }
+                }   
+
+              
                    
                 </main>
             </section>

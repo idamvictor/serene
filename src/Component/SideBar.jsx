@@ -70,15 +70,26 @@ export function SideBar() {
               reactIcon={RiGlobalFill}
               linkName={"Resources"}
             />
+            {/* <NAV_LINK
+              destinationLink={"/chats"}
+              reactIcon={RiGlobalFill}
+              linkName={"Chats"}
+            /> */}
              <NAV_LINK
               destinationLink={"/payment"}
               reactIcon={RiGlobalFill}
               linkName={"Payment"}
             />
+            <NAV_LINK 
+            destinationLink={"/bookings"}
+            reactIcon={RiGlobalFill}
+            linkName={"My Bookings"}
+            />
           </nav>
 
           <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4 ">
             <NAV_LINK 
+              destinationLink={"/settings"}
               reactIcon={IoSettings}
               linkName={"Settings"}
             />

@@ -24,7 +24,7 @@ function ToogleButton({ text }) {
                     ></div>
                 </button>
             </div>
-            <hr />
+            <hr className='mb-2 border-[#272727]' />
         </div>
     </div>
   )

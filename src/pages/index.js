@@ -7,6 +7,7 @@ import Communities  from "./Communities";
 import Payment from "./Payment";
 import Authentication from "./Authentication";
 import Settings from "./Settings";
+import Bookings from "./Bookings";
 
 
 
@@ -20,5 +21,6 @@ export {
   Communities,
   Authentication,
   Payment,
-  Settings
+  Settings,
+  Bookings
 };

@@ -40,6 +40,9 @@ import rightArrow from "./Icons/rightArrow.svg";
 import verifiedBadge from "./Icons/verifiedBadge.svg";
 import facebookIcon from "./Icons/facebook-icon.svg";
 import instaIcon from "./Icons/insta-icon.svg";
+import link from './Icons/link.svg'
+import book from './Icons/book.svg'
+import trailing from './Icons/Trailing.svg'
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -77,9 +80,16 @@ import articleFeaturedPic from "./Images/articleFeaturedPic.png";
 import smallArticleCardPic from "./Images/smallArticleCardPic.png";
 import articleContentPic from "./Images/articleContentPic.png";
 
+
 // settings image
 import profileAvatar from './Images/profile-avatar.png'
+import angleRight from './Icons/right-arrow.svg'
 
+// chat image
+import chatImage from './Images/chat.png'
+import Mic from './Images/Mic.svg'
+import video from './Icons/Video.svg'
+import Group from './Icons/Group.svg'
 
 
 
@@ -156,5 +166,13 @@ export {
   verifiedBadge,
   facebookIcon,
   instaIcon,
-  profileAvatar
+  profileAvatar,
+  angleRight,
+  link,
+  book,
+  trailing,
+  chatImage,
+  Mic,
+  video,
+  Group
 };

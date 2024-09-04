@@ -1,7 +1,8 @@
-import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Settings } from "./pages";
+import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Settings, Bookings } from "./pages";
 
 import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate } from "react-router-dom";
 import Survey from "./features/survey/Survey";
+import Chat from "./pages/Chat";
 
 
 
@@ -36,6 +37,14 @@ function App() {
       path: "/settings",
       element: <Settings />
     },
+    {
+      path: "/bookings",
+      element: <Bookings />
+    },
+    // {
+    //   path: "/chats",
+    //   element: <Chat />
+    // },
   ]);
 
   return (
