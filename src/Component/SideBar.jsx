@@ -63,11 +63,6 @@ export function SideBar() {
               linkName={"Communities"}
             />
              <NAV_LINK
-              destinationLink={"/therapists"} 
-              reactIcon={IoPerson}
-              linkName={"Therapists"}
-            />
-             <NAV_LINK
               destinationLink={"/resources"}
               reactIcon={RiGlobalFill}
               linkName={"Resources"}
@@ -76,12 +71,6 @@ export function SideBar() {
               destinationLink={"/payment"}
               reactIcon={RiGlobalFill}
               linkName={"Payment"}
-            />
-        
-             <NAV_LINK
-              destinationLink={"/experiment"}
-              reactIcon={RiGlobalFill}
-              linkName={"Experiment"}
             />
             
             
