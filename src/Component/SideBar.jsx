@@ -96,11 +96,11 @@ export function SideBar({ isOpen }) {
               reactIcon={RiGlobalFill}
               linkName={"Chats"}
             /> */}
-            <NAV_LINK
+            {/* <NAV_LINK
               destinationLink={"/payment"}
               reactIcon={RiGlobalFill}
               linkName={"Payment"}
-            />
+            /> */}
             <NAV_LINK
               destinationLink={"/bookings"}
               reactIcon={RiGlobalFill}

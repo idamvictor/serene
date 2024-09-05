@@ -54,7 +54,7 @@ const Recommended = ({name,about,ratings,expertise,type,experience,highest,image
           {highest ? (
             <div>
               <Expertise experience={experience} expertise={expertise} />
-              <h1 className="text-serene">Other Reccomendtion</h1>
+
             </div>
           ) : (
             <button
