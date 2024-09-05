@@ -188,7 +188,7 @@ const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, 
         </form>
 
         {/* RENDERED COMMENTS*/}
-        <ul className="mt-1 overflow-y-auto h-fit scrollbar-hide ">
+        <ul className="mt-1 overflow-y-auto h-fit max-h-[10rem] scrollbar-hide ">
           {postComments.map((postComment) => (
              <li key={postComment._id}>
              <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
