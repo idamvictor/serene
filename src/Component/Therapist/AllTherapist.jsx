@@ -13,7 +13,7 @@ const handleNavigation =()=>{
   return (
     <div className="mt-10 border-white border-opacity-35 rounded-lg p-4 shadow-lg border">
       <div className="mb-4 flex flex-col" onClick={handleNavigation}>
-        <div className="flex gap-3 items-center cursor-pointer">
+        <div className="flex gaxp-3 items-center cursor-pointer">
           <img
             src={image}
             loading="lazy"
