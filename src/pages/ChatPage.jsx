@@ -63,7 +63,7 @@ const ChatPage = () => {
   return (
     <>
         <Layout hideHeaderCSS={`hidden`}>
-            <div className="h-screen md:max-h-[630px] md:grid md:grid-cols-[30%_70%] hidden" id="chatsection">
+            <div className="h-screen mt-20  md:max-h-[630px] md:grid md:grid-cols-[30%_70%] hidden" id="chatsection">
                 {/* USERLIST SECTION */}
                 <div className="userlist-section">
                     <div>

@@ -52,8 +52,16 @@ const ConnectWallet = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false); 
 
+  function checkmetamask() {
+    if(typeof window.ethereum !== 'undefined' && window.ethereum.isMetamask) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   async function connectWallet() {
-    if (window.ethereum) {
+    if (checkmetamask) {
       setIsLoading(true); 
       var web3 = new Web3(window.ethereum);
       await window.ethereum.send("eth_requestAccounts");
