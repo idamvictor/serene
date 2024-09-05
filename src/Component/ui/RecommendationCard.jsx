@@ -1,4 +1,6 @@
+
 const RecommendationCard = ({img, imgCaption, recommendedText, children, seeAllLogic}) => {
+
     return ( 
         <>
             <div className="recommendation-cont rounded-[.73rem] mt-7 md:bg-[#272727] md:flex md:flex-col md:p-4 md:h-auto lg:h-[427.44px] lg:mt-0 lg:px-4 xl:py-8 xl:px-5 xl:h-auto ">

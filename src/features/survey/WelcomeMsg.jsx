@@ -17,7 +17,6 @@ const navigate = useNavigate()
     <AuthLayout>
       <Modal>
         <>
-          <button className="text-white">back</button>
           <div className="text-white my-4 mx-4">
             <div className="text-center flex flex-col gap-5 align-center">
               <h1 className="font-semibold text-xl lg:text-4xl">
@@ -56,8 +55,8 @@ const navigate = useNavigate()
               </p>
             </div>
             <button
-              onClick={handleSubmit} // Handle final submission here
-              className="flex font-medium mx-auto py-4 px-10 mt-5 fixed bottom-8 right-40 md:bottom-16 md:right-60 bg-serene text-black rounded-md gap-2"
+              onClick={handleSubmit} 
+              className="flex font-medium mx-auto py-4 px-10 mt-5 fixed bottom-8 right-20 md:bottom-16 md:right-60 bg-serene text-black rounded-md gap-2"
             >
               Go to dashboard <img src={arrow} width={24} height={24} />
             </button>

@@ -1,4 +1,4 @@
-//TODO: DELETE THE MENUBAR ICON 
+//TODO: DELETE THE MENUBAR ICON
 
 // ALL ICONS IMPORT
 import sereneSign from "./Icons/sereneSign.svg";
@@ -23,18 +23,18 @@ import postForwardArrow from "./Icons/postForwardArrow.svg";
 import postMessage from "./Icons/postMessage.svg";
 import about from "./Icons/about.svg";
 import experience from "./Icons/experience.svg";
-import lang from "./Icons/lang.svg"; 
+import lang from "./Icons/lang.svg";
 import leftArrow from "./Icons/rightArrow.svg";
 import ruleArrowDown from "./Icons/rule-arrow-down.svg";
 import yellowPlusSign from "./Icons/yellowPlusSign.svg";
-import metamask from "./Icons/metamask_symbol.svg.svg"
-import coinbase from "./Icons/coinbase.svg"
-import rainbow from "./Icons/rainbow.svg"
-import wallet from "./Icons/wallet.svg"
-import metamany from "./Icons/Frame 237591.svg"
-import login from "./Icons/login.svg"
-import framer2 from "./Icons/framer2.svg"
-import arrow from "./Icons/arrow.svg"
+import metamask from "./Icons/metamask_symbol.svg.svg";
+import coinbase from "./Icons/coinbase.svg";
+import rainbow from "./Icons/rainbow.svg";
+import wallet from "./Icons/wallet.svg";
+import metamany from "./Icons/Frame 237591.svg";
+import login from "./Icons/login.svg";
+import framer2 from "./Icons/framer2.svg";
+import arrow from "./Icons/arrow.svg";
 import playVideoIcon from "./Icons/playVideoIcon.svg";
 import saveAddIcon from "./Icons/saveAddIcon.svg";
 import yellowShareIcon from "./Icons/yellowShareIcon.svg";
@@ -42,8 +42,11 @@ import rightArrow from "./Icons/rightArrow.svg";
 import verifiedBadge from "./Icons/verifiedBadge.svg";
 import facebookIcon from "./Icons/facebook-icon.svg";
 import instaIcon from "./Icons/insta-icon.svg";
-import spinner from "./Icons/spinner.svg"
-import arrowBack from "./Icons/arrowBack.svg"
+import link from './Icons/link.svg'
+import book from './Icons/book.svg'
+import trailing from './Icons/Trailing.svg'
+import spinner from "./Icons/spinner.svg";
+import arrowBack from "./Icons/arrowBack.svg";
 import redSpinner from "./Icons/redSpinner.svg";
 import sereneS from "./Icons/sereneS.svg";
 
@@ -56,7 +59,7 @@ import communityPic2 from "./Images/communityPic2.png";
 import Onboarding from "./Images/Onboarding.png";
 import postPic from "./Images/postPic.png";
 import userProfilePic from "./Images/userProfilePic.png";;
-import headerImg from "./Images/headerImg.png";
+// import headerImg from "./images/headerImg.png";
 import americanExpress from "./Icons/americanExpress.svg";
 import bitcoin from "./Icons/bitcoin.png";
 import discover from "./Icons/discover.svg";
@@ -67,25 +70,37 @@ import radioButton from "./Icons/radioButton.svg";
 import usdc from "./Icons/usdc.svg";
 import usdt from "./Icons/usdt.svg";
 import visa from "./Icons/visa.svg";
-// import profilePhoto from "./Images/profilePhoto.png";
-// import headerImg from "./Images/headerImg.png";
 import communityProfilePic from "./Images/communityProfilePic.png";
 import communityCoverPic from "./Images/communityCoverPic.png";
 import userDashboardProfilePic from "./Images/userDashboardProfilePic.svg";
 import articlePic from "./Images/articlePic.png";
 import quickChatPic from "./Images/quickchatPic.svg";
-import profilePhoto from "./Images/profilePhoto.png";
+// import profilePhoto from "./Images/profilePhoto.png";
 import videoPreviewPic from "./Images/videoPreviewPic.png";
 import videoDesktopPreviewPic from "./Images/videoDesktopPreviewPic.png";
 import smallVideoCardPic from "./Images/smallVideoCardPic.png";
 import articleFeaturedPic from "./Images/articleFeaturedPic.png";
+import headerImage from "./Images/headImage.png";
 import smallArticleCardPic from "./Images/smallArticleCardPic.png";
 import articleContentPic from "./Images/articleContentPic.png";
+import cryingWoman from "./Images/cryingWoman.png";
+import depressedMan from "./Images/depressedMan.png";
+import anxiousWoman from "./Images/anxiousWoman.png";
 
+// settings image
+import profileAvatar from './Images/profile-avatar.png'
+import angleRight from './Icons/right-arrow.svg'
+
+// chat image
+import chatImage from './Images/chat.png'
+import Mic from './Images/Mic.svg'
+import video from './Icons/Video.svg'
+import Group from './Icons/Group.svg'
 
 export {
   sereneSign,
   searchIcon,
+  headerImage,
   chat,
   bell,
   recommendedTherapistImage,
@@ -104,7 +119,6 @@ export {
   postMessage,
   postPic,
   userProfilePic,
-  headerImg,
   about,
   experience,
   lang,
@@ -139,8 +153,7 @@ export {
   yellowPlusSign,
   userDashboardProfilePic,
   articlePic,
-  quickChatPic, 
-  profilePhoto,
+  quickChatPic,
   framer2,
   arrow,
   arrowBack,
@@ -153,11 +166,24 @@ export {
   articleFeaturedPic,
   smallArticleCardPic,
   rightArrow,
-  articleContentPic, 
+  articleContentPic,
   verifiedBadge,
   facebookIcon,
   instaIcon,
+  profileAvatar,
+  angleRight,
+  link,
+  book,
+  trailing,
+  chatImage,
+  Mic,
+  video,
+  Group,
   spinner,
   redSpinner,
-  sereneS
+  sereneS,
+  // profilePhoto
+  cryingWoman,
+  depressedMan,
+  anxiousWoman
 };

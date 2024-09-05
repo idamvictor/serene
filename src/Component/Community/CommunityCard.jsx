@@ -35,9 +35,9 @@ const handleViewClick = () => {
                 <img src={communityPicture} alt="" className="h-9 w-9 bg-[#d9d9d9] rounded-full"/>
 
                 <div className="communityCard1-info">
-                    <h5 className="font-semibold text-xs md:text-sm w-[8rem] lg:text-xs lg:w-full xl:text-[.85rem] ">{communityName}</h5>
+                    <h5 className="font-semibold text-xs md:text-sm w-[8rem] lg:text-xs lg:w-full xl:text-[.85rem] text-[#191919] ">{communityName}</h5>
                     <p className="text-xs font-medium my-1 text-[#666666] ">{communityMembers <= 1 ? `${communityMembers} Member` : `${communityMembers} Members` } </p>
-                    <Badges styling={`${badgeStyling} text-xs`}>{badgeTitle}</Badges>
+                    <Badges styling={`${badgeStyling}  text-xs`}>{badgeTitle}</Badges>
                 </div>  
             </div>
         </>

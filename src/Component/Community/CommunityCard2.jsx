@@ -1,13 +1,20 @@
 import Badges from "@/Component/ui/Badges";
 import { menuBar, spinner } from "@/assets";
-import {  useJoinCommunityMutation } from "@/services/community/CommunitySlice";
+import { useJoinCommunityMutation } from "@/services/community/CommunitySlice";
 import { Link, useNavigate } from "react-router-dom";
 import { LuMoreVertical } from "react-icons/lu";
 
-
-
 //* COMMUNITYCARD2 COMPONENT
-const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communityDescription, communityMembers, communityId, isMember, refetchUserCommunities}) => {
+const CommunityCard2 = ({
+  communityProfilePic,
+  communityName,
+  badgeTitle,
+  communityDescription,
+  communityMembers,
+  communityId,
+  isMember,
+  refetchUserCommunities,
+}) => {
   const navigate = useNavigate();
 
   //* Getting userId from Local storage
@@ -15,7 +22,6 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
 
   //* All API queries
   const [joinCommunity, { isLoading }] = useJoinCommunityMutation();
-
 
   //* Set up for sending the post request when a user clicks join
   const handleJoinClick = async () => {
@@ -28,21 +34,35 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
     }
   };
 
-
   return (
     <>
       <div className="border border-[#333333] bg-[#1b1b1b] rounded-[.5625rem] flex items-start gap-2 p-3 relative h-[10.5rem] ">
-          <img src={communityProfilePic} alt="" className="h-9 w-9 bg-[#d9d9d9] rounded-full" />
+        <img
+          src={communityProfilePic}
+          alt=""
+          className="h-9 w-9 bg-[#d9d9d9] rounded-full"
+        />
 
-          <div className="flex flex-col gap-2 w-[100%]">
-            <div className="flex items-center justify-between">
-              <h3 className="text-white text-[.93rem] font-bold xl:text-base">{communityName}</h3>
-              <LuMoreVertical className="text-[#c7c7c7] size-5 absolute flex ml-[76%] lg:ml-[78%] xl:ml-[80%] " />
-            </div>
+        <div className="flex flex-col gap-2 w-[100%]">
+          <div className="flex items-center justify-between">
+            <h3 className="text-white text-[.93rem] font-bold xl:text-base">
+              {communityName}
+            </h3>
+            <LuMoreVertical className="text-[#c7c7c7] size-5 absolute flex ml-[76%] lg:ml-[78%] xl:ml-[80%] " />
+          </div>
 
-            <Badges styling={"text-[#5f5f5f] bg-[#E1DC58] text-xs w-[4.5rem] xl:text-[.85rem] xl:w-[6rem]"}> {badgeTitle} </Badges>
+          <Badges
+            styling={
+              "text-[#5f5f5f] bg-[#E1DC58] text-xs w-[4.5rem] xl:text-[.85rem] xl:w-[6rem]"
+            }
+          >
+            {" "}
+            {badgeTitle}{" "}
+          </Badges>
 
-            <p className="text-serene-gray text-xs leading-5 pr-20  xl:text-sm ">{communityDescription}</p>
+          <p className="text-serene-gray text-xs leading-5 pr-20  xl:text-sm ">
+            {communityDescription}
+          </p>
 
             <div className="community-members flex items-center justify-between w-[81%] lg:w-[82%] xl:w-[84%] absolute bottom-0 mb-3">
               <div className="flex items-center gap-1">
@@ -78,7 +98,7 @@ const CommunityCard2 = ({communityProfilePic, communityName, badgeTitle, communi
           </div>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default CommunityCard2;

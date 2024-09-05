@@ -2,17 +2,17 @@ import { fetchTherapist } from "@/services/auth/therapistSlice2";
 import { useDispatch,useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-const SessionSummary = () => {
+const SessionSummary = ({setTherapistData,setStringDate}) => {
   const therapists = useSelector((state) => state.fetchTherapist.therapist);
    const selectedTime = useSelector(state => state.Booking.selectedDateTime)
 
    const time = selectedTime?.Time
    const date = selectedTime?.date
-     const stringDate = new Date(date).toDateString();
+     const stringDate = date ? new Date(date).toDateString() : null
 
   const { id } = useParams();
   const dispatch = useDispatch();
-const [therapistData, setTherapistData] = useState([])
+const [localtherapistData, setLocalTherapistData] = useState(null)
  
        useEffect(() => {
          dispatch(fetchTherapist());
@@ -20,19 +20,27 @@ const [therapistData, setTherapistData] = useState([])
  
        useEffect(() => {
          if (Array.isArray(therapists) && therapists.length > 0) {
-           const selectTherapist = therapists.find((t) => t._id === id);
-           if (selectTherapist) {
-             setTherapistData(selectTherapist); 
+           const selectedTherapist = therapists.find((t) => t._id === id);
+           if (selectedTherapist) {
+             setLocalTherapistData(selectedTherapist);
+             setTherapistData(selectedTherapist); // Update the parent state
            } else {
-             setTherapistData(null); 
+             setLocalTherapistData(null);
+             setTherapistData(null);
            }
          }
-       }, [therapists, id]);
+       }, [therapists, id, setTherapistData]);
+
+       useEffect(() => {
+         if (stringDate) {
+           setStringDate(stringDate); // Update the parent state
+         }
+       }, [stringDate, setStringDate]);
   return (
     <div>
-      <div className="self-stretch text-[rgba(255,255,255,0.9)] font-[450] text-[1rem] leading-[1.25rem] tracking-[0.0125rem] font-haas-grotesk">
+      <h1 className="text-[450] text-white text-2xl">
         Summary
-      </div>
+      </h1>
       <section className="flex flex-col items-start px-6 py-7 mt-6 w-full rounded-lg bg-neutral-800 max-md:px-5">
         <div className="flex flex-col max-w-full text-sm w-[20.6875rem]">
           <h2 className="font-semibold tracking-wide leading-none text-serene">
@@ -63,7 +71,7 @@ const [therapistData, setTherapistData] = useState([])
             You selected:
           </h2>
           <div className="mt-2 tracking-wide leading-5 text-white text-opacity-80">
-            {therapistData.name}
+            {setLocalTherapistData.name}
           </div>
         </div>
 

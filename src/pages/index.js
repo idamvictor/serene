@@ -8,6 +8,8 @@ import Therapists from "./Therapists";
 import Authentication from "./Authentication";
 import ChatPage from "./ChatPage";
 import ErrorPage from "./ErrorPage";
+import Settings from "./Settings";
+import Bookings from "./Bookings";
 
 export {
   Dashboard,
@@ -19,5 +21,7 @@ export {
   Payment,
   Therapists,
   ChatPage,
-  ErrorPage
+  ErrorPage,
+  Settings,
+  Bookings,
 };

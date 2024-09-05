@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import NavigationTabs from "../psychologists/NavigationTabs";
 import StarRating from "@/Component/ui/StarRating";
-import { headerImg } from "@/assets";
+import { headerImage } from "@/assets";
 import { useGetAllTherapistQuery } from "@/services/auth/therapistSlice";
 import Layout from "@/Component/Shared/Layout";
 import ProfileHeader from "../psychologists/ProfileHeader";
@@ -23,7 +23,7 @@ const Therapist2 = () =>{
     const navigate = useNavigate()
 
     useEffect(()=>{
-      if(therapist?.data && Array.isArray(therapist.data) && id ){
+      if(therapist?.data && Array.isArray(therapist?.data) && id ){
 
         const selectTherapist = therapist.data.find((t)=> t._id === id)
 
@@ -69,12 +69,12 @@ const Therapist2 = () =>{
 
     return (
       <Layout  onBack={handleBack}>
-        <main className="flex flex-col mt-20 mx-11">
+        <main className="flex flex-col mt-20 mx-11 mb-32">
           <ProfileHeader
             name={therapistData.name}
             title={therapistData.type}
             avatarSrc={therapistData.image}
-            coverSrc={headerImg}
+            coverSrc={headerImage}
             profileHeaderStyling={`size-20 lg:size-32`}
             profileCoverStyling={`h-28`}
           >
@@ -102,7 +102,7 @@ const Therapist2 = () =>{
             />
           </div>
           {activeTab === "Overview" && (
-            <div className="mt-10">
+            <div className="mt-10 mb-32">
               <About about={therapistData.about} />
               <Expertise
                 experience={therapistData.experience}

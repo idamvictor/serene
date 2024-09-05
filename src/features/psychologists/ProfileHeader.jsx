@@ -18,22 +18,6 @@ export default function ProfileHeader({ name, avatarSrc, coverSrc, children, pro
         />
 
         {children}
-
-        {/* TODO: DELETE THE CODE BELOW */}
-        {/* <div className="flex flex-col self-end mt-16 max-md:mt-10">
-          <h1 className="text-xl font-semibold tracking-normal leading-tight text-white">
-            {name}
-          </h1>
-          <p className="mt-1.5 text-base font-medium tracking-normal text-white">
-            {title}
-          </p>
-          <div className="flex gap-2.5 items-center mt-1.5 w-full">
-            <StarRating rating={4} />
-            <span className="self-stretch my-auto text-base font-medium text-white">
-              ({rating})
-            </span>
-          </div>
-        </div> */}
       </div>
     </header>
   );

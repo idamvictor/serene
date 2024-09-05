@@ -53,7 +53,7 @@ const ConnectWallet = () => {
   const [isLoading, setIsLoading] = useState(false); 
 
   async function connectWallet() {
-    if (window.ethereum) {
+    if (window.ethereum && window.ethereum.checkMetamask) {
       setIsLoading(true); 
       var web3 = new Web3(window.ethereum);
       await window.ethereum.send("eth_requestAccounts");
@@ -91,7 +91,7 @@ const ConnectWallet = () => {
     <AuthLayout>
       <Modal>
         {isLoading ? (
-          <Loader /> 
+          <Loader />
         ) : (
           <section className="text-white mx-6 mt-14">
             <div className="flex ">
@@ -101,33 +101,36 @@ const ConnectWallet = () => {
                   <h5 className="font-semibold text-[#D9D9D9] text-base">
                     Approved
                   </h5>
-                  <div className="flex items-center gap-2 mt-8">
-                    <img src={metamask} width={40} className="hover:w-12 hover:cursor-pointer"/>
+                  <div className="flex flex-wrap items-center gap-2 mt-8">
+                    <img
+                      src={metamask}
+                      width={40}
+                      className="hover:w-12 hover:cursor-pointer"
+                    />
                     <span
                       id="connectButton"
                       onClick={connectWallet}
-                      className="text-serene opacity-65 hover:opacity-95 font-semibold  hover:text-serene cursor-pointer"
+                      className="text-serene text-sm opacity-65 hover:opacity-95 font-semibold  hover:text-serene cursor-pointer"
                     >
                       Metamask Wallet
                     </span>
-                   
                   </div>
                 </div>
                 <div className="mt-10">
-                  <h5 className="font-semibold text-[#D9D9D9] text-base">
+                  <h5 className="font-semibold text-[#D9D9D9] text-sm">
                     Coming Soon
                   </h5>
-                  <div className="flex items-center gap-2 mt-7">
+                  <div className="flex flex-wrap items-center gap-2 mt-7">
                     <img src={coinbase} width={30} />
                     <span className="metamask">Coinbase Wallet</span>
                   </div>
-                  <div className="flex items-center gap-2 mt-4">
+                  <div className="flex flex-wrap items-center gap-2 mt-4">
                     <img src={rainbow} width={30} />
                     <span className="metamask">Rainbow</span>
                   </div>
-                  <div className="flex items-center gap-2 mt-4">
+                  <div className="flex flex-wrap items-center text-sm gap-2 mt-4">
                     <img src={wallet} width={30} />
-                    <span className="metamask">WalletConnect</span>
+                    <span className="metamask text-sm">WalletConnect</span>
                   </div>
                 </div>
               </div>
@@ -140,7 +143,7 @@ const ConnectWallet = () => {
                 <h4 className="font-semibold text-white text-base text-center">
                   What is Wallet?
                 </h4>
-                <div className="flex items-start mt-6 gap-4">
+                <div className="flex flex-wrap lg:flex-nowrap items-start mt-6 gap-4">
                   <img src={metamany} width={60} />
                   <div>
                     <h5 className="font-semibold text-white">
@@ -152,7 +155,7 @@ const ConnectWallet = () => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-start mt-6 gap-4">
+                <div className="flex flex-wrap lg:flex-nowrap items-start mt-6 gap-4">
                   <img src={login} width={60} />
                   <div>
                     <h5 className="font-semibold text-white">
@@ -160,7 +163,7 @@ const ConnectWallet = () => {
                     </h5>
                     <p className="text-gray-400 text-sm">
                       Instead of creating new accounts and passwords on every
-                      website, just connect your wallet.
+                      website, just connect your wallet, which would take you to install your wallet then when that is done head back here for the rest of your serene journey!
                     </p>
                   </div>
                 </div>
