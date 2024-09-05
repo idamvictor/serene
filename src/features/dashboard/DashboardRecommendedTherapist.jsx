@@ -6,14 +6,17 @@ import { useSelector,useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import { star } from "@/assets";
 import Badges from "../../Component/ui/Badges";
+import { useNavigate } from "react-router-dom";
 
 const DashboardRecommendedTherapist = () => {
+  const navigate = useNavigate()
    const dispatch = useDispatch()
     const therapists = useSelector(state => state.fetchTherapist.therapist)
 
     const loading = useSelector(state => state.fetchTherapist.loading)
     const error = useSelector(state => state.fetchTherapist.error)
 
+   
     useEffect(()=>{
         dispatch(fetchTherapist())
     },[dispatch])
@@ -33,6 +36,10 @@ const DashboardRecommendedTherapist = () => {
  const sortedTherapists = [...therapists].sort(
    (a, b) => b.experience - a.experience
  );
+  const handleNavigate = (id) => {
+    navigate(`/therapist/${id}`);
+  };
+
   return (
     <>
       <div className="dashboard-therapist">
@@ -46,7 +53,10 @@ const DashboardRecommendedTherapist = () => {
           {sortedTherapists.slice(0, 2).map((therapist) => (
             <div>
               <TherapistCard>
-                <div className="therapistCard-profile flex gap-3">
+                <div 
+                onClick={()=> handleNavigate(therapist?._id)}
+                
+                className="therapistCard-profile flex gap-3">
                   <img
                     src={therapist.image}
                     alt=""

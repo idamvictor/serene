@@ -11,7 +11,11 @@ import {
   Bookings
 } from "./pages";
 
-import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate} from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import Survey from "./features/survey/Survey";
 import Chat from "./pages/Chat";
 import { Toaster } from "react-hot-toast";
@@ -19,11 +23,12 @@ import ConnectWallet from "./features/authentication/ConnectWallet";
 import Therapist2 from "./features/Therapist/Therapist2";
 
 function App() {
- 
+
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Dashboard />,
+      element: <Dashboard />
     },
     {
       path: "/community",
@@ -76,7 +81,7 @@ function App() {
     {
       path: "/therapists",
       element: <Therapists />,
-    },  
+    },
   ]);
 
   return (
@@ -85,10 +90,7 @@ function App() {
         position="top-center"
         reverseOrder={false}
         gutter={8}
-        containerClassName=""
-        containerStyle={{}}
         toastOptions={{
-          // Define default options
           className: "",
           duration: 5000,
           style: {
@@ -96,8 +98,6 @@ function App() {
             background: "#363636",
             color: "yellow",
           },
-
-          // Default options for specific types
           success: {
             duration: 3000,
             theme: {
