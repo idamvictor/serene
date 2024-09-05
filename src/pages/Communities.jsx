@@ -12,10 +12,20 @@ import PostModal from "@/Component/Community/PostModal";
 
 
 //* COMMUNITY ACTION BUTTONS
-export const CommunityActionBtns = ({btnText}) => {
+export const CommunityActionBtns = ({btnText, activeTab, setActiveTab}) => {
+    const tabs = ["Posts", "About"];
     return ( 
         <>
-            <button className="px-4 py-2 text-white bg-[#242424] ">{btnText}</button>
+            {tabs.map((tab) => (
+                <button key={tab} className={`px-4 py-2 text-white bg-[#242424] 
+                    ${
+                        tab === activeTab
+                            ? "bg-serene font-semibold text-[#191919] "
+                            : "bg-[#201f1f] border border-[#201f1f] text-[#c7c7c7] "
+                    }`}
+                    onClick={() => setActiveTab(tab)}
+                    >{tab}</button>
+            ))}
         </>
      );
 };
@@ -24,17 +34,18 @@ export const CommunityActionBtns = ({btnText}) => {
 //* COMMUNITIES COMPONENT
 const Communities = () => {
     //* All useStates
+    const [activeTab, setActiveTab] = useState("Posts");
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [ isPostOpen, setIsPostOpen ] = useState(false);
     const [user, setUser] = useState(null);
+  
 
     //* Getting user info from local storage
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem("userInfo"));
         setUser(storedUser);
     }, []);
-  
 
     //* Accessing the communityId from the URL
     const { communityID } = useParams();
@@ -49,6 +60,7 @@ const Communities = () => {
     //* Destructuring
     const communities = allCommunities?.data || [];
     const posts = allPosts?.data || [];
+    // console.log(posts)
 
     //* Getting a single community
     const selectedCommunity = communities.find((community) => community._id === communityID )
@@ -61,7 +73,7 @@ const Communities = () => {
     const handleBackClick = () => navigate("/community");
 
     //* To handle menu dropdown toggle
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+    const toggleMenu = () => setIsMenuOpen(prevState => !prevState);
     const closeMenu = () => setIsMenuOpen(false);
 
     //* To handle Popup when a user wants to make a post 
@@ -95,11 +107,11 @@ const Communities = () => {
        
     };
     
-
     return (
         <>
         <Layout onBack={handleBackClick}>
             <div className=" mt-28 lg:mx-3 lg:mt-28 xl:mx-7 xl:mt-28 relative">
+                {/* PROFILE HEADER OF THE COMMUNITY */}
                 <ProfileHeader
                     name={``}
                     avatarSrc={communityProfilePic}
@@ -107,7 +119,7 @@ const Communities = () => {
                     profileCoverStyling={`h-20 `}
                     profileHeaderStyling={`size-14 lg:size-20`}
                 >
-                    <div className="hidden md:flex md:self-end md:items-center md:justify-between md:mt-14 max-md:mt-10 md:w-[100%] ">
+                    <div className=" md:flex md:self-end md:items-center md:justify-between md:mt-14 max-md:mt-10 md:w-[100%] ">
                         <h3 className="text-white font-semibold ">{selectedCommunity.name}</h3>
 
                         <div className="flex items-center gap-4">
@@ -129,13 +141,11 @@ const Communities = () => {
                 )}
             </div>
         
+            {/* <div className="tab-btns mx-2">
+                <CommunityActionBtns activeTab={activeTab} setActiveTab={setActiveTab} />
+            </div> */}
 
             <section className="mt-8 mb-10 lg:mx-4 xl:mx-7 flex items-center justify-center ">
-                <div className="tab-btns hidden">
-                    <CommunityActionBtns btnText="Post" />
-                    <CommunityActionBtns btnText="About" />
-                </div>
-
                 {/* COMMUNITY POSTS */}
                 <div className="grid grid-cols-[3fr_2fr] auto-rows-auto place-content-center">
                     <div className="post-cont mr-10">
@@ -150,8 +160,11 @@ const Communities = () => {
                                 <Post 
                                     key={post._id}
                                     posterName={post.userId?.username}
-                                    // posterImg={post.userId?.avatar}
+                                    posterImg={post.userId?.avatar}
                                     postTime={post.time}
+                                    postID={post._id}
+                                    refetchPosts={refetchPosts}
+                                    postOwnerId={post.userId?._id}
                                 >
                                     {post.message}
                                 </Post>
@@ -167,11 +180,13 @@ const Communities = () => {
                             communityDescription={selectedCommunity.description}
                             communityRuleArr={selectedCommunity.rules}
                             communityRuleTopics={selectedCommunity.topics}
+                            communityMembers={selectedCommunity.members}
                         />
                     </aside>
                 </div>
             </section>
 
+            {/* POPUP WHEN YOU WANT TO LEAVE A COMMUNITY */}
             <PopupModal 
                 isOpen={isModalOpen}
                 onClose={handleCloseModal}
@@ -182,6 +197,7 @@ const Communities = () => {
                 loadingLeave={loadingLeave}
             />
 
+            {/* POPUP WHEN YOU WANT TO MAKE A POST */}
             <PostModal 
                 isOpen={isPostOpen}
                 onClose={handleClosePostModal}
