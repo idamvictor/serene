@@ -24,8 +24,22 @@ export const CommentSlice = apiSlice.injectEndpoints({
                 }
               },
         }),
+        deleteComments: builder.mutation({
+            query: (commentId) => ({
+                url: `/comment/${commentId}`,
+                method: "DELETE"
+            }),
+            async onQueryStarted(arg, { queryFulfilled }) {
+                try {
+                  const { data } = await queryFulfilled;
+                  console.log('DELETE COMMENT API RESPONSE:', data);
+                } catch (error) {
+                  console.error('Error in deleting comment:', error);
+                }
+            },
+        })
     })
 });
 
 
-export const { useGetCommentsQuery, useSendCommentsMutation } = CommentSlice;
+export const { useGetCommentsQuery, useSendCommentsMutation, useDeleteCommentsMutation } = CommentSlice;

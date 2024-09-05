@@ -4,8 +4,8 @@ import { PiShareFat } from "react-icons/pi";
 import { PiSmileyBold } from "react-icons/pi";
 import { FaRegComment } from "react-icons/fa";
 import { formatDistanceToNowStrict } from 'date-fns';
-import { useState, useEffect } from "react";
-import { useGetCommentsQuery, useSendCommentsMutation } from "@/services/community/CommentSlice";
+import { useState, useEffect, useMemo, useCallback } from "react";
+import { useDeleteCommentsMutation, useGetCommentsQuery, useSendCommentsMutation } from "@/services/community/CommentSlice";
 import { useDeletePostMutation } from "@/services/community/CommunitySlice";
 
 
@@ -24,7 +24,7 @@ export const PostActionBtn = ({btnIcon, btnIconAlt, btnTitle, btnLogic }) => {
 
 //* Format timestamp from backend 
 const TimeAgo = ({ timestamp }) => {
-    const date = formatDistanceToNowStrict(new Date(timestamp));  
+    const date = useMemo(() => formatDistanceToNowStrict(new Date(timestamp)), [timestamp]);  
     return date;
 };
 
@@ -34,7 +34,7 @@ const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, 
   const [ commentMessage, setCommentMessage ] = useState('');
   const [ user, setUser ] = useState(null);
   const [ postOptionOpen, setPostOptionOpen ] = useState(null);
-  // const [activePostId, setActivePostId] = useState(null);
+  const [ commentOptionOpen, setCommentOptionOpen ] = useState(null);
 
   //* Getting user info from local storage
   useEffect(() => {
@@ -46,9 +46,11 @@ const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, 
   const { data: allComments, refetch: refetchComments } = useGetCommentsQuery(postID);
   const [ sendComments, { isLoading: loadingSendComment} ] = useSendCommentsMutation();
   const [ deletePost ] = useDeletePostMutation();
+  const [ deleteComments ] = useDeleteCommentsMutation();
 
   //* Destructuring
-  const postComments = allComments?.data || [];
+  const postComments = useMemo(() => allComments?.data || [], [allComments]);
+  // console.log(postComments)
 
   //* Handle comment section toggle
   const handleCommentClick = () => {
@@ -56,18 +58,18 @@ const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, 
   };
 
   //* Handle posting comments
-  const handleCommentSubmit = async (e) => {
+  const handleCommentSubmit = useCallback(async (e) => {
     e.preventDefault();
     if (user) {
-      try{
+      try {
         await sendComments({ userId: user._id, comment: commentMessage, postID }).unwrap();
         setCommentMessage('');
         refetchComments();
       } catch (error) {
-        console.error("Failed to create comment:", error)
+        console.error("Failed to create comment:", error);
       }
     }
-  };
+  }, [commentMessage, postID, refetchComments, sendComments, user]);
 
   const handleKeyDown = (e) => {
     if ( e.key === 'Enter' && !e.shiftKey ) {
@@ -77,21 +79,38 @@ const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, 
   };
 
   //* Handle delete posts
-  const handleDeletePost = async () => {
-    if(postID && user && user._id === postOwnerId) {
+  const handleDeletePost = useCallback(async () => {
+    if (postID && user && user._id === postOwnerId) {
       try {
-        await deletePost(postID).unwrap()
+        await deletePost(postID).unwrap();
         refetchPosts();
       } catch (error) {
-        console.error("Failed to delete post:", error)
+        console.error("Failed to delete post:", error);
       }
     }
-  };
+  }, [deletePost, postID, postOwnerId, refetchPosts, user]);
 
-  //* Handle more options click
-  const handleMoreOptionsClick = () => {
+  //* Handle delete comments
+  const handleDeleteComment = useCallback(async (commentId) => {
+    if (user && user._id === postOwnerId) {
+      try {
+        await deleteComments(commentId).unwrap();
+        refetchComments();
+      } catch (error) {
+        console.error("Failed to delete comment:", error);
+      }
+    }
+  }, [deleteComments, postOwnerId, refetchComments, user]);
+
+  //* Handle more options click for post
+  const handleMoreOptionsClick = useCallback(() => {
     setPostOptionOpen((prevState) => (prevState === postID ? null : postID));
-  };
+  }, [postID]);
+
+  //* Handle more options click for comments
+  const handleCommentMoreOptions = useCallback((commentId) => {
+    setCommentOptionOpen((prevId) => (prevId === commentId ? null : commentId));
+  }, []);
 
   return (
     <>
@@ -108,7 +127,7 @@ const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, 
             <IoIosMore onClick={handleMoreOptionsClick} className="text-[#b9b9b9] size-5  "/>
         </div>
 
-        {/* MORE OPTIONS BUTTON */}
+        {/* POST MORE OPTIONS BUTTON */}
         {postOptionOpen === postID && user && user._id === postOwnerId && (
           <button 
             onClick={handleDeletePost}
@@ -138,7 +157,7 @@ const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, 
           /> */}
         </div>
 
-              {/* COMMENTS SECTION */}
+      {/* COMMENTS SECTION */}
       {isCommentOpen && (
         <section aria-labelledby="comments-section" className="mt-1">
         <form onSubmit={handleCommentSubmit}>
@@ -155,22 +174,33 @@ const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, 
             </label>
         </form>
 
-        {/* RENDERED COMMENTS */}
+        {/* RENDERED COMMENTS*/}
         <ul className="mt-1 overflow-y-auto h-fit scrollbar-hide ">
-
           {postComments.map((postComment) => (
              <li key={postComment._id}>
              <article className="p-2 bg-transparent rounded flex flex-col gap-3 ">
                <header className="flex items-center justify-between">
                  <div className="flex items-center gap-2 ">
-                   <img src={userDashboardProfilePic} alt="" className="size-5" />
-                   <h3 className="font-semibold text-xs ">Jelly Bean</h3>
+                   <img src={postComment.userId?.avatar} alt="" className="size-5" />
+                   <h3 className="font-semibold text-xs ">{postComment.userId?.username}</h3>
                  </div>
  
-                 <div className="flex items-center gap-6">
+                 <div className="flex items-center gap-6 relative">
                    <time dateTime="2024-08-31" className="text-[#a3a3a3] text-xs "><TimeAgo timestamp={postComment.createdAt} /></time>
-                   <IoIosMore  className="text-[#989898] size-5"/> 
+
+                   {/* COMMENT MORE OPTIONS BTN */}
+                   <IoIosMore 
+                    onClick={() => handleCommentMoreOptions(postComment._id)} 
+                    className="text-[#989898] size-5"/> 
+                    
                  </div>
+                 {commentOptionOpen === postComment._id && user && user._id === postOwnerId && (
+                        <button 
+                          onClick={() => handleDeleteComment(postComment._id)}
+                          className="text-white text-xs text-opacity-70 font-medium absolute ml-[90%] mt-10 bg-[#5e5e5e] shadow-lg hover:bg-[#555321] rounded-xl px-3 py-1 cursor-pointer ">
+                          Delete
+                        </button>
+                  )}
                </header>
  
                <p className="text-[#e8e8e8] text-sm ">{postComment.comment}</p>
