@@ -6,7 +6,10 @@ import { FaRegComment } from "react-icons/fa";
 import { formatDistanceToNowStrict } from 'date-fns';
 import { useState, useEffect } from "react";
 import { useGetCommentsQuery, useSendCommentsMutation } from "@/services/community/CommentSlice";
+import { useDeletePostMutation } from "@/services/community/CommunitySlice";
 
+
+//* Action Btns for post
 export const PostActionBtn = ({btnIcon, btnIconAlt, btnTitle, btnLogic }) => {
     return ( 
         <>
@@ -26,35 +29,33 @@ const TimeAgo = ({ timestamp }) => {
 };
 
 //* POST COMPONENT
-const Post = ({children, posterName, posterImg, postTime, postID}) => {
+const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, postOwnerId}) => {
   const [isCommentOpen, setIsCommentOpen] = useState(false);
   const [ commentMessage, setCommentMessage ] = useState('');
   const [ user, setUser ] = useState(null);
-  const [ postOptionOpen, setPostOptionOpen ] = useState(false);
+  const [ postOptionOpen, setPostOptionOpen ] = useState(null);
+  // const [activePostId, setActivePostId] = useState(null);
 
   //* Getting user info from local storage
   useEffect(() => {
     const storedUser = JSON.parse(localStorage.getItem("userInfo"));
     setUser(storedUser);
   }, []);
-  // console.log(user._id)
-  // console.log(postID)
 
   //* ALL API QUERIES
   const { data: allComments, refetch: refetchComments } = useGetCommentsQuery(postID);
-  const[ sendComments, { isLoading: loadingSendComment} ] = useSendCommentsMutation();
+  const [ sendComments, { isLoading: loadingSendComment} ] = useSendCommentsMutation();
+  const [ deletePost ] = useDeletePostMutation();
 
   //* Destructuring
   const postComments = allComments?.data || [];
-  // console.log(postComments)
-  //  console.log(postID);
 
-  //*Handle comment section toggle
+  //* Handle comment section toggle
   const handleCommentClick = () => {
     setIsCommentOpen(prevState => !prevState);
   };
 
-  //*Handle posting comments
+  //* Handle posting comments
   const handleCommentSubmit = async (e) => {
     e.preventDefault();
     if (user) {
@@ -75,30 +76,54 @@ const Post = ({children, posterName, posterImg, postTime, postID}) => {
     }
   };
 
+  //* Handle delete posts
+  const handleDeletePost = async () => {
+    if(postID && user && user._id === postOwnerId) {
+      try {
+        await deletePost(postID).unwrap()
+        refetchPosts();
+      } catch (error) {
+        console.error("Failed to delete post:", error)
+      }
+    }
+  };
+
+  //* Handle more options click
+  const handleMoreOptionsClick = () => {
+    setPostOptionOpen((prevState) => (prevState === postID ? null : postID));
+  };
+
   return (
     <>
       <div className="text-white border-t-[1px] border-t-[#3e3e3e] flex flex-col mb-2 relative">
+
+        {/* POST HEADER */}
         <div className="flex items-center justify-between mt-3  ">
             <div className="flex items-center justify-center gap-1 ">
-                <img src={userProfilePic} alt="user profile pic" className="w-8 h-8 rounded-full "  />
+                <img src={posterImg} alt="user profile pic" className="w-8 h-8 rounded-full "  />
                 <h4 className="username text-[.92rem] font-semibold ml-1 ">{posterName}</h4>
                 <div className="dot rounded-full bg-white w-[.125rem] h-[.125rem] "></div>
                 <time dateTime="" className="text-[.64rem] text-[#8d8d8d] font-medium"> <TimeAgo timestamp={postTime} /> </time>
             </div>
-            <IoIosMore onClick={() => setPostOptionOpen(prevState => !prevState)} className="text-[#b9b9b9] size-5  "/>
-
+            <IoIosMore onClick={handleMoreOptionsClick} className="text-[#b9b9b9] size-5  "/>
         </div>
 
-        {postOptionOpen && (
-          <button className="text-white text-sm text-opacity-70 font-medium absolute self-end mt-9 bg-[#5e5e5e] shadow-lg hover:bg-[#555321] rounded-xl px-3 py-1 cursor-pointer ">Delete</button>
+        {/* MORE OPTIONS BUTTON */}
+        {postOptionOpen === postID && user && user._id === postOwnerId && (
+          <button 
+            onClick={handleDeletePost}
+            className="text-white text-sm text-opacity-70 font-medium absolute self-end mt-9 bg-[#5e5e5e] shadow-lg hover:bg-[#555321] rounded-xl px-3 py-1 cursor-pointer ">
+            Delete
+          </button>
         )}
 
+        {/* POST CONTENT */}
         <main className="text-[.92rem] tracking-wide leading-6 pt-2 text-[#c7c7c7]">
           {children}
         </main>
 
+        {/* POST COMMENT OR SHARE BTNS */}
         <div className="comment-box text-xs flex gap-[.6rem] h-10 items-center w-[25%] ">
-
           <PostActionBtn
               // btnIcon={<FaRegComment className="size-4" />}
               btnIcon={postMessage}

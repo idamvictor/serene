@@ -39,13 +39,13 @@ const Communities = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [ isPostOpen, setIsPostOpen ] = useState(false);
     const [user, setUser] = useState(null);
+  
 
     //* Getting user info from local storage
     useEffect(() => {
         const storedUser = JSON.parse(localStorage.getItem("userInfo"));
         setUser(storedUser);
     }, []);
-  
 
     //* Accessing the communityId from the URL
     const { communityID } = useParams();
@@ -60,7 +60,7 @@ const Communities = () => {
     //* Destructuring
     const communities = allCommunities?.data || [];
     const posts = allPosts?.data || [];
-    // console.log(posts)
+    console.log(posts)
 
     //* Getting a single community
     const selectedCommunity = communities.find((community) => community._id === communityID )
@@ -160,9 +160,11 @@ const Communities = () => {
                                 <Post 
                                     key={post._id}
                                     posterName={post.userId?.username}
-                                    // posterImg={post.userId?.avatar}
+                                    posterImg={post.userId?.avatar}
                                     postTime={post.time}
                                     postID={post._id}
+                                    refetchPosts={refetchPosts}
+                                    postOwnerId={post.userId?._id}
                                 >
                                     {post.message}
                                 </Post>

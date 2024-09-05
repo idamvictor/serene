@@ -51,12 +51,10 @@ const DashboardRecommendedCommunities = () => {
     isCommunityJoined(community._id, userCommunities)
   );
 
-
   //* Logic to handle "See all"
   const seeAllCommunities = () => {
     navigate('/community')
   };
-
 
   //* To render community cards
   const renderCommunityCards = (communities) =>

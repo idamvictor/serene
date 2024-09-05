@@ -37,8 +37,8 @@ export const CommunitySlice = apiSlice.injectEndpoints({
             })
         }),
         getCommunityPost: builder.query({
-            query: (id) => ({
-                url: `/community/post/${id}`,
+            query: (communityId) => ({
+                url: `/community/post/${communityId}`,
                 method: "GET"
             }),
         }),
@@ -57,6 +57,20 @@ export const CommunitySlice = apiSlice.injectEndpoints({
                 }
               },
         }),
+        deletePost: builder.mutation({
+            query: (postId) => ({
+                url: `/community/post/${postId}`,
+                method: "DELETE"
+            }),
+            async onQueryStarted(arg, { queryFulfilled }) {
+                try {
+                  const { data } = await queryFulfilled;
+                  console.log('DELETE POST API RESPONSE:', data);
+                } catch (error) {
+                  console.error('Error in deleting post:', error);
+                }
+              },
+        }),
         leaveCommunity: builder.mutation({
             query: ({communityId, userId}) => ({
                 url: `/community/leave`,
@@ -68,4 +82,4 @@ export const CommunitySlice = apiSlice.injectEndpoints({
 });
 
 
-export const { useGetCommunitiesQuery, useJoinCommunityMutation, useGetUserCommunityQuery, useGetCommunityPostQuery,  useSendCommunityPostMutation, useLeaveCommunityMutation } = CommunitySlice;
+export const { useGetCommunitiesQuery, useJoinCommunityMutation, useGetUserCommunityQuery, useGetCommunityPostQuery,  useSendCommunityPostMutation, useDeletePostMutation, useLeaveCommunityMutation } = CommunitySlice;
