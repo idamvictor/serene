@@ -2,11 +2,12 @@ import {
   articleFeaturedPic,
   filterIcon,
   arrowDown,
-  smallArticleCardPic,
+  smallArticleCardPic, cryingWoman, articlePic, depressedMan, anxiousWoman
 } from "@/assets";
 import SmallArticleCard from "./SmallArticleCard";
 import ArticleCard from "./ArticleCard";
 import ArticleContent from "./ArticleContent";
+
 
 const ArticleSection = ({ selectedArticle, setSelectedArticle }) => {
   //* function to call when you want to display the article content UI
@@ -25,6 +26,7 @@ const ArticleSection = ({ selectedArticle, setSelectedArticle }) => {
 
   const trendingArticles = [
     {
+      articleImg: smallArticleCardPic,
       title: "Should I Tell My Partner What Happens in Therapy?",
       author: "Sanjana Gupta",
       tag: "Family issues",
@@ -32,6 +34,7 @@ const ArticleSection = ({ selectedArticle, setSelectedArticle }) => {
         "Full content of 'Should I Tell My Partner What Happens in Therapy?' article goes here...",
     },
     {
+      articleImg: anxiousWoman,
       title: "What Are the Symptoms of Social Anxiety?",
       author: "Courtney Telloian",
       tag: "Anxiety",
@@ -39,6 +42,7 @@ const ArticleSection = ({ selectedArticle, setSelectedArticle }) => {
         "Full content of 'What Are the Symptoms of Social Anxiety?' article goes here...",
     },
     {
+      articleImg: depressedMan,
       title: "Is Depression a Disability?",
       author: "Julia Childs Heyl, MSW",
       tag: "Depression",
@@ -49,6 +53,7 @@ const ArticleSection = ({ selectedArticle, setSelectedArticle }) => {
 
   const relatedArticles = [
     {
+      articleImg: articlePic,
       title: "How I was able to fight my depression of 10 years now",
       description:
         "For a decade, I lived in the shadow of depression. It was a constant companion, sapping my energy, motivation, and joy.",
@@ -56,6 +61,7 @@ const ArticleSection = ({ selectedArticle, setSelectedArticle }) => {
         "Full content of 'How I was able to fight my depression of 10 years now' article goes here...",
     },
     {
+      articleImg: cryingWoman,
       title: "How depression ruined my live",
       description:
         "Depression affected my life in ways i coudnt imagine possible, starting with my career and then my marriage life and eventually my general well being",
@@ -105,7 +111,7 @@ const ArticleSection = ({ selectedArticle, setSelectedArticle }) => {
             {trendingArticles.map((article, index) => (
               <SmallArticleCard
                 key={index}
-                articlePreviewImg={smallArticleCardPic}
+                articlePreviewImg={article.articleImg}
                 articleTag={article.tag}
                 articleTitle={article.title}
                 articleAuthor={article.author}
@@ -135,6 +141,7 @@ const ArticleSection = ({ selectedArticle, setSelectedArticle }) => {
             <div className="flex flex-col lg:mt-5">
               {relatedArticles.map((article, index) => (
                 <ArticleCard
+                  articleImg={article.articleImg}
                   key={index}
                   articleTitle={article.title}
                   articleDescription={article.description}

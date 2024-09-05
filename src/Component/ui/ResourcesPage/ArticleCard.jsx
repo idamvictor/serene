@@ -1,9 +1,9 @@
-import { arrowRight, articlePic } from "@/assets";
+import { arrowRight } from "@/assets";
 
-const ArticleCard = ({ articleTitle, articleDescription, onClick }) => { 
+const ArticleCard = ({ articleTitle, articleDescription, onClick, articleImg }) => { 
     return (
         <article className="border-b-[.05rem] border-b-[#505050] flex flex-col md:items-center md:flex-row gap-4 mt-5 pb-5">
-            <img src={articlePic} alt="" className="md:w-32 md:h-28 w-auto h-36" />
+            <img src={articleImg} alt="" className="md:w-32 md:h-28 w-auto h-36" />
 
             <div className="article-info md:pr-32 flex flex-col gap-2">
                 <h4 className="font-semibold text-white text-sm md:text-base xl:text-lg">{articleTitle}</h4>

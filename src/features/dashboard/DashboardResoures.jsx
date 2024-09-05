@@ -3,6 +3,7 @@ import ArticleCard from "@/Component/ui/ResourcesPage/ArticleCard";
 import VideoCard from "@/Component/ui/ResourcesPage/VideoCard";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { cryingWoman, articlePic } from "@/assets";
 
 const ResourceBtn = ({ activeTab, setActiveTab }) => {
   const tabs = ["Videos", "Articles", "Podcasts", "Careers"];
@@ -100,12 +101,14 @@ const DashboardResources = () => {
           {activeTab === "Articles" && (
             <>
               <ArticleCard
+                articleImg={articlePic}
                 articleTitle={`How I was able to fight my depression of 10 years now`}
                 articleDescription={`For a decade, I lived in the shadow of depression. It was a constant companion, sapping my energy, motivation, and joy.`}
               />
               <ArticleCard
-                articleTitle={`How I was able to fight my depression of 10 years now`}
-                articleDescription={`For a decade, I lived in the shadow of depression. It was a constant companion, sapping my energy, motivation, and joy.`}
+              articleImg={cryingWoman}
+                articleTitle={`How depression ruined my live`}
+                articleDescription={`Depression affected my life in ways i coudnt imagine possible, starting with my career and then my marriage life and eventually my general well being`}
               />
             </>
           )}
