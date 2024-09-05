@@ -9,7 +9,7 @@ import CryptoModal from "./CryptoModal";
 import { useSendInfoMutation, saveDate } from "@/services/auth/cryptoSlice";
 
 function CryptoPaymentMethodSection({isModalOpen,closeModal,openAppointModal}) {
-  const [isConfirmed, setIsConfirmed] = useState(true);
+  const [isConfirmed, setIsConfirmed] = useState(false);
   const navigate = useNavigate();
  const { id } = useParams();
  const dispatch = useDispatch();
@@ -215,34 +215,38 @@ const [sendInfo] = useSendInfoMutation();
 
   getBlockNum();
 
-  // let handlePayment = setInterval(function() {
+  let handlePayment = setInterval(function() {
 
-  //   contract
-  //     .getPastEvents(
-  //       "Transfer",
-  //       {
-  //         fromBlock: blockNumber,
-  //         toBlock: "latest",
-  //       },
-  //       (error, events) => {
-  //         console.log(error);
-  //       }
-  //     )
-  //     .then((event) => {
-  //       console.log(event);
-  //       const data = event;
-  //       console.log(data[0].returnValues.value)
-  //       let amount = data[0].returnValues.value;
-  //       if(amount === 100000000000000000000) {
-  //         console.log('payment successful')
-  //         setIsConfirmed(true);
-  //         clearInterval(handlePayment);
-  //       }else {
-  //         console.log('payment unsuccessful')
-  //       }
-  //       //clearInterval(handlePayment);  //remove
-  //     });
-  // }, 15000)
+    contract
+      .getPastEvents(
+        "Transfer",
+        {
+          filter: {to: '0x065bbBfB4e353a5569c46B5229Cc619385A0eD4b'},
+          fromBlock: blockNumber,
+          toBlock: "latest",
+        },
+        (error, events) => {
+          console.log(error);
+        }
+      )
+      .then((event) => {
+        console.log(event);
+        const data = event;
+        //console.log(data[0].returnValues.value)
+        console.log(data)
+        let amount = data[0].returnValues.value;
+        //let amount = 6000;
+        console.log('amount is:' + amount)
+        if(amount == 6000000000000000000) {
+          console.log('payment successful')
+          setIsConfirmed(true);
+          clearInterval(handlePayment);
+        }else {
+          console.log('payment unsuccessful' + amount)
+        }
+        //clearInterval(handlePayment);  //remove
+      });
+  }, 1500)
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const professionalId = therapistData?._id
   const userId = userInfo?._id;
@@ -299,7 +303,7 @@ const [sendInfo] = useSendInfoMutation();
               <div className="mt-3.5">OR</div>
               <div className="mt-3 flex items-center justify-between px-2 py-3.5 rounded-xl bg-stone-600 border border-neutral-400 border-opacity-70">
                 <span className="text-sm font-bold">
-                  0x634bC37172eCDD1Eb18Fb1C1f1E043006be5Cc60
+                  0x065bbBfB4e353a5569c46B5229Cc619385A0eD4b
                 </span>
                 <img
                   loading="lazy"
