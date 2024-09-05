@@ -277,8 +277,8 @@ const [sendInfo] = useSendInfoMutation();
     //   </button>
 
       <CryptoModal isOpen={isModalOpen} onClose={closeModal}>
-          <section className="flex flex-col items-center px-20 py-6 mt-20 h-[30px] rounded-lg border border-zinc-700 bg-neutral-800 max-w-[35.688rem] max-md:px-5">
-            <div className="">
+          <section className="flex flex-col items-center px-20 py-6 mt-20 h-[630px] rounded-lg border border-zinc-700 bg-neutral-800 max-w-[35.688rem] max-md:px-5">
+            <div className="text-center max-w-[21.125rem] w-full h-20">
               <h1 className="text-2xl font-semibold text-white text-opacity-90">
                 Crypto Payment Method
               </h1>

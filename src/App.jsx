@@ -1,4 +1,10 @@
-// import { Dashboard, JoinCommunities, Rooms, Therapist, Resources, Communities, Authentication } from "./pages";
+import React, { useEffect, useState } from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import {
   Dashboard,
   JoinCommunities,
@@ -9,21 +15,49 @@ import {
   Therapists,
   Authentication,
 } from "./pages";
-
-import { createBrowserRouter, RouterProvider, Route, Outlet, Navigate} from "react-router-dom";
 import Survey from "./features/survey/Survey";
-import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
 import Therapist2 from "./features/Therapist/Therapist2";
-
-
+import AppointmentDetails from "./features/payment/AppointmentDetails";
 
 function App() {
- 
+  const [userInfo, setUserInfo] = useState(localStorage.getItem("userInfo"));
+
+  useEffect(() => {
+    // Log initial userInfo
+    console.log("Initial userInfo:", userInfo);
+
+    // Function to update state from localStorage
+    const updateUserInfo = () => {
+      const info = localStorage.getItem("userInfo");
+      setUserInfo(info);
+      console.log("Updated userInfo:", info);
+    };
+
+    // Event listener for storage changes
+    window.addEventListener("storage", updateUserInfo);
+
+    // Cleanup event listener
+    return () => {
+      window.removeEventListener("storage", updateUserInfo);
+    };
+  }, []);
+
+  const ProtectedLayout = ({ children }) => {
+    if (!userInfo) {
+      return <Navigate to="/authpage" />;
+    }
+    return children;
+  };
+
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <Dashboard />,
+      element: (
+        <ProtectedLayout>
+          <Dashboard />
+        </ProtectedLayout>
+      ),
     },
     {
       path: "/community",
@@ -65,10 +99,10 @@ function App() {
       path: "/therapists",
       element: <Therapists />,
     },
-    // {
-    //   path: "/sucessfulPage",
-    //   element: <AppointmentDetails />,
-    // },
+    {
+      path: "/successfulPage",
+      element: <AppointmentDetails />,
+    },
   ]);
 
   return (
@@ -77,10 +111,7 @@ function App() {
         position="top-center"
         reverseOrder={false}
         gutter={8}
-        containerClassName=""
-        containerStyle={{}}
         toastOptions={{
-          // Define default options
           className: "",
           duration: 5000,
           style: {
@@ -88,8 +119,6 @@ function App() {
             background: "#363636",
             color: "yellow",
           },
-
-          // Default options for specific types
           success: {
             duration: 3000,
             theme: {
