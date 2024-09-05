@@ -60,7 +60,7 @@ const Communities = () => {
     //* Destructuring
     const communities = allCommunities?.data || [];
     const posts = allPosts?.data || [];
-    console.log(posts)
+    // console.log(posts)
 
     //* Getting a single community
     const selectedCommunity = communities.find((community) => community._id === communityID )
@@ -141,9 +141,9 @@ const Communities = () => {
                 )}
             </div>
         
-            <div className="tab-btns mx-2">
+            {/* <div className="tab-btns mx-2">
                 <CommunityActionBtns activeTab={activeTab} setActiveTab={setActiveTab} />
-            </div>
+            </div> */}
 
             <section className="mt-8 mb-10 lg:mx-4 xl:mx-7 flex items-center justify-center ">
                 {/* COMMUNITY POSTS */}

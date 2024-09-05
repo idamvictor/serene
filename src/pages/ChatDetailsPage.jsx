@@ -10,7 +10,7 @@ const ChatDetailsPage = ({therapistProfilePic, therapistName, therapistId, roomI
 
 const { data: allMessages} = useLoadChatMessagesQuery(roomId);
 
-console.log(allMessages)
+// console.log(allMessages)
 // const messages = allMessages?.data
 
   return (

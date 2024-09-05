@@ -3,7 +3,7 @@ import { useSendCommunityPostMutation } from "@/services/community/CommunitySlic
 import { IoClose } from "react-icons/io5";
 import { spinner } from "@/assets";
 import { useEffect, useState } from "react";
-import { postSocket } from "@/App";
+// import { postSocket } from "@/App";
 
 const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
   const [postMessage, setPostMessage] = useState('');
@@ -16,20 +16,20 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
     const storedUser = JSON.parse(localStorage.getItem("userInfo"));
     setUser(storedUser);
 
-    if (postSocket) {
-      postSocket.connect();
+    // if (postSocket) {
+    //   postSocket.connect();
 
-      postSocket.on('receive-post', () => {
-        console.log('Received post event');
-        refetchPosts();
-      });
+    //   postSocket.on('receive-post', () => {
+    //     console.log('Received post event');
+    //     refetchPosts();
+    //   });
 
-      return () => {
-        console.log('Disconnecting socket');
-        postSocket.off('receive-post');
-        postSocket.disconnect();
-      };
-    }
+    //   return () => {
+    //     console.log('Disconnecting socket');
+    //     postSocket.off('receive-post');
+    //     postSocket.disconnect();
+    //   };
+    // }
    
   }, [refetchPosts]);
 
@@ -42,8 +42,8 @@ const PostModal = ({ isOpen, onClose, communityId, refetchPosts}) => {
     e.preventDefault();
     if (user && !isSubmitting) {
       try{
-        // await sendCommunityPost({ communityId, userId: user._id, message: postMessage }).unwrap();
-        postSocket.emit('new-post', {communityId, userId: user?._id, message: postMessage});
+        await sendCommunityPost({ communityId, userId: user._id, message: postMessage }).unwrap();
+        // postSocket.emit('new-post', {communityId, userId: user?._id, message: postMessage});
         setPostMessage('');
         refetchPosts();
         onClose();

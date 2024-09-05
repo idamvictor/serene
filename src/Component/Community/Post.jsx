@@ -52,6 +52,19 @@ const Post = ({children, posterName, posterImg, postTime, postID, refetchPosts, 
   const postComments = useMemo(() => allComments?.data || [], [allComments]);
   // console.log(postComments)
 
+
+  //* Defining an interval to refetch both posts and comments
+  useEffect(() => {
+    const interval = setInterval(() => {
+      refetchPosts();    
+      refetchComments(); 
+    }, 3000); 
+  
+    //* Clear the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, [refetchPosts, refetchComments]);
+  
+
   //* Handle comment section toggle
   const handleCommentClick = () => {
     setIsCommentOpen(prevState => !prevState);
