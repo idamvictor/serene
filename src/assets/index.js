@@ -82,6 +82,9 @@ import articleFeaturedPic from "./Images/articleFeaturedPic.png";
 import headerImage from "./Images/headImage.png";
 import smallArticleCardPic from "./Images/smallArticleCardPic.png";
 import articleContentPic from "./Images/articleContentPic.png";
+import cryingWoman from "./Images/cryingWoman.png";
+import depressedMan from "./Images/depressedMan.png";
+import anxiousWoman from "./Images/anxiousWoman.png";
 
 // settings image
 import profileAvatar from './Images/profile-avatar.png'
@@ -178,4 +181,8 @@ export {
   spinner,
   redSpinner,
   // profilePhoto
+  cryingWoman,
+  depressedMan,
+  anxiousWoman
+
 };

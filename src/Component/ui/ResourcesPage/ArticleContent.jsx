@@ -1,5 +1,6 @@
 import { articleContentPic, facebookIcon, instaIcon, userProfilePic, verifiedBadge, filterIcon, arrowDown,  } from "@/assets";
 import ArticleCard from "./ArticleCard";
+import { cryingWoman, articlePic } from "@/assets";
 
 
 const ArticleContent = () => {
@@ -92,10 +93,12 @@ const ArticleContent = () => {
      
                  <div className="flex flex-col" >
                      <ArticleCard 
+                     articleImg={articlePic}
                          articleTitle={`How I was able to fight my depression of 10 years now`}
                          articleDescription={`For a decade, I lived in the shadow of depression. It was a constant companion, sapping my energy, motivation, and joy.`}
                      />
                      <ArticleCard 
+                     articleImg={cryingWoman}
                          articleTitle={`How I was able to fight my depression of 10 years now`}
                          articleDescription={`For a decade, I lived in the shadow of depression. It was a constant companion, sapping my energy, motivation, and joy.`}
                      />
