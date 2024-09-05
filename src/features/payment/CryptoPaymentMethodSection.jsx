@@ -210,7 +210,7 @@ const [sendInfo] = useSendInfoMutation();
 
   async function getBlockNum() {
     blockNumber = await web3.eth.getBlockNumber();
-    console.log(blockNumber);
+    //console.log(blockNumber);
   }
 
   getBlockNum();
@@ -230,23 +230,19 @@ const [sendInfo] = useSendInfoMutation();
         }
       )
       .then((event) => {
-        console.log(event);
+        //console.log(event);
         const data = event;
         //console.log(data[0].returnValues.value)
-        console.log(data)
         let amount = data[0].returnValues.value;
-        //let amount = 6000;
-        console.log('amount is:' + amount)
         if(amount == 6000000000000000000) {
-          console.log('payment successful')
+          //console.log('payment successful')
           setIsConfirmed(true);
           clearInterval(handlePayment);
         }else {
-          console.log('payment unsuccessful' + amount)
+          //console.log('payment unsuccessful')
         }
-        //clearInterval(handlePayment);  //remove
       });
-  }, 1500)
+  }, 2500)
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const professionalId = therapistData?._id
   const userId = userInfo?._id;
