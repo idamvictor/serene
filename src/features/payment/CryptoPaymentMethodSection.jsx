@@ -14,7 +14,7 @@ function CryptoPaymentMethodSection({
   closeModal,
   openAppointModal,
 }) {
-  const [isConfirmed, setIsConfirmed] = useState(true);
+  const [isConfirmed, setIsConfirmed] = useState(false);
   const navigate = useNavigate();
   const { id } = useParams();
   const dispatch = useDispatch();
