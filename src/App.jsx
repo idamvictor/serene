@@ -82,10 +82,6 @@ function App() {
       path: "/therapists",
       element: <Therapists />,
     },
-    {
-      path: "/successfulPage",
-      element: <AppointmentDetails />,
-    },
   ]);
 
   return (
