@@ -242,7 +242,7 @@ const [sendInfo] = useSendInfoMutation();
           //console.log('payment unsuccessful')
         }
       });
-  }, 2500)
+  }, 18000)
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const professionalId = therapistData?._id
   const userId = userInfo?._id;
