@@ -18,6 +18,14 @@ const ResourceBtn = ({ activeTab, setActiveTab }) => {
               : "bg-[#201f1f] border border-[#201f1f] text-[#c7c7c7] "
           }`}
           onClick={() => setActiveTab(tab)}
+          disabled={tab === "Podcasts" || tab === "Careers"} // Disable the Podcasts and Careers buttons
+          style={{
+            cursor:
+              tab === "Podcasts" || tab === "Careers"
+                ? "not-allowed"
+                : "pointer",
+            opacity: tab === "Podcasts" || tab === "Careers" ? 0.5 : 1,
+          }}
         >
           {tab}
         </button>
@@ -108,5 +116,3 @@ const DashboardResources = () => {
 };
 
 export default DashboardResources;
-
-
