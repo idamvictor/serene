@@ -1,7 +1,7 @@
 import Layout from "@/Component/Shared/Layout";
 import PaymentInfo from "@/features/payment/PaymentInfo";
 import SectionSummary from "@/features/payment/SessionSummary";
-import Footer from "@/Component/Therapist/footer";
+import Footer from "@/Component/Therapist/Footer";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import AppointmentDetails from "@/features/payment/AppointmentDetails";
