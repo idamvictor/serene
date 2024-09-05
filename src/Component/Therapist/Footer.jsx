@@ -18,6 +18,13 @@ const Footer = ({ buttonNote,onClickNote }) => {
               window.removeEventListener("scroll", handleScroll);
             };
           }, []);
+          const handleClick = () => {
+            if (typeof onClickNote === "string") {
+              navigate(onClickNote);
+            } else if (typeof onClickNote === "function") {
+              onClickNote();
+            }
+          };
     const navigate = useNavigate()
   return (
     <footer
@@ -26,7 +33,7 @@ const Footer = ({ buttonNote,onClickNote }) => {
       }`}
     >
       <button
-        onClick={() => navigate(`${onClickNote}`)}
+        onClick={handleClick}
         className="bg-serene text-[#0B0B0B] py-1 lg:py-2 font-medium px-1 lg:px-4 rounded-lg text-sm flex items-center"
       >
         {buttonNote}

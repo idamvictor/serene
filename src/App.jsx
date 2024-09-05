@@ -64,7 +64,11 @@ function App() {
     {
       path: "/therapists",
       element: <Therapists />,
-    },  
+    },
+    // {
+    //   path: "/sucessfulPage",
+    //   element: <AppointmentDetails />,
+    // },
   ]);
 
   return (
