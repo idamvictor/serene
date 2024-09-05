@@ -64,45 +64,38 @@ const CommunityCard2 = ({
             {communityDescription}
           </p>
 
-          <div className="community-members flex items-center justify-between w-[81%] lg:w-[82%] xl:w-[84%] absolute bottom-0 mb-3">
-            <div className="flex items-center gap-1">
-              <img
-                src=""
-                alt=""
-                className="h-4 w-4 bg-[#d9d9d9] rounded-full"
-              />
-              <p className="text-white  text-sm xl:text-[.85rem] font-medium ">
-                {communityMembers}
-              </p>
+            <div className="community-members flex items-center justify-between w-[81%] lg:w-[82%] xl:w-[84%] absolute bottom-0 mb-3">
+              <div className="flex items-center gap-1">
+                <img src="" alt="" className="h-4 w-4 bg-[#d9d9d9] rounded-full" />
+                <p className="text-white  text-sm xl:text-[.85rem] font-medium ">{communityMembers <= 1 ? `${communityMembers} Member` : `${communityMembers} Members` }</p>
+              </div>
+
+              {/* VIEW OR JOIN LOGIC */}
+              {isMember ? (
+                <Link
+                  to={`/community/${communityId}/${communityName}`}
+                  className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]"
+                >
+                  View
+                </Link>
+              ) : (
+                <button
+                  onClick={handleJoinClick}
+                  className={`flex items-center justify-center font-semibold text-[.8rem] px-3 py-1 rounded-[.375rem] border border-serene ${
+                    isLoading ? "bg-transparent text-serene" : "bg-serene text-[#191919]"
+                  } hover:bg-serene hover:text-[#191919] ${isLoading ? "cursor-not-allowed" : ""}`}
+                  disabled={isLoading}
+                >
+                  {isLoading ? (
+                    <img src={spinner} width={20} height={20} alt="Loading" />
+                  ) : (
+                    "Join"
+                  )}
+                </button>
+
+              )}
             </div>
-            {isMember ? (
-              <Link
-                to={`/community/${communityId}/${communityName}`}
-                className="bg-transparent font-semibold text-serene border border-serene text-[.8rem] px-3 py-1 rounded-[.375rem] hover:bg-serene hover:text-[#191919]"
-              >
-                View
-              </Link>
-            ) : (
-              <button
-                onClick={handleJoinClick}
-                className={`flex items-center justify-center font-semibold text-[.8rem] px-3 py-1 rounded-[.375rem] border border-serene ${
-                  isLoading
-                    ? "bg-transparent text-serene"
-                    : "bg-serene text-[#191919]"
-                } hover:bg-serene hover:text-[#191919] ${
-                  isLoading ? "cursor-not-allowed" : ""
-                }`}
-                disabled={isLoading}
-              >
-                {isLoading ? (
-                  <img src={spinner} width={20} height={20} alt="Loading" />
-                ) : (
-                  "Join"
-                )}
-              </button>
-            )}
           </div>
-        </div>
       </div>
     </>
   );

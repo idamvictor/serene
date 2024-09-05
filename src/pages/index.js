@@ -6,6 +6,8 @@ import Communities from "./Communities";
 import Payment from "./Payment";
 import Therapists from "./Therapists";
 import Authentication from "./Authentication";
+import ChatPage from "./ChatPage";
+import ErrorPage from "./ErrorPage";
 import Settings from "./Settings";
 import Bookings from "./Bookings";
 
@@ -17,7 +19,9 @@ export {
   Communities,
   Authentication,
   Payment,
+  Therapists,
+  ChatPage,
+  ErrorPage,
   Settings,
   Bookings,
-  Therapists
 };

@@ -16,6 +16,11 @@ const DashboardRecommendedTherapist = () => {
     const loading = useSelector(state => state.fetchTherapist.loading)
     const error = useSelector(state => state.fetchTherapist.error)
 
+
+    //* Logic to handle seeALl
+    const seeAllTherapists = () => {
+      navigate('/therapists')
+    };
    
     useEffect(()=>{
         dispatch(fetchTherapist())
@@ -49,6 +54,7 @@ const DashboardRecommendedTherapist = () => {
             "You don't have any scheduled appointment with a therapist"
           }
           recommendedText={"Recommended therapists for you"}
+          seeAllLogic={seeAllTherapists}
         >
           {sortedTherapists.slice(0, 2).map((therapist) => (
             <div>

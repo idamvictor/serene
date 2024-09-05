@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useEffect, useState, useResolvedPath } from "react";
 import { AiFillHome } from "react-icons/ai";
-import { IoCubeSharp, IoPerson, IoSettings } from "react-icons/io5";
+import { IoCubeSharp, IoPerson, IoSettings, IoChatbubblesSharp } from "react-icons/io5";
 import { RiGlobalFill, RiLogoutBoxFill } from "react-icons/ri";
 import { IoIosPeople } from "react-icons/io";
 import {sereneSign } from "@/assets";
@@ -20,7 +20,7 @@ export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinati
 
   }, [location.pathname, destinationLink]);
 
-  const handleClick = (link) => {
+  const handleClick = () => {
     setActive(destinationLink);
   };
 
@@ -96,6 +96,12 @@ export function SideBar({ isOpen }) {
             reactIcon={RiGlobalFill}
             linkName={"My Bookings"}
             />
+             <NAV_LINK
+              destinationLink={"/chat"}
+              reactIcon={IoChatbubblesSharp}
+              linkName={"Chats"}
+            />
+            
           </nav>
 
           <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4 ">

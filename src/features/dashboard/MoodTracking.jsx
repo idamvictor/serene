@@ -16,7 +16,7 @@ const MoodTracking = () => {
           What's your mood like today?
         </h5>
         <p className="text-xs text-[#666] mt-1 md:mb-5 xl:text-sm mb-3">4 August</p>
-        <div className="flex flex-wrap gap-1 xl:pr-20">
+        <div className="flex flex-wrap gap-1 xl:pr-20 text-[#191919]">
           <MoodButton mood={`Anxiety`} />
           <MoodButton mood={`Joy`} />
           <MoodButton mood={`Depressed`} />

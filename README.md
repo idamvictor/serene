@@ -18,7 +18,6 @@ Serene is a mental and personal improvement platform designed to help users enha
 6. [Directory Structure](#directory-structure)
 7. [Technologies Used](#technologies-used)
 8. [Contributing](#contributing)
-9. [License](#license)
 
 ---
 
@@ -191,11 +190,5 @@ We welcome contributions to improve Serene. Please follow these guidelines:
 4. Ensure your code follows the project’s coding standards.
 
 ---
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more details.
-
---- 
 
 **Serene** is more than just an app. It's a tool for personal growth and mental wellness, helping individuals take control of their mental health journey.
