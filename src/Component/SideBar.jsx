@@ -85,6 +85,7 @@ export function SideBar({ isOpen }) {
 
           <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4">
             <NAV_LINK reactIcon={IoSettings} linkName={"Settings"} />
+            
             <NAV_LINK reactIcon={RiLogoutBoxFill} linkName={"Log out"} />
           </nav>
         </div>

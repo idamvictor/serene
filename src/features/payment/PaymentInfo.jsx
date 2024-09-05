@@ -13,12 +13,15 @@ import {
 } from "@/assets";
 import Web3 from "web3"
 
-// Main PaymentInfo Component
+
 function PaymentInfo() {
 const [activeSection, setActiveSection] = useState(null);
 
+const [isClicked, setIsClicked] = useState(false);
+
+
   const handleClick = (section) => {
-    // setActiveSection(activeSection === section ? null : section);
+
     setActiveSection(section);
   };
 
@@ -186,7 +189,7 @@ const CreditCardPaymentDetails = () => (
 );
 
 //============================ Currency Selector ==============================
-const currencies = ["USDT", "USDC", "ETH", "BTC"];
+const currencies = ["USDT"];
 
 const CurrencySelector = () => (
   <nav className="flex gap-6 items-center text-sm font-medium text-neutral-400">
@@ -198,12 +201,22 @@ const CurrencySelector = () => (
 
 // ======================== CUrrency Button ===================================
 
-const CurrencyButton = ({ currency }) => (
-  <button className="flex justify-center items-center px-3 py-2 rounded border border-zinc-400 bg-transparent w-[5.75rem]">
-    <span>{currency}</span>
-  </button>
-);
-
+const CurrencyButton = ({ currency }) => {
+  const [isClicked, setIsClicked] = useState(false)
+ const handle = ()=>{
+   setIsClicked(!isClicked); 
+ }
+  return (
+    <button
+      className={`flex justify-center items-center px-3 py-2 rounded border border-serene w-[5.75rem]  ${
+        isClicked ? "bg-serene  text-serene-black" : "bg-transparent"
+      }`}
+      onClick={handle}
+    >
+      <span>{currency}</span>
+    </button>
+  );
+}
 //======================= Credit Card Form =======================================
 
 const CreditCardForm = () => {

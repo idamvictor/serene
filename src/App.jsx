@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
 import {
-  createBrowserRouter,
-  RouterProvider,
-  Navigate,
-} from "react-router-dom";
-import { Toaster } from "react-hot-toast";
-import {
   Dashboard,
   JoinCommunities,
   Rooms,
@@ -15,7 +9,14 @@ import {
   Therapists,
   Authentication,
 } from "./pages";
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import Survey from "./features/survey/Survey";
+import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
 import Therapist2 from "./features/Therapist/Therapist2";
 import AppointmentDetails from "./features/payment/AppointmentDetails";
@@ -37,7 +38,6 @@ function App() {
     // Event listener for storage changes
     window.addEventListener("storage", updateUserInfo);
 
-    // Cleanup event listener
     return () => {
       window.removeEventListener("storage", updateUserInfo);
     };
