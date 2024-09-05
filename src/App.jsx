@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import {
   Dashboard,
   JoinCommunities,
@@ -8,6 +7,8 @@ import {
   Payment,
   Therapists,
   Authentication,
+  Settings,
+  Bookings
 } from "./pages";
 
 import {
@@ -16,48 +17,18 @@ import {
   Navigate,
 } from "react-router-dom";
 import Survey from "./features/survey/Survey";
+import Chat from "./pages/Chat";
 import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
 import Therapist2 from "./features/Therapist/Therapist2";
-import AppointmentDetails from "./features/payment/AppointmentDetails";
 
 function App() {
-  const [userInfo, setUserInfo] = useState(localStorage.getItem("userInfo"));
 
-  useEffect(() => {
-    // Log initial userInfo
-    console.log("Initial userInfo:", userInfo);
-
-    // Function to update state from localStorage
-    const updateUserInfo = () => {
-      const info = localStorage.getItem("userInfo");
-      setUserInfo(info);
-      console.log("Updated userInfo:", info);
-    };
-
-    // Event listener for storage changes
-    window.addEventListener("storage", updateUserInfo);
-
-    return () => {
-      window.removeEventListener("storage", updateUserInfo);
-    };
-  }, []);
-
-  const ProtectedLayout = ({ children }) => {
-    if (!userInfo) {
-      return <Navigate to="/authpage" />;
-    }
-    return children;
-  };
 
   const router = createBrowserRouter([
     {
       path: "/",
-      element: (
-        <ProtectedLayout>
-          <Dashboard />
-        </ProtectedLayout>
-      ),
+      element: <Dashboard />
     },
     {
       path: "/community",
@@ -88,8 +59,20 @@ function App() {
       element: <Payment />,
     },
     {
+      path: "/settings",
+      element: <Settings />
+    },
+    {
+      path: "/bookings",
+      element: <Bookings />
+    },
+    // {
+    //   path: "/chats",
+    //   element: <Chat />
+    // },
+    {
       path: "/wallet",
-      element: <ConnectWallet />,
+      element: <ConnectWallet />
     },
     {
       path: "/survey",
