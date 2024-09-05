@@ -204,47 +204,47 @@ function CryptoPaymentMethodSection({
     },
   ];
 
-  // const web3 = new Web3(
-  //   "https://sepolia.infura.io/v3/cf560557c9b640158273f0cd835e0522"
-  // );
+  const web3 = new Web3(
+    "https://sepolia.infura.io/v3/cf560557c9b640158273f0cd835e0522"
+  );
 
-  // let blockNumber;
-  // let contract = new web3.eth.Contract(ABI, contractAddress);
+  let blockNumber;
+  let contract = new web3.eth.Contract(ABI, contractAddress);
 
-  // async function getBlockNum() {
-  //   blockNumber = await web3.eth.getBlockNumber();
-  //   console.log(blockNumber);
-  // }
+  async function getBlockNum() {
+    blockNumber = await web3.eth.getBlockNumber();
+    console.log(blockNumber);
+  }
 
-  // getBlockNum();
+  getBlockNum();
 
-  // let handlePayment = setInterval(function () {
-  //   contract
-  //     .getPastEvents(
-  //       "Transfer",
-  //       {
-  //         filter: { to: "0x065bbBfB4e353a5569c46B5229Cc619385A0eD4b" },
-  //         fromBlock: blockNumber,
-  //         toBlock: "latest",
-  //       },
-  //       (error, events) => {
-  //         console.log(error);
-  //       }
-  //     )
-  //     .then((event) => {
-  //       //console.log(event);
-  //       const data = event;
-  //       //console.log(data[0].returnValues.value)
-  //       let amount = data[0].returnValues.value;
-  //       if (amount == 6000000000000000000) {
-  //         //console.log('payment successful')
-  //         setIsConfirmed(true);
-  //         clearInterval(handlePayment);
-  //       } else {
-  //         //console.log('payment unsuccessful')
-  //       }
-  //     });
-  // }, 18000);
+  let handlePayment = setInterval(function () {
+    contract
+      .getPastEvents(
+        "Transfer",
+        {
+          filter: { to: "0x065bbBfB4e353a5569c46B5229Cc619385A0eD4b" },
+          fromBlock: blockNumber,
+          toBlock: "latest",
+        },
+        (error, events) => {
+          console.log(error);
+        }
+      )
+      .then((event) => {
+        //console.log(event);
+        const data = event;
+        //console.log(data[0].returnValues.value)
+        let amount = data[0].returnValues.value;
+        if (amount == 6000000000000000000) {
+          //console.log('payment successful')
+          setIsConfirmed(true);
+          clearInterval(handlePayment);
+        } else {
+          //console.log('payment unsuccessful')
+        }
+      });
+  }, 18000);
 
   const userInfo = JSON.parse(localStorage.getItem("userInfo"));
   const professionalId = therapistData?._id;
@@ -292,7 +292,7 @@ function CryptoPaymentMethodSection({
         <div className="flex flex-col justify-center items-center text-white mt-8">
           <img
             loading="lazy"
-            src="https://cdn.builder.io/api/v1/image/assets/TEMP/958ff975f89b873f7da7ee27126aadc56b6d59ece0fd4ed3f01f5fc77939189d?placeholderIfAbsent=true&apiKey=df44ca8e15de4475b0d7b182ebb1db7c"
+            src="https://cdn.builder.io/api/v1/image/assets%2F100e2d6f7ca14266bfead5d17c059b5c%2Fc582768c59bd4280869bb996e4a9c005"
             className="object-contain w-[73px] lg:w-[203px] rounded-xl align-middle flex"
             alt="QR Code"
           />

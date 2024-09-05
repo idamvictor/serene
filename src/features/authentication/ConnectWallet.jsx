@@ -53,7 +53,7 @@ const ConnectWallet = () => {
   const [isLoading, setIsLoading] = useState(false); 
 
   async function connectWallet() {
-    if (window.ethereum && window.ethereum.checkMetamask) {
+    if (window.ethereum) {
       setIsLoading(true); 
       var web3 = new Web3(window.ethereum);
       await window.ethereum.send("eth_requestAccounts");

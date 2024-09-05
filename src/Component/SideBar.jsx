@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation,useNavigate} from 'react-router-dom';
 import { useEffect, useState, useResolvedPath } from "react";
 import { AiFillHome } from "react-icons/ai";
 import { IoCubeSharp, IoPerson, IoSettings, IoChatbubblesSharp } from "react-icons/io5";
@@ -39,8 +39,18 @@ export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinati
 };
 
 
+
+
+
+
 //* SIDE BAR COMPONENT
 export function SideBar({ isOpen }) {
+  const handleLogout = () => {
+    localStorage.removeItem("userInfo");
+    navigate("/authpage");
+  };
+  
+  const navigate = useNavigate();
   // Debug: Confirm the sidebar is receiving the correct isOpen prop
   console.log("Rendering SideBar with isOpen:", isOpen);
 
@@ -86,15 +96,15 @@ export function SideBar({ isOpen }) {
               reactIcon={RiGlobalFill}
               linkName={"Chats"}
             /> */}
-             <NAV_LINK
+            {/* <NAV_LINK
               destinationLink={"/payment"}
               reactIcon={RiGlobalFill}
               linkName={"Payment"}
-            />
-            <NAV_LINK 
-            destinationLink={"/bookings"}
-            reactIcon={RiGlobalFill}
-            linkName={"My Bookings"}
+            /> */}
+            <NAV_LINK
+              destinationLink={"/bookings"}
+              reactIcon={RiGlobalFill}
+              linkName={"My Bookings"}
             />
              <NAV_LINK
               destinationLink={"/chat"}
@@ -105,17 +115,19 @@ export function SideBar({ isOpen }) {
           </nav>
 
           <nav className="bottom-nav lg:flex lg:flex-col lg:gap-4 ">
-            <NAV_LINK 
+            <NAV_LINK
               destinationLink={"/settings"}
               reactIcon={IoSettings}
               linkName={"Settings"}
             />
-            <NAV_LINK 
-              reactIcon={RiLogoutBoxFill}
-              linkName={"Log out"}
-            />
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 lg:text-sm xl:text-base py-[12px] text-muted-foreground hover:text-serene"
+            >
+              <RiLogoutBoxFill className="text-xl ml-4" />
+              Log out
+            </button>
           </nav>
-
         </div>
       </div>
     </aside>
