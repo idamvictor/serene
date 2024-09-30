@@ -88,6 +88,12 @@ import cryingWoman from "./Images/cryingWoman.png";
 import depressedMan from "./Images/depressedMan.png";
 import anxiousWoman from "./Images/anxiousWoman.png";
 
+//LandingPage Img
+import featurePic1 from './Images/featurePic1.png';
+import featurePic2 from './Images/featurePic2.png';
+import featurePic3 from './Images/featurePic3.png';
+
+
 // settings image
 import profileAvatar from './Images/profile-avatar.png'
 import angleRight from './Icons/right-arrow.svg'
@@ -187,5 +193,8 @@ export {
   cryingWoman,
   depressedMan,
   anxiousWoman,
-  landingPageS
+  landingPageS,
+  featurePic1,
+  featurePic2,
+  featurePic3
 };
