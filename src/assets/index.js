@@ -49,6 +49,7 @@ import spinner from "./Icons/spinner.svg";
 import arrowBack from "./Icons/arrowBack.svg";
 import redSpinner from "./Icons/redSpinner.svg";
 import sereneS from "./Icons/sereneS.svg";
+import landingPageS from "./Icons/landingpage-S.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -185,5 +186,6 @@ export {
   // profilePhoto
   cryingWoman,
   depressedMan,
-  anxiousWoman
+  anxiousWoman,
+  landingPageS
 };
