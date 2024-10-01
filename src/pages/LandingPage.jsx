@@ -5,6 +5,7 @@ import 'aos/dist/aos.css'; // Import AOS styles
 import { useEffect } from "react";
 import TherapistLanding from "@/Component/LandingPage/TherapistLanding";
 import TherapistLanding2 from "@/Component/LandingPage/TherapistLanding2";
+import { circleData } from "@/lib/circleData";
 
 
 export const RadialEllipse = ({customStyling}) => {
@@ -35,7 +36,7 @@ const LandingPage = () => {
         </header>
         
         {/* SECTION 1 */}
-        <section className="relative h-[75vh] lg:h-[100vh] ">
+        <section className="relative h-[80vh] lg:h-[100vh] ">
           <div className="landingPage-bg-logo absolute w-full lg:w-[35%] h-full bg-no-repeat opacity-35 blur-[2px] bg-blend-screen -rotate-[46.35deg] top-3 left-2 hidden lg:block " 
             style={{
               backgroundImage: `url(${sereneS})`, 
@@ -52,7 +53,7 @@ const LandingPage = () => {
               Serene
             </h1>
             <p className=" text-3xl lg:text-6xl font-thin leading-normal ">Welcome to a space to be <strong className="font-bold">Invisible But Heard</strong></p>
-            <button className="bg-serene rounded-md font-semibold  text-[#0b0b0b] lg:w-[50%] px-10 py-2 ">Get Started</button>
+            <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] lg:w-[50%] px-10 py-2 ">Get Started</button>
           </div>
         </section>
 
@@ -64,7 +65,7 @@ const LandingPage = () => {
 
           <div className=" grid grid-cols-1 z-[1000] place-items-center">
 
-            <div className="mt-24 flex flex-col gap-10 md:flex-row justify-between">
+            <div className="mt-24 flex flex-col justify-center items-center gap-10  lg:flex-row lg:justify-between">
               <article data-aos="zoom-in-down" data-aos-duration="1500" className=" relative border-[1.4px] border-[#9f9f9f] rounded-2xl md:w-[29.38rem] h-[37.5rem] flex flex-col gap-5 font-semibold px-10 ">
                 <img src={featurePic2} alt="" className="absolute place-self-center mt-[-3.5rem] md:mt-[-4.5rem] size-28 md:size-36 " />
                 <h2 className=" text-[2rem] md:text-[2.44rem] mt-[8rem] md:mt-[10rem] ">Privacy</h2>
@@ -81,7 +82,7 @@ const LandingPage = () => {
             </div>
           
 
-            <div className="flex flex-col gap-10 md:flex-row justify-between">
+            <div className="flex flex-col justify-center items-center gap-10 lg:flex-row lg:justify-between">
               <article data-aos="zoom-in-right" data-aos-duration="1500" className="size-auto rounded-2xl bg-cover bg-no-repeat md:w-[46.88rem] h-[31.25rem] mt-10 flex flex-col justify-end px-10 pb-7 "  
                 style={{
                 backgroundImage: `url(${featurePic3})`, 
@@ -135,6 +136,34 @@ const LandingPage = () => {
               therapistImg={therapistImg2}
             />
           </div>
+        </section>
+
+        {/* SECTION 4 */}
+        <section className="relative md:h-[100vh] py-96 border flex justify-center items-center">
+              <div className="absolute w-[40%] z-50 text-center text-[#dadada] flex flex-col items-center justify-center gap-10 ">
+                <h1 className="font-bold text-2xl md:text-6xl"> Our Therapists Expertise</h1>
+                <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[58%] px-5 md:px-10 py-2 ">Book a Session</button>
+              </div>
+ 
+              <RadialEllipse customStyling='size-[22rem] blur-[9rem] ' />
+
+              {
+                circleData.map((item, index) => (
+                  <div 
+                    key={index} 
+                    className="absolute size-16 md:size-[7.5rem] bg-cover bg-center flex justify-center items-end text-center"
+                    style={{
+                      backgroundImage: `url(${item.img})`,
+                      transform: window.innerWidth < 768
+                        ? `rotate(${index * (360 / circleData.length)}deg) translate(10rem) rotate(-${index * (360 / circleData.length)}deg)`
+                        : `rotate(${index * (360 / circleData.length)}deg) translate(19.5rem) rotate(-${index * (360 / circleData.length)}deg)`,
+                    }}
+                  >
+                    <p className="z-50 font-bold text-xs md:text-base text-[#eceaea] ">{item.text}</p>
+                </div>
+                ))
+              }
+
         </section>
 
       </main>

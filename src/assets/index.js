@@ -105,6 +105,15 @@ import featurePic3 from './Images/featurePic3.png';
 import therapistImg1 from './Images/therapist-img1.png';
 import therapistImg2 from './Images/therapist-img2.png';
 import starRating from './Images/star-rating.svg';
+import ptsd from './Images/PTSD.png';
+import anxiety from './Images/anxiety.png';
+import depression from './Images/depression.png';
+import phobias from './Images/phobias.png';
+import ocd from './Images/ocd.png';
+import addiction from './Images/addiction.png';
+import adhd from './Images/adhd.png';
+import bipolar from './Images/bipolar.png';
+import schizo from './Images/schizo.png';
 
 export {
   sereneSign,
@@ -201,5 +210,6 @@ export {
   featurePic3,
   therapistImg1,
   therapistImg2,
-  starRating
+  starRating,
+  ptsd, anxiety, depression, phobias, ocd, addiction, adhd, bipolar, schizo
 };
