@@ -6,7 +6,10 @@ import { useEffect } from "react";
 import TherapistLanding from "@/Component/LandingPage/TherapistLanding";
 import TherapistLanding2 from "@/Component/LandingPage/TherapistLanding2";
 import { circleData } from "@/lib/circleData";
-import { resourcesAbout } from "@/lib/resourcesData";
+import { articleData, resourcesAbout, videoData } from "@/lib/resourcesData";
+import SmallArticleCard from "@/Component/ui/ResourcesPage/SmallArticleCard";
+import videoCard from "@/Component/LandingPage/LandingVideoCard";
+import LandingVideoCard from "@/Component/LandingPage/LandingVideoCard";
 
 
 export const RadialEllipse = ({customStyling}) => {
@@ -172,37 +175,70 @@ const LandingPage = () => {
               <RadialEllipse customStyling='size-[30rem] blur-[12rem] ' />
 
               <div className="w-[90%]">
-                <div className="flex items-center justify-between border border-green-500 ">
-                  <div className="text-[#dadada] border w-[50%] flex flex-col justify-center gap-5 ">
-                    <h2 className="text-[3.5rem] font-bold  ">Resources made for you</h2>
-                    <p className="text-2xl w-[85%] leading-normal tracking-wide ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget.</p>
-                <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[20%] px-5 md:px-10 py-2 ">Explore</button>
 
+                {/* ROW 1 */}
+                <div className="flex items-center justify-between">
+                  <div className="text-[#dadada] w-[60%] flex flex-col justify-center gap-5 ">
+                    <h2 className="text-[3.5rem] font-bold  ">Resources made for you</h2>
+                    <p className="text-2xl w-[88%] leading-normal tracking-wide font-Poppins font-light ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget.</p>
+                    <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[20%] px-5 md:px-10 py-2 ">Explore</button>
                   </div>
-                  <div className="w-[30rem] h-[29rem] border-[1.4px] border-[#c9c9c9] "></div>
+
+                  <div className="w-[36%] h-[29rem] border-[1.4px] border-[#c9c9c9] px-10 flex flex-col  justify-center ">
+                    <h3 className="text-white text-opacity-80 text-2xl font-bold">Trending</h3>
+                    {articleData.map((item, index) => (
+                      <SmallArticleCard 
+                        articlePreviewImg={item.img}
+                        articleAuthor={item.author}
+                        articleTag={item.tag}
+                        articleTitle={item.title}
+                        landingStyling='gap-5'
+                        key={index}
+                      />
+                    ))}
+                  </div>
                 </div>
 
-                <div className="flex items-end justify-between border border-red-500">
-                  <div className="relative w-[30rem] h-[29rem] border-[1.4px] border-[#c9c9c9] "></div>
 
-                  <div className="-ml-40 mb-10   w-[72%] h-[16rem] rounded-[9rem] border-[1.5px] border-[#a3a3a3]  backdrop-blur-[10px] backdrop-brightness-75 grid grid-cols-3 place-content-center gap-10 items-center px-28  "
+                {/* ROW 2 */}
+                <div className="flex items-end justify-between">
+                  <div className="relative w-[35%] h-[29rem] border-[1.4px] border-[#c9c9c9] flex flex-col justify-center px-10">
+                    <h3 className="text-white text-opacity-80 text-2xl font-bold">Recommended</h3>
+                    {videoData.map((item, index) => (
+                      <LandingVideoCard 
+                        key={index}
+                        videoImg={item.img}
+                        videoDuration={item.videoDuration}
+                        videoChannel={item.channel}
+                        videoTitle={item.title}
+                        videoPostDate={item.postDate}
+                        videoViews={item.views}
+                      />
+                    ))}
+                  </div>
+
+                  <div className="-ml-40 mb-10   w-[72%] h-[16rem] rounded-[9rem] border-[1.5px] border-[#a3a3a3]  backdrop-blur-[10px] backdrop-brightness-75 grid grid-cols-3 place-content-center gap-14 items-center px-24  "
                      style={{
                       background: 'linear-gradient(135deg,rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15) 70%)',
                     }}
                   >
-                    {
-                      resourcesAbout.map((item, index) => (
+                    {resourcesAbout.map((item, index) => (
                         <article key={index} className=" flex flex-col gap-3 font-Poppins text-[#dadada] ">
-                          <h3 className="font-semibold text-2xl">{item.title}
-                          </h3><hr className="bg-[#e3daff] h-1 w-[13%] " />
+                          <h3 className="font-semibold text-2xl">{item.title}</h3>
+                          <hr className="bg-[#e3daff] h-1 w-[13%] " />
                           <p className="font-extralight">{item.description} </p>
                         </article>
-                      ))
-                    }
+                      ))}
                   </div>
                 </div>
+
               </div>
         </section>
+
+        {/* FOOTER */}
+        <footer className="h-[100vh] border ">
+
+        </footer>
 
       </main>
        
