@@ -83,12 +83,8 @@ input[type="checkbox"]:checked::after {
 }
 
 
-
     /* ------- RESPONSIVENESS FOR MOBILES ------ */
 @media screen and (max-width: 960.33px) {
-    .landingPage-bg-logo {
-        /* background-size: 100px; */
-    }
 }
 
 @media screen and (max-width: 1023.33px) {

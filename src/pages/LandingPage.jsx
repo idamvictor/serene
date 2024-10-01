@@ -1,8 +1,10 @@
-import { featurePic1, featurePic2, featurePic3, landingPageS, sereneS } from "@/assets";
+import { featurePic1, featurePic2, featurePic3, landingPageS, sereneS, starRating, therapistImg1, therapistImg2 } from "@/assets";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 import { useEffect } from "react";
+import TherapistLanding from "@/Component/LandingPage/TherapistLanding";
+import TherapistLanding2 from "@/Component/LandingPage/TherapistLanding2";
 
 
 export const RadialEllipse = ({customStyling}) => {
@@ -22,7 +24,7 @@ const LandingPage = () => {
   
   return (
     <> 
-      <main className="bg-[#2e2e2e] bg-opacity-60 w-[100vw] text-white">
+      <main className="bg-[#2e2e2e] bg-opacity-60 w-[100vw] text-white ">
         
         {/* HEADER */}
         <header className="bg-[#393839] bg-opacity-40 h-20 lg:h-16 flex items-center justify-between px-8">
@@ -40,7 +42,7 @@ const LandingPage = () => {
               backgroundSize: '400px',
           }}></div>
               
-          <RadialEllipse customStyling=' top-[70%] left-2' />
+          <RadialEllipse customStyling=' top-[70%] left-0' />
           <RadialEllipse customStyling='top-[10%] lg:top-[30%] right-0' />
 
           {/* Centered Content */}
@@ -55,15 +57,15 @@ const LandingPage = () => {
         </section>
 
         {/* SECTION 2 */}
-        <section className="relative h-auto py-7 px-7 md:px-14 border">
+        <section className="relative h-auto p-7 md:px-14 border">
           <RadialEllipse customStyling='z-[-30] size-[34rem] top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 hidden md:block' />
 
           <h1 className="text-center text-4xl md:text-5xl font-bold">Features <br /> <strong className="font-semibold text-xl  md:text-2xl">What we at serene offer to our users </strong></h1>
 
-          <div className=" grid grid-cols-1 z-[1000]">
+          <div className=" grid grid-cols-1 z-[1000] place-items-center">
 
             <div className="mt-24 flex flex-col gap-10 md:flex-row justify-between">
-              <article data-aos="zoom-in-down" data-aos-duration="1500" className=" relative border-[1.4px] border-[#9f9f9f] rounded-2xl md:w-[29.38rem] h-[37.5rem] flex flex-col gap-5 font-semibold px-10  ">
+              <article data-aos="zoom-in-down" data-aos-duration="1500" className=" relative border-[1.4px] border-[#9f9f9f] rounded-2xl md:w-[29.38rem] h-[37.5rem] flex flex-col gap-5 font-semibold px-10 ">
                 <img src={featurePic2} alt="" className="absolute place-self-center mt-[-3.5rem] md:mt-[-4.5rem] size-28 md:size-36 " />
                 <h2 className=" text-[2rem] md:text-[2.44rem] mt-[8rem] md:mt-[10rem] ">Privacy</h2>
                 <p className="text-[1.15rem] font-medium md:pr-[6rem] md:leading-tight ">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante.</p>
@@ -98,8 +100,41 @@ const LandingPage = () => {
         </section>
 
         {/* SECTION 3 */}
-        <section className="border h-[100vh] "> 
+        <section className=" relative border h-auto flex flex-col lg:flex-row justify-center items-center gap-7 py-10 px-7 text-[#dadada] "> 
+          <h1 className="font-bold text-4xl text-center lg:text-left lg:text-[4rem] lg:w-[27%] tracking-wide leading-tight ">Our Network of 700+ licensed therapists</h1>
 
+          <RadialEllipse customStyling='right-0 top-[10%] size-[16rem] blur-[6rem] lg:blur-[8rem] ' />
+
+          <div className=" overflow-x-auto flex items-center w-full h-[32rem] scrollbar-hide lg:w-[60%] lg:h-auto lg:overflow-visible lg:grid lg:grid-cols-2 gap-7 lg:gap-2 ">
+            <TherapistLanding 
+              animation={{
+                'data-aos': "flip-left", 
+                'data-aos-easing': "ease-out-cubic", 
+                'data-aos-duration': "1800"
+              }}
+              therapistImg={therapistImg1}
+            />
+
+            <TherapistLanding2
+              title='Book a session to chat and video call at your selected time'
+              width='w-[65%]'
+            />
+
+            <TherapistLanding2 
+              title='Personalised recommendations to suit your needs'
+              width='w-[75%]'
+              customStyling=''
+            />
+
+            <TherapistLanding 
+              animation={{
+                'data-aos': "flip-right", 
+                'data-aos-easing': "ease-out-cubic", 
+                'data-aos-duration': "1800"
+              }}
+              therapistImg={therapistImg2}
+            />
+          </div>
         </section>
 
       </main>
