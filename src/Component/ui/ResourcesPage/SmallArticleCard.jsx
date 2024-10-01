@@ -7,12 +7,12 @@ const SmallArticleCard = ({ articlePreviewImg, articleTag, articleTitle, article
         className={`smallVideo-card-cont flex items-center gap-1 mt-3 cursor-pointer ${landingStyling} `} 
         onClick={onClick}
       >
-        <div className="w-[119px] overflow-hidden rounded-[3px] flex flex-col items-end justify-end">
+        <div className="w-[7.4375rem] overflow-hidden rounded-[.1875rem] flex flex-col items-end justify-end">
           <img src={articlePreviewImg} alt="" className="size-full relative" />
         </div>
 
         <div className="">
-          <Badges styling={`bg-serene-gray px-[7.32px] py-[3.05px] mb-1 `}>{articleTag}</Badges> 
+          <Badges styling={`bg-serene-gray px-[.4575rem] py-[.1906rem] mb-1 `}>{articleTag}</Badges> 
 
           <h3 
             className="text-[#fefefe] font-semibold text-sm text-ellipsis overflow-hidden w-[12rem] xl:w-[15rem]"
@@ -25,7 +25,7 @@ const SmallArticleCard = ({ articlePreviewImg, articleTag, articleTitle, article
             {articleTitle}
           </h3>
 
-          <p className="text-[#c7c7c7] text-[11px] text-xs mt-1">By {articleAuthor}</p>
+          <p className="text-[#c7c7c7] text-[.6875rem] text-xs mt-1">By {articleAuthor}</p>
         </div>
       </article>  
     </>

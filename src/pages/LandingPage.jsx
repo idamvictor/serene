@@ -1,5 +1,8 @@
 import { featurePic1, featurePic2, featurePic3, landingPageS, sereneS, starRating, therapistImg1, therapistImg2 } from "@/assets";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa";
+import { GrFacebookOption } from "react-icons/gr";
+import { FaXTwitter } from "react-icons/fa6";
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // Import AOS styles
 import { useEffect } from "react";
@@ -8,9 +11,7 @@ import TherapistLanding2 from "@/Component/LandingPage/TherapistLanding2";
 import { circleData } from "@/lib/circleData";
 import { articleData, resourcesAbout, videoData } from "@/lib/resourcesData";
 import SmallArticleCard from "@/Component/ui/ResourcesPage/SmallArticleCard";
-import videoCard from "@/Component/LandingPage/LandingVideoCard";
 import LandingVideoCard from "@/Component/LandingPage/LandingVideoCard";
-
 
 export const RadialEllipse = ({customStyling}) => {
   return (
@@ -184,7 +185,7 @@ const LandingPage = () => {
                     <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[20%] px-5 md:px-10 py-2 ">Explore</button>
                   </div>
 
-                  <div className="w-[36%] h-[29rem] border-[1.4px] border-[#c9c9c9] px-10 flex flex-col  justify-center ">
+                  <div className="w-[36%] h-[29rem] border-[.0875rem] border-[#c9c9c9] px-10 flex flex-col  justify-center ">
                     <h3 className="text-white text-opacity-80 text-2xl font-bold">Trending</h3>
                     {articleData.map((item, index) => (
                       <SmallArticleCard 
@@ -236,8 +237,25 @@ const LandingPage = () => {
         </section>
 
         {/* FOOTER */}
-        <footer className="h-[100vh] border ">
+        <footer className="h-auto border flex items-center justify-center px-7 pt-36 pb-20 bg-[#1F1E1F66] backdrop-blur-[1rem] ">
+          <div className="flex flex-col w-[60%] ">
+            <div className="border-b-[.0625rem] border-b-white border-opacity-25 flex flex-col items-center justify-center gap-5 pb-40">
+              <h2 className="font-medium text-[40px] ">Secure. Engaging. Inclusive.</h2>
+              <p className="w-[95%] text-center text-lg ">We’re a diverse and passionate team that takes ownership of your design and empower you to execute the roadmap. We stay light on our feet and truly enjoy delivering great work.</p>
+              <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[35%] px-5 md:px-10 py-2 ">Get Started</button>
+            </div>
 
+
+            <div className="flex items-center justify-between mt-5">
+              <img src={sereneS} alt="Serene logo" className="size-8" />
+              <p className="text-xl">© 2024 Serene. All Rights Reserved. </p>
+              <div className="flex items-center justify-center gap-2">
+                <GrFacebookOption className="size-10 border-[.09rem] border-white border-opacity-25 px-2 rounded-full "  />
+                <FaLinkedinIn className="size-10 border-[.09rem] border-white border-opacity-25 px-3 rounded-full "/>
+                <FaXTwitter className="size-10 border-[.09rem] border-white border-opacity-25 px-3 rounded-full "/>
+              </div>
+            </div>
+          </div>
         </footer>
 
       </main>
