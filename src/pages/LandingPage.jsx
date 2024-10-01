@@ -6,13 +6,14 @@ import { useEffect } from "react";
 import TherapistLanding from "@/Component/LandingPage/TherapistLanding";
 import TherapistLanding2 from "@/Component/LandingPage/TherapistLanding2";
 import { circleData } from "@/lib/circleData";
+import { resourcesAbout } from "@/lib/resourcesData";
 
 
 export const RadialEllipse = ({customStyling}) => {
   return (
     <div  className={`blur-3xl opacity-70 size-56 absolute rounded-full ${customStyling}` }
       style={{
-      background: "radial-gradient(circle, rgba(229, 200, 13, 0.4), rgba(127, 111, 7, 0.4))",
+        background: "radial-gradient(circle, rgba(229, 200, 13, 0.4), rgba(127, 111, 7, 0.4))",
     }}></div>
   );
 };
@@ -65,7 +66,7 @@ const LandingPage = () => {
 
           <div className=" grid grid-cols-1 z-[1000] place-items-center">
 
-            <div className="mt-24 flex flex-col justify-center items-center gap-10  lg:flex-row lg:justify-between">
+            <div className="mt-24 flex flex-col  justify-center items-center gap-10  lg:flex-row lg:justify-between">
               <article data-aos="zoom-in-down" data-aos-duration="1500" className=" relative border-[1.4px] border-[#9f9f9f] rounded-2xl md:w-[29.38rem] h-[37.5rem] flex flex-col gap-5 font-semibold px-10 ">
                 <img src={featurePic2} alt="" className="absolute place-self-center mt-[-3.5rem] md:mt-[-4.5rem] size-28 md:size-36 " />
                 <h2 className=" text-[2rem] md:text-[2.44rem] mt-[8rem] md:mt-[10rem] ">Privacy</h2>
@@ -82,8 +83,8 @@ const LandingPage = () => {
             </div>
           
 
-            <div className="flex flex-col justify-center items-center gap-10 lg:flex-row lg:justify-between">
-              <article data-aos="zoom-in-right" data-aos-duration="1500" className="size-auto rounded-2xl bg-cover bg-no-repeat md:w-[46.88rem] h-[31.25rem] mt-10 flex flex-col justify-end px-10 pb-7 "  
+            <div className="flex flex-col-reverse justify-center items-center gap-10 lg:flex-row lg:justify-between">
+              <article data-aos="zoom-in-right" data-aos-duration="1500" className="size-auto rounded-2xl bg-cover bg-no-repeat md:w-[46.88rem] h-[31.25rem]  flex flex-col justify-end px-10 pb-7 "  
                 style={{
                 backgroundImage: `url(${featurePic3})`, 
               }}>
@@ -91,7 +92,7 @@ const LandingPage = () => {
                 <p className="text-[1.15rem] font-medium md:pr-[15.5rem] md:leading-tight z-30">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante.</p>
               </article>
 
-              <article data-aos="zoom-in-up" data-aos-duration="1500" className=" border-[1.4px] border-[#9f9f9f] rounded-2xl md:w-[29.38rem] h-[37.5rem] flex flex-col gap-5 font-semibold px-10">
+              <article data-aos="zoom-in-up" data-aos-duration="1500" className=" border-[1.4px] border-[#9f9f9f] rounded-2xl md:w-[29.38rem] h-[37.5rem] flex flex-col gap-5 font-semibold px-10 mt-10 lg:mt-0">
                 <h2 className=" text-[2rem] md:text-[2.44rem] mt-[8rem] md:mt-[10rem] ">Resources</h2>
                 <p className="text-[1.15rem] font-medium md:pr-[6rem] md:leading-tight ">Lorem ipsum dolor sit amet consectetur adipiscing elit Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus. Nullam quis imperdiet augue. Vestibulum auctor ornare leo, non suscipit magna interdum eu. Curabitur pellentesque nibh nibh, at maximus ante.</p>
               </article>
@@ -139,7 +140,7 @@ const LandingPage = () => {
         </section>
 
         {/* SECTION 4 */}
-        <section className="relative md:h-[100vh] py-96 border flex justify-center items-center">
+        <section className="relative h-[70vh] md:h-[100vh] md:py-96 border flex justify-center items-center">
               <div className="absolute w-[40%] z-50 text-center text-[#dadada] flex flex-col items-center justify-center gap-10 ">
                 <h1 className="font-bold text-2xl md:text-6xl"> Our Therapists Expertise</h1>
                 <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[58%] px-5 md:px-10 py-2 ">Book a Session</button>
@@ -164,6 +165,43 @@ const LandingPage = () => {
                 ))
               }
 
+        </section>
+
+        {/* SECTION 5 */}
+        <section className="h-auto py-20 flex flex-col justify-center items-center border">
+              <RadialEllipse customStyling='size-[30rem] blur-[12rem] ' />
+
+              <div className="w-[90%]">
+                <div className="flex items-center justify-between border border-green-500 ">
+                  <div className="text-[#dadada] border w-[50%] flex flex-col justify-center gap-5 ">
+                    <h2 className="text-[3.5rem] font-bold  ">Resources made for you</h2>
+                    <p className="text-2xl w-[85%] leading-normal tracking-wide ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget.</p>
+                <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[20%] px-5 md:px-10 py-2 ">Explore</button>
+
+                  </div>
+                  <div className="w-[30rem] h-[29rem] border-[1.4px] border-[#c9c9c9] "></div>
+                </div>
+
+                <div className="flex items-end justify-between border border-red-500">
+                  <div className="relative w-[30rem] h-[29rem] border-[1.4px] border-[#c9c9c9] "></div>
+
+                  <div className="-ml-40 mb-10   w-[72%] h-[16rem] rounded-[9rem] border-[1.5px] border-[#a3a3a3]  backdrop-blur-[10px] backdrop-brightness-75 grid grid-cols-3 place-content-center gap-10 items-center px-28  "
+                     style={{
+                      background: 'linear-gradient(135deg,rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15) 70%)',
+                    }}
+                  >
+                    {
+                      resourcesAbout.map((item, index) => (
+                        <article key={index} className=" flex flex-col gap-3 font-Poppins text-[#dadada] ">
+                          <h3 className="font-semibold text-2xl">{item.title}
+                          </h3><hr className="bg-[#e3daff] h-1 w-[13%] " />
+                          <p className="font-extralight">{item.description} </p>
+                        </article>
+                      ))
+                    }
+                  </div>
+                </div>
+              </div>
         </section>
 
       </main>

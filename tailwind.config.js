@@ -42,6 +42,7 @@ export default {
       },
       fontFamily: {
         NeueHass: ["Neue Haas Grotesk Display Pro", "sans-serif"],
+        Poppins: ["Poppins", "sans-serif"],
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",

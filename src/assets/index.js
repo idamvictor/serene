@@ -114,6 +114,13 @@ import addiction from './Images/addiction.png';
 import adhd from './Images/adhd.png';
 import bipolar from './Images/bipolar.png';
 import schizo from './Images/schizo.png';
+import smallArticlePic2 from './Images/smallArticlePic2.png';
+import smallArticlePic3 from './Images/smallArticlePic3.png';
+import smallArticlePic4 from './Images/smallArticlePic4.png';
+import smallVideoPic2 from './Images/smallVideoPic2.png';
+import smallVideoPic3 from './Images/smallVideoPic3.png';
+import smallVideoPic4 from './Images/smallVideoPic4.png';
+
 
 export {
   sereneSign,
@@ -211,5 +218,5 @@ export {
   therapistImg1,
   therapistImg2,
   starRating,
-  ptsd, anxiety, depression, phobias, ocd, addiction, adhd, bipolar, schizo
+  ptsd, anxiety, depression, phobias, ocd, addiction, adhd, bipolar, schizo, smallArticlePic2, smallArticlePic3, smallArticlePic4, smallVideoPic2, smallVideoPic3, smallVideoPic4
 };
