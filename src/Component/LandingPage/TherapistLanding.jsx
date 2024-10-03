@@ -7,7 +7,7 @@ const TherapistLanding = ({ animation, therapistImg }) => {
 
       <div className="">
         <article {...animation}  
-          className="bg-[#3e3e3e] border-[.125rem] lg:border-[.1875rem] border-[#565656] lg:w-[26.26rem] h-[29.18rem] rounded-2xl text-white text-opacity-90 flex flex-col items-center justify-center gap-3 relative min-w-[18.75rem] lg:min-w-0 ">
+          className="bg-[#3e3e3e] border-[.125rem] lg:border-[.1875rem] border-[#565656]  xl:w-full h-[29.18rem] rounded-2xl text-white text-opacity-90 flex flex-col items-center justify-center gap-3 relative min-w-[18.75rem]  ">
                 <img src={therapistImg} alt="therapist image"  className=" size-36 lg:size-44 rounded-full " />
                 <h2 className="font-semibold text-2xl lg:text-[2rem] mt-5"> Mary-Ann Okoli</h2>
                 <p className="text-lg lg:text-2xl  ">Clinical Psychologist</p>
