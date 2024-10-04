@@ -10,7 +10,8 @@ import {
   ChatPage,
   ErrorPage,
   Settings,
-  Bookings
+  Bookings,
+  LandingPage
 } from "./pages";
 
 import {
@@ -18,7 +19,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Survey from "./features/survey/Survey";
-import Chat from "./pages/Chat";
+// import Chat from "./pages/Chat";
 import { Toaster } from "react-hot-toast";
 import ConnectWallet from "./features/authentication/ConnectWallet";
 import Therapist2 from "./features/Therapist/Therapist2";
@@ -74,10 +75,6 @@ function App() {
       path: "/bookings",
       element: <Bookings />
     },
-    // {
-    //   path: "/chats",
-    //   element: <Chat />
-    // },
     {
       path: "/wallet",
       element: <ConnectWallet />
@@ -94,6 +91,10 @@ function App() {
       path: "/chat",
       element: <ChatPage />,
     },  
+    {
+      path: "/landingpage",
+      element: <LandingPage />,
+    },
   ]);
 
   return (
