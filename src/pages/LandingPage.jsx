@@ -32,7 +32,7 @@ const LandingPage = () => {
   
   return (
     <> 
-      <main className="bg-[#2e2e2e] bg-opacity-60 w-[100vw] text-white ">
+      <main className="bg-[#2e2e2e] bg-opacity-60  text-white  ">
         
         {/* HEADER */}
         <header className="bg-[#393839] bg-opacity-40 h-20 lg:h-16 flex items-center justify-between px-8">
@@ -44,10 +44,10 @@ const LandingPage = () => {
         
         {/* SECTION 1 */}
         <section className="relative h-[80vh] lg:h-[100vh] ">
-          <div className="landingPage-bg-logo absolute  lg:w-[35%] h-full bg-no-repeat opacity-35 blur-[.125rem] bg-blend-screen -rotate-[46.35deg] top-3 left-2 hidden lg:block " 
+          <div className="hidden xl:block landingPage-bg-logo absolute xl:w-[35%] h-full bg-no-repeat opacity-35 blur-[.125rem] bg-blend-screen -rotate-[46.35deg] top-3 left-2  " 
             style={{
               backgroundImage: `url(${sereneS})`, 
-              backgroundSize: window.innerWidth < 1280 ? '18rem' :'25rem',
+              backgroundSize: '25rem',
           }}></div>
               
           <RadialEllipse customStyling=' top-[70%] left-0' />
