@@ -49,6 +49,7 @@ import spinner from "./Icons/spinner.svg";
 import arrowBack from "./Icons/arrowBack.svg";
 import redSpinner from "./Icons/redSpinner.svg";
 import sereneS from "./Icons/sereneS.svg";
+import landingPageS from "./Icons/landingpage-S.svg";
 
 // ALL IMAGES IMPORT
 import moodImg from "./Images/moodImg.png";
@@ -88,14 +89,38 @@ import depressedMan from "./Images/depressedMan.png";
 import anxiousWoman from "./Images/anxiousWoman.png";
 
 // settings image
-import profileAvatar from './Images/profile-avatar.png'
-import angleRight from './Icons/right-arrow.svg'
+import profileAvatar from './Images/profile-avatar.png';
+import angleRight from './Icons/right-arrow.svg';
 
 // chat image
-import chatImage from './Images/chat.png'
-import Mic from './Images/Mic.svg'
-import video from './Icons/Video.svg'
-import Group from './Icons/Group.svg'
+import chatImage from './Images/chat.png';
+import Mic from './Images/Mic.svg';
+import video from './Icons/Video.svg';
+import Group from './Icons/Group.svg';
+
+//LandingPage Img
+import featurePic1 from './Images/featurePic1.png';
+import featurePic2 from './Images/featurePic2.png';
+import featurePic3 from './Images/featurePic3.png';
+import therapistImg1 from './Images/therapist-img1.png';
+import therapistImg2 from './Images/therapist-img2.png';
+import starRating from './Images/star-rating.svg';
+import ptsd from './Images/PTSD.png';
+import anxiety from './Images/anxiety.png';
+import depression from './Images/depression.png';
+import phobias from './Images/phobias.png';
+import ocd from './Images/ocd.png';
+import addiction from './Images/addiction.png';
+import adhd from './Images/adhd.png';
+import bipolar from './Images/bipolar.png';
+import schizo from './Images/schizo.png';
+import smallArticlePic2 from './Images/smallArticlePic2.png';
+import smallArticlePic3 from './Images/smallArticlePic3.png';
+import smallArticlePic4 from './Images/smallArticlePic4.png';
+import smallVideoPic2 from './Images/smallVideoPic2.png';
+import smallVideoPic3 from './Images/smallVideoPic3.png';
+import smallVideoPic4 from './Images/smallVideoPic4.png';
+
 
 export {
   sereneSign,
@@ -185,5 +210,13 @@ export {
   // profilePhoto
   cryingWoman,
   depressedMan,
-  anxiousWoman
+  anxiousWoman,
+  landingPageS,
+  featurePic1,
+  featurePic2,
+  featurePic3,
+  therapistImg1,
+  therapistImg2,
+  starRating,
+  ptsd, anxiety, depression, phobias, ocd, addiction, adhd, bipolar, schizo, smallArticlePic2, smallArticlePic3, smallArticlePic4, smallVideoPic2, smallVideoPic3, smallVideoPic4
 };

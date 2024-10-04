@@ -10,6 +10,7 @@ import ChatPage from "./ChatPage";
 import ErrorPage from "./ErrorPage";
 import Settings from "./Settings";
 import Bookings from "./Bookings";
+import LandingPage from "./LandingPage";
 
 export {
   Dashboard,
@@ -24,4 +25,5 @@ export {
   ErrorPage,
   Settings,
   Bookings,
+  LandingPage
 };
