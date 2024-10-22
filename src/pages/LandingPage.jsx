@@ -14,6 +14,7 @@ import SmallArticleCard from "@/Component/ui/ResourcesPage/SmallArticleCard";
 import LandingVideoCard from "@/Component/LandingPage/LandingVideoCard";
 import FeatureCard1 from "@/Component/LandingPage/FeatureCard1";
 import FeatureCard2 from "@/Component/LandingPage/FeatureCard2";
+import { Link } from "react-router-dom";
 
 export const RadialEllipse = ({customStyling}) => {
   return (
@@ -29,6 +30,12 @@ const LandingPage = () => {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  const scrollToSection = () => {
+    const section = document.getElementById('next-section');
+    section?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   
   return (
     <> 
@@ -37,9 +44,9 @@ const LandingPage = () => {
         {/* HEADER */}
         <header className="bg-[#393839] bg-opacity-40 h-20 lg:h-16 flex items-center justify-between px-8">
           <img src={sereneS} alt="serene logo" className="size-8" />
-          <button className="text-serene font-medium text-sm flex items-center gap-1 border border-serene rounded-md px-6 py-3  "> Login
+          <Link to="/authpage" className="text-serene font-medium text-sm flex items-center gap-1 border border-serene rounded-md px-6 py-3  "> Login
             <IoIosArrowDroprightCircle className="text-lg" /> 
-          </button>
+          </Link>
         </header>
         
         {/* SECTION 1 */}
@@ -60,12 +67,12 @@ const LandingPage = () => {
               Serene
             </h1>
             <p className=" text-3xl lg:text-5xl xl:text-6xl font-thin leading-normal ">Welcome to a space to be <strong className="font-bold">Invisible But Heard</strong></p>
-            <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] lg:w-[50%] px-10 py-2 ">Get Started</button>
+            <button onClick={scrollToSection} className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] lg:w-[50%] px-10 py-2 ">Get Started</button>
           </div>
         </section>
 
         {/* SECTION 2 */}
-        <section className="relative h-auto p-7 md:px-14">
+        <section id="next-section" className="relative h-auto p-7 md:px-14">
           <RadialEllipse customStyling='z-[-30] size-[34rem] top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 hidden md:block' />
 
           <h1 className="text-center text-4xl md:text-5xl font-bold">Features <br /> <strong className="font-semibold text-xl md:text-2xl">What we at serene offer to our users </strong></h1>
@@ -156,7 +163,7 @@ const LandingPage = () => {
         <section className="relative h-[70vh] md:h-[100vh] md:py-96 flex justify-center items-center">
               <div className="absolute w-[40%] z-50 text-center text-[#dadada] flex flex-col items-center justify-center gap-10 ">
                 <h1 className="font-bold text-2xl md:text-4xl lg:text-6xl"> Our Therapists Expertise</h1>
-                <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[58%] px-5 md:px-10 py-2 ">Book a Session</button>
+                <Link to="/authpage" className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-center text-sm md:text-base lg:w-[58%] px-5 md:px-10 py-2 ">Book a Session</Link>
               </div>
  
               <RadialEllipse customStyling='size-[22rem] blur-[9rem] ' />
@@ -191,7 +198,7 @@ const LandingPage = () => {
                   <div className="text-[#dadada] text-center lg:text-left lg:w-[60%] flex flex-col items-center lg:items-start justify-center gap-5 ">
                     <h2 className="text-[2rem] xl:text-[3.5rem] font-bold  ">Resources made for you</h2>
                     <p className=" text-xl xl:text-2xl lg:w-[88%]  leading-normal tracking-wide font-Poppins font-light ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget.</p>
-                    <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base w-[30%] md:[w-20%] px-5 md:px-10 py-2 ">Explore</button>
+                    <Link to='/authpage' className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-center text-sm md:text-base w-[30%] md:[w-20%] px-5 md:px-10 py-2 ">Explore</Link>
                   </div>
 
                   <div className="w-[90%] md:w-auto xl:w-[36%] h-[29rem] border-[.0875rem] border-[#c9c9c9] px-5 md:px-10 flex flex-col justify-center ">
@@ -250,7 +257,7 @@ const LandingPage = () => {
             <div className="border-b-[.0625rem] border-b-white border-opacity-25 flex flex-col items-center justify-center gap-5 pb-40">
               <h2 className="font-medium text-[2.5rem] text-center ">Secure. Engaging. Inclusive.</h2>
               <p className="w-[95%] text-center text-lg ">We’re a diverse and passionate team that takes ownership of your design and empower you to execute the roadmap. We stay light on our feet and truly enjoy delivering great work.</p>
-              <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[35%] px-5 md:px-10 py-2 ">Get Started</button>
+              <Link to='/authpage' className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-center text-sm md:text-base lg:w-[35%] px-5 md:px-10 py-2 ">Get Started</Link>
             </div>
 
 
