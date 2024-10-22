@@ -9,7 +9,7 @@ const WelcomeMsg = () => {
 const navigate = useNavigate()
 
   const handleSubmit = () => {
-    navigate('/')
+    navigate('/dashboard')
     console.log("Final submission");
   };
 

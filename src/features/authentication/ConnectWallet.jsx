@@ -76,7 +76,7 @@ const ConnectWallet = () => {
           notify("Fill in the survey")
 
         } else {
-          navigate("/");
+          navigate("/dashboard");
            notify("Welcome Back!");
           
         }
