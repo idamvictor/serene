@@ -163,7 +163,7 @@ const LandingPage = () => {
         <section className="relative h-[70vh] md:h-[100vh] md:py-96 flex justify-center items-center">
               <div className="absolute w-[40%] z-50 text-center text-[#dadada] flex flex-col items-center justify-center gap-10 ">
                 <h1 className="font-bold text-2xl md:text-4xl lg:text-6xl"> Our Therapists Expertise</h1>
-                <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[58%] px-5 md:px-10 py-2 ">Book a Session</button>
+                <Link to="/authpage" className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-center text-sm md:text-base lg:w-[58%] px-5 md:px-10 py-2 ">Book a Session</Link>
               </div>
  
               <RadialEllipse customStyling='size-[22rem] blur-[9rem] ' />
@@ -198,7 +198,7 @@ const LandingPage = () => {
                   <div className="text-[#dadada] text-center lg:text-left lg:w-[60%] flex flex-col items-center lg:items-start justify-center gap-5 ">
                     <h2 className="text-[2rem] xl:text-[3.5rem] font-bold  ">Resources made for you</h2>
                     <p className=" text-xl xl:text-2xl lg:w-[88%]  leading-normal tracking-wide font-Poppins font-light ">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus in libero risus semper habitant arcu eget. Et integer facilisi eget.</p>
-                    <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base w-[30%] md:[w-20%] px-5 md:px-10 py-2 ">Explore</button>
+                    <Link to='/authpage' className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-center text-sm md:text-base w-[30%] md:[w-20%] px-5 md:px-10 py-2 ">Explore</Link>
                   </div>
 
                   <div className="w-[90%] md:w-auto xl:w-[36%] h-[29rem] border-[.0875rem] border-[#c9c9c9] px-5 md:px-10 flex flex-col justify-center ">
@@ -257,7 +257,7 @@ const LandingPage = () => {
             <div className="border-b-[.0625rem] border-b-white border-opacity-25 flex flex-col items-center justify-center gap-5 pb-40">
               <h2 className="font-medium text-[2.5rem] text-center ">Secure. Engaging. Inclusive.</h2>
               <p className="w-[95%] text-center text-lg ">We’re a diverse and passionate team that takes ownership of your design and empower you to execute the roadmap. We stay light on our feet and truly enjoy delivering great work.</p>
-              <button className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-sm md:text-base lg:w-[35%] px-5 md:px-10 py-2 ">Get Started</button>
+              <Link to='/authpage' className="bg-serene rounded-sm font-semibold  text-[#0b0b0b] text-center text-sm md:text-base lg:w-[35%] px-5 md:px-10 py-2 ">Get Started</Link>
             </div>
 
 
