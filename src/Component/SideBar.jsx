@@ -47,7 +47,7 @@ export const NAV_LINK = ({reactIcon: Icon, reactIconStyling, linkName, destinati
 export function SideBar({ isOpen }) {
   const handleLogout = () => {
     localStorage.removeItem("userInfo");
-    navigate("/authpage");
+    navigate("/");
   };
   
   const navigate = useNavigate();
@@ -72,7 +72,7 @@ export function SideBar({ isOpen }) {
         <div className="sideBar-links-cont lg:mx-2 lg:mt-12 lg:flex lg:flex-col lg:justify-between lg:gap-24 xl:mt-6 xl:gap-48">
           <nav className="top-nav lg:flex lg:flex-col lg:gap-1">
             <NAV_LINK
-              destinationLink={"/"}
+              destinationLink={"/dashboard"}
               reactIcon={AiFillHome}
               linkName={"Dashboard"}
             />

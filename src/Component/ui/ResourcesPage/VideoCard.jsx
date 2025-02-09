@@ -61,7 +61,7 @@ const VideoCard = ({
 
         <div className="text-white text-[.8rem] opacity-70 flex justify-between items-center">
           <span>{videoViews} views</span>
-          <span>{videoPostDate} ago</span>
+          <span>{videoPostDate} </span>
         </div>
       </div>
     </div>
