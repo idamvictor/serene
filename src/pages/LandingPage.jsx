@@ -17,10 +17,17 @@ import FeatureCard2 from "@/Component/LandingPage/FeatureCard2";
 
 export const RadialEllipse = ({customStyling}) => {
   return (
-    <div  className={`blur-3xl opacity-70 size-56 absolute rounded-full ${customStyling}` }
+    <div
+      className={`w-[27rem] h-[27rem] flex-shrink-0 rounded-full ${customStyling}`}
       style={{
-        background: "radial-gradient(circle, rgba(229, 200, 13, 0.4), rgba(127, 111, 7, 0.4))",
-    }}></div>
+        backgroundImage: "linear-gradient(125deg, rgba(229, 200, 13, 0.40) -111.35%, rgba(127, 111, 7, 0.40) 70.79%)",
+        filter: "blur(200px)",
+      }}
+    ></div>
+    // <div  className={`blur-3xl opacity-70 size-56 absolute rounded-full ${customStyling}` }
+    //   style={{
+    //     background: "radial-gradient(circle, rgba(229, 200, 13, 0.4), rgba(127, 111, 7, 0.4))",
+    // }}></div>
   );
 };
  
@@ -50,8 +57,8 @@ const LandingPage = () => {
               backgroundSize: '25rem',
           }}></div>
               
-          <RadialEllipse customStyling=' top-[70%] left-0' />
-          <RadialEllipse customStyling='top-[10%] lg:top-[30%] right-0' />
+          <RadialEllipse customStyling='absolute top-28 -right-10' />
+          <RadialEllipse customStyling='absolute bottom-0 lg:bottom-52 left-0' />
 
           {/* Centered Content */}
           <div className="z-30 absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-10 text-center text-white min-w-80 ">

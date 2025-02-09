@@ -1,4 +1,5 @@
-export default function NavigationTabs({ activeTab, setActiveTab, tabs}) {
+export default function 
+NavigationTabs({ activeTab, setActiveTab, tabs}) {
  
 
   return (

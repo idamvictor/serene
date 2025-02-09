@@ -56,7 +56,7 @@ export function SideBar({ isOpen }) {
 
   return (
     <aside
-      className={`lg:block lg:bg-[#272727] text-serene-ash lg:fixed fixed z-50 bg-[#272727] top-20 w-[15rem] h-[30rem] pt-2  lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[12.625rem] xl:w-[15.625rem] 
+      className={` lg:block lg:bg-[#272727] text-serene-ash lg:fixed fixed z-50 bg-[#272727] top-20 w-[15rem] h-[30rem] pt-2  lg:top-0 lg:z-[1000] lg:bottom-0 lg:h-full lg:w-[12.625rem] xl:w-[15.625rem] 
     transform transition-transform duration-300 ease-in-out ${
       isOpen ? "translate-x-0 block" : "-translate-x-full hidden"
     } lg:translate-x-0`}
