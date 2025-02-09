@@ -60,40 +60,42 @@ const ConnectWallet = () => {
     }
   }
 
-  async function connectWallet() {
-    if (checkmetamask) {
-      setIsLoading(true); 
-      var web3 = new Web3(window.ethereum);
-      await window.ethereum.send("eth_requestAccounts");
-      var accounts = await web3.eth.getAccounts();
-      const walletid = accounts[0];
+ async function connectWallet() {
+   if (checkmetamask()) {
+     setIsLoading(true);
+     var web3 = new Web3(window.ethereum);
 
-      try {
-        const response = await loginUser(walletid).unwrap();
-         dispatch(setCredentials(response.data));
-        if (response.newuser) {
-          navigate("/survey");
-          notify("Fill in the survey")
+     try {
+       await window.ethereum.request({ method: "eth_requestAccounts" });
+       var accounts = await web3.eth.getAccounts();
+       const walletid = accounts[0];
 
-        } else {
-          navigate("/dashboard");
-           notify("Welcome Back!");
-          
-        }
-        // dispatch(setCredentials(response.data));
-      } catch (error) {
-        notify("login/sign error: server down!");
-      } finally {
-        setIsLoading(false); 
-      }
-    } else {
-      notify("redirecting you to metamask...");
+       const response = await loginUser({ walletId: walletid }).unwrap();
+       dispatch(setCredentials(response.data));
+
+       if (response.newuser) {
+         navigate("/survey");
+         notify("Fill in the survey");
+       } else {
+         navigate("/");
+         notify("Welcome Back!");
+       }
+     } catch (error) {
+       notify("User denied wallet connection.");
+       console.error("Wallet connection error:", error);
+     } finally {
+       setIsLoading(false);
+     }
+   } else {
+     notify("Redirecting you to Metamask...");
+     setTimeout(() => {
        window.open(
          "https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn",
          "_blank"
        );
-    }
-  }
+     }, 2000);
+   }
+ }
 
   return (
     <AuthLayout>
