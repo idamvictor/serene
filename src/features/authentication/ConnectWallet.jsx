@@ -7,6 +7,7 @@ import Web3 from "web3";
 import { setCredentials } from "@/services/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import { GiNinjaHead } from "react-icons/gi";
 import { generateSecretKey,encryptUserId,decryptUserId } from "@/utils/encrypt-loginkey";
 
 // Loader Component
@@ -84,7 +85,50 @@ const ConnectWallet = () => {
      setIsLoading(false);
    }
  };
-  
+  function checkmetamask() {
+    if(typeof window.ethereum !== 'undefined' && window.ethereum.isMetamask) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+ async function connectWallet() {
+   if (checkmetamask) {
+     setIsLoading(true);
+     var web3 = new Web3(window.ethereum);
+
+     try {
+       await window.ethereum.request({ method: "eth_requestAccounts" });
+       var accounts = await web3.eth.getAccounts();
+       const walletid = accounts[0];
+
+       const response = await loginUser(walletid).unwrap();
+       dispatch(setCredentials(response.data));
+
+       if (response.newuser) {
+         navigate("/survey");
+         notify("Fill in the survey");
+       } else {
+         navigate("/dashboard");
+         notify("Welcome Back!");
+       }
+     } catch (error) {
+       notify("User denied wallet connection.");
+       console.error("Wallet connection error:", error);
+     } finally {
+       setIsLoading(false);
+     }
+   } else {
+     notify("Redirecting you to Metamask...");
+     setTimeout(() => {
+       window.open(
+         "https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn",
+         "_blank"
+       );
+     }, 2000);
+   }
+ }
 
 
   return (
@@ -109,10 +153,20 @@ const ConnectWallet = () => {
                     />
                     <span
                       id="connectButton"
-                      onClick={connectUser}
+                      onClick={connectWallet}
                       className="text-serene text-sm opacity-65 hover:opacity-95 font-semibold  hover:text-serene cursor-pointer"
                     >
                       Metamask Wallet
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-2 mt-8">
+                    <GiNinjaHead className="w-10 h-8 text-serene opacity-65" />
+                    <span
+                      id="connectButton"
+                      onClick={connectUser}
+                      className="text-serene text-sm opacity-65 hover:opacity-95 font-semibold  hover:text-serene cursor-pointer"
+                    >
+                      Temporal Access
                     </span>
                   </div>
                 </div>
@@ -163,7 +217,9 @@ const ConnectWallet = () => {
                     </h5>
                     <p className="text-gray-400 text-sm">
                       Instead of creating new accounts and passwords on every
-                      website, just connect your wallet, which would take you to install your wallet then when that is done head back here for the rest of your serene journey!
+                      website, just connect your wallet, which would take you to
+                      install your wallet then when that is done head back here
+                      for the rest of your serene journey!
                     </p>
                   </div>
                 </div>
