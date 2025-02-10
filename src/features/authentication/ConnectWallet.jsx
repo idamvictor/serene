@@ -7,6 +7,7 @@ import Web3 from "web3";
 import { setCredentials } from "@/services/auth/authSlice";
 import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
+import { generateSecretKey,encryptUserId,decryptUserId } from "@/utils/encrypt-loginkey";
 
 // Loader Component
 const Loader = () => {
@@ -52,50 +53,39 @@ const ConnectWallet = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false); 
 
-  function checkmetamask() {
-    if(typeof window.ethereum !== 'undefined' && window.ethereum.isMetamask) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+ const connectUser = async () => {
+   setIsLoading(true);
 
- async function connectWallet() {
-   if (checkmetamask()) {
-     setIsLoading(true);
-     var web3 = new Web3(window.ethereum);
-
-     try {
-       await window.ethereum.request({ method: "eth_requestAccounts" });
-       var accounts = await web3.eth.getAccounts();
-       const walletid = accounts[0];
-
-       const response = await loginUser({ walletId: walletid }).unwrap();
-       dispatch(setCredentials(response.data));
-
-       if (response.newuser) {
-         navigate("/survey");
-         notify("Fill in the survey");
-       } else {
-         navigate("/");
-         notify("Welcome Back!");
-       }
-     } catch (error) {
-       notify("User denied wallet connection.");
-       console.error("Wallet connection error:", error);
-     } finally {
-       setIsLoading(false);
+   try {
+     let secretKey = sessionStorage.getItem("secret_key");
+     if (!secretKey) {
+       secretKey = await generateSecretKey();
      }
-   } else {
-     notify("Redirecting you to Metamask...");
-     setTimeout(() => {
-       window.open(
-         "https://chromewebstore.google.com/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn",
-         "_blank"
-       );
-     }, 2000);
+
+     let userId = await decryptUserId(secretKey);
+     if (!userId) {
+       userId = crypto.randomUUID();
+       await encryptUserId(userId, secretKey);
+     }
+
+     const response = await loginUser(userId).unwrap();
+     dispatch(setCredentials(response.data));
+
+     if (response.newuser) {
+       navigate("/survey");
+       notify("Fill in the survey");
+     } else {
+       navigate("/dashboard");
+       notify("Welcome Back!");
+     }
+   } catch (error) {
+     notify("Login failed: Server error!");
+   } finally {
+     setIsLoading(false);
    }
- }
+ };
+  
+
 
   return (
     <AuthLayout>
@@ -119,7 +109,7 @@ const ConnectWallet = () => {
                     />
                     <span
                       id="connectButton"
-                      onClick={connectWallet}
+                      onClick={connectUser}
                       className="text-serene text-sm opacity-65 hover:opacity-95 font-semibold  hover:text-serene cursor-pointer"
                     >
                       Metamask Wallet
